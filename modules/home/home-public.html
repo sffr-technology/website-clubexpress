@@ -1,0 +1,182 @@
+<!--
+  SFFR PUBLIC HOMEPAGE REDESIGN
+  Paste this entire file into the ClubExpress homepage HTML editor.
+
+  PRESERVED FROM THE CURRENT HOMEPAGE:
+  - The Kezar Stadium group photo
+  - Run with us button and destination
+  - Become a Member button and destination
+  - Run Learn More button and destination
+  - Race Learn More button and destination
+  - Join Today button and destination
+-->
+<style>
+    .sffr-home,.sffr-home *{box-sizing:border-box}
+    .sffr-home{
+    --ink:#25202c;--muted:#6a6470;--purple:#4b2e83;--purple-dark:#2e174e;
+    --purple-soft:#f2edf8;--pink:#db1f69;--pink-soft:#fff0f5;--gold:#f3b83e;
+    --gold-soft:#fff6dc;--green:#267157;--green-soft:#edf7f2;--blue:#087dc1;
+    --blue-soft:#edf7fc;--paper:#fffdf8;--white:#fff;--line:#e1d9e6;
+    background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;
+    line-height:1.65;overflow:hidden
+    }
+    .sffr-home a{color:var(--purple)}
+    .sffr-home-inner,.sffr-home-section{margin:0 auto;max-width:1180px}
+    .sffr-home-hero{background:linear-gradient(135deg,var(--purple-dark),var(--purple));color:#fff;padding:clamp(54px,8vw,94px) 22px;position:relative}
+    .sffr-home-hero:before{background:var(--gold);border-radius:50%;content:"";height:210px;left:-115px;opacity:.18;position:absolute;top:-92px;width:210px}
+    .sffr-home-hero-grid{align-items:center;display:grid;gap:52px;grid-template-columns:minmax(0,.88fr) minmax(420px,1.12fr);position:relative}
+    .sffr-home-kicker,.sffr-home-label{color:#f8d67e;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 15px;text-transform:uppercase}
+    .sffr-home-hero h1{color:#fff;font-size:clamp(47px,7vw,76px);letter-spacing:-.05em;line-height:.98;margin:0 0 23px;max-width:650px}
+    .sffr-home-hero-copy{color:rgba(255,255,255,.84);font-size:clamp(18px,2vw,21px);margin:0;max-width:650px}
+    .sffr-home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .sffr-home-button{background:var(--pink);border:2px solid var(--pink);border-radius:999px;color:#fff!important;display:inline-block;font-size:14px;font-weight:800;padding:12px 21px;text-decoration:none!important}
+    .sffr-home-button-alt{background:#fff;border-color:#fff;color:var(--purple-dark)!important}
+    .sffr-home-photo{background:#fff;border:8px solid rgba(255,255,255,.15);border-radius:24px;box-shadow:0 25px 58px rgba(23,9,41,.38);display:block;overflow:hidden;position:relative;transform:rotate(1.2deg)}
+    .sffr-home-photo img{aspect-ratio:1.32/1;display:block;height:auto;object-fit:cover;width:100%}
+    .sffr-home-photo-caption{background:linear-gradient(transparent,rgba(20,8,37,.9));bottom:0;color:#fff;left:0;padding:65px 22px 18px;position:absolute;right:0}
+    .sffr-home-photo-caption strong{display:block;font-size:16px}
+    .sffr-home-photo-caption span{color:rgba(255,255,255,.72);font-size:12px}
+    .sffr-home-proof{background:#fff;border-bottom:1px solid var(--line)}
+    .sffr-home-proof-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .sffr-home-proof-item{border-right:1px solid var(--line);padding:23px;text-align:center}
+    .sffr-home-proof-item:last-child{border-right:0}
+    .sffr-home-proof-item strong{color:var(--purple-dark);display:block;font-size:17px}
+    .sffr-home-proof-item span{color:var(--muted);font-size:12px}
+    .sffr-home-section{padding:clamp(60px,8vw,92px) 22px}
+    .sffr-home-heading{margin-bottom:32px;max-width:840px}
+    .sffr-home-label{color:var(--pink)}
+    .sffr-home-heading h2{color:var(--purple-dark);font-size:clamp(32px,5vw,48px);letter-spacing:-.04em;line-height:1.08;margin:0 0 13px}
+    .sffr-home-heading p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-home-schedule{background:#fff;border-bottom:1px solid var(--line)}
+    .sffr-home-schedule-grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .sffr-home-meetup{background:var(--paper);border:1px solid var(--line);border-radius:18px;display:grid;gap:13px;grid-template-columns:auto 1fr;padding:23px}
+    .sffr-home-meetup-day{align-items:center;background:var(--purple);border-radius:13px;color:#fff;display:flex;font-size:12px;font-weight:800;height:48px;justify-content:center;letter-spacing:.06em;text-transform:uppercase;width:48px}
+    .sffr-home-meetup:nth-child(2) .sffr-home-meetup-day{background:var(--pink)}
+    .sffr-home-meetup:nth-child(3) .sffr-home-meetup-day{background:var(--green)}
+    .sffr-home-meetup strong{color:var(--purple-dark);display:block;font-size:18px;line-height:1.2;margin:2px 0 4px}
+    .sffr-home-meetup span{color:var(--muted);display:block;font-size:13px}
+    .sffr-home-meetup .sffr-home-meetup-day{color:#fff;display:flex;font-size:12px}
+    .sffr-home-community{background:var(--purple-soft)}
+    .sffr-home-community-grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+    .sffr-home-card{background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;min-height:300px;padding:27px}
+    .sffr-home-card-icon{align-items:center;background:var(--purple-soft);border-radius:14px;display:flex;font-size:25px;height:51px;justify-content:center;margin-bottom:25px;width:51px}
+    .sffr-home-card:nth-child(2) .sffr-home-card-icon{background:var(--green-soft)}
+    .sffr-home-card:nth-child(3) .sffr-home-card-icon{background:var(--gold-soft)}
+    .sffr-home-card:nth-child(4) .sffr-home-card-icon{background:var(--pink-soft)}
+    .sffr-home-card:nth-child(5) .sffr-home-card-icon{background:var(--blue-soft)}
+    .sffr-home-card h3{color:var(--purple-dark);font-size:25px;letter-spacing:-.025em;line-height:1.2;margin:0 0 10px}
+    .sffr-home-card p{color:var(--muted);font-size:14px;margin:0 0 22px}
+    .sffr-home-card .sffr-home-text-link{font-size:13px;font-weight:800;margin-top:auto;text-decoration:none!important}
+    .sffr-home-member-card{background:linear-gradient(145deg,var(--purple),var(--pink));border:0;color:#fff}
+    .sffr-home-member-card .sffr-home-card-icon{background:rgba(255,255,255,.15)}
+    .sffr-home-member-card h3{color:#fff}
+    .sffr-home-member-card p{color:rgba(255,255,255,.82)}
+    .sffr-home-member-card .sffr-home-button{align-self:flex-start;background:#fff;border-color:#fff;color:var(--purple-dark)!important;margin-top:auto}
+    .sffr-home-story{background:#fff}
+    .sffr-home-story-grid{align-items:center;display:grid;gap:55px;grid-template-columns:.78fr 1.22fr}
+    .sffr-home-story-mark{background:linear-gradient(145deg,var(--gold-soft),#fff);border:1px solid #eed69c;border-radius:24px;padding:34px;text-align:center}
+    .sffr-home-story-mark strong{color:var(--purple-dark);display:block;font-size:72px;letter-spacing:-.06em;line-height:1}
+    .sffr-home-story-mark span{color:#735b29;display:block;font-size:13px;font-weight:800;letter-spacing:.1em;margin-top:12px;text-transform:uppercase}
+    .sffr-home-story-copy .sffr-home-label{margin-bottom:12px}
+    .sffr-home-story-copy h2{color:var(--purple-dark);font-size:clamp(32px,5vw,48px);letter-spacing:-.04em;line-height:1.08;margin:0 0 16px}
+    .sffr-home-story-copy p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-home-footer-note{background:var(--purple-dark);color:rgba(255,255,255,.72);padding:27px 22px;text-align:center}
+    .sffr-home-footer-note p{font-size:13px;margin:0}
+    @media(hover:hover){.sffr-home-button,.sffr-home-card,.sffr-home-meetup,.sffr-home-photo{transition:transform .2s ease,box-shadow .2s ease}.sffr-home-button:hover{transform:translateY(-2px)}.sffr-home-card:hover,.sffr-home-meetup:hover{box-shadow:0 15px 34px rgba(46,23,78,.1);transform:translateY(-2px)}.sffr-home-photo:hover{transform:rotate(0)}}
+    @media(max-width:920px){.sffr-home-hero-grid{grid-template-columns:1fr}.sffr-home-photo{max-width:680px}.sffr-home-community-grid{grid-template-columns:repeat(2,1fr)}.sffr-home-story-grid{grid-template-columns:1fr}.sffr-home-story-mark{max-width:360px}}
+    @media(max-width:700px){.sffr-home-proof-grid,.sffr-home-schedule-grid{grid-template-columns:1fr}.sffr-home-proof-item{border-bottom:1px solid var(--line);border-right:0}.sffr-home-proof-item:last-child{border-bottom:0}.sffr-home-community-grid{grid-template-columns:1fr}.sffr-home-card{min-height:0}.sffr-home-photo{transform:none}.sffr-home-actions{align-items:stretch;flex-direction:column}.sffr-home-button{text-align:center}}
+</style>
+<div class="sffr-home">
+<section class="sffr-home-hero">
+<div class="sffr-home-inner sffr-home-hero-grid">
+<div>
+<p class="sffr-home-kicker">San Francisco’s LGBTQIA+ running club</p>
+<h1>Run, walk, and belong.</h1>
+<p class="sffr-home-hero-copy">Welcome to the founding chapter of a worldwide network of LGBTQIA+ running and walking clubs. All abilities, identities, faces, and paces are welcome here.</p>
+<div class="sffr-home-actions">
+<a class="sffr-home-button sffr-home-button-alt" href="https://www.sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=415882">Run with us</a>
+<a class="sffr-home-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=416033">Become a Member</a>
+</div>
+</div>
+<a class="sffr-home-photo" href="https://images.clubexpress.com/801899/photos/original/WhatsApp_Image_2026-02-14_at_12.05.09_1__510456615.jpeg" target="_blank" rel="noopener">
+<img src="https://images.clubexpress.com/801899/photos/original/WhatsApp_Image_2026-02-14_at_12.05.09_1__510456615.jpeg" alt="San Francisco FrontRunners gathered with Pride flags at Kezar Stadium">
+<span class="sffr-home-photo-caption"><strong>Community at every pace</strong>SF FrontRunners at Kezar Stadium</span>
+</a>
+</div>
+</section>
+<div class="sffr-home-proof">
+<div class="sffr-home-inner sffr-home-proof-grid">
+<div class="sffr-home-proof-item"><strong>All faces. All paces.</strong><span>Runners and walkers of every ability</span></div>
+<div class="sffr-home-proof-item"><strong>Three weekly meetups</strong><span>Tuesday, Thursday, and Saturday</span></div>
+<div class="sffr-home-proof-item"><strong>Founded in 1974</strong><span>The original FrontRunners chapter</span></div>
+</div>
+</div>
+<section class="sffr-home-schedule">
+<div class="sffr-home-section">
+<div class="sffr-home-heading">
+<p class="sffr-home-label">Meet us this week</p>
+<h2>Your next run starts here</h2>
+<p>Come once as a guest, choose a comfortable distance and pace, and stay afterward for food and conversation.</p>
+</div>
+<div class="sffr-home-schedule-grid">
+<article class="sffr-home-meetup"><span class="sffr-home-meetup-day">Tue</span>
+<div><strong>6:30 PM</strong><span>Ferry Building</span></div>
+</article>
+<article class="sffr-home-meetup"><span class="sffr-home-meetup-day">Thu</span>
+<div><strong>6:30 PM</strong><span>Market Street &amp; Noe Street</span></div>
+</article>
+<article class="sffr-home-meetup"><span class="sffr-home-meetup-day">Sat</span>
+<div><strong>9:00 AM</strong><span>Blue Heron Lake</span></div>
+</article>
+</div>
+</div>
+</section>
+<section class="sffr-home-community">
+<div class="sffr-home-section">
+<div class="sffr-home-heading">
+<p class="sffr-home-label">More than miles</p>
+<h2>Find your place in the community</h2>
+<p>Run, walk, race, socialize, volunteer, or do a little of everything. There is no single way to be a FrontRunner.</p>
+</div>
+<div class="sffr-home-community-grid">
+<article class="sffr-home-card"><span class="sffr-home-card-icon" aria-hidden="true">🏃</span>
+<h3>Run</h3>
+<p>Join us every Tuesday, Thursday, and Saturday. Train for a race, return to running, or simply enjoy a social few miles.</p>
+<a class="sffr-home-text-link" href="https://www.sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=415882">Learn More →</a></article>
+<article class="sffr-home-card"><span class="sffr-home-card-icon" aria-hidden="true">🚶</span>
+<h3>Walk</h3>
+<p>Walk at your own pace, enjoy the outdoors, and connect with the community. Our Saturday gathering includes dedicated walking routes.</p>
+</article>
+<article class="sffr-home-card"><span class="sffr-home-card-icon" aria-hidden="true">🏅</span>
+<h3>Race</h3>
+<p>Set goals, find training partners, and celebrate achievements through the Race Circuit, from a first 5K to a marathon PR.</p>
+<a class="sffr-home-text-link" href="https://www.sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=780323">Learn More →</a></article>
+<article class="sffr-home-card"><span class="sffr-home-card-icon" aria-hidden="true">🌈</span>
+<h3>Socialize</h3>
+<p>Make friendships through fun runs, happy hours, brunches, dinners, and member gatherings throughout the year.</p>
+</article>
+<article class="sffr-home-card"><span class="sffr-home-card-icon" aria-hidden="true">🤝</span>
+<h3>Volunteer</h3>
+<p>Support weekly runs, races, social events, and club initiatives. Give an hour, share a skill, or take on a leadership role.</p>
+</article>
+<article class="sffr-home-card sffr-home-member-card"><span class="sffr-home-card-icon" aria-hidden="true">⭐</span>
+<h3>Become a Member</h3>
+<p>Stay connected with Footweb, club updates, social events, races, discounts, and member benefits.</p>
+<a class="sffr-home-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=416033">Join Today</a></article>
+</div>
+</div>
+</section>
+<section class="sffr-home-story">
+<div class="sffr-home-section sffr-home-story-grid">
+<div class="sffr-home-story-mark"><strong>1974</strong><span>Where FrontRunners began</span></div>
+<div class="sffr-home-story-copy">
+<p class="sffr-home-label">A San Francisco original</p>
+<h2>The founding chapter of a worldwide movement</h2>
+<p>What began in San Francisco grew into an international network of LGBTQIA+ running and walking clubs. More than fifty years later, the heart of the club remains the same: move together, make friends, and create a community where people can show up as themselves.</p>
+</div>
+</div>
+</section>
+<div class="sffr-home-footer-note">
+<p>Come for the miles. Stay for the community.</p>
+</div>
+</div>

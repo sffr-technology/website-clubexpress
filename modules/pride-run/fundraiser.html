@@ -1,0 +1,875 @@
+<!--
+  DRAG BRUNCH SLIDESHOW SETUP
+  1. Upload IMG_4338.png, IMG_4336.png, IMG_4340.png, and IMG_4337.png to ClubExpress.
+  2. Copy the public URL generated for each image.
+  3. Replace the four SLIDE_IMAGE_URL placeholders below with those URLs.
+-->
+<style>
+    .sffr-pride-page {
+    --sffr-purple: #542583;
+    --sffr-purple-dark: #2f174d;
+    --sffr-pink: #d82e85;
+    --sffr-pink-dark: #aa1d66;
+    --sffr-gold: #f3bd49;
+    --sffr-cream: #fff8ed;
+    --sffr-lilac: #f3ecfa;
+    --sffr-ink: #2d2733;
+    --sffr-muted: #655d6b;
+    --sffr-white: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--sffr-ink);
+    background: #faf8fc;
+    line-height: 1.65;
+    }
+    .sffr-pride-page * {
+    box-sizing: border-box;
+    }
+    .sffr-pride-page h1,
+    .sffr-pride-page h2,
+    .sffr-pride-page h3,
+    .sffr-pride-page p {
+    margin-top: 0;
+    }
+    .sffr-pride-page a:focus-visible,
+    .sffr-pride-page label:focus-visible,
+    .sffr-pride-page summary:focus-visible {
+    outline: 3px solid var(--sffr-gold);
+    outline-offset: 3px;
+    }
+    /* HERO */
+    .sffr-pride-hero {
+    position: relative;
+    margin: 20px;
+    padding: 75px 45px;
+    overflow: hidden;
+    color: var(--sffr-white);
+    background:
+    radial-gradient(
+    circle at 15% 25%,
+    rgba(243, 189, 73, 0.25),
+    transparent 28%
+    ),
+    radial-gradient(
+    circle at 88% 75%,
+    rgba(216, 46, 133, 0.42),
+    transparent 33%
+    ),
+    linear-gradient(135deg, #26123d 0%, #542583 55%, #9d256e 100%);
+    border-radius: 22px;
+    box-shadow: 0 16px 38px rgba(47, 23, 77, 0.24);
+    text-align: center;
+    }
+    .sffr-pride-hero::before,
+    .sffr-pride-hero::after {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    content: "";
+    }
+    .sffr-pride-hero::before {
+    top: -95px;
+    left: -65px;
+    }
+    .sffr-pride-hero::after {
+    right: -70px;
+    bottom: -100px;
+    }
+    .sffr-pride-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    }
+    .sffr-pride-logo {
+    display: block;
+    width: min(100%, 580px);
+    height: auto;
+    margin: 0 auto 28px;
+    padding: 9px 14px;
+    background: var(--sffr-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(23, 10, 39, 0.2);
+    }
+    .sffr-pride-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+    color: #382044;
+    background: var(--sffr-gold);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    }
+    .sffr-pride-hero h1 {
+    margin-bottom: 17px;
+    color: var(--sffr-white);
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.02;
+    }
+    .sffr-pride-hero-subtitle {
+    margin-bottom: 15px !important;
+    color: #ffe9f6;
+    font-size: clamp(23px, 3vw, 32px);
+    font-weight: 700;
+    }
+    .sffr-pride-hero-description {
+    max-width: 760px;
+    margin: 0 auto 30px !important;
+    color: #f6eef9;
+    font-size: 19px;
+    }
+    /* BUTTONS */
+    .sffr-pride-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    }
+    .sffr-pride-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 24px;
+    color: var(--sffr-white) !important;
+    background: var(--sffr-pink);
+    border: 2px solid var(--sffr-pink);
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+    }
+    .sffr-pride-button:hover {
+    color: var(--sffr-white) !important;
+    background: var(--sffr-pink-dark);
+    border-color: var(--sffr-pink-dark);
+    box-shadow: 0 8px 20px rgba(216, 46, 133, 0.26);
+    transform: translateY(-2px);
+    }
+    .sffr-pride-button-light {
+    color: var(--sffr-purple-dark) !important;
+    background: var(--sffr-white);
+    border-color: var(--sffr-white);
+    }
+    .sffr-pride-button-light:hover {
+    color: var(--sffr-purple-dark) !important;
+    background: #f8eefa;
+    border-color: #f8eefa;
+    }
+    .sffr-pride-button-outline {
+    color: var(--sffr-purple) !important;
+    background: transparent;
+    border-color: var(--sffr-purple);
+    }
+    .sffr-pride-button-outline:hover {
+    color: var(--sffr-white) !important;
+    background: var(--sffr-purple);
+    border-color: var(--sffr-purple);
+    }
+    /* SHARED LAYOUT */
+    .sffr-pride-section {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 68px 20px;
+    }
+    .sffr-pride-section-heading {
+    max-width: 800px;
+    margin-bottom: 34px;
+    }
+    .sffr-pride-section-heading h2 {
+    margin-bottom: 12px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+    }
+    .sffr-pride-section-heading p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    /* EVENT DETAILS */
+    .sffr-pride-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    }
+    .sffr-pride-detail-card {
+    padding: 28px 22px;
+    background: var(--sffr-white);
+    border: 1px solid #e7ddec;
+    border-top: 5px solid var(--sffr-pink);
+    border-radius: 15px;
+    box-shadow: 0 7px 20px rgba(47, 23, 77, 0.07);
+    text-align: center;
+    }
+    .sffr-pride-detail-icon {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+    }
+    .sffr-pride-detail-card h3 {
+    margin-bottom: 7px;
+    color: var(--sffr-purple);
+    font-size: 19px;
+    }
+    .sffr-pride-detail-card p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    }
+    .sffr-pride-detail-card a {
+    color: var(--sffr-purple);
+    font-weight: 700;
+    }
+    /* FEATURE AND SLIDESHOW */
+    .sffr-pride-feature-wrap {
+    background: var(--sffr-white);
+    }
+    .sffr-pride-feature {
+    display: grid;
+    grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1.1fr);
+    gap: 44px;
+    align-items: center;
+    }
+    .sffr-drag-slider {
+    position: relative;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+    }
+    .sffr-drag-slider-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    }
+    .sffr-drag-slides {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: linear-gradient(145deg, #f7eef9, #fff7ec);
+    border: 1px solid #e6d8eb;
+    border-radius: 20px;
+    box-shadow: 0 14px 35px rgba(47, 23, 77, 0.16);
+    }
+    .sffr-drag-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    }
+    .sffr-drag-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    }
+    #sffr-drag-slide-1:checked ~ .sffr-drag-slides .sffr-drag-slide-1,
+    #sffr-drag-slide-2:checked ~ .sffr-drag-slides .sffr-drag-slide-2,
+    #sffr-drag-slide-3:checked ~ .sffr-drag-slides .sffr-drag-slide-3,
+    #sffr-drag-slide-4:checked ~ .sffr-drag-slides .sffr-drag-slide-4 {
+    display: block;
+    }
+    .sffr-drag-arrow-set {
+    display: none;
+    }
+    #sffr-drag-slide-1:checked ~ .sffr-drag-arrow-sets .sffr-drag-arrows-1,
+    #sffr-drag-slide-2:checked ~ .sffr-drag-arrow-sets .sffr-drag-arrows-2,
+    #sffr-drag-slide-3:checked ~ .sffr-drag-arrow-sets .sffr-drag-arrows-3,
+    #sffr-drag-slide-4:checked ~ .sffr-drag-arrow-sets .sffr-drag-arrows-4 {
+    display: block;
+    }
+    .sffr-drag-arrow {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    color: var(--sffr-white);
+    background: rgba(47, 23, 77, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+    transform: translateY(-50%);
+    }
+    .sffr-drag-arrow:hover {
+    background: var(--sffr-pink);
+    }
+    .sffr-drag-arrow-prev {
+    left: 14px;
+    }
+    .sffr-drag-arrow-next {
+    right: 14px;
+    }
+    .sffr-drag-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 16px;
+    }
+    .sffr-drag-dot {
+    width: 12px;
+    height: 12px;
+    background: #c9bbd0;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    #sffr-drag-slide-1:checked ~ .sffr-drag-dots label:nth-child(1),
+    #sffr-drag-slide-2:checked ~ .sffr-drag-dots label:nth-child(2),
+    #sffr-drag-slide-3:checked ~ .sffr-drag-dots label:nth-child(3),
+    #sffr-drag-slide-4:checked ~ .sffr-drag-dots label:nth-child(4) {
+    background: var(--sffr-pink);
+    box-shadow: 0 0 0 4px rgba(216, 46, 133, 0.15);
+    }
+    .sffr-pride-feature-copy h2 {
+    margin-bottom: 8px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.15;
+    }
+    .sffr-pride-feature-handle {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--sffr-pink);
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    }
+    .sffr-pride-feature-copy p {
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    .sffr-pride-tip-note {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--sffr-cream);
+    border: 1px solid #efd9a8;
+    border-radius: 13px;
+    }
+    .sffr-pride-tip-note span {
+    font-size: 30px;
+    }
+    .sffr-pride-tip-note p {
+    margin-bottom: 0;
+    color: #5e4c2c;
+    font-size: 16px;
+    }
+    /* TICKETS */
+    .sffr-pride-tickets {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    }
+    .sffr-pride-ticket {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: var(--sffr-white);
+    border: 1px solid #e7ddec;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(47, 23, 77, 0.07);
+    }
+    .sffr-pride-ticket-featured {
+    color: var(--sffr-white);
+    background: linear-gradient(
+    145deg,
+    var(--sffr-purple),
+    var(--sffr-pink-dark)
+    );
+    border-color: transparent;
+    transform: translateY(-8px);
+    }
+    .sffr-pride-ticket h3 {
+    margin-bottom: 8px;
+    color: var(--sffr-purple-dark);
+    font-size: 22px;
+    }
+    .sffr-pride-ticket-featured h3 {
+    color: var(--sffr-white);
+    }
+    .sffr-pride-ticket-price {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--sffr-pink);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    }
+    .sffr-pride-ticket-featured .sffr-pride-ticket-price {
+    color: #ffd9ee;
+    }
+    .sffr-pride-ticket p {
+    flex-grow: 1;
+    color: var(--sffr-muted);
+    }
+    .sffr-pride-ticket-featured p {
+    color: #f7eefa;
+    }
+    .sffr-pride-ticket .sffr-pride-button {
+    width: 100%;
+    margin-top: 12px;
+    }
+    /* BENEFICIARY */
+    .sffr-pride-beneficiary-wrap {
+    background: var(--sffr-lilac);
+    }
+    .sffr-pride-beneficiary {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: 36px;
+    align-items: center;
+    }
+    .sffr-pride-beneficiary h2 {
+    margin-bottom: 14px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(32px, 4vw, 42px);
+    }
+    .sffr-pride-beneficiary p {
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    .sffr-pride-impact-card {
+    padding: 34px;
+    color: var(--sffr-white);
+    background: linear-gradient(145deg, #2f174d, #643286);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(47, 23, 77, 0.18);
+    text-align: center;
+    }
+    .sffr-pride-impact-card strong {
+    display: block;
+    margin-bottom: 9px;
+    color: #ffd1e9;
+    font-size: 50px;
+    line-height: 1;
+    }
+    .sffr-pride-impact-card span {
+    font-size: 17px;
+    font-weight: 700;
+    }
+    /* VOLUNTEERS */
+    .sffr-pride-volunteer-section {
+    scroll-margin-top: 24px;
+    }
+    .sffr-pride-volunteer-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: 35px;
+    align-items: center;
+    padding: 38px;
+    color: var(--sffr-white);
+    background: linear-gradient(135deg, var(--sffr-purple-dark), #4d2a68);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(47, 23, 77, 0.18);
+    }
+    .sffr-pride-volunteer-card h2 {
+    margin-bottom: 10px;
+    color: var(--sffr-white);
+    font-size: 32px;
+    }
+    .sffr-pride-volunteer-card p {
+    margin-bottom: 0;
+    color: #eee5f3;
+    font-size: 17px;
+    }
+    .sffr-pride-volunteer-jobs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+    }
+    .sffr-pride-volunteer-jobs li {
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    }
+    .sffr-pride-volunteer-action {
+    text-align: center;
+    }
+    .sffr-pride-volunteer-action .sffr-pride-button {
+    width: 100%;
+    max-width: 310px;
+    }
+    /* RECAP */
+    .sffr-pride-recap-wrap {
+    background: var(--sffr-white);
+    }
+    .sffr-pride-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    }
+    .sffr-pride-stat {
+    padding: 24px 16px;
+    background: #fbf9fc;
+    border: 1px solid #e7ddec;
+    border-radius: 14px;
+    text-align: center;
+    }
+    .sffr-pride-stat strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--sffr-pink);
+    font-size: 30px;
+    line-height: 1.1;
+    }
+    .sffr-pride-stat span {
+    color: var(--sffr-muted);
+    font-size: 14px;
+    font-weight: 700;
+    }
+    .sffr-pride-link-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    }
+    .sffr-pride-link-card {
+    display: block;
+    padding: 22px;
+    color: var(--sffr-purple) !important;
+    background: var(--sffr-lilac);
+    border: 1px solid #e2d5ec;
+    border-radius: 13px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none !important;
+    }
+    .sffr-pride-link-card:hover {
+    color: var(--sffr-white) !important;
+    background: var(--sffr-purple);
+    }
+    /* CONTACT */
+    .sffr-pride-contact {
+    margin: 0 20px 20px;
+    padding: 52px 25px;
+    background: linear-gradient(135deg, #f3ecfa, #fff0f7);
+    border-radius: 20px;
+    text-align: center;
+    }
+    .sffr-pride-contact-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    }
+    .sffr-pride-contact h2 {
+    margin-bottom: 12px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(30px, 4vw, 40px);
+    }
+    .sffr-pride-contact p {
+    margin-bottom: 24px;
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    @media (max-width: 900px) {
+    .sffr-pride-feature,
+    .sffr-pride-beneficiary,
+    .sffr-pride-volunteer-card {
+    grid-template-columns: 1fr;
+    }
+    .sffr-pride-details,
+    .sffr-pride-tickets {
+    grid-template-columns: 1fr;
+    }
+    .sffr-pride-ticket-featured {
+    transform: none;
+    }
+    .sffr-pride-volunteer-action {
+    text-align: left;
+    }
+    .sffr-pride-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    }
+    @media (max-width: 650px) {
+    .sffr-pride-hero {
+    margin: 12px;
+    padding: 54px 23px;
+    border-radius: 16px;
+    }
+    .sffr-pride-section {
+    padding: 50px 12px;
+    }
+    .sffr-pride-feature {
+    gap: 32px;
+    }
+    .sffr-drag-arrow {
+    width: 42px;
+    height: 42px;
+    }
+    .sffr-pride-actions,
+    .sffr-pride-button {
+    width: 100%;
+    }
+    .sffr-pride-volunteer-card {
+    padding: 29px 23px;
+    }
+    .sffr-pride-volunteer-jobs,
+    .sffr-pride-stats,
+    .sffr-pride-link-grid {
+    grid-template-columns: 1fr;
+    }
+    .sffr-pride-contact {
+    margin: 0 12px 12px;
+    padding: 44px 20px;
+    }
+    }
+</style>
+<div class="sffr-pride-page">
+<section class="sffr-pride-hero">
+<div class="sffr-pride-hero-inner">
+<img class="sffr-pride-logo" src="https://images.clubexpress.com/801899/graphics/Positive_Main_Logo_with_SFFR_2049796861.png" alt="San Francisco Pride Run, since 1979">
+<span class="sffr-pride-eyebrow">The party is not over yet</span>
+<h1>Let's Have a Kiki!</h1>
+<p class="sffr-pride-hero-subtitle">Drag Brunch &amp; Fundraiser</p>
+<p class="sffr-pride-hero-description">
+Celebrate our largest Pride Run yet with our largest Drag Brunch and
+Fundraiser yet. Enjoy a fabulous performance, waffles, and a hosted bar
+while supporting the Rafiki Coalition.
+</p>
+<div class="sffr-pride-actions">
+<a class="sffr-pride-button" href="https://form.jotform.com/sffr/2026-fundraiser" target="_blank" rel="noopener">Buy tickets</a>
+<a class="sffr-pride-button sffr-pride-button-light" href="#sffr-drag-brunch-volunteer">Volunteer at the event</a>
+</div>
+</div>
+</section>
+<section class="sffr-pride-section">
+<div class="sffr-pride-section-heading">
+<h2>Join the Pride Run community for brunch</h2>
+<p>
+Pride Run participants, volunteers, sponsors, friends, and community
+members are all invited to celebrate and continue raising funds for a
+great cause.
+</p>
+</div>
+<div class="sffr-pride-details">
+<article class="sffr-pride-detail-card">
+<span class="sffr-pride-detail-icon" aria-hidden="true">📅</span>
+<h3>When</h3>
+<p>Sunday, August 30, 2026<br>
+11:00 AM to 2:00 PM</p>
+</article>
+<article class="sffr-pride-detail-card">
+<span class="sffr-pride-detail-icon" aria-hidden="true">📍</span>
+<h3>Where</h3>
+<p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Rafiki+Coalition+601+Cesar+Chavez+St+San+Francisco+CA+94124" target="_blank" rel="noopener">Rafiki Coalition for Health &amp; Wellness</a><br>
+601 Cesar Chavez St<br>
+San Francisco, CA 94124
+</p>
+</article>
+<article class="sffr-pride-detail-card">
+<span class="sffr-pride-detail-icon" aria-hidden="true">🌈</span>
+<h3>Why</h3>
+<p>
+Fundraise for Rafiki Coalition and celebrate the Pride Run community.
+</p>
+</article>
+</div>
+</section>
+<section class="sffr-pride-feature-wrap">
+<div class="sffr-pride-section sffr-pride-feature">
+<div class="sffr-drag-slider" aria-label="Photos of Mx Kiki Krunch">
+<input class="sffr-drag-slider-toggle" type="radio" name="sffr-drag-slides" id="sffr-drag-slide-1" checked="">
+<input class="sffr-drag-slider-toggle" type="radio" name="sffr-drag-slides" id="sffr-drag-slide-2">
+<input class="sffr-drag-slider-toggle" type="radio" name="sffr-drag-slides" id="sffr-drag-slide-3">
+<input class="sffr-drag-slider-toggle" type="radio" name="sffr-drag-slides" id="sffr-drag-slide-4">
+<div class="sffr-drag-slides">
+<figure class="sffr-drag-slide sffr-drag-slide-1">
+<img src="//images.clubexpress.com/801899/photos/original/IMG_4336_689102985.png" alt="Mx Kiki Krunch posing in a black gown">
+</figure>
+<figure class="sffr-drag-slide sffr-drag-slide-2">
+<img src="//images.clubexpress.com/801899/photos/screen/IMG_4337_1563629327.png" alt="Mx Kiki Krunch standing in a black gown and gloves">
+</figure>
+<figure class="sffr-drag-slide sffr-drag-slide-3">
+<img src="//images.clubexpress.com/801899/photos/screen/IMG_4338_750710095.png" alt="Mx Kiki Krunch posing with one hand at the waist">
+</figure>
+<figure class="sffr-drag-slide sffr-drag-slide-4">
+<img src="//images.clubexpress.com/801899/photos/screen/IMG_4340_2122583332.png" alt="Mx Kiki Krunch posing with crossed arms">
+</figure>
+</div>
+<div class="sffr-drag-arrow-sets" aria-hidden="true">
+<div class="sffr-drag-arrow-set sffr-drag-arrows-1">
+<label class="sffr-drag-arrow sffr-drag-arrow-prev" for="sffr-drag-slide-4">‹</label>
+<label class="sffr-drag-arrow sffr-drag-arrow-next" for="sffr-drag-slide-2">›</label>
+</div>
+<div class="sffr-drag-arrow-set sffr-drag-arrows-2">
+<label class="sffr-drag-arrow sffr-drag-arrow-prev" for="sffr-drag-slide-1">‹</label>
+<label class="sffr-drag-arrow sffr-drag-arrow-next" for="sffr-drag-slide-3">›</label>
+</div>
+<div class="sffr-drag-arrow-set sffr-drag-arrows-3">
+<label class="sffr-drag-arrow sffr-drag-arrow-prev" for="sffr-drag-slide-2">‹</label>
+<label class="sffr-drag-arrow sffr-drag-arrow-next" for="sffr-drag-slide-4">›</label>
+</div>
+<div class="sffr-drag-arrow-set sffr-drag-arrows-4">
+<label class="sffr-drag-arrow sffr-drag-arrow-prev" for="sffr-drag-slide-3">‹</label>
+<label class="sffr-drag-arrow sffr-drag-arrow-next" for="sffr-drag-slide-1">›</label>
+</div>
+</div>
+<div class="sffr-drag-dots" aria-label="Choose a slideshow image">
+<label class="sffr-drag-dot" for="sffr-drag-slide-1" title="View photo 1"></label>
+<label class="sffr-drag-dot" for="sffr-drag-slide-2" title="View photo 2"></label>
+<label class="sffr-drag-dot" for="sffr-drag-slide-3" title="View photo 3"></label>
+<label class="sffr-drag-dot" for="sffr-drag-slide-4" title="View photo 4"></label>
+</div>
+</div>
+<div class="sffr-pride-feature-copy">
+<span class="sffr-pride-eyebrow">Featured performer</span>
+<h2>Mx Kiki Krunch</h2>
+<a class="sffr-pride-feature-handle" href="https://www.instagram.com/mxkikikrunch/" target="_blank" rel="noopener">@mxkikikrunch on Instagram</a>
+<p>
+Get ready for a fun-filled drag brunch featuring Mx Kiki Krunch, with
+waffles and a hosted bar. Come ready to cheer, celebrate, and support
+Rafiki Coalition's work in our community.
+</p>
+<div class="sffr-pride-tip-note">
+<span aria-hidden="true">💵</span>
+<p>
+<strong>Do not forget your singles!</strong> Bring $1 bills so you
+can tip the drag performers during the show.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class="sffr-pride-section">
+<div class="sffr-pride-section-heading">
+<h2>Choose your ticket</h2>
+<p>
+Your ticket helps fund Rafiki Coalition's health and wellness programs
+for San Francisco's Black, LGBTQ+, and marginalized communities.
+</p>
+</div>
+<div class="sffr-pride-tickets">
+<article class="sffr-pride-ticket">
+<h3>Attendee</h3>
+<span class="sffr-pride-ticket-price">$92.91</span>
+<p>Join us for drag performances, waffles, and a hosted bar.</p>
+<a class="sffr-pride-button" href="https://form.jotform.com/sffr/2026-fundraiser" target="_blank" rel="noopener">Buy attendee ticket</a>
+</article>
+<article class="sffr-pride-ticket sffr-pride-ticket-featured">
+<h3>Supporter</h3>
+<span class="sffr-pride-ticket-price">$128.93</span>
+<p>
+Attend the celebration while making an additional contribution to the
+fundraiser.
+</p>
+<a class="sffr-pride-button sffr-pride-button-light" href="https://form.jotform.com/sffr/2026-fundraiser" target="_blank" rel="noopener">Buy supporter ticket</a>
+</article>
+<article class="sffr-pride-ticket">
+<h3>Community Access</h3>
+<span class="sffr-pride-ticket-price">By request</span>
+<p>
+Community access tickets are available by request. Email the Race
+Director to request a ticket.
+</p>
+<a class="sffr-pride-button sffr-pride-button-outline" href="mailto:racedirector@sffr.org?subject=Drag%20Brunch%20Community%20Access%20Ticket">Request access</a>
+</article>
+</div>
+</section>
+<section class="sffr-pride-beneficiary-wrap">
+<div class="sffr-pride-section sffr-pride-beneficiary">
+<div>
+<span class="sffr-pride-eyebrow">Our 2026 beneficiary</span>
+<h2>Supporting Rafiki Coalition</h2>
+<p>
+Rafiki Coalition works to eliminate health inequities in San
+Francisco's Black, LGBTQ+, and marginalized communities through
+education, advocacy, and culturally affirming health and wellness
+services.
+</p>
+<a class="sffr-pride-button sffr-pride-button-outline" href="https://rafikicoalition.org/" target="_blank" rel="noopener">Learn about Rafiki Coalition</a>
+</div>
+<div class="sffr-pride-impact-card">
+<strong>$50,000</strong>
+<span>Record-breaking projected 2026 Pride Run donation</span>
+</div>
+</div>
+</section>
+<section class="sffr-pride-section sffr-pride-volunteer-section" id="sffr-drag-brunch-volunteer">
+<div class="sffr-pride-volunteer-card">
+<div>
+<h2>Help make the brunch happen</h2>
+<p>
+We are looking for volunteers to help welcome guests and keep the
+event running smoothly. Sign up for a 2–3 hour shift. No special
+experience is required.
+</p>
+<ul class="sffr-pride-volunteer-jobs">
+    <li>✓ Event setup</li>
+    <li>✓ Guest check-in</li>
+    <li>✓ Bartending</li>
+    <li>✓ Costco shopping</li>
+    <li>✓ Event logistics</li>
+    <li>✓ Event teardown</li>
+</ul>
+</div>
+<div class="sffr-pride-volunteer-action">
+<a class="sffr-pride-button sffr-pride-button-light" href="https://forms.gle/bkVNw9VaVhRjKNma6" target="_blank" rel="noopener">Sign up to volunteer</a>
+</div>
+</div>
+</section>
+<section class="sffr-pride-recap-wrap">
+<div class="sffr-pride-section">
+<div class="sffr-pride-section-heading">
+<h2>Thank you for a record-breaking Pride Run</h2>
+<p>
+Thank you for supporting LGBTQ+ fitness, fundraising, and community,
+and for being part of the largest San Francisco Pride Run on record.
+</p>
+</div>
+<div class="sffr-pride-stats">
+<div class="sffr-pride-stat">
+<strong>950</strong>
+<span>Attendees</span>
+</div>
+<div class="sffr-pride-stat">
+<strong>$10,000</strong>
+<span>Participant donations</span>
+</div>
+<div class="sffr-pride-stat">
+<strong>$24,500</strong>
+<span>Sponsorship contributions</span>
+</div>
+<div class="sffr-pride-stat">
+<strong>$50,000</strong>
+<span>Projected donation</span>
+</div>
+</div>
+<div class="sffr-pride-link-grid">
+<a class="sffr-pride-link-card" href="https://forms.gle/gkSKFL12dYvcBf897" target="_blank" rel="noopener">Share race feedback</a>
+<a class="sffr-pride-link-card" href="https://photos.app.goo.gl/PVe3pDQFmr1HC36Z8" target="_blank" rel="noopener">Share your photos 📸</a>
+<a class="sffr-pride-link-card" href="https://docs.google.com/document/d/1uNNAy_xr9w7BZ04TzhJnjC2eX_DUjqPd4mrS3nw-2jk/edit?tab=t.0" target="_blank" rel="noopener">Read the 2026 recap</a>
+</div>
+</div>
+</section>
+<section class="sffr-pride-contact">
+<div class="sffr-pride-contact-inner">
+<h2>Questions about the Drag Brunch or Pride Run?</h2>
+<p>
+Email the race director and our volunteer team will be happy to help.
+</p>
+<a class="sffr-pride-button" href="mailto:racedirector@sffr.org">Email racedirector@sffr.org</a>
+</div>
+</section>
+</div>

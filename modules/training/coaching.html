@@ -1,0 +1,456 @@
+<style>
+    .sffr-coaching-page {
+    --sffr-navy: #17324d;
+    --sffr-blue: #176b9b;
+    --sffr-teal: #1f8a83;
+    --sffr-sky: #e9f5fb;
+    --sffr-mint: #e8f6f3;
+    --sffr-ink: #263746;
+    --sffr-muted: #5d6c78;
+    --sffr-white: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--sffr-ink);
+    background: #f7f9fb;
+    line-height: 1.65;
+    }
+    .sffr-coaching-page * {
+    box-sizing: border-box;
+    }
+    .sffr-coaching-page h1,
+    .sffr-coaching-page h2,
+    .sffr-coaching-page h3,
+    .sffr-coaching-page p {
+    margin-top: 0;
+    }
+    .sffr-coaching-page a:focus-visible {
+    outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+    }
+    /* HERO */
+    .sffr-coaching-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    align-items: stretch;
+    min-height: 500px;
+    background: linear-gradient(135deg, #dff2f7 0%, #e9f5fb 52%, #e8f6f3 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px;
+    box-shadow: 0 14px 36px rgba(23, 50, 77, 0.12);
+    }
+    .sffr-coaching-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px 48px;
+    }
+    .sffr-coaching-eyebrow {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 16px;
+    padding: 7px 13px;
+    color: var(--sffr-blue);
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(23, 107, 155, 0.18);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    }
+    .sffr-coaching-hero h1 {
+    margin-bottom: 20px;
+    color: var(--sffr-navy);
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.08;
+    }
+    .sffr-coaching-hero p {
+    margin-bottom: 28px;
+    color: #425969;
+    font-size: 19px;
+    line-height: 1.75;
+    }
+    .sffr-coaching-hero-image {
+    min-height: 500px;
+    background: #d7e7ed;
+    }
+    .sffr-coaching-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    }
+    /* SHARED LAYOUT */
+    .sffr-coaching-section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 65px 20px;
+    }
+    .sffr-coaching-section-heading {
+    max-width: 760px;
+    margin-bottom: 32px;
+    }
+    .sffr-coaching-section-heading h2 {
+    margin-bottom: 12px;
+    color: var(--sffr-navy);
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.2;
+    }
+    .sffr-coaching-section-heading p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    /* BUTTONS */
+    .sffr-coaching-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    }
+    .sffr-coaching-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    color: var(--sffr-white) !important;
+    background: var(--sffr-blue);
+    border: 2px solid var(--sffr-blue);
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+    }
+    .sffr-coaching-button:hover {
+    color: var(--sffr-white) !important;
+    background: #115b86;
+    border-color: #115b86;
+    box-shadow: 0 8px 18px rgba(23, 107, 155, 0.22);
+    transform: translateY(-2px);
+    }
+    .sffr-coaching-button-secondary {
+    color: var(--sffr-blue) !important;
+    background: transparent;
+    }
+    .sffr-coaching-button-secondary:hover {
+    color: var(--sffr-white) !important;
+    }
+    /* COACH INTRODUCTION */
+    .sffr-coaching-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 34px;
+    align-items: center;
+    }
+    .sffr-coaching-intro-copy {
+    font-size: 18px;
+    }
+    .sffr-coaching-intro-copy p:last-child {
+    margin-bottom: 0;
+    }
+    .sffr-coaching-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    }
+    .sffr-coaching-stat {
+    min-height: 145px;
+    padding: 24px 18px;
+    background: var(--sffr-white);
+    border: 1px solid #dfe8ed;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 7px 20px rgba(23, 50, 77, 0.07);
+    }
+    .sffr-coaching-stat strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--sffr-blue);
+    font-size: 30px;
+    line-height: 1.1;
+    }
+    .sffr-coaching-stat span {
+    color: var(--sffr-muted);
+    font-size: 15px;
+    font-weight: 700;
+    }
+    /* BENEFIT CARDS */
+    .sffr-coaching-benefits-wrap {
+    background: var(--sffr-white);
+    }
+    .sffr-coaching-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    }
+    .sffr-coaching-benefit {
+    padding: 28px;
+    background: #f9fbfc;
+    border: 1px solid #dfe8ed;
+    border-top: 5px solid var(--sffr-teal);
+    border-radius: 14px;
+    }
+    .sffr-coaching-benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    background: var(--sffr-mint);
+    border-radius: 12px;
+    font-size: 24px;
+    }
+    .sffr-coaching-benefit h3 {
+    margin-bottom: 10px;
+    color: var(--sffr-navy);
+    font-size: 21px;
+    }
+    .sffr-coaching-benefit p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    }
+    /* CLUB CONTRIBUTION */
+    .sffr-coaching-giveback {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    padding: 34px;
+    background: linear-gradient(135deg, var(--sffr-navy), #205a73);
+    border-radius: 18px;
+    color: var(--sffr-white);
+    box-shadow: 0 12px 28px rgba(23, 50, 77, 0.18);
+    }
+    .sffr-coaching-giveback-number {
+    min-width: 140px;
+    padding-right: 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    color: #8de1d5;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    }
+    .sffr-coaching-giveback h2 {
+    margin-bottom: 8px;
+    color: var(--sffr-white);
+    font-size: 28px;
+    }
+    .sffr-coaching-giveback p {
+    margin-bottom: 0;
+    color: #e5f1f4;
+    font-size: 17px;
+    }
+    /* FINAL CTA */
+    .sffr-coaching-cta {
+    margin: 0 20px 20px;
+    padding: 55px 25px;
+    background: linear-gradient(135deg, #e9f5fb, #e8f6f3);
+    border-radius: 20px;
+    text-align: center;
+    }
+    .sffr-coaching-cta-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    }
+    .sffr-coaching-cta h2 {
+    margin-bottom: 14px;
+    color: var(--sffr-navy);
+    font-size: clamp(30px, 4vw, 40px);
+    }
+    .sffr-coaching-cta p {
+    margin-bottom: 25px;
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    .sffr-coaching-cta .sffr-coaching-actions {
+    justify-content: center;
+    }
+    @media (max-width: 900px) {
+    .sffr-coaching-hero,
+    .sffr-coaching-intro {
+    grid-template-columns: 1fr;
+    }
+    .sffr-coaching-hero-image {
+    min-height: 420px;
+    order: -1;
+    }
+    .sffr-coaching-benefits {
+    grid-template-columns: 1fr;
+    }
+    }
+    @media (max-width: 600px) {
+    .sffr-coaching-hero {
+    min-height: 0;
+    margin: 12px;
+    border-radius: 15px;
+    }
+    .sffr-coaching-hero-copy {
+    padding: 34px 24px 38px;
+    }
+    .sffr-coaching-hero-image {
+    min-height: 320px;
+    }
+    .sffr-coaching-hero h1 {
+    font-size: 37px;
+    }
+    .sffr-coaching-hero p {
+    font-size: 17px;
+    }
+    .sffr-coaching-section {
+    padding: 48px 12px;
+    }
+    .sffr-coaching-stats {
+    grid-template-columns: 1fr;
+    }
+    .sffr-coaching-stat {
+    min-height: 0;
+    }
+    .sffr-coaching-giveback {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 24px;
+    text-align: center;
+    }
+    .sffr-coaching-giveback-number {
+    padding: 0 0 18px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .sffr-coaching-cta {
+    margin: 0 12px 12px;
+    padding: 44px 20px;
+    }
+    .sffr-coaching-actions,
+    .sffr-coaching-button {
+    width: 100%;
+    }
+    }
+</style>
+<div class="sffr-coaching-page">
+<section class="sffr-coaching-hero">
+<div class="sffr-coaching-hero-copy">
+<span class="sffr-coaching-eyebrow">Personalized run coaching</span>
+<h1>Run toward your next goal with Coach Devesh</h1>
+<p>
+Whether you are preparing for your first race or working toward a new
+personal best, get a structured training plan tailored to your goals and
+lifestyle.
+</p>
+<div class="sffr-coaching-actions">
+<a class="sffr-coaching-button" href="mailto:devesh@devesh.com">Get a complimentary assessment</a>
+<a class="sffr-coaching-button sffr-coaching-button-secondary" href="tel:+14157928889">Call 415-792-8889</a>
+</div>
+</div>
+<div class="sffr-coaching-hero-image">
+<img src="https://images.clubexpress.com/801899/graphics/PHOTO-2026-04-10-14-34-51_1634589049.jpg" alt="RRCA-certified running coach Devesh">
+</div>
+</section>
+<section class="sffr-coaching-section">
+<div class="sffr-coaching-intro">
+<div class="sffr-coaching-intro-copy">
+<div class="sffr-coaching-section-heading">
+<h2>Experienced guidance, built around you</h2>
+</div>
+<p>
+Now is a great time to begin training for the San Francisco Marathon,
+the Gay Games Half Marathon, or any race you have your sights set on.
+</p>
+<p>
+With Coach Devesh's guidance, you will follow a structured plan
+tailored to your individual goals and lifestyle. Having a coach
+provides accountability and motivation that no app or AI can match.
+</p>
+<p>
+Devesh is an RRCA-certified running and team coach with experience
+across distances from 5Ks to ultramarathons.
+</p>
+</div>
+<div class="sffr-coaching-stats" aria-label="Coach Devesh's experience">
+<div class="sffr-coaching-stat">
+<strong>20+</strong>
+<span>Years of experience</span>
+</div>
+<div class="sffr-coaching-stat">
+<strong>167</strong>
+<span>Marathons completed</span>
+</div>
+<div class="sffr-coaching-stat">
+<strong>35</strong>
+<span>Countries raced in</span>
+</div>
+<div class="sffr-coaching-stat">
+<strong>7</strong>
+<span>World Marathon Majors</span>
+</div>
+</div>
+</div>
+</section>
+<section class="sffr-coaching-benefits-wrap">
+<div class="sffr-coaching-section">
+<div class="sffr-coaching-section-heading">
+<h2>What personalized coaching gives you</h2>
+<p>
+A plan designed for your race goals, your experience, and the
+realities of your schedule.
+</p>
+</div>
+<div class="sffr-coaching-benefits">
+<article class="sffr-coaching-benefit">
+<div class="sffr-coaching-benefit-icon" aria-hidden="true">🎯</div>
+<h3>A plan for your goals</h3>
+<p>
+Follow a structured approach shaped around your target distance,
+current ability, and lifestyle.
+</p>
+</article>
+<article class="sffr-coaching-benefit">
+<div class="sffr-coaching-benefit-icon" aria-hidden="true">📈</div>
+<h3>Accountability</h3>
+<p>
+Stay consistent and motivated with one-on-one guidance from an
+experienced running coach.
+</p>
+</article>
+<article class="sffr-coaching-benefit">
+<div class="sffr-coaching-benefit-icon" aria-hidden="true">🏅</div>
+<h3>Deep race experience</h3>
+<p>
+Learn from a coach who has raced from 5Ks to ultramarathons and
+completed the SF Marathon 17 times.
+</p>
+</article>
+</div>
+</div>
+</section>
+<section class="sffr-coaching-section">
+<div class="sffr-coaching-giveback">
+<div class="sffr-coaching-giveback-number">10%</div>
+<div>
+<h2>Your coaching supports SF FrontRunners</h2>
+<p>
+Devesh gives 10% of his coaching fees back to SFFR, so investing in
+your running also helps support the club community.
+</p>
+</div>
+</div>
+</section>
+<section class="sffr-coaching-cta">
+<div class="sffr-coaching-cta-inner">
+<h2>Ready to get started?</h2>
+<p>
+Contact Coach Devesh for a complimentary assessment and begin building a
+plan for your next race.
+</p>
+<div class="sffr-coaching-actions">
+<a class="sffr-coaching-button" href="mailto:devesh@devesh.com">Email devesh@devesh.com</a>
+<a class="sffr-coaching-button sffr-coaching-button-secondary" href="tel:+14157928889">Call 415-792-8889</a>
+</div>
+</div>
+</section>
+</div>

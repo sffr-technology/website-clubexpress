@@ -1,0 +1,116 @@
+<div id="github-html-module" aria-live="polite">
+  <p>Loading HTML module…</p>
+</div>
+
+<script>
+  (() => {
+    "use strict";
+
+    // Update these values to identify the HTML fragment in the private repository.
+    const githubFile = {
+      owner: "YOUR_GITHUB_ORGANIZATION_OR_USERNAME",
+      repository: "YOUR_PRIVATE_REPOSITORY",
+      branch: "main",
+      path: "path/to/module.html"
+    };
+
+    const target = document.getElementById("github-html-module");
+    const tokenStorageKey = "sffr.githubModuleToken";
+
+    function getToken() {
+      let token = sessionStorage.getItem(tokenStorageKey);
+
+      if (!token) {
+        token = window.prompt(
+          "Enter a fine-grained GitHub token with read-only Contents access to the private repository. " +
+          "The token will be retained only for this browser tab."
+        );
+
+        if (token) {
+          token = token.trim();
+          sessionStorage.setItem(tokenStorageKey, token);
+        }
+      }
+
+      return token;
+    }
+
+    function fileApiUrl() {
+      const owner = encodeURIComponent(githubFile.owner);
+      const repository = encodeURIComponent(githubFile.repository);
+      const path = githubFile.path
+        .split("/")
+        .map(encodeURIComponent)
+        .join("/");
+      const branch = encodeURIComponent(githubFile.branch);
+
+      return `https://api.github.com/repos/${owner}/${repository}/contents/${path}?ref=${branch}`;
+    }
+
+    function showError(message) {
+      target.replaceChildren();
+
+      const heading = document.createElement("h2");
+      heading.textContent = "Unable to load the HTML module";
+
+      const details = document.createElement("p");
+      details.textContent = message;
+
+      const retry = document.createElement("button");
+      retry.type = "button";
+      retry.textContent = "Use another token";
+      retry.addEventListener("click", () => {
+        sessionStorage.removeItem(tokenStorageKey);
+        loadModule();
+      });
+
+      target.append(heading, details, retry);
+    }
+
+    async function loadModule() {
+      const token = getToken();
+
+      if (!token) {
+        showError("A GitHub token is required to read a file from a private repository.");
+        return;
+      }
+
+      target.innerHTML = "<p>Loading HTML module…</p>";
+
+      try {
+        const response = await fetch(fileApiUrl(), {
+          method: "GET",
+          headers: {
+            Accept: "application/vnd.github.raw+json",
+            Authorization: `Bearer ${token}`,
+            "X-GitHub-Api-Version": "2022-11-28"
+          },
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          if (response.status === 401) {
+            throw new Error("GitHub rejected the token. Check that it is valid.");
+          }
+
+          if (response.status === 403) {
+            throw new Error("The token does not have read access to this repository or file.");
+          }
+
+          if (response.status === 404) {
+            throw new Error("The repository, branch, or file path was not found for this token.");
+          }
+
+          throw new Error(`GitHub returned HTTP ${response.status}.`);
+        }
+
+        const html = await response.text();
+        target.innerHTML = html;
+      } catch (error) {
+        showError(error instanceof Error ? error.message : "An unexpected error occurred.");
+      }
+    }
+
+    loadModule();
+  })();
+</script>

@@ -1,0 +1,589 @@
+<!--
+  SFFR BRONZE PLAQUE STORY
+  Create a new ClubExpress custom page and paste this entire file into the HTML editor.
+
+  Before publishing, upload the three supplied images to ClubExpress Website Media and replace:
+  BRONZE_TABLE_IMAGE_URL
+  BRONZE_PLAQUE_CLOSEUP_IMAGE_URL
+  BRONZE_ARCHIVE_SCAN_URL
+
+  Also replace TRADITIONS_PAGE_URL with the published Traditions & Landmarks page URL.
+-->
+<style>
+    .sffr-plaque,
+    .sffr-plaque * {
+    box-sizing: border-box;
+    }
+    .sffr-plaque {
+    --ink: #28242d;
+    --muted: #6c6670;
+    --purple: #4b2e83;
+    --purple-dark: #301c5b;
+    --lavender: #f2edf8;
+    --bronze: #9a602f;
+    --bronze-dark: #603619;
+    --bronze-light: #d9a66c;
+    --green: #39745a;
+    --paper: #fffdf8;
+    --line: #dfd6e6;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    overflow: hidden;
+    }
+    .sffr-plaque a {
+    color: var(--purple);
+    }
+    .sffr-plaque-hero {
+    background: linear-gradient(140deg, var(--purple-dark), var(--purple));
+    color: #fff;
+    padding: clamp(38px, 6vw, 72px) 20px;
+    }
+    .sffr-plaque-hero-inner {
+    align-items: center;
+    display: grid;
+    gap: clamp(30px, 5vw, 60px);
+    grid-template-columns: minmax(0, .9fr) minmax(340px, 1.1fr);
+    margin: 0 auto;
+    max-width: 1180px;
+    }
+    .sffr-plaque-back {
+    color: rgba(255,255,255,.82) !important;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 34px;
+    text-decoration: none;
+    }
+    .sffr-plaque-kicker {
+    color: #f6cc96;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    }
+    .sffr-plaque h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    letter-spacing: -.04em;
+    line-height: 1.02;
+    margin: 0 0 20px;
+    }
+    .sffr-plaque-hero-copy {
+    color: rgba(255,255,255,.84);
+    font-size: clamp(17px, 2vw, 21px);
+    margin: 0;
+    }
+    .sffr-plaque-hero-figure {
+    margin: 0;
+    position: relative;
+    }
+    .sffr-plaque-hero-figure img {
+    aspect-ratio: 3 / 2;
+    border: 7px solid rgba(255,255,255,.94);
+    border-radius: 4px;
+    box-shadow: 0 24px 54px rgba(20,9,38,.38);
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    }
+    .sffr-plaque-hero-badge {
+    background: var(--bronze-dark);
+    bottom: -16px;
+    color: #fff;
+    font-weight: 700;
+    left: 18px;
+    padding: 10px 16px;
+    position: absolute;
+    }
+    .sffr-plaque-facts {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    }
+    .sffr-plaque-facts-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    max-width: 1180px;
+    }
+    .sffr-plaque-fact {
+    border-right: 1px solid var(--line);
+    padding: 25px 18px;
+    text-align: center;
+    }
+    .sffr-plaque-fact:last-child {
+    border-right: 0;
+    }
+    .sffr-plaque-fact strong {
+    color: var(--bronze-dark);
+    display: block;
+    font-size: 25px;
+    line-height: 1.2;
+    }
+    .sffr-plaque-fact span {
+    color: var(--muted);
+    display: block;
+    font-size: 13px;
+    margin-top: 5px;
+    }
+    .sffr-plaque-section {
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: clamp(55px, 8vw, 90px) 20px;
+    }
+    .sffr-plaque-section-heading {
+    margin-bottom: 36px;
+    max-width: 780px;
+    }
+    .sffr-plaque-section-heading h2 {
+    color: var(--purple-dark);
+    font-size: clamp(31px, 5vw, 47px);
+    letter-spacing: -.03em;
+    line-height: 1.12;
+    margin: 0 0 14px;
+    }
+    .sffr-plaque-section-heading p {
+    color: var(--muted);
+    font-size: 18px;
+    margin: 0;
+    }
+    .sffr-plaque-intro {
+    display: grid;
+    gap: 42px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    }
+    .sffr-plaque-intro-copy p {
+    font-size: 18px;
+    margin: 0 0 20px;
+    }
+    .sffr-plaque-intro-copy p:first-child::first-letter {
+    color: var(--bronze);
+    float: left;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: .85;
+    padding: 7px 9px 0 0;
+    }
+    .sffr-plaque-record-note {
+    background: var(--lavender);
+    border-top: 5px solid var(--purple);
+    padding: 24px;
+    }
+    .sffr-plaque-record-note strong {
+    color: var(--purple-dark);
+    display: block;
+    font-size: 17px;
+    margin-bottom: 8px;
+    }
+    .sffr-plaque-record-note p {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0;
+    }
+    .sffr-plaque-timeline-wrap {
+    background: #f4f1ed;
+    }
+    .sffr-plaque-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    .sffr-plaque-step {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 150px minmax(0, 1fr);
+    padding-bottom: 38px;
+    position: relative;
+    }
+    .sffr-plaque-step:last-child {
+    padding-bottom: 0;
+    }
+    .sffr-plaque-step-date {
+    color: var(--bronze-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    padding-top: 5px;
+    text-transform: uppercase;
+    }
+    .sffr-plaque-step-copy {
+    border-left: 3px solid var(--bronze-light);
+    padding: 0 0 4px 28px;
+    position: relative;
+    }
+    .sffr-plaque-step-copy::before {
+    background: var(--bronze);
+    border: 4px solid #f4f1ed;
+    border-radius: 50%;
+    content: "";
+    height: 17px;
+    left: -10px;
+    position: absolute;
+    top: 3px;
+    width: 17px;
+    }
+    .sffr-plaque-step h3 {
+    color: var(--purple-dark);
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 0 0 7px;
+    }
+    .sffr-plaque-step p {
+    color: var(--muted);
+    margin: 0;
+    }
+    .sffr-plaque-design {
+    align-items: center;
+    display: grid;
+    gap: clamp(32px, 6vw, 70px);
+    grid-template-columns: minmax(0, 1fr) minmax(330px, .95fr);
+    }
+    .sffr-plaque-design-copy h2 {
+    color: var(--purple-dark);
+    font-size: clamp(31px, 5vw, 46px);
+    letter-spacing: -.03em;
+    line-height: 1.12;
+    margin: 0 0 17px;
+    }
+    .sffr-plaque-design-copy p {
+    font-size: 17px;
+    margin: 0 0 18px;
+    }
+    .sffr-plaque-inscription {
+    border-left: 5px solid var(--bronze);
+    color: var(--bronze-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(18px, 2.5vw, 25px);
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 28px 0 0;
+    padding: 4px 0 4px 23px;
+    text-transform: uppercase;
+    }
+    .sffr-plaque-design figure,
+    .sffr-plaque-installation figure {
+    margin: 0;
+    }
+    .sffr-plaque-design img,
+    .sffr-plaque-installation img {
+    border-radius: 14px;
+    box-shadow: 0 18px 38px rgba(45,29,73,.16);
+    display: block;
+    height: auto;
+    width: 100%;
+    }
+    .sffr-plaque figcaption {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+    }
+    .sffr-plaque-installation-wrap {
+    background: var(--green);
+    color: #fff;
+    }
+    .sffr-plaque-installation {
+    align-items: center;
+    display: grid;
+    gap: clamp(32px, 6vw, 64px);
+    grid-template-columns: minmax(340px, 1.1fr) minmax(0, .9fr);
+    }
+    .sffr-plaque-installation h2 {
+    color: #fff;
+    font-size: clamp(31px, 5vw, 46px);
+    letter-spacing: -.03em;
+    line-height: 1.12;
+    margin: 0 0 17px;
+    }
+    .sffr-plaque-installation p {
+    color: rgba(255,255,255,.82);
+    font-size: 17px;
+    margin: 0 0 17px;
+    }
+    .sffr-plaque-installation figcaption {
+    color: rgba(255,255,255,.72);
+    }
+    .sffr-plaque-archive {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    }
+    .sffr-plaque-archive summary {
+    color: var(--purple-dark);
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    list-style-position: inside;
+    padding: 20px 22px;
+    }
+    .sffr-plaque-archive-inner {
+    border-top: 1px solid var(--line);
+    padding: 22px;
+    }
+    .sffr-plaque-archive img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+    }
+    .sffr-plaque-credits {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    }
+    .sffr-plaque-credit {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    }
+    .sffr-plaque-credit strong {
+    color: var(--purple-dark);
+    display: block;
+    margin-bottom: 6px;
+    }
+    .sffr-plaque-credit span {
+    color: var(--muted);
+    font-size: 14px;
+    }
+    .sffr-plaque-visit {
+    align-items: center;
+    background: var(--purple-dark);
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    gap: 28px;
+    justify-content: space-between;
+    margin-top: 46px;
+    padding: 30px;
+    }
+    .sffr-plaque-visit h2 {
+    color: #fff;
+    font-size: 26px;
+    margin: 0 0 7px;
+    }
+    .sffr-plaque-visit p {
+    color: rgba(255,255,255,.78);
+    margin: 0;
+    }
+    .sffr-plaque-actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    gap: 10px;
+    }
+    .sffr-plaque-button {
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    color: var(--purple-dark) !important;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 16px;
+    text-decoration: none;
+    }
+    .sffr-plaque-button-secondary {
+    background: transparent;
+    color: #fff !important;
+    }
+    @media (max-width: 800px) {
+    .sffr-plaque-hero-inner,
+    .sffr-plaque-intro,
+    .sffr-plaque-design,
+    .sffr-plaque-installation {
+    grid-template-columns: 1fr;
+    }
+    .sffr-plaque-facts-inner {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .sffr-plaque-fact:nth-child(2) {
+    border-right: 0;
+    }
+    .sffr-plaque-fact:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+    }
+    .sffr-plaque-installation figure {
+    order: 2;
+    }
+    .sffr-plaque-credits {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .sffr-plaque-visit {
+    align-items: flex-start;
+    flex-direction: column;
+    }
+    }
+    @media (max-width: 560px) {
+    .sffr-plaque-step {
+    gap: 8px;
+    grid-template-columns: 1fr;
+    padding-bottom: 30px;
+    }
+    .sffr-plaque-step-copy {
+    margin-left: 8px;
+    }
+    .sffr-plaque-credits {
+    grid-template-columns: 1fr;
+    }
+    }
+</style>
+<main class="sffr-plaque">
+<header class="sffr-plaque-hero">
+<div class="sffr-plaque-hero-inner">
+<div>
+<a class="sffr-plaque-back" href="TRADITIONS_PAGE_URL">← Back to Traditions &amp; Landmarks</a>
+<p class="sffr-plaque-kicker">A permanent marker in Golden Gate Park</p>
+<h1>The Story of the Bronze Plaque</h1>
+<p class="sffr-plaque-hero-copy">A $5,000 inclusion grant, a year of planning and one small bronze marker gave San Francisco FrontRunners a lasting place in the landscape where the club has gathered for generations.</p>
+</div>
+<figure class="sffr-plaque-hero-figure">
+<a href="BRONZE_TABLE_IMAGE_URL" target="_blank" rel="noopener">
+<img src="//images.clubexpress.com/801899/photos/screen/IMG_3951_1__815446193.jpg" alt="Green picnic table with the San Francisco FrontRunners bronze plaque installed near Blue Heron Lake">
+</a>
+<span class="sffr-plaque-hero-badge">Installed June 2020</span>
+</figure>
+</div>
+</header>
+<section class="sffr-plaque-facts" aria-label="Bronze plaque facts">
+<div class="sffr-plaque-facts-inner">
+<div class="sffr-plaque-fact"><strong>$5,000</strong><span>Brooks inclusion grant</span></div>
+<div class="sffr-plaque-fact"><strong>4 × 8 in.</strong><span>Bronze plaque</span></div>
+<div class="sffr-plaque-fact"><strong>4</strong><span>Designs presented</span></div>
+<div class="sffr-plaque-fact"><strong>June 2020</strong><span>Installation</span></div>
+</div>
+</section>
+<section class="sffr-plaque-section">
+<div class="sffr-plaque-intro">
+<div class="sffr-plaque-intro-copy">
+<p>The plaque is easy to miss. It sits quietly in the top of a green picnic table near the Blue Heron Lake Boathouse, at the place then known as Stow Lake. Yet the small marker represents something much larger: a deliberate effort to make the history and presence of San Francisco’s LGBTQ+ running and walking community visible in public space.</p>
+<p>Its story began in May 2019, when International Front Runners invited member clubs to apply for support through a partnership with Brooks Running. The grant asked clubs to propose ways to grow and become more inclusive of LGBT+ runners and walkers. SFFR answered with an idea rooted in both memory and place.</p>
+</div>
+<aside class="sffr-plaque-record-note">
+<strong>An archival note</strong>
+<p>The surviving project record says the Brooks grant was $5,000 while the Parks Alliance required a minimum $6,000 contribution for a plaque. It does not explain how the remaining $1,000 was covered.</p>
+</aside>
+</div>
+</section>
+<section class="sffr-plaque-timeline-wrap">
+<div class="sffr-plaque-section">
+<div class="sffr-plaque-section-heading">
+<p class="sffr-plaque-kicker">From invitation to installation</p>
+<h2>A year in the making</h2>
+<p>The dated project record reveals how the idea moved from a national grant opportunity to a physical marker in Golden Gate Park.</p>
+</div>
+<ol class="sffr-plaque-timeline">
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">May 10, 2019</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>The opportunity arrives</h3>
+    <p>Danny Luong, International Front Runners President and Western Region Representative, emailed FrontRunner clubs about a partnership with Brooks Running. Clubs could apply for a $5,000 grant supporting growth and greater inclusion of LGBT+ runners and walkers. The program awarded ten grant packages between May 2019 and December 2020.</p>
+    </div>
+    </li>
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">July 30, 2019</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>SFFR submits its idea</h3>
+    <p>Bob Callori submitted SFFR’s application to International Front Runners. It described the club’s origins and proposed commemorative plaques for a picnic table and a park bench, supported by photographs of both possible locations.</p>
+    </div>
+    </li>
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">October 29, 2019</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>The grant is approved</h3>
+    <p>Liem Nguyen received confirmation from Lauren Osborn, Marketing Team Executive Assistant at Brooks, that SFFR’s application had been approved.</p>
+    </div>
+    </li>
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">January 13, 2020</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>The plan meets park requirements</h3>
+    <p>In a call with Paula Martin, Development Operations Manager at the SF Parks Alliance, Bob learned that the park used standard furniture and that only a plaque was eligible. The Parks Alliance required a minimum $6,000 donation for the plaque.</p>
+    </div>
+    </li>
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">February 4, 2020</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>A location and format take shape</h3>
+    <p>Bob Callori and Liem Nguyen met with Paula Martin to discuss a 4 by 8-inch bronze plaque for existing park furniture in the grassy area near the Stow Lake Boathouse parking lot.</p>
+    </div>
+    </li>
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">February 5, 2020</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>The club chooses its design</h3>
+    <p>Bob presented four design options at the club’s monthly meeting. Members approved a final design, which was then submitted to the SF Parks Alliance.</p>
+    </div>
+    </li>
+    <li class="sffr-plaque-step">
+    <div class="sffr-plaque-step-date">June 2020</div>
+    <div class="sffr-plaque-step-copy">
+    <h3>The plaque finds its home</h3>
+    <p>The finished bronze plaque was installed on a green picnic table near the boathouse parking lot, creating a permanent marker of SFFR’s presence in Golden Gate Park.</p>
+    </div>
+    </li>
+</ol>
+</div>
+</section>
+<section class="sffr-plaque-section">
+<div class="sffr-plaque-design">
+<div class="sffr-plaque-design-copy">
+<p class="sffr-plaque-kicker">The final design</p>
+<h2>A concise statement of identity</h2>
+<p>Bob Callori’s original design combined the SFFR logo with the club’s name, its LGBTQ+ identity, the Saturday gathering and the year the community began. The park’s bronze rendering simplified the typography while preserving the message.</p>
+<blockquote class="sffr-plaque-inscription">
+San Francisco FrontRunners<br>
+LGBTQ+ Run &amp; Walk Club<br>
+Meets Every Saturday<br>
+Since 1974&nbsp;&nbsp;&nbsp;SFFR.org
+</blockquote>
+</div>
+<figure>
+<a href="//images.clubexpress.com/801899/photos/screen/Screenshot_2026-08-08_at_20.55.22_151880640.png" target="_blank" rel="noopener">
+<img src="//images.clubexpress.com/801899/photos/screen/Screenshot_2026-08-08_at_20.55.22_151880640.png" alt="Close view of the bronze SFFR plaque and its engraved inscription">
+</a>
+<figcaption>The completed 4 by 8-inch bronze plaque. Select the image to view it at full size.</figcaption>
+</figure>
+</div>
+</section>
+<section class="sffr-plaque-installation-wrap">
+<div class="sffr-plaque-section sffr-plaque-installation">
+<figure>
+<a href="//images.clubexpress.com/801899/photos/screen/IMG_4468_1__323780115.JPG" target="_blank" rel="noopener">
+<img src="//images.clubexpress.com/801899/photos/screen/IMG_4468_1__323780115.JPG" alt="The completed SFFR plaque mounted in a green picnic table near Blue Heron Lake">
+</a>
+<figcaption>The plaque in its Golden Gate Park setting.</figcaption>
+</figure>
+<div>
+<p class="sffr-plaque-kicker">A small marker with a long memory</p>
+<h2>Part of the landscape</h2>
+<p>Mounted flush with the tabletop, the plaque does not behave like a monument. It becomes part of an everyday gathering place where people pause, share food and meet before or after time in the park.</p>
+<p>That modest placement feels fitting for a club built around showing up week after week. The marker makes SFFR’s history public without separating it from the ordinary community life that history made possible.</p>
+</div>
+</div>
+</section>
+<section class="sffr-plaque-section">
+<div class="sffr-plaque-section-heading">&nbsp;&nbsp;<span style="font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgb(108, 102, 112);">People and partners<br>
+</span><span style="background-color: transparent; font-size: clamp(31px, 5vw, 47px); letter-spacing: -0.03em; font-family: Verdana, Geneva, sans-serif; color: rgb(48, 28, 91);">Who brought it together</span></div>
+<div class="sffr-plaque-credits">
+<div class="sffr-plaque-credit"><strong>Bob Callori</strong><span>Application, concept development and original plaque designs</span></div>
+<div class="sffr-plaque-credit"><strong>Liem Nguyen</strong><span>Grant coordination and Parks Alliance planning</span></div>
+<div class="sffr-plaque-credit"><strong>Danny Luong</strong><span>International Front Runners outreach and grant opportunity</span></div>
+<div class="sffr-plaque-credit"><strong>Paula Martin</strong><span>SF Parks Alliance development and installation guidance</span></div>
+<div class="sffr-plaque-credit"><strong>Lauren Osborn</strong><span>Brooks Running grant confirmation</span></div>
+<div class="sffr-plaque-credit"><strong>Brooks Running, IFR &amp; SF Parks Alliance</strong><span>Funding, partnership and park coordination</span></div>
+</div>
+<div class="sffr-plaque-visit">
+<div>
+<h2>See the plaque in Golden Gate Park</h2>
+<p>Look for the green picnic tables near the Blue Heron Lake Boathouse parking lot, formerly the Stow Lake Boathouse.</p>
+</div>
+<div class="sffr-plaque-actions">
+<a class="sffr-plaque-button" href="https://www.sfrecpark.org/938/GGP---Stow-Lake-Boathouse-Picnic-Area" target="_blank" rel="noopener">Visitor information</a>
+<a class="sffr-plaque-button sffr-plaque-button-secondary" href="https://photos.app.goo.gl/sSgvbN2P6sycUdUs8" target="_blank" rel="noopener">More plaque photos</a>
+</div>
+</div>
+</section>
+</main>

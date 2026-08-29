@@ -1,0 +1,363 @@
+<!--
+  SFFR HISTORY OVERVIEW
+  Use this code on the existing About > History page.
+  Replace FOUNDING_PAGE_URL and TRADITIONS_PAGE_URL after creating the two detail pages.
+-->
+<style>
+    .sffr-history,
+    .sffr-history * {
+    box-sizing: border-box;
+    }
+    .sffr-history {
+    --ink: #24212b;
+    --muted: #686371;
+    --purple: #4b2e83;
+    --purple-dark: #321d60;
+    --lavender: #f2edfa;
+    --gold: #f4b942;
+    --paper: #fffdf8;
+    --line: #ddd4e9;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    overflow: hidden;
+    }
+    .sffr-history a {
+    color: inherit;
+    }
+    .sffr-history-hero {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: #fff;
+    padding: clamp(44px, 7vw, 88px) 20px;
+    }
+    .sffr-history-hero-inner {
+    align-items: center;
+    display: grid;
+    gap: clamp(30px, 5vw, 64px);
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+    margin: 0 auto;
+    max-width: 1160px;
+    }
+    .sffr-history-kicker {
+    color: #f9d77b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    }
+    .sffr-history h1 {
+    font-size: clamp(42px, 7vw, 74px);
+    letter-spacing: -.04em;
+    line-height: 1.02;
+    margin: 0 0 20px;
+    }
+    .sffr-history-hero-copy {
+    color: rgba(255, 255, 255, .86);
+    font-size: clamp(17px, 2vw, 21px);
+    margin: 0;
+    max-width: 650px;
+    }
+    .sffr-history-hero-figure {
+    margin: 0;
+    position: relative;
+    }
+    .sffr-history-hero-figure img {
+    aspect-ratio: 4 / 3;
+    border: 8px solid rgba(255, 255, 255, .94);
+    box-shadow: 0 22px 50px rgba(16, 7, 35, .35);
+    display: block;
+    object-fit: cover;
+    transform: rotate(1.5deg);
+    width: 100%;
+    }
+    .sffr-history-hero-figure figcaption {
+    color: rgba(255, 255, 255, .72);
+    font-size: 13px;
+    margin-top: 12px;
+    }
+    .sffr-history-stats {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    }
+    .sffr-history-stats-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    max-width: 1160px;
+    }
+    .sffr-history-stat {
+    border-right: 1px solid var(--line);
+    padding: 26px 20px;
+    text-align: center;
+    }
+    .sffr-history-stat:last-child {
+    border-right: 0;
+    }
+    .sffr-history-stat strong {
+    color: var(--purple);
+    display: block;
+    font-size: 28px;
+    line-height: 1.15;
+    }
+    .sffr-history-stat span {
+    color: var(--muted);
+    display: block;
+    font-size: 13px;
+    margin-top: 5px;
+    }
+    .sffr-history-section {
+    margin: 0 auto;
+    max-width: 1160px;
+    padding: clamp(54px, 8vw, 92px) 20px;
+    }
+    .sffr-history-heading {
+    margin-bottom: 34px;
+    max-width: 760px;
+    }
+    .sffr-history-heading h2 {
+    color: var(--purple-dark);
+    font-size: clamp(30px, 4vw, 46px);
+    letter-spacing: -.025em;
+    line-height: 1.12;
+    margin: 0 0 13px;
+    }
+    .sffr-history-heading p {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+    }
+    .sffr-history-chapters {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-history-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(51, 29, 94, .08);
+    display: flex;
+    flex-direction: column;
+    min-height: 330px;
+    overflow: hidden;
+    padding: 32px;
+    position: relative;
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .sffr-history-card:hover,
+    .sffr-history-card:focus-visible {
+    box-shadow: 0 18px 38px rgba(51, 29, 94, .14);
+    transform: translateY(-4px);
+    }
+    .sffr-history-card::before {
+    background: var(--gold);
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    }
+    .sffr-history-card:nth-child(2)::before {
+    background: #c68ce8;
+    }
+    .sffr-history-card-year {
+    color: var(--purple);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    }
+    .sffr-history-card h3 {
+    color: var(--ink);
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 18px 0 12px;
+    }
+    .sffr-history-card p {
+    color: var(--muted);
+    margin: 0;
+    }
+    .sffr-history-card-link {
+    color: var(--purple);
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 28px;
+    }
+    .sffr-history-timeline-wrap {
+    background: var(--lavender);
+    }
+    .sffr-history-timeline {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    .sffr-history-milestone {
+    border-top: 3px solid var(--purple);
+    min-height: 170px;
+    padding: 24px 22px 0 0;
+    position: relative;
+    }
+    .sffr-history-milestone::before {
+    background: var(--gold);
+    border: 4px solid var(--lavender);
+    border-radius: 50%;
+    content: "";
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: -10px;
+    width: 17px;
+    }
+    .sffr-history-milestone strong {
+    color: var(--purple-dark);
+    display: block;
+    font-size: 23px;
+    margin-bottom: 7px;
+    }
+    .sffr-history-milestone span {
+    color: var(--muted);
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+    }
+    .sffr-history-related {
+    align-items: center;
+    background: var(--purple-dark);
+    border-radius: 22px;
+    color: #fff;
+    display: flex;
+    gap: 28px;
+    justify-content: space-between;
+    padding: 34px;
+    }
+    .sffr-history-related h2 {
+    font-size: 26px;
+    margin: 0 0 7px;
+    }
+    .sffr-history-related p {
+    color: rgba(255, 255, 255, .78);
+    margin: 0;
+    }
+    .sffr-history-button {
+    background: #fff;
+    border-radius: 999px;
+    color: var(--purple-dark) !important;
+    display: inline-block;
+    flex: 0 0 auto;
+    font-weight: 700;
+    padding: 12px 20px;
+    text-decoration: none;
+    }
+    @media (max-width: 780px) {
+    .sffr-history-hero-inner,
+    .sffr-history-chapters {
+    grid-template-columns: 1fr;
+    }
+    .sffr-history-stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .sffr-history-stat:nth-child(2) {
+    border-right: 0;
+    }
+    .sffr-history-stat:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+    }
+    .sffr-history-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+    }
+    .sffr-history-related {
+    align-items: flex-start;
+    flex-direction: column;
+    }
+    }
+    @media (max-width: 480px) {
+    .sffr-history-timeline {
+    grid-template-columns: 1fr;
+    }
+    .sffr-history-milestone {
+    min-height: 0;
+    padding-bottom: 22px;
+    }
+    }
+</style>
+<main class="sffr-history">
+<section class="sffr-history-hero">
+<div class="sffr-history-hero-inner">
+<div>
+<p class="sffr-history-kicker">San Francisco FrontRunners</p>
+<h1>Our history runs deep.</h1>
+<p class="sffr-history-hero-copy">From a half-mile jogging class in Golden Gate Park to an enduring LGBTQ+ running and walking community, our story spans more than five decades.</p>
+</div>
+<figure class="sffr-history-hero-figure">
+<a href="https://images.clubexpress.com/801899/graphics/Circa_1974_large_1386719285.jpg" target="_blank" rel="noopener">
+<img src="https://images.clubexpress.com/801899/graphics/Circa_1974_large_1386719285.jpg" alt="Early members of the group circa 1974">
+</a>
+<figcaption>Early days of the club, circa 1974. Select the photo to view it at full size.</figcaption>
+</figure>
+</div>
+</section>
+<section class="sffr-history-stats" aria-label="Club history highlights">
+<div class="sffr-history-stats-inner">
+<div class="sffr-history-stat"><strong>1974</strong><span>First Sunday run</span></div>
+<div class="sffr-history-stat"><strong>40</strong><span>Charter members in 1979</span></div>
+<div class="sffr-history-stat"><strong>400</strong><span>Runners at the first Gay Run</span></div>
+<div class="sffr-history-stat"><strong>50+</strong><span>Years of community</span></div>
+</div>
+</section>
+<section class="sffr-history-section">
+<div class="sffr-history-heading">
+<p class="sffr-history-kicker">Explore the archive</p>
+<h2>One history, two chapters</h2>
+<p>The original page has been organized into a founding narrative and a collection of traditions and landmarks, making each part easier to read and revisit.</p>
+</div>
+<div class="sffr-history-chapters">
+<a class="sffr-history-card" href="/foundingstory">
+<span class="sffr-history-card-year">1973 to 1980</span>
+<h3>How It All Began</h3>
+<p>Bud Budlong’s account of Lavender U. Joggers, the first Sunday runs, the adoption of the FrontRunners name and the first Gay Run.</p>
+<span class="sffr-history-card-link">Read the founding story →</span>
+</a>
+<a class="sffr-history-card" href="/traditions">
+<span class="sffr-history-card-year">1998 to today</span>
+<h3>Traditions &amp; Landmarks</h3>
+<p>Explore the Golden Gate Park water fountain, Easter Bonnet Run, Little Black Dress Run and Stow Lake bronze plaque.</p>
+<span class="sffr-history-card-link">Explore club traditions →</span>
+</a>
+</div>
+</section>
+<section class="sffr-history-timeline-wrap">
+<div class="sffr-history-section">
+<div class="sffr-history-heading">
+<p class="sffr-history-kicker">At a glance</p>
+<h2>Milestones along the route</h2>
+</div>
+<ol class="sffr-history-timeline">
+    <li class="sffr-history-milestone"><strong>1973</strong><span>Lavender U. lists an introduction to jogging class.</span></li>
+    <li class="sffr-history-milestone"><strong>1974</strong><span>The first run begins near the south windmill in Golden Gate Park.</span></li>
+    <li class="sffr-history-milestone"><strong>1978</strong><span>The group reorganizes with members, bylaws and elected officers.</span></li>
+    <li class="sffr-history-milestone"><strong>1980</strong><span>The first Gay Run draws approximately 400 participants.</span></li>
+    <li class="sffr-history-milestone"><strong>1998</strong><span>A club water fountain is installed in Golden Gate Park.</span></li>
+    <li class="sffr-history-milestone"><strong>1999</strong><span>The Little Black Dress Run tradition begins.</span></li>
+    <li class="sffr-history-milestone"><strong>2020</strong><span>A commemorative bronze plaque is installed at Stow Lake.</span></li>
+    <li class="sffr-history-milestone"><strong>Today</strong><span>The club continues to run, walk, volunteer and build community.</span></li>
+</ol>
+</div>
+</section>
+<section class="sffr-history-section">
+<div class="sffr-history-related">
+<div>
+<h2>The people who carried the club forward</h2>
+<p>Explore San Francisco FrontRunners leadership by year and decade.</p>
+</div>
+<a class="sffr-history-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=799217">View the Hall of Fame</a>
+</div>
+</section>
+</main>

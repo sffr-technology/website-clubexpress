@@ -1,0 +1,197 @@
+<!--
+  SFFR GAY GAMES VALENCIA 2026
+  Recommended ClubExpress quick link: sffr.org/gaygames
+  Paste this entire file into the ClubExpress HTML editor for module 782934.
+-->
+<style>
+    .sffr-gg,.sffr-gg *{box-sizing:border-box}
+    .sffr-gg{
+    --ink:#252936;--muted:#676d79;--navy:#16324d;--navy-dark:#0d2236;
+    --teal:#178b82;--teal-soft:#eaf7f5;--coral:#ed6f61;--orange:#f4a340;
+    --yellow:#f6ce5d;--paper:#fffdf8;--line:#dbe4e3;
+    background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;
+    line-height:1.65;overflow:hidden;
+    }
+    .sffr-gg a{color:var(--teal)}
+    .sffr-gg-hero{
+    background:
+    radial-gradient(circle at 88% 15%,rgba(246,206,93,.3) 0 105px,transparent 106px),
+    radial-gradient(circle at 78% 84%,rgba(255,255,255,.08) 0 155px,transparent 156px),
+    linear-gradient(135deg,var(--navy-dark),var(--navy) 53%,#176f79);
+    color:#fff;padding:clamp(56px,8vw,98px) 22px;
+    }
+    .sffr-gg-inner,.sffr-gg-section{margin:0 auto;max-width:1120px}
+    .sffr-gg-hero-inner{display:grid;gap:42px;grid-template-columns:minmax(0,1fr) 310px}
+    .sffr-gg-kicker,.sffr-gg-label{color:#93e1da;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 14px;text-transform:uppercase}
+    .sffr-gg-hero h1{color:#fff;font-size:clamp(43px,7vw,72px);letter-spacing:-.045em;line-height:1.01;margin:0 0 20px;max-width:820px}
+    .sffr-gg-hero-copy{color:rgba(255,255,255,.84);font-size:clamp(18px,2vw,21px);margin:0;max-width:730px}
+    .sffr-gg-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:29px}
+    .sffr-gg-button{background:#fff;border:2px solid #fff;border-radius:999px;color:var(--navy-dark)!important;display:inline-block;font-size:14px;font-weight:800;padding:11px 18px;text-decoration:none}
+    .sffr-gg-button-alt{background:transparent;color:#fff!important}
+    .sffr-gg-date{align-self:end;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:26px}
+    .sffr-gg-date b{color:#fff;display:block;font-size:38px;letter-spacing:-.04em;line-height:1.05}
+    .sffr-gg-date span{color:#93e1da;display:block;font-size:13px;font-weight:800;letter-spacing:.1em;margin-top:10px;text-transform:uppercase}
+    .sffr-gg-date p{color:rgba(255,255,255,.74);font-size:14px;margin:8px 0 0}
+    .sffr-gg-bar{background:#fff;border-bottom:1px solid var(--line)}
+    .sffr-gg-bar-inner{display:grid;grid-template-columns:repeat(3,1fr);margin:auto;max-width:1120px}
+    .sffr-gg-stat{border-right:1px solid var(--line);padding:22px;text-align:center}
+    .sffr-gg-stat:last-child{border-right:0}
+    .sffr-gg-stat strong{color:var(--navy);display:block;font-size:18px}
+    .sffr-gg-stat span{color:var(--muted);display:block;font-size:12px;margin-top:3px}
+    .sffr-gg-section{padding:clamp(58px,8vw,88px) 22px}
+    .sffr-gg-heading{margin-bottom:30px;max-width:800px}
+    .sffr-gg-label{color:var(--coral)}
+    .sffr-gg-heading h2{color:var(--navy);font-size:clamp(31px,5vw,47px);letter-spacing:-.035em;line-height:1.1;margin:0 0 12px}
+    .sffr-gg-heading p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-gg-values{display:grid;gap:15px;grid-template-columns:repeat(3,1fr)}
+    .sffr-gg-value{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px}
+    .sffr-gg-value b{align-items:center;background:var(--teal-soft);border-radius:50%;color:var(--teal);display:flex;font-size:15px;height:42px;justify-content:center;margin-bottom:21px;width:42px}
+    .sffr-gg-value h3{color:var(--navy);font-size:21px;margin:0 0 8px}
+    .sffr-gg-value p{color:var(--muted);font-size:14px;margin:0}
+    .sffr-gg-history{background:var(--navy-dark);color:#fff}
+    .sffr-gg-history .sffr-gg-label{color:#93e1da}
+    .sffr-gg-history .sffr-gg-heading h2{color:#fff}
+    .sffr-gg-history .sffr-gg-heading p{color:rgba(255,255,255,.72)}
+    .sffr-gg-timeline{display:grid;gap:1px;grid-template-columns:repeat(4,1fr);overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:rgba(255,255,255,.16)}
+    .sffr-gg-milestone{background:#122a42;padding:27px}
+    .sffr-gg-milestone b{color:var(--yellow);display:block;font-size:31px;letter-spacing:-.04em;line-height:1;margin-bottom:18px}
+    .sffr-gg-milestone h3{color:#fff;font-size:19px;line-height:1.3;margin:0 0 9px}
+    .sffr-gg-milestone p{color:rgba(255,255,255,.7);font-size:13px;margin:0}
+    .sffr-gg-history-note{border-left:3px solid var(--teal);color:rgba(255,255,255,.75);font-size:15px;margin:30px 0 0;padding:2px 0 2px 18px;max-width:890px}
+    .sffr-gg-history-note a{color:#93e1da;font-weight:800}
+    .sffr-gg-highlight{background:linear-gradient(135deg,#fdf2de,#fff9ed);border-bottom:1px solid #f0d5a2;border-top:1px solid #f0d5a2}
+    .sffr-gg-highlight-inner{align-items:center;display:grid;gap:42px;grid-template-columns:280px 1fr}
+    .sffr-gg-amount{background:#fff;border:1px solid #f0d5a2;border-radius:20px;padding:28px;text-align:center}
+    .sffr-gg-amount b{color:var(--coral);display:block;font-size:54px;letter-spacing:-.05em;line-height:1}
+    .sffr-gg-amount span{color:var(--muted);display:block;font-size:13px;font-weight:800;margin-top:10px;text-transform:uppercase}
+    .sffr-gg-highlight-copy h2{color:var(--navy);font-size:clamp(30px,5vw,44px);letter-spacing:-.035em;line-height:1.1;margin:0 0 12px}
+    .sffr-gg-highlight-copy p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-gg-resources{display:grid;gap:15px;grid-template-columns:repeat(3,1fr)}
+    .sffr-gg-resource{background:#fff;border:1px solid var(--line);border-radius:17px;display:flex;flex-direction:column;padding:24px;text-decoration:none}
+    .sffr-gg-resource span{color:var(--coral);font-size:12px;font-weight:800;letter-spacing:.11em;margin-bottom:23px;text-transform:uppercase}
+    .sffr-gg-resource strong{color:var(--navy);font-size:19px;line-height:1.3}
+    .sffr-gg-resource p{color:var(--muted);font-size:13px;margin:8px 0 20px}
+    .sffr-gg-resource b{color:var(--teal);font-size:13px;margin-top:auto}
+    .sffr-gg-footer{background:var(--navy-dark);color:#fff;padding:clamp(48px,7vw,70px) 22px;text-align:center}
+    .sffr-gg-footer h2{color:#fff;font-size:clamp(30px,5vw,44px);letter-spacing:-.03em;margin:0 0 9px}
+    .sffr-gg-footer p{color:rgba(255,255,255,.75);margin:0 auto 22px;max-width:650px}
+    @media(hover:hover){.sffr-gg-button,.sffr-gg-value,.sffr-gg-resource{transition:transform .2s ease,box-shadow .2s ease}.sffr-gg-button:hover{transform:translateY(-1px)}.sffr-gg-value:hover,.sffr-gg-resource:hover{box-shadow:0 14px 32px rgba(13,34,54,.11);transform:translateY(-2px)}}
+    @media(max-width:920px){.sffr-gg-timeline{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:820px){.sffr-gg-hero-inner{grid-template-columns:1fr}.sffr-gg-date{max-width:420px}.sffr-gg-values,.sffr-gg-resources{grid-template-columns:1fr}.sffr-gg-highlight-inner{grid-template-columns:1fr}.sffr-gg-amount{max-width:320px}}
+    @media(max-width:620px){.sffr-gg-date{display:none}.sffr-gg-bar-inner{grid-template-columns:1fr}.sffr-gg-stat{border-bottom:1px solid var(--line);border-right:0}.sffr-gg-stat:last-child{border-bottom:0}}
+    @media(max-width:560px){.sffr-gg-timeline{grid-template-columns:1fr}}
+</style>
+<div class="sffr-gg">
+<section class="sffr-gg-hero">
+<div class="sffr-gg-inner sffr-gg-hero-inner">
+<div>
+<p class="sffr-gg-kicker">Connect with your crew</p>
+<h1>Gay Games Valencia 2026</h1>
+<p class="sffr-gg-hero-copy">Whether racing, cheering, volunteering, or soaking in the experience, SFFR members and Bay Area travelers can find one another and make Valencia even more memorable.</p>
+<div class="sffr-gg-actions"><a class="sffr-gg-button" href="https://docs.google.com/spreadsheets/d/1sGo8sdifcyxO6eEEGsDiI9K67XXGhJHB9PRMCG-bLM0/edit?usp=sharing" target="_blank" rel="noopener">Open participant list</a><a class="sffr-gg-button sffr-gg-button-alt" href="https://sffr.org/whatsapp">Explore SFFR WhatsApp groups</a></div>
+</div>
+<aside class="sffr-gg-date"><b>27 June<br>
+to 4 July</b><span>Valencia, Spain</span>
+<p>A shared adventure built around sport, pride, travel, friendship, and international LGBTQ+ community.</p>
+</aside>
+</div>
+</section>
+<div class="sffr-gg-bar">
+<div class="sffr-gg-bar-inner">
+<div class="sffr-gg-stat"><strong>27 June to 4 July</strong><span>Eight days together</span></div>
+<div class="sffr-gg-stat"><strong>Valencia, Spain</strong><span>Gay Games XII host city</span></div>
+<div class="sffr-gg-stat"><strong>Bay Area crew</strong><span>Athletes, supporters, and volunteers</span></div>
+</div>
+</div>
+<section class="sffr-gg-section">
+<div class="sffr-gg-heading">
+<p class="sffr-gg-label">Why connect?</p>
+<h2>Build community before landing in Valencia</h2>
+<p>The shared participant list helps travelers coordinate plans, meet fellow SFFR members, and find company for the moments between events.</p>
+</div>
+<div class="sffr-gg-values">
+<article class="sffr-gg-value"><b>01</b>
+<h3>Meet your crew</h3>
+<p>Connect with fellow runners, athletes, volunteers, and travelers from the Bay Area.</p>
+</article>
+<article class="sffr-gg-value"><b>02</b>
+<h3>Share lodging</h3>
+<p>Find hotel or Airbnb buddies and compare neighborhoods or accommodations.</p>
+</article>
+<article class="sffr-gg-value"><b>03</b>
+<h3>Coordinate travel</h3>
+<p>Compare flight plans, arrival times, airport transfers, and other logistics.</p>
+</article>
+<article class="sffr-gg-value"><b>04</b>
+<h3>Make plans</h3>
+<p>Organize group dinners, sightseeing, meetups, and post-race celebrations.</p>
+</article>
+<article class="sffr-gg-value"><b>05</b>
+<h3>Show up together</h3>
+<p>Represent a strong, welcoming, and visible Bay Area LGBTQ+ community.</p>
+</article>
+</div>
+</section>
+<section class="sffr-gg-history">
+<div class="sffr-gg-section">
+<div class="sffr-gg-heading">
+<p class="sffr-gg-label">A shared legacy</p>
+<h2>FrontRunners and the Gay Games grew up together</h2>
+<p>Our connection reaches back to the beginning. SF FrontRunners was already building LGBTQ+ community through running when the first Gay Games brought athletes from around the world to San Francisco.</p>
+</div>
+<div class="sffr-gg-timeline">
+<article class="sffr-gg-milestone"><b>1974</b>
+<h3>SF FrontRunners begins</h3>
+<p>Eight years before the first Gay Games, the country’s first FrontRunners club began bringing LGBTQ+ runners together in San Francisco.</p>
+</article>
+<article class="sffr-gg-milestone"><b>1982</b>
+<h3>The first Gay Games</h3>
+<p>Dr. Tom Waddell’s vision came to life in San Francisco. The Games gave LGBTQ+ athletes and FrontRunners greater visibility and helped inspire new clubs.</p>
+</article>
+<article class="sffr-gg-milestone"><b>1986</b>
+<h3>SFFR helps make it happen</h3>
+<p>For Gay Games II, SFFR marathoners Mary Ann Powers and Bob Puerzer headed the Marathon Committee. FrontRunners from around the world also held their first international gathering.</p>
+</article>
+<article class="sffr-gg-milestone"><b>2026</b>
+<h3>The tradition reaches Valencia</h3>
+<p>SFFR members carried that legacy to Spain as athletes, supporters, volunteers, travelers, and part of a worldwide FrontRunner community.</p>
+</article>
+</div>
+<p class="sffr-gg-history-note">As the Gay Games traveled from San Francisco to cities around the world, FrontRunner clubs grew into an international network connected by sport, friendship, and visibility. Valencia is the newest chapter in a relationship spanning more than four decades. Explore the <a href="https://www.gaygames.org/historical-results" target="_blank" rel="noopener">Gay Games archive</a> and <a href="https://www.frontrunners.org/EN/about/history/ifr_history.php" target="_blank" rel="noopener">International Front Runners history</a>.</p>
+</div>
+</section>
+<section class="sffr-gg-highlight">
+<div class="sffr-gg-section sffr-gg-highlight-inner">
+<div class="sffr-gg-amount"><b>✈️</b><span>Optional shared list</span></div>
+<div class="sffr-gg-highlight-copy">
+<h2>Add your travel and event plans</h2>
+<p>The optional spreadsheet gives participants a simple place to share dates, sports, lodging plans, and contact information they are comfortable sharing with the group.</p>
+<div class="sffr-gg-actions"><a class="sffr-gg-button" href="https://docs.google.com/spreadsheets/d/1sGo8sdifcyxO6eEEGsDiI9K67XXGhJHB9PRMCG-bLM0/edit?usp=sharing" target="_blank" rel="noopener">Open the travel and participant list</a></div>
+</div>
+</div>
+</section>
+<section class="sffr-gg-section">
+<div class="sffr-gg-heading">
+<p class="sffr-gg-label">Stay connected</p>
+<h2>Keep the conversation going</h2>
+<p>The Gay Games WhatsApp group helps travelers coordinate in real time before, during, and after the Games.</p>
+</div>
+<div class="sffr-gg-resources">
+<a class="sffr-gg-resource" href="https://sffr.org/whatsapp"><span>Group conversation</span><strong>Gay Games WhatsApp</strong>
+<p>Find updates, meetups, last-minute roommates, activity buddies, and travel coordination.</p>
+<b>Explore SFFR WhatsApp groups</b></a>
+<a class="sffr-gg-resource" href="https://docs.google.com/spreadsheets/d/1sGo8sdifcyxO6eEEGsDiI9K67XXGhJHB9PRMCG-bLM0/edit?usp=sharing" target="_blank" rel="noopener"><span>Shared planning</span><strong>Travel and Participant List</strong>
+<p>See the optional spreadsheet for participants and Bay Area travelers.</p>
+<b>Open spreadsheet ↗</b></a>
+<a class="sffr-gg-resource" href="https://www.gaygamesvalencia2026.com/en/" target="_blank" rel="noopener"><span>Official event</span><strong>Gay Games Valencia 2026</strong>
+<p>Visit the official website for event information and resources.</p>
+<b>Visit official site ↗</b></a>
+</div>
+</section>
+<section class="sffr-gg-footer">
+<div class="sffr-gg-inner">
+<h2>Together before, during, and after</h2>
+<p>Join the conversation if you would like to connect with the community as plans, events, and memories come together.</p>
+<a class="sffr-gg-button" href="https://sffr.org/whatsapp">Explore SFFR WhatsApp groups</a></div>
+</section>
+</div>

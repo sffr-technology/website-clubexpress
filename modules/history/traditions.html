@@ -1,0 +1,272 @@
+<!--
+  SFFR TRADITIONS AND LANDMARKS: 1998 TO TODAY
+  Create a new ClubExpress custom page and paste this entire file into the HTML editor.
+  After publishing the Bronze Plaque page, replace history-bronze-plaque.html with its ClubExpress URL.
+-->
+<style>
+    .sffr-traditions,
+    .sffr-traditions * {
+    box-sizing: border-box;
+    }
+    .sffr-traditions {
+    --ink: #29242f;
+    --muted: #6b6472;
+    --purple: #4b2e83;
+    --purple-dark: #321d60;
+    --lavender: #f4effa;
+    --gold: #f0b43c;
+    --rose: #bd4c7d;
+    --paper: #fffdf8;
+    --line: #ded5e8;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    }
+    .sffr-traditions a {
+    color: var(--purple);
+    }
+    .sffr-traditions-hero {
+    background: linear-gradient(135deg, #4b2e83 0%, #7c3d7f 55%, #bd4c7d 100%);
+    color: #fff;
+    padding: clamp(48px, 8vw, 92px) 20px;
+    }
+    .sffr-traditions-hero-inner,
+    .sffr-traditions-body {
+    margin: 0 auto;
+    max-width: 1100px;
+    }
+    .sffr-traditions-back {
+    color: rgba(255,255,255,.84) !important;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    text-decoration: none;
+    }
+    .sffr-traditions-kicker {
+    color: #ffe09b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin: 0 0 13px;
+    text-transform: uppercase;
+    }
+    .sffr-traditions h1 {
+    font-size: clamp(40px, 7vw, 68px);
+    letter-spacing: -.04em;
+    line-height: 1.03;
+    margin: 0 0 18px;
+    }
+    .sffr-traditions-deck {
+    color: rgba(255,255,255,.84);
+    font-size: clamp(17px, 2vw, 21px);
+    margin: 0;
+    max-width: 760px;
+    }
+    .sffr-traditions-body {
+    padding: clamp(54px, 8vw, 88px) 20px;
+    }
+    .sffr-traditions-grid {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-traditions-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(45, 30, 73, .08);
+    display: flex;
+    flex-direction: column;
+    min-height: 390px;
+    overflow: hidden;
+    }
+    .sffr-traditions-card-top {
+    align-items: flex-end;
+    background: var(--lavender);
+    display: flex;
+    justify-content: space-between;
+    min-height: 140px;
+    padding: 25px 28px;
+    }
+    .sffr-traditions-card:nth-child(2) .sffr-traditions-card-top {
+    background: #fff0f5;
+    }
+    .sffr-traditions-card:nth-child(3) .sffr-traditions-card-top {
+    background: #f3ecf7;
+    }
+    .sffr-traditions-card:nth-child(4) .sffr-traditions-card-top {
+    background: #fff5db;
+    }
+    .sffr-traditions-year {
+    color: var(--purple-dark);
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1;
+    }
+    .sffr-traditions-number {
+    color: rgba(75, 46, 131, .25);
+    font-size: 18px;
+    font-weight: 700;
+    }
+    .sffr-traditions-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 28px;
+    }
+    .sffr-traditions-card h2 {
+    color: var(--purple-dark);
+    font-size: 27px;
+    line-height: 1.2;
+    margin: 0 0 14px;
+    }
+    .sffr-traditions-card p {
+    color: var(--muted);
+    margin: 0 0 16px;
+    }
+    .sffr-traditions-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+    }
+    .sffr-traditions-link {
+    border: 1px solid var(--purple);
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 14px;
+    text-decoration: none;
+    }
+    .sffr-traditions-link:hover,
+    .sffr-traditions-link:focus-visible {
+    background: var(--purple);
+    color: #fff;
+    }
+    .sffr-traditions-next {
+    align-items: center;
+    background: var(--purple-dark);
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    gap: 26px;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 32px;
+    }
+    .sffr-traditions-next h2 {
+    font-size: 27px;
+    margin: 0 0 7px;
+    }
+    .sffr-traditions-next p {
+    color: rgba(255,255,255,.76);
+    margin: 0;
+    }
+    .sffr-traditions-button {
+    background: #fff;
+    border-radius: 999px;
+    color: var(--purple-dark) !important;
+    flex: 0 0 auto;
+    font-weight: 700;
+    padding: 11px 18px;
+    text-decoration: none;
+    }
+    @media (max-width: 760px) {
+    .sffr-traditions-grid {
+    grid-template-columns: 1fr;
+    }
+    .sffr-traditions-card {
+    min-height: 0;
+    }
+    .sffr-traditions-next {
+    align-items: flex-start;
+    flex-direction: column;
+    }
+    }
+</style>
+<main class="sffr-traditions">
+<header class="sffr-traditions-hero">
+<div class="sffr-traditions-hero-inner">
+<a class="sffr-traditions-back" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=462070">← Back to Our History</a>
+<p class="sffr-traditions-kicker">1998 to today</p>
+<h1>Traditions &amp; Landmarks</h1>
+<p class="sffr-traditions-deck">The joyful runs, gathering places and physical markers that have carried the spirit of San Francisco FrontRunners across generations.</p>
+</div>
+</header>
+<div class="sffr-traditions-body">
+<div class="sffr-traditions-grid">
+<article class="sffr-traditions-card">
+<div class="sffr-traditions-card-top">
+<span class="sffr-traditions-year">1998</span>
+<span class="sffr-traditions-number">01</span>
+</div>
+<div class="sffr-traditions-card-body">
+<h2>Golden Gate Park Water Fountain</h2>
+<p>In 1998 the club installed a water fountain in Golden Gate Park at Transverse Drive and Kennedy Drive. There was concern that explicitly describing the club could invite vandalism, so its bronze plaque reads, “The Running Club for Lesbians, Gay Men and Their Friends.”</p>
+<p>Documented as the first Pride Run beneficiary by The Family Link and Friends of Recreation &amp; Parks, it proudly stands untarnished to this day.</p>
+<div class="sffr-traditions-links">
+<a class="sffr-traditions-link" href="https://photos.app.goo.gl/dTfD3rryKyXaBNg98" target="_blank" rel="noopener">View water fountain photos</a>
+</div>
+</div>
+</article>
+<article class="sffr-traditions-card">
+<div class="sffr-traditions-card-top">
+<span class="sffr-traditions-year">1998</span>
+<span class="sffr-traditions-number">02</span>
+</div>
+<div class="sffr-traditions-card-body">
+<h2>The Easter Bonnet Run &amp; Contest</h2>
+<p>The earliest photo found in the Footprint newsletters dates to 1998. John Kruse always showed up in a pink outfit. The first club photos were taken in 2004.</p>
+<p>The group ran two miles, similar to the Little Black Dress Run, then had brunch in the park. Chuck Louden and Reggie Snowden often ran the “walkway,” followed by prizes including chocolate bunnies, Easter baskets and stuffed animals. Account by Bob Callori.</p>
+<div class="sffr-traditions-links">
+<a class="sffr-traditions-link" href="https://photos.app.goo.gl/XGF9y29UwSjdY8yt6" target="_blank" rel="noopener">View photos</a>
+<a class="sffr-traditions-link" href="https://youtu.be/a138nriwxXo" target="_blank" rel="noopener">2014 video</a>
+<a class="sffr-traditions-link" href="https://youtu.be/o-d6F-gtBWs" target="_blank" rel="noopener">2016 video</a>
+</div>
+</div>
+</article>
+<article class="sffr-traditions-card">
+<div class="sffr-traditions-card-top">
+<span class="sffr-traditions-year">1999</span>
+<span class="sffr-traditions-number">03</span>
+</div>
+<div class="sffr-traditions-card-body">
+<h2>The Little Black Dress Run</h2>
+<p>In 1999, Anne Ludwig and Terri Hill of Baylands FrontRunners organized the first Little Black Dress Run. The event grew from a desire to hold a San Francisco event similar to the San Diego Hash House Harriers’ Red Dress Run.</p>
+<p>An original logo was designed for the event. The social, leisurely run has continued through the years, and the club carries on the tradition today.</p>
+<div class="sffr-traditions-links">
+<a class="sffr-traditions-link" href="https://photos.app.goo.gl/5VA3iqVYXNb8Vt1U8" target="_blank" rel="noopener">View photos</a>
+<a class="sffr-traditions-link" href="https://youtu.be/3ZX3iKo3Uc0" target="_blank" rel="noopener">Watch the 2017 video</a>
+</div>
+</div>
+</article>
+<article class="sffr-traditions-card">
+<div class="sffr-traditions-card-top">
+<span class="sffr-traditions-year">2020</span>
+<span class="sffr-traditions-number">04</span>
+</div>
+<div class="sffr-traditions-card-body">
+<h2>The Bronze Plaque at Blue Heron Lake</h2>
+<p>A 2019 inclusion grant from Brooks Running and International Front Runners began a year-long effort to give SFFR a permanent marker in Golden Gate Park.</p>
+<p>The result was a 4 by 8-inch bronze plaque installed in June 2020 on a green picnic table at what was then called Stow Lake.</p>
+<div class="sffr-traditions-links">
+<a class="sffr-traditions-link" href="/bronze-plaque">Read the full story</a>
+<a class="sffr-traditions-link" href="https://photos.app.goo.gl/sSgvbN2P6sycUdUs8" target="_blank" rel="noopener">View bronze plaque photos</a>
+</div>
+</div>
+</article>
+</div>
+<section class="sffr-traditions-next">
+<div>
+<h2>Meet the leaders behind the history</h2>
+<p>Browse the club’s officers and board members by decade.</p>
+</div>
+<a class="sffr-traditions-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=799217">View the Hall of Fame</a>
+</section>
+</div>
+</main>

@@ -1,0 +1,22 @@
+{
+  "site": "https://www.sffr.org",
+  "lastReviewed": "2026-08-29",
+  "pages": [
+    {"title":"Home","source":"https://www.sffr.org/content.aspx","file":"modules/home/index.html","type":"custom-content"},
+    {"title":"Monday Morning Run","moduleId":"799040","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=799040&page_id=22","file":"modules/weekly-runs/monday.html","type":"custom-content"},
+    {"title":"Tuesday Evening Run","moduleId":"464093","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=464093&page_id=22","file":"modules/weekly-runs/tuesday.html","type":"custom-content"},
+    {"title":"Thursday Evening Run","moduleId":"464094","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=464094&page_id=22","file":"modules/weekly-runs/thursday.html","type":"custom-content"},
+    {"title":"Saturday Morning Run","moduleId":"464091","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=464091&page_id=22","file":"modules/weekly-runs/saturday.html","type":"custom-content"},
+    {"title":"Membership Overview","moduleId":"416033","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=416033&page_id=22","file":"modules/membership/overview.html","type":"custom-content"},
+    {"title":"SFFR Board","source":"https://www.sffr.org/board","file":"modules/about/board.html","type":"custom-content"},
+    {"title":"Club History","moduleId":"462070","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=462070&page_id=22","file":"modules/about/history.html","type":"custom-content"},
+    {"title":"Race Circuit Home","moduleId":"780323","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=780323&page_id=22","file":"modules/race-circuit/index.html","type":"custom-content"},
+    {"title":"2026 Race Calendar","moduleId":"782904","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=782904&page_id=22","file":"modules/race-circuit/2026-calendar.html","type":"custom-content"},
+    {"title":"Race Circuit FAQs","moduleId":"782913","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=782913&page_id=22","file":"modules/race-circuit/faqs.html","type":"custom-content"},
+    {"title":"Pride 10K Build","moduleId":"782842","source":"https://www.sffr.org/content.aspx?club_id=801899&module_id=782842&page_id=22","file":"modules/programs/pride-10k-build.html","type":"custom-content"}
+  ],
+  "platformGeneratedExclusions": [
+    {"title":"Events","source":"https://www.sffr.org/content.aspx?action=cira&club_id=801899&page_id=4001"},
+    {"title":"Contact Us","source":"https://www.sffr.org/content.aspx?club_id=801899&page_id=4"}
+  ]
+}

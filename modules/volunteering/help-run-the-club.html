@@ -1,0 +1,205 @@
+<!--
+  SFFR HELP RUN THE CLUB
+  Recommended ClubExpress quick link: sffr.org/volunteer
+  Paste this entire file into the ClubExpress HTML editor for module 796515.
+-->
+<style>
+    .sffr-help,.sffr-help *{box-sizing:border-box}
+    .sffr-help{--ink:#28242f;--muted:#68626e;--plum:#472765;--plum-dark:#2d173f;--lav:#f3edf7;--coral:#e9695d;--coral-soft:#fff0ed;--gold:#f1b83c;--green:#28745b;--paper:#fffdf8;--line:#e2d8e8;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;overflow:hidden}
+    .sffr-help a{color:var(--plum)}
+    .sffr-help-inner,.sffr-help-section{margin:0 auto;max-width:1140px}
+    .sffr-help-hero{background:linear-gradient(135deg,var(--plum-dark),var(--plum));color:#fff;padding:clamp(52px,7vw,88px) 22px}
+    .sffr-help-hero-grid{align-items:center;display:grid;gap:46px;grid-template-columns:minmax(0,1fr) minmax(300px,440px)}
+    .sffr-help-kicker,.sffr-help-label{color:#f7d36f;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 14px;text-transform:uppercase}
+    .sffr-help-hero h1{color:#fff;font-size:clamp(43px,7vw,72px);letter-spacing:-.045em;line-height:1.01;margin:0 0 20px}
+    .sffr-help-hero-copy{color:rgba(255,255,255,.83);font-size:clamp(18px,2vw,21px);margin:0;max-width:700px}
+    .sffr-help-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+    .sffr-help-button{background:#fff;border:2px solid #fff;border-radius:999px;color:var(--plum-dark)!important;display:inline-block;font-size:14px;font-weight:800;padding:11px 18px;text-decoration:none}
+    .sffr-help-button-alt{background:transparent;color:#fff!important}
+    .sffr-help-hero-photo{background:#fff;border:8px solid rgba(255,255,255,.14);border-radius:22px;box-shadow:0 22px 52px rgba(24,10,34,.3);display:block;overflow:hidden;transform:rotate(1.5deg)}
+    .sffr-help-hero-photo img{display:block;height:330px;object-fit:cover;width:100%}
+    .sffr-help-nav{background:#fff;border-bottom:1px solid var(--line)}
+    .sffr-help-nav-inner{display:flex;gap:9px;overflow-x:auto;padding:15px 22px;scrollbar-width:none}
+    .sffr-help-nav-inner::-webkit-scrollbar{display:none}
+    .sffr-help-nav a{background:var(--lav);border-radius:999px;flex:0 0 auto;font-size:13px;font-weight:800;padding:7px 13px;text-decoration:none}
+    .sffr-help-section{padding:clamp(58px,8vw,88px) 22px;scroll-margin-top:20px}
+    .sffr-help-heading{margin-bottom:30px;max-width:820px}
+    .sffr-help-label{color:var(--coral)}
+    .sffr-help-heading h2{color:var(--plum-dark);font-size:clamp(31px,5vw,47px);letter-spacing:-.035em;line-height:1.1;margin:0 0 12px}
+    .sffr-help-heading p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-help-intro-grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+    .sffr-help-intro-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px}
+    .sffr-help-intro-card b{align-items:center;background:var(--coral-soft);border-radius:50%;color:var(--coral);display:flex;font-size:15px;height:42px;justify-content:center;margin-bottom:20px;width:42px}
+    .sffr-help-intro-card h3{color:var(--plum-dark);font-size:20px;margin:0 0 8px}
+    .sffr-help-intro-card p{color:var(--muted);font-size:14px;margin:0}
+    .sffr-help-tinted{background:var(--lav);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
+    .sffr-help-roles{display:grid;gap:13px;grid-template-columns:1fr 1fr}
+    .sffr-help-role{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .sffr-help-role summary{align-items:center;color:var(--plum-dark);cursor:pointer;display:flex;font-size:18px;font-weight:800;gap:14px;justify-content:space-between;list-style:none;padding:21px 23px}
+    .sffr-help-role summary::-webkit-details-marker{display:none}
+    .sffr-help-role summary:after{align-items:center;background:var(--lav);border-radius:50%;content:'+';display:flex;flex:0 0 auto;font-size:21px;height:32px;justify-content:center;width:32px}
+    .sffr-help-role[open] summary:after{content:'×'}
+    .sffr-help-role-body{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:18px 23px 23px}
+    .sffr-help-role-body p{margin:0}
+    .sffr-help-role-body p+p{margin-top:10px}
+    .sffr-help-role-body a{font-weight:800}
+    .sffr-help-role-tag{color:var(--coral);font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .sffr-help-feature{background:linear-gradient(135deg,#fff3d7,#fffaf0);border-color:#efd48f;margin-top:14px}
+    .sffr-help-feature summary{display:grid;gap:24px;grid-template-columns:150px 1fr;padding:20px}
+    .sffr-help-feature summary:after{grid-column:3;grid-row:1}
+    .sffr-help-feature-copy{align-self:center}
+    .sffr-help-feature-date{background:#fff;border:1px solid #efd48f;border-radius:15px;color:var(--plum-dark);padding:19px;text-align:center}
+    .sffr-help-feature-date b{display:block;font-size:35px;letter-spacing:-.04em;line-height:1}
+    .sffr-help-feature-date span{color:var(--coral);font-size:12px;font-weight:800;text-transform:uppercase}
+    .sffr-help-feature h3{color:var(--plum-dark);font-size:25px;margin:0 0 7px}
+    .sffr-help-feature p{color:var(--muted);font-size:14px;font-weight:400;margin:0}
+    .sffr-help-create{background:var(--plum-dark);color:#fff}
+    .sffr-help-create-grid{align-items:center;display:grid;gap:40px;grid-template-columns:1fr auto}
+    .sffr-help-create h2{color:#fff;font-size:clamp(31px,5vw,47px);letter-spacing:-.035em;line-height:1.1;margin:0 0 10px}
+    .sffr-help-create p{color:rgba(255,255,255,.75);font-size:17px;margin:0;max-width:720px}
+    .sffr-help-footer{background:#1f102c;color:rgba(255,255,255,.72);padding:25px 22px;text-align:center}
+    .sffr-help-footer p{margin:0}
+    @media(hover:hover){.sffr-help-button,.sffr-help-intro-card,.sffr-help-role,.sffr-help-hero-photo{transition:transform .2s ease,box-shadow .2s ease}.sffr-help-button:hover{transform:translateY(-1px)}.sffr-help-intro-card:hover,.sffr-help-role:hover{box-shadow:0 13px 30px rgba(45,23,63,.1);transform:translateY(-2px)}.sffr-help-hero-photo:hover{transform:rotate(0)}}
+    @media(max-width:850px){.sffr-help-hero-grid{grid-template-columns:1fr}.sffr-help-hero-photo{max-width:560px}.sffr-help-intro-grid{grid-template-columns:1fr}.sffr-help-create-grid{grid-template-columns:1fr}}
+    @media(max-width:680px){.sffr-help-hero-photo{display:none}.sffr-help-roles{grid-template-columns:1fr}.sffr-help-feature summary{grid-template-columns:1fr}.sffr-help-feature summary:after{grid-column:2;grid-row:1}.sffr-help-feature-date{max-width:155px}}
+</style>
+<div class="sffr-help">
+<section class="sffr-help-hero">
+<div class="sffr-help-inner sffr-help-hero-grid">
+<div>
+<p class="sffr-help-kicker">Many hands. One community.</p>
+<h1>Help run the club</h1>
+<p class="sffr-help-hero-copy">SF FrontRunners thrives because members share their time, skills, ideas, and care. Choose a one-time task, a recurring role, or a project that fits what you enjoy.</p>
+<div class="sffr-help-actions"><a class="sffr-help-button" href="https://forms.gle/bkVNw9VaVhRjKNma6" target="_blank" rel="noopener">Tell us how you can help</a><a class="sffr-help-button sffr-help-button-alt" href="#opportunities">Explore opportunities</a></div>
+</div>
+<a class="sffr-help-hero-photo" href="https://images.clubexpress.com/801899/photos/original/0226b0f3-ff8c-4668-908c-c74cb4b51036_1160716828.jpg" target="_blank" rel="noopener" aria-label="Open the full-size volunteer photo"><img src="https://images.clubexpress.com/801899/photos/original/0226b0f3-ff8c-4668-908c-c74cb4b51036_1160716828.jpg" alt="SF FrontRunners members volunteering together"></a>
+</div>
+</section>
+<nav class="sffr-help-nav" aria-label="Volunteer opportunity categories">
+<div class="sffr-help-inner sffr-help-nav-inner"><a href="#form1023">Form 1023 project</a><a href="#recurring">Recurring roles</a><a href="#seasonal">Seasonal events</a><a href="#create">Create something new</a></div>
+</nav>
+<section class="sffr-help-section">
+<div class="sffr-help-heading">
+<p class="sffr-help-label">Find your fit</p>
+<h2>Volunteer in a way that works for you</h2>
+<p>You do not need to take on a board position to make a meaningful difference. Clear, focused contributions keep our runs, socials, stories, and club operations moving.</p>
+</div>
+<div class="sffr-help-intro-grid">
+<article class="sffr-help-intro-card"><b>01</b>
+<h3>Use your strengths</h3>
+<p>Bring professional experience, practical skills, creative energy, or simply a willingness to pitch in.</p>
+</article>
+<article class="sffr-help-intro-card"><b>02</b>
+<h3>Choose your pace</h3>
+<p>Help once, host monthly, or join a short-term project team with a clear finish line.</p>
+</article>
+<article class="sffr-help-intro-card"><b>03</b>
+<h3>Build connection</h3>
+<p>Meet members while helping create the welcoming community we all want to experience.</p>
+</article>
+</div>
+</section>
+<section class="sffr-help-tinted" id="opportunities">
+<div class="sffr-help-section" id="form1023">
+<div class="sffr-help-heading">
+<p class="sffr-help-label">Short-term priority</p>
+<h2>Form 1023 project team</h2>
+<p>Help SFFR prepare its federal tax-exemption application. We are forming three small work groups, with two volunteers in each area. <a href="https://docs.google.com/document/d/10Cc-SdLUPSuwiHExYWy1b01ssed_sF_M1zK2npXaDOQ/edit?usp=sharing" target="_blank" rel="noopener">Read the full role details</a>.</p>
+</div>
+<div class="sffr-help-roles">
+<details class="sffr-help-role"><summary><span><span class="sffr-help-role-tag">2 volunteers</span><br>
+Governance &amp; Bylaws</span></summary>
+<div class="sffr-help-role-body">
+<p>Review the club’s governing documents and help ensure the application accurately reflects how SFFR is organized and operated.</p>
+<p><a href="https://docs.google.com/document/d/10Cc-SdLUPSuwiHExYWy1b01ssed_sF_M1zK2npXaDOQ/edit?usp=sharing" target="_blank" rel="noopener">View project details</a></p>
+</div>
+</details>
+<details class="sffr-help-role"><summary><span><span class="sffr-help-role-tag">2 volunteers</span><br>
+Programs &amp; Operations</span></summary>
+<div class="sffr-help-role-body">
+<p>Describe the club’s activities, programs, community impact, and day-to-day operations for the application narrative.</p>
+<p><a href="https://docs.google.com/document/d/10Cc-SdLUPSuwiHExYWy1b01ssed_sF_M1zK2npXaDOQ/edit?usp=sharing" target="_blank" rel="noopener">View project details</a></p>
+</div>
+</details>
+<details class="sffr-help-role"><summary><span><span class="sffr-help-role-tag">2 volunteers</span><br>
+Finance &amp; Accounting</span></summary>
+<div class="sffr-help-role-body">
+<p>Help assemble financial information and projections. Former Treasurer Peter Graney has offered support and historical context.</p>
+<p><a href="https://docs.google.com/document/d/10Cc-SdLUPSuwiHExYWy1b01ssed_sF_M1zK2npXaDOQ/edit?usp=sharing" target="_blank" rel="noopener">View project details</a></p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<section class="sffr-help-section" id="recurring">
+<div class="sffr-help-heading">
+<p class="sffr-help-label">Recurring opportunities</p>
+<h2>Make a regular moment possible</h2>
+<p>These roles create reliable touchpoints for members. Open a role to see what is involved.</p>
+</div>
+<div class="sffr-help-roles">
+<details class="sffr-help-role" open=""><summary>👟 Shoe Donation Coordinator</summary>
+<div class="sffr-help-role-body">
+<p>Organize a twice-yearly collection of gently used, wearable shoes from club members. Gather the donations and deliver them to local thrift stores or community organizations for reuse.</p>
+</div>
+</details>
+<details class="sffr-help-role"><summary>Monthly Supper Club Host</summary>
+<div class="sffr-help-role-body">
+<p>Choose a restaurant, set the details, welcome attendees, and help members connect around the table.</p>
+</div>
+</details>
+<details class="sffr-help-role"><summary>Monthly Social Host</summary>
+<div class="sffr-help-role-body">
+<p>Plan an approachable social activity that gives new and longtime members another way to spend time together.</p>
+</div>
+</details>
+<details class="sffr-help-role"><summary>Monthly Movie Night Host</summary>
+<div class="sffr-help-role-body">
+<p>Select a film and coordinate a casual movie outing or gathering for members.</p>
+</div>
+</details>
+<details class="sffr-help-role"><summary>Digital Storyteller &amp; Community Engagement Lead</summary>
+<div class="sffr-help-role-body">
+<p>Help share member stories, events, milestones, and community moments through SFFR’s digital channels.</p>
+</div>
+</details>
+</div>
+</section>
+<section class="sffr-help-tinted">
+<div class="sffr-help-section" id="seasonal">
+<div class="sffr-help-heading">
+<p class="sffr-help-label">Annual and seasonal</p>
+<h2>Pitch in for a special event</h2>
+<p>Prefer a one-day commitment? These club traditions benefit from setup, logistics, hospitality, and cleanup support.</p>
+</div>
+<details class="sffr-help-role sffr-help-feature"><summary><span class="sffr-help-feature-date">Sunday<b>Aug 30</b>2026</span><span class="sffr-help-feature-copy">
+<h3>Drag Brunch Fundraiser</h3>
+<p>One special day, many ways to pitch in.</p>
+</span></summary>
+<div class="sffr-help-role-body">
+<p>Volunteer from 10:00 a.m. to 3:00 p.m. with setup, teardown, and event logistics.</p>
+</div>
+</details>
+<details class="sffr-help-role sffr-help-feature"><summary><span class="sffr-help-feature-date">October<b>TBD</b>Golden Gate Park</span><span class="sffr-help-feature-copy">
+<h3>Friends &amp; Family Day</h3>
+<p>Help make a welcoming club tradition happen.</p>
+</span></summary>
+<div class="sffr-help-role-body">
+<p>Help with setup, teardown, coffee, Costco pickup, and the practical details that make the day welcoming.</p>
+</div>
+</details>
+</div>
+</section>
+<section class="sffr-help-create" id="create">
+<div class="sffr-help-section sffr-help-create-grid">
+<div>
+<p class="sffr-help-kicker">Have another idea?</p>
+<h2>Create something new</h2>
+<p>If you see an opportunity that is not listed here, tell us what you would like to build. A new run, gathering, project, or member resource may start with your idea.</p>
+</div>
+<a class="sffr-help-button" href="https://forms.gle/bkVNw9VaVhRjKNma6" target="_blank" rel="noopener">Share your interest or idea</a></div>
+</section>
+<footer class="sffr-help-footer">
+<p>Every contribution helps SF FrontRunners stay welcoming, active, and connected.</p>
+</footer>
+</div>

@@ -1,0 +1,736 @@
+<style>
+    * {
+    box-sizing: border-box;
+    }
+    .legacy-page {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #fafafa;
+    padding-bottom: 70px;
+    }
+    .legacy-hero {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 58px 24px 34px;
+    text-align: center;
+    }
+    .legacy-eyebrow {
+    color: #6f52a3;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    }
+    .legacy-hero h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1.08;
+    color: #4b2e83;
+    margin: 0 0 18px;
+    }
+    .legacy-hero p {
+    max-width: 760px;
+    margin: auto;
+    color: #626262;
+    line-height: 1.75;
+    font-size: 18px;
+    }
+    .decade-nav {
+    max-width: 1100px;
+    margin: 0 auto 28px;
+    padding: 0 20px;
+    }
+    .decade-nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    .decade-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 10px 12px;
+    border: 2px solid #4b2e83;
+    border-radius: 12px;
+    color: #4b2e83;
+    background: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    transition: 0.2s;
+    }
+    .decade-nav a:hover,
+    .decade-nav a:focus {
+    background: #ede7f8;
+    transform: translateY(-2px);
+    }
+    .decade-nav a[aria-current="page"] {
+    background: #4b2e83;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(75, 46, 131, 0.25);
+    }
+    .year-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+    padding: 12px 20px;
+    margin-bottom: 46px;
+    }
+    .year-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    }
+    .year-nav a {
+    display: block;
+    text-decoration: none;
+    color: #4b2e83;
+    padding: 8px 13px;
+    border-radius: 999px;
+    font-weight: 700;
+    }
+    .year-nav a:hover,
+    .year-nav a:focus {
+    background: #ede7f8;
+    }
+    .timeline {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 24px;
+    position: relative;
+    }
+    .timeline:before {
+    content: "";
+    position: absolute;
+    left: 45px;
+    top: 12px;
+    bottom: 0;
+    width: 3px;
+    background: #ddd4eb;
+    }
+    .year-section {
+    position: relative;
+    margin-bottom: 66px;
+    padding-left: 76px;
+    scroll-margin-top: 90px;
+    }
+    .year-section:before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 12px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4b2e83;
+    border: 5px solid #fafafa;
+    box-shadow: 0 0 0 3px #4b2e83;
+    }
+    .year-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    }
+    .year-heading h2 {
+    margin: 0;
+    font-size: 38px;
+    color: #4b2e83;
+    }
+    .year-tag {
+    background: #ede7f8;
+    color: #4b2e83;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    }
+    .board-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    }
+    .board-card {
+    background: #fff;
+    border: 1px solid #eee8f6;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 7px 22px rgba(44, 29, 73, 0.07);
+    border-top: 5px solid #6f52a3;
+    }
+    .board-photo {
+    display: block;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #6f52a3;
+    background: #ede7f8;
+    }
+    .board-role {
+    color: #6f52a3;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+    }
+    .board-name {
+    font-size: 19px;
+    font-weight: 750;
+    line-height: 1.35;
+    }
+    .source-note,
+    .footer-note {
+    max-width: 850px;
+    margin: 45px auto 0;
+    padding: 0 24px;
+    text-align: center;
+    color: #666;
+    line-height: 1.7;
+    }
+    .footer-note h2 {
+    color: #4b2e83;
+    }
+    .source-note {
+    font-size: 14px;
+    }
+    .back-top {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4b2e83;
+    font-weight: 700;
+    }
+    @media (max-width: 900px) {
+    .decade-nav ul {
+    grid-template-columns: repeat(3, 1fr);
+    }
+    .board-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    }
+    @media (max-width: 600px) {
+    .legacy-hero {
+    padding-top: 38px;
+    }
+    .legacy-hero p {
+    font-size: 16px;
+    }
+    .decade-nav ul {
+    grid-template-columns: 1fr 1fr;
+    }
+    .decade-nav li:first-child {
+    grid-column: 1/-1;
+    }
+    .year-nav {
+    position: relative;
+    }
+    .timeline:before,
+    .year-section:before {
+    display: none;
+    }
+    .year-section {
+    padding-left: 0;
+    }
+    .year-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    }
+    .board-grid {
+    grid-template-columns: 1fr;
+    }
+    .board-card {
+    padding: 19px;
+    }
+    .year-heading h2 {
+    font-size: 34px;
+    }
+    }
+    .board-photo-link {
+    display: block;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    cursor: zoom-in;
+    }
+    .board-photo-link .board-photo {
+    margin: 0;
+    transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+    }
+    .board-photo-link:hover .board-photo,
+    .board-photo-link:focus .board-photo {
+    transform: scale(1.04);
+    filter: brightness(0.92);
+    }
+    .board-photo-link:focus-visible {
+    outline: 3px solid #4b2e83;
+    outline-offset: 4px;
+    }
+    .board-photo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(20, 14, 30, 0.78);
+    }
+    .board-photo-modal.is-open {
+    display: flex;
+    }
+    .board-photo-modal-dialog {
+    position: relative;
+    width: min(92vw, 600px);
+    max-height: 88vh;
+    padding: 16px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+    .board-photo-modal-image {
+    display: block;
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 10px;
+    }
+    .board-photo-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(32, 22, 47, 0.88);
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 1;
+    }
+    .board-photo-modal-close:hover,
+    .board-photo-modal-close:focus {
+    background: #4b2e83;
+    }
+    .board-photo-modal-close:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    }
+</style>
+<div class="legacy-page" id="top">
+<section class="legacy-hero">
+<p class="legacy-eyebrow">San Francisco FrontRunners</p>
+<h1>Leadership Hall of Fame</h1>
+<p>
+Since our founding, countless volunteers have shaped San Francisco
+FrontRunners through their leadership, dedication, and service. Explore
+the club's leadership history by decade.
+</p>
+</section>
+<nav class="decade-nav" aria-label="Leadership history by decade">
+<ul>
+    <li><a href="https://sffr.org/halloffame">2020-Current</a></li>
+    <li><a href="https://sffr.org/halloffame2010-2019">2010-2019</a></li>
+    <li>
+    <a href="https://sffr.org/halloffame2000-2009" aria-current="page">2000-2009</a>
+    </li>
+    <li><a href="https://sffr.org/halloffame1990-1999">1990-1999</a></li>
+    <li><a href="https://sffr.org/halloffame1974-1989">1974-1989</a></li>
+</ul>
+</nav>
+<nav class="year-nav" aria-label="Years on this page">
+<ul>
+    <li><a href="#y2009">2009</a></li>
+    <li><a href="#y2008">2008</a></li>
+    <li><a href="#y2007">2007</a></li>
+    <li><a href="#y2006">2006</a></li>
+    <li><a href="#y2005">2005</a></li>
+    <li><a href="#y2004">2004</a></li>
+    <li><a href="#y2003">2003</a></li>
+    <li><a href="#y2002">2002</a></li>
+    <li><a href="#y2001">2001</a></li>
+    <li><a href="#y2000">2000</a></li>
+</ul>
+</nav>
+<main class="timeline">
+<section class="year-section" id="y2009">
+<div class="year-heading">
+<h2>2009</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Ryan_Salma_1941108879.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Ryan_Salma_1941108879.JPG" alt="Photo needed for Ryan Salma" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Ryan Salma</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Ryan_Keryan_763495001.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Ryan_Keryan_763495001.JPG" alt="Photo needed for Ryan Kerian" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Ryan Kerian</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Keith_Calkins_1046736725.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Keith_Calkins_1046736725.JPG" alt="Photo needed for Keith Calkins" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Keith Calkins</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Steve_Miller_1660434472.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Steve_Miller_1660434472.JPG" alt="Photo needed for Steve Miller" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Steve Miller</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2008">
+<div class="year-heading">
+<h2>2008</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Bill_McCarty_1038249438.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Bill_McCarty_1038249438.JPG" alt="Photo needed for Bill McCarty" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Bill McCarty</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/original/Chuck_Louden2_1462694694.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/original/Chuck_Louden2_1462694694.jpg" alt="Photo needed for Chuck Louden" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Chuck Louden</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Darlene_Hall_1175258438.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Darlene_Hall_1175258438.JPG" alt="Photo needed for Darlene Hall" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Darlene Hall</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Brenda_Stowers_2003544915.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Brenda_Stowers_2003544915.JPG" alt="Photo needed for Brenda Stowers" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Brenda Stowers</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2007">
+<div class="year-heading">
+<h2>2007</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Brian_Hill_104381897.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Brian_Hill_104381897.JPG" alt="Photo needed for Brian Charles Hill" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Brian Charles Hill</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/original/Bill_McCarty_1038249438.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/original/Bill_McCarty_1038249438.JPG" alt="Photo needed for Bill McCarty" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Bill McCarty</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/original/Chuck_Louden2_1462694694.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/original/Chuck_Louden2_1462694694.jpg" alt="Photo needed for Chuck Louden" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Chuck Louden</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Robert_Chan_1917057054.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Robert_Chan_1917057054.JPG" alt="Photo needed for Robert Chan" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Robert Chan</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2006">
+<div class="year-heading">
+<h2>2006</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/original/Reggie_Snowden_1958102396.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/original/Reggie_Snowden_1958102396.JPG" alt="Photo needed for Reggie Snowden" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Reggie Snowden</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Jeffrey_Chu_2_702504981.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Jeffrey_Chu_2_702504981.JPG" alt="Photo needed for Jeffrey Chu" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Jeffrey Chu</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Nancy_Andrews_367682684.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Nancy_Andrews_367682684.JPG" alt="Photo needed for Nancy Andrews" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Nancy Andrews</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Jeffry_Leach_685963406.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Jeffry_Leach_685963406.JPG" alt="Photo needed for Jeffrey Leach" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Jeffrey Leach</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2005">
+<div class="year-heading">
+<h2>2005</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Garrett_Hayashida_162504227.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Garrett_Hayashida_162504227.jpg" alt="Photo needed for Garrett Hayashida" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Garrett Hayashida</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Howard_Chan_307549833.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Howard_Chan_307549833.jpg" alt="Photo needed for Howie Chan" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Howard Chan</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Paget_Valentaz_104467342.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Paget_Valentaz_104467342.JPG" alt="Photo needed for Paget Valentzas" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Paget Valentzas</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="https://placehold.co/300x300.png?text=Photo+Needed" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="https://placehold.co/300x300.png?text=Photo+Needed" alt="Photo needed for Michael Burdick" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Michael Burdick</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2004">
+<div class="year-heading">
+<h2>2004</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Garrett_Hayashida_162504227.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Garrett_Hayashida_162504227.jpg" alt="Photo needed for Garrett Hayashida" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Garrett Hayashida</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Eileen_Murphy_1798362229.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Eileen_Murphy_1798362229.JPG" alt="Photo needed for Eileen Murphy" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Eileen Murphy</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Andrew_Chandler_630585451.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Andrew_Chandler_630585451.JPG" alt="Photo needed for Andrew Chandler" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Andrew Chandler</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Alan_Vitolo_930000353.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Alan_Vitolo_930000353.JPG" alt="Photo needed for Alan Vitolo" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Alan Vitolo</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2003">
+<div class="year-heading">
+<h2>2003</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Michael_Tomas_1541372102.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Michael_Tomas_1541372102.JPG" alt="Photo needed for Michael Tomas" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Michael Tomas</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Brian_Hill_104381897.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Brian_Hill_104381897.JPG" alt="Photo needed for Brian Hill" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Brian C Hill</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Eileen_Murphy_1798362229.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Eileen_Murphy_1798362229.JPG" alt="Photo needed for Eileen Murphy" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Eileen Murphy</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Garrett_Hayashida_162504227.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Garrett_Hayashida_162504227.jpg" alt="Photo needed for Garrett Hayashida" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Garrett Hayashida</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2002">
+<div class="year-heading">
+<h2>2002</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Jeffrey_Chu_2_702504981.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Jeffrey_Chu_2_702504981.JPG" alt="Photo needed for Jeffrey Chu" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Jeffrey Chu</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/original/Reggie_Snowden_1958102396.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/original/Reggie_Snowden_1958102396.JPG" alt="Photo needed for Reggie Snowden" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Reggie Snowden</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Eileen_Murphy_1798362229.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Eileen_Murphy_1798362229.JPG" alt="Photo needed for Eileen Murphy" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Eileen Murphy</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Steve_Benne_136286340.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Steve_Benne_136286340.JPG" alt="Photo needed for Steve Benne" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Steve Benne</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2001">
+<div class="year-heading">
+<h2>2001</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Erling_Eia_824046981.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Erling_Eia_824046981.jpg" alt="Photo needed for Erling Eia" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Erling Eia</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="https://placehold.co/300x300.png?text=Photo+Needed" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="https://placehold.co/300x300.png?text=Photo+Needed" alt="Photo needed for Dan Dean" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Dan Dean</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Brenda_Stowers_2003544915.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Brenda_Stowers_2003544915.JPG" alt="Photo needed for Brenda Stowers" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Brenda Stowers</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Jeffrey_Chu_2_702504981.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Jeffrey_Chu_2_702504981.JPG" alt="Photo needed for Jeffrey Chu" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Jeffrey Chu</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+<section class="year-section" id="y2000">
+<div class="year-heading">
+<h2>2000</h2>
+<div class="year-tag">Club Leadership</div>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Brenda_Stowers_2003544915.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Brenda_Stowers_2003544915.JPG" alt="Photo needed for Brenda Stowers" data-photo-status="needed"></a>
+<div class="board-role">President</div>
+<div class="board-name">Brenda Stowers</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Anne_Ludwig_851261641.jpg" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Anne_Ludwig_851261641.jpg" alt="Photo needed for Anne Ludwig" data-photo-status="needed"></a>
+<div class="board-role">Vice-President</div>
+<div class="board-name">Anne M Ludwig</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Tim_Gaffney_1123054464.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Tim_Gaffney_1123054464.JPG" alt="Photo needed for Tim Gaffney" data-photo-status="needed"></a>
+<div class="board-role">Secretary</div>
+<div class="board-name">Tim Gaffney</div>
+</div>
+<div class="board-card">
+<a class="board-photo-link" href="//images.clubexpress.com/801899/photos/screen/Kip_Darcy_515429890.JPG" aria-haspopup="dialog" title="Open full-size photo"><img class="board-photo" src="//images.clubexpress.com/801899/photos/screen/Kip_Darcy_515429890.JPG" alt="Photo needed for Kip Darcy" data-photo-status="needed"></a>
+<div class="board-role">Treasurer</div>
+<div class="board-name">Kip Darcy</div>
+</div>
+</div>
+<a class="back-top" href="#top">Back to top</a>
+</section>
+</main>
+<div class="footer-note">
+<h2>Thank You</h2>
+<p>
+Every leader listed here contributed time, energy, and care to help build
+the welcoming community San Francisco FrontRunners is today.
+</p>
+<p>
+<strong>Help us complete our photo archive.</strong> If you have a photo
+of any past officer whose photo is missing, please email it to
+<a href="mailto:tech@sffr.org">tech@sffr.org</a>.
+</p>
+</div>
+</div>
+<div class="board-photo-modal" id="board-photo-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Full-size board member photo">
+<div class="board-photo-modal-dialog">
+<button type="button" class="board-photo-modal-close" aria-label="Close full-size photo">
+×
+</button>
+<img class="board-photo-modal-image" alt="">
+</div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById("board-photo-modal");
+    if (!modal) return;
+
+    var modalImage = modal.querySelector(".board-photo-modal-image");
+    var closeButton = modal.querySelector(".board-photo-modal-close");
+    var photoLinks = document.querySelectorAll(
+      ".legacy-page .board-photo-link"
+    );
+    var lastTrigger = null;
+
+    function openModal(link, event) {
+      event.preventDefault();
+      var thumbnail = link.querySelector("img");
+      lastTrigger = link;
+      modalImage.src = link.href;
+      modalImage.alt = thumbnail
+        ? thumbnail.alt
+        : "Full-size board member photo";
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeButton.focus();
+    }
+
+    function closeModal() {
+      if (!modal.classList.contains("is-open")) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      modalImage.removeAttribute("src");
+      modalImage.alt = "";
+      document.body.style.overflow = "";
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    photoLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        openModal(link, event);
+      });
+    });
+
+    closeButton.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeModal();
+    });
+  })();
+</script>

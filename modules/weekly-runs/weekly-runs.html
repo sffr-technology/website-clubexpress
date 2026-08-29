@@ -1,0 +1,243 @@
+<style>
+    .sffr-runs-page {
+        font-family: Arial, sans-serif;
+    }
+
+    /* Hero */
+    .sffr-runs-hero {
+        background: none;
+        height: auto;
+        padding: 30px 20px;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .sffr-runs-overlay {
+        background: none;
+        padding: 0;
+        color: #333;
+        max-width: 900px;
+    }
+
+    .sffr-runs-overlay h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .sffr-runs-overlay p {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    /* Intro */
+    .sffr-intro {
+        text-align: left;
+        max-width: 100%;
+        margin: 0 0 40px;
+        padding: 0 20px;
+    }
+
+    .sffr-intro h2 {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .sffr-intro p {
+        font-size: 17px;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    /* Run Day Headers */
+    .sffr-run-content h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .sffr-run-content h3 a {
+        color: #0077cc;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .sffr-run-content h3 a:hover {
+        text-decoration: underline;
+    }
+
+    /* Schedule */
+    .sffr-schedule {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+    .sffr-run-card {
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .sffr-run-photo {
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .sffr-run-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sffr-run-content {
+        padding: 25px;
+    }
+
+    .sffr-run-content h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #0077cc;
+    }
+
+    .sffr-run-content p {
+        color: #555;
+        line-height: 1.5;
+    }
+
+    .sffr-time {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .sffr-location {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .sffr-button {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 12px 30px;
+        background: #0077cc;
+        color: white !important;
+        text-decoration: none !important;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    /* What to Expect */
+    .sffr-expect h2 {
+        text-align: left;
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    .sffr-expect-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .sffr-expect-item {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .sffr-expect-item h3 {
+        color: #0077cc;
+    }
+
+    /* Photo gallery */
+    .sffr-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 35px;
+    }
+
+    .sffr-photo-placeholder {
+        height: 220px;
+        background: #ddd;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #777;
+    }
+
+    @media(max-width:900px) {
+
+        .sffr-schedule,
+        .sffr-expect-grid,
+        .sffr-gallery {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<div class="sffr-runs-page">
+    <!-- Hero -->
+    <div class="sffr-runs-hero">
+        <div class="sffr-runs-overlay">
+            <h1>Weekly Runs & Walks</h1>
+        </div>
+    </div><!-- Intro -->
+    <div class="sffr-intro">
+        <h2>Find Your Pace. Find Your Community.</h2>
+        <p>Anyone is welcome to join our weekly runs and walks! Simply show up at any of our weekly meeting points!</p>
+        <p>Whether you’re training for a marathon, getting back into running, or simply looking for a fun way to meet people, you’ll find a welcoming community at SF FrontRunners.</p>
+        <p>After attending a few runs, we encourage you to support the club by becoming a member.</p>
+    </div><!-- Weekly Schedule -->
+    <div class="sffr-schedule">
+        <div class="sffr-run-card">
+            <div class="sffr-run-content">
+                <h3> <a href="https://sffr.org/content.aspx?page_id=22&club_id=801899&module_id=464093" target="_blank"> Tuesday </a></h3>
+                <div class="sffr-time">6:30 PM</div>
+                <p class="sffr-location">📍 Ferry Building</p><a class="sffr-button" href="https://maps.app.goo.gl/ZaKXgZBaabtevnQH7">Google Pin</a>
+            </div>
+        </div>
+        <div class="sffr-run-card">
+            <div class="sffr-run-content">
+                <h3> <a href="https://sffr.org/content.aspx?page_id=22&club_id=801899&module_id=464094" target="_blank"> Thursday </a></h3>
+                <div class="sffr-time">6:30 PM</div>
+                <p class="sffr-location">📍 FITNESS SF - Castro</p><a class="sffr-button" href="https://maps.app.goo.gl/JFCTBzvra3Yw1rLC9">Google Pin</a>
+            </div>
+        </div>
+        <div class="sffr-run-card">
+            <div class="sffr-run-content">
+                <h3> <a href="https://sffr.org/content.aspx?page_id=22&club_id=801899&module_id=464091" target="_blank"> Saturday </a></h3>
+                <div class="sffr-time">9:00 AM</div>
+                <p class="sffr-location">📍 Blue Heron Lake Boathouse</p><a class="sffr-button" href="https://maps.app.goo.gl/LNo3LZF9kTs7QdULA">Google Pin</a>
+            </div>
+        </div>
+    </div><!-- What to Expect -->
+    <div class="sffr-expect">
+        <h2>What To Expect</h2>
+        <div class="sffr-expect-grid">
+            <div class="sffr-expect-item">
+                <h3>👋 Meet the Group</h3>
+                <p> Before the run/walk begins, everyone introduces themselves and the Run Coordinator shares announcements about upcoming club events and activities. </p>
+            </div>
+            <div class="sffr-expect-item">
+                <h3>🏃 Run or Walk Your Way</h3>
+                <p> We’ll review suggested routes before heading out together. Choose a pace and distance that feels comfortable. </p>
+            </div>
+            <div class="sffr-expect-item">
+                <h3>🍻 Meet Back & Connect</h3>
+                <p> About 50 minutes later, we’ll return to the starting point to wrap up together. Many members stick around afterward to socialize, grab food, and continue the conversation.</p>
+            </div>
+        </div>
+    </div>
+</div>

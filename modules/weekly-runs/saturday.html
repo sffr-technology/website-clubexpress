@@ -1,0 +1,519 @@
+<style>
+    * {
+    box-sizing: border-box;
+    }
+    html {
+    scroll-behavior: smooth;
+    }
+    .saturday-page {
+    --purple: #4b2e83;
+    --purple-dark: #34205f;
+    --purple-light: #eee8f8;
+    --pink: #d94f91;
+    --ink: #2f2f35;
+    --muted: #66636d;
+    --line: #e5deef;
+    --surface: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: #faf9fc;
+    line-height: 1.65;
+    }
+    .saturday-page a {
+    color: var(--purple);
+    }
+    .saturday-page img {
+    display: block;
+    max-width: 100%;
+    }
+    .saturday-container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    }
+    .saturday-hero {
+    padding: 58px 0 38px;
+    background: #f0e8f7;
+    border-bottom: 1px solid #e2d7ee;
+    text-align: center;
+    }
+    .saturday-eyebrow {
+    margin: 0 0 10px;
+    color: var(--pink);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    }
+    .saturday-hero h1 {
+    margin: 0 0 18px;
+    color: var(--purple);
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.08;
+    }
+    .saturday-hero p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.75;
+    }
+    .saturday-hero-photo {
+    position: relative;
+    overflow: hidden;
+    margin-top: 34px;
+    border-radius: 24px;
+    box-shadow: 0 18px 44px rgba(52, 32, 95, 0.18);
+    }
+    .saturday-hero-photo img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    }
+    /* TEMPORARY AUGUST 8 ANNOUNCEMENT STYLES: Remove after Saturday, August 8. */
+    .saturday-special-alert {
+    max-width: 880px;
+    margin: 30px auto 0;
+    padding: 26px;
+    border: 2px solid #d89418;
+    border-radius: 20px;
+    background: #fff4d6;
+    box-shadow: 0 10px 28px rgba(99, 65, 8, 0.12);
+    text-align: left;
+    }
+    .saturday-special-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: #8a4f00;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    }
+    .saturday-special-alert h2 {
+    margin: 0 0 10px;
+    color: #6b3d00;
+    font-size: clamp(25px, 4vw, 32px);
+    line-height: 1.2;
+    }
+    .saturday-special-alert p {
+    max-width: none;
+    margin: 0;
+    color: #4d3a1d;
+    font-size: 16px;
+    line-height: 1.65;
+    }
+    .saturday-special-alert p + p {
+    margin-top: 10px;
+    }
+    .saturday-special-alert a {
+    color: #6b3d00;
+    font-weight: 800;
+    }
+    /* END TEMPORARY AUGUST 8 ANNOUNCEMENT STYLES */
+    .saturday-section {
+    padding: 44px 0;
+    }
+    .saturday-section-heading {
+    max-width: 790px;
+    margin-bottom: 24px;
+    }
+    .saturday-section-heading h2 {
+    margin: 0 0 10px;
+    color: var(--purple);
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.2;
+    }
+    .saturday-section-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    }
+    .saturday-details {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+    }
+    .saturday-detail-card {
+    min-height: 185px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 24px rgba(52, 32, 95, 0.07);
+    }
+    .saturday-detail-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 28px;
+    }
+    .saturday-detail-card strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--purple);
+    font-size: 17px;
+    }
+    .saturday-detail-card p {
+    margin: 0;
+    color: var(--muted);
+    }
+    .saturday-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: 2px solid var(--purple);
+    border-radius: 999px;
+    background: var(--purple);
+    color: #ffffff !important;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.2s ease;
+    }
+    .saturday-button:hover,
+    .saturday-button:focus {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+    transform: translateY(-2px);
+    }
+    .saturday-button-secondary {
+    background: #ffffff;
+    color: var(--purple) !important;
+    }
+    .saturday-route-list {
+    display: grid;
+    gap: 28px;
+    }
+    .saturday-route-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: 0 10px 30px rgba(52, 32, 95, 0.08);
+    }
+    .saturday-route-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: #ece8f2;
+    }
+    .saturday-route-gallery img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    }
+    .saturday-route-gallery img + img {
+    border-left: 4px solid #ffffff;
+    }
+    .saturday-route-gallery-single {
+    grid-template-columns: 1fr;
+    }
+    .saturday-route-map {
+    object-fit: contain !important;
+    background: #f4f1f8;
+    }
+    .saturday-route-content {
+    padding: 28px;
+    }
+    .saturday-route-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 12px;
+    }
+    .saturday-route-title h3 {
+    margin: 0;
+    color: var(--purple);
+    font-size: 28px;
+    }
+    .saturday-route-badge {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    }
+    .saturday-route-content p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 16px;
+    }
+    .saturday-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    }
+    .saturday-info-panel {
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    }
+    .saturday-info-panel h3 {
+    margin: 0 0 14px;
+    color: var(--purple);
+    font-size: 24px;
+    }
+    .saturday-info-panel ul {
+    margin: 0;
+    padding-left: 21px;
+    color: var(--muted);
+    }
+    .saturday-info-panel li + li {
+    margin-top: 9px;
+    }
+    .saturday-connect {
+    margin-top: 10px;
+    padding: 38px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: #ffffff;
+    text-align: center;
+    }
+    .saturday-connect h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 34px;
+    }
+    .saturday-connect p {
+    max-width: 740px;
+    margin: 0 auto 22px;
+    color: #f2edf9;
+    font-size: 17px;
+    }
+    .saturday-connect-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    }
+    .saturday-connect .saturday-button {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: var(--purple) !important;
+    }
+    .saturday-connect .saturday-button-secondary {
+    background: transparent;
+    color: #ffffff !important;
+    }
+    @media (max-width: 900px) {
+    .saturday-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .saturday-info-grid {
+    grid-template-columns: 1fr;
+    }
+    }
+    @media (max-width: 650px) {
+    .saturday-container {
+    width: min(calc(100% - 28px), 1120px);
+    }
+    .saturday-hero {
+    padding-top: 38px;
+    }
+    .saturday-hero p {
+    font-size: 17px;
+    }
+    .saturday-details,
+    .saturday-route-gallery {
+    grid-template-columns: 1fr;
+    }
+    .saturday-route-gallery img {
+    height: 250px;
+    }
+    .saturday-route-gallery img + img {
+    border-top: 4px solid #ffffff;
+    border-left: 0;
+    }
+    .saturday-route-title {
+    align-items: flex-start;
+    flex-direction: column;
+    }
+    .saturday-route-content,
+    .saturday-info-panel,
+    .saturday-connect {
+    padding: 24px;
+    }
+    }
+</style>
+<div class="saturday-page">
+<header class="saturday-hero">
+<div class="saturday-container">
+<p class="saturday-eyebrow">Weekly Run &amp; Walk</p>
+<h1>Saturday Morning Run</h1>
+<p>
+Start your weekend with San Francisco FrontRunners in Golden Gate Park. Choose a walk or run from 1 to 5 miles, meet runners and walkers of every pace, and stay for brunch with the group afterward.
+</p>
+<div class="saturday-hero-photo">
+<img src="https://images.clubexpress.com/801899/graphics/Saturday_banner_3_1755367773.png" alt="San Francisco FrontRunners at the Saturday morning run">
+</div>
+</div>
+</header>
+<main>
+<section class="saturday-section">
+<div class="saturday-container">
+<div class="saturday-section-heading">
+<h2>About the Run</h2>
+<p>
+A group of 25 to 100 runners and walkers meets at the Blue Heron Lake Picnic Area near the Blue Heron Lake Boathouse. Choose a 1 or 2 mile walk or a 3, 4, or 5 mile run.
+</p>
+</div>
+<div class="saturday-details">
+<div class="saturday-detail-card">
+<span class="saturday-detail-icon" aria-hidden="true">📅</span>
+<strong>Saturday</strong>
+<p>9:00 AM<br>
+Rain or shine</p>
+</div>
+<div class="saturday-detail-card">
+<span class="saturday-detail-icon" aria-hidden="true">📍</span>
+<strong>Meeting Point</strong>
+<p><a href="https://share.google/g201WQXqijMaLSSvf" target="_blank" rel="noopener">Blue Heron Lake Picnic Area</a><br>
+Near the boathouse</p>
+</div>
+<div class="saturday-detail-card">
+<span class="saturday-detail-icon" aria-hidden="true">🏃</span>
+<strong>Distances</strong>
+<p>1 or 2 mile walk<br>
+3, 4, or 5 mile run</p>
+</div>
+<div class="saturday-detail-card">
+<span class="saturday-detail-icon" aria-hidden="true">🎒</span>
+<strong>Bag Drop &amp; Parking</strong>
+<p>Bag drop is generally available if you arrive by 8:50 AM. Free street parking is available on Blue Heron Lake Drive.</p>
+</div>
+<div class="saturday-detail-card">
+<span class="saturday-detail-icon" aria-hidden="true">🥞</span>
+<strong>Afterward</strong>
+<p>Join a no-host group for brunch at a rotating nearby location.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="saturday-section">
+<div class="saturday-container">
+<div class="saturday-section-heading">
+<h2>Choose Your Route</h2>
+<p>
+Saturday offers walking and running options through Golden Gate Park. The run routes are loops, so plan to complete the full listed distance to return to the starting point.
+</p>
+</div>
+<div class="saturday-route-list">
+<article class="saturday-route-card">
+<div class="saturday-route-gallery saturday-route-gallery-single">
+<img class="saturday-route-map" src="https://images.clubexpress.com/801899/graphics/Saturday_1_mile_650926526.png" alt="Map of the 1 mile Blue Heron Lake walk">
+</div>
+<div class="saturday-route-content">
+<div class="saturday-route-title">
+<h3>Blue Heron Lake Walk</h3>
+<span class="saturday-route-badge">1 or 2 miles</span>
+</div>
+<p>
+Our most popular walking option circles Blue Heron Lake. Complete one lap for 1 mile or two laps for 2 miles.
+</p>
+<a class="saturday-button" href="https://www.strava.com/routes/2752254744201568816" target="_blank" rel="noopener">View on Strava</a>
+</div>
+</article>
+<article class="saturday-route-card">
+<div class="saturday-route-gallery saturday-route-gallery-single">
+<img class="saturday-route-map" src="https://images.clubexpress.com/801899/graphics/Saturday_3_mile_1560645908.png" alt="Map of the 3.5 mile Carousel Run">
+</div>
+<div class="saturday-route-content">
+<div class="saturday-route-title">
+<h3>Carousel Run</h3>
+<span class="saturday-route-badge">3.5 miles</span>
+</div>
+<p>
+This loop follows Blue Heron Lake, Martin Luther King Jr. Drive, and JFK Promenade, with highlights including Hippie Hill, the Children's Carousel, and the Conservatory of Flowers.
+</p>
+<a class="saturday-button" href="https://www.strava.com/routes/2799771001701221994" target="_blank" rel="noopener">View on Strava</a>
+</div>
+</article>
+<article class="saturday-route-card">
+<div class="saturday-route-gallery saturday-route-gallery-single">
+<img class="saturday-route-map" src="https://images.clubexpress.com/801899/graphics/Saturday_4_mile_198773528.png" alt="Map of the 4 mile Bison Run">
+</div>
+<div class="saturday-route-content">
+<div class="saturday-route-title">
+<h3>Bison Run</h3>
+<span class="saturday-route-badge">4 miles</span>
+</div>
+<p>
+This loop includes a little trail running along the Fulton trail and paths near JFK Drive. Highlights include the park's bison paddock and Spreckels Lake.
+</p>
+<a class="saturday-button" href="https://www.strava.com/routes/2799764296644023142" target="_blank" rel="noopener">View on Strava</a>
+</div>
+</article>
+<article class="saturday-route-card">
+<div class="saturday-route-gallery">
+<img src="https://images.clubexpress.com/801899/graphics/Saturday_5_photo_681739287.png" alt="Runners on the Saturday 5 mile beach route">
+<img class="saturday-route-map" src="https://images.clubexpress.com/801899/graphics/Saturday_5_mile_2000907563.png" alt="Map of the Saturday 5 mile beach route">
+</div>
+<div class="saturday-route-content">
+<div class="saturday-route-title">
+<h3>Beach Run</h3>
+<span class="saturday-route-badge">5 miles</span>
+</div>
+<p>
+Our world-famous beach-and-back loop follows JFK Promenade, Middle Drive West, Martin Luther King Jr. Drive, the Great Highway along Ocean Beach, and JFK back to the start. Highlights include Ocean Beach and Lindley Meadow.
+</p>
+<a class="saturday-button" href="https://www.strava.com/routes/2799767209711605354" target="_blank" rel="noopener">View on Strava</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="saturday-section">
+<div class="saturday-container">
+<div class="saturday-info-grid">
+<div class="saturday-info-panel">
+<h3>Everyone Is Welcome</h3>
+<p>
+All ages and abilities are welcome. We are a club of all faces and all paces, and we are proud to include both runners and walkers. Whether you are training for Boston or joining us for a walk around the lake, you will be in good company.
+</p>
+</div>
+<div class="saturday-info-panel">
+<h3>Run Information</h3>
+<ul>
+    <li>The group meets and runs rain or shine.</li>
+    <li>Please arrive by 8:50 AM if you plan to use the bag drop.</li>
+    <li>The running routes are loops and require the full listed distance.</li>
+    <li>Please stay alert at road crossings and follow traffic signals.</li>
+    <li>Free street parking is available on Blue Heron Lake Drive.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="saturday-section">
+<div class="saturday-container">
+<div class="saturday-section-heading">
+<h2>Brunch Afterwards</h2>
+<p>
+Brunch locations rotate, but there are almost always groups heading to <a href="https://maps.app.goo.gl/sfABtTJ7V8fFNbs87" target="_blank" rel="noopener">Crepevine</a> and <a href="https://maps.app.goo.gl/3Gzco4aGyp3Rb95p7" target="_blank" rel="noopener">Bar 49</a>. Ask around after the run and join whichever group sounds good to you.
+</p>
+</div>
+</div>
+</section>
+<section class="saturday-section">
+<div class="saturday-container">
+<div class="saturday-connect">
+<h2>Stay Connected</h2>
+<p>
+Have questions before your first Saturday run? Connect with SF FrontRunners on Instagram for updates and community conversation.
+</p>
+<div class="saturday-connect-actions">
+<a class="saturday-button" href="https://www.instagram.com/sffrontrunners/" target="_blank" rel="noopener">Message Us on Instagram</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>

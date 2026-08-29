@@ -1,0 +1,341 @@
+<!--
+  SFFR FOUNDING HISTORY: 1973 TO 1980
+  Create a new ClubExpress custom page and paste this entire file into the HTML editor.
+-->
+<style>
+    .sffr-founding,
+    .sffr-founding * {
+    box-sizing: border-box;
+    }
+    .sffr-founding {
+    --ink: #29242f;
+    --muted: #6b6472;
+    --purple: #4b2e83;
+    --purple-dark: #321d60;
+    --lavender: #f4effa;
+    --gold: #f0b43c;
+    --paper: #fffdf8;
+    --line: #ded5e8;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.75;
+    }
+    .sffr-founding a {
+    color: var(--purple);
+    }
+    .sffr-founding-hero {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: #fff;
+    padding: clamp(48px, 8vw, 92px) 20px;
+    }
+    .sffr-founding-hero-inner,
+    .sffr-founding-body {
+    margin: 0 auto;
+    max-width: 1080px;
+    }
+    .sffr-founding-back {
+    color: rgba(255,255,255,.82) !important;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    text-decoration: none;
+    }
+    .sffr-founding-kicker {
+    color: #f7d57c;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin: 0 0 13px;
+    text-transform: uppercase;
+    }
+    .sffr-founding h1 {
+    font-size: clamp(40px, 7vw, 68px);
+    letter-spacing: -.04em;
+    line-height: 1.03;
+    margin: 0 0 18px;
+    }
+    .sffr-founding-deck {
+    color: rgba(255,255,255,.84);
+    font-size: clamp(17px, 2vw, 21px);
+    margin: 0;
+    max-width: 720px;
+    }
+    .sffr-founding-credit {
+    align-items: center;
+    background: var(--lavender);
+    border-left: 5px solid var(--gold);
+    display: flex;
+    gap: 16px;
+    margin: 44px 0 58px;
+    padding: 20px 24px;
+    }
+    .sffr-founding-credit strong {
+    color: var(--purple-dark);
+    display: block;
+    }
+    .sffr-founding-credit span {
+    color: var(--muted);
+    font-size: 14px;
+    }
+    .sffr-founding-body {
+    padding: 0 20px 84px;
+    }
+    .sffr-founding-entry {
+    display: grid;
+    gap: 34px;
+    grid-template-columns: 150px minmax(0, 1fr);
+    padding: 0 0 60px;
+    }
+    .sffr-founding-year {
+    color: var(--purple);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    padding-top: 8px;
+    text-transform: uppercase;
+    }
+    .sffr-founding-content {
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    }
+    .sffr-founding-content h2 {
+    color: var(--purple-dark);
+    font-size: clamp(28px, 4vw, 40px);
+    letter-spacing: -.025em;
+    line-height: 1.15;
+    margin: 0 0 20px;
+    }
+    .sffr-founding-content p {
+    font-size: 17px;
+    margin: 0 0 18px;
+    }
+    .sffr-founding-content p:last-child {
+    margin-bottom: 0;
+    }
+    .sffr-founding-subhead {
+    color: var(--purple);
+    font-weight: 700;
+    }
+    .sffr-founding-photo {
+    margin: 30px 0 5px;
+    }
+    .sffr-founding-photo img {
+    border-radius: 14px;
+    box-shadow: 0 16px 35px rgba(45, 30, 73, .14);
+    display: block;
+    height: auto;
+    max-height: 620px;
+    object-fit: contain;
+    width: 100%;
+    }
+    .sffr-founding-photo figcaption {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+    }
+    .sffr-founding-split {
+    align-items: start;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: minmax(0, 1fr) 210px;
+    }
+    .sffr-founding-split figure {
+    margin: 0;
+    }
+    .sffr-founding-split img {
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(45, 30, 73, .16);
+    display: block;
+    height: auto;
+    width: 100%;
+    }
+    .sffr-founding-gallery {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 28px;
+    }
+    .sffr-founding-gallery a {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    }
+    .sffr-founding-gallery img {
+    aspect-ratio: 4 / 5;
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    }
+    .sffr-founding-cta {
+    background: var(--purple-dark);
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 10px;
+    padding: 30px;
+    text-align: center;
+    }
+    .sffr-founding-cta h2 {
+    color: #fff;
+    font-size: 28px;
+    margin: 0 0 8px;
+    }
+    .sffr-founding-cta p {
+    color: rgba(255,255,255,.78);
+    margin: 0 0 20px;
+    }
+    .sffr-founding-button {
+    background: #fff;
+    border-radius: 999px;
+    color: var(--purple-dark) !important;
+    display: inline-block;
+    font-weight: 700;
+    padding: 12px 20px;
+    text-decoration: none;
+    }
+    @media (max-width: 720px) {
+    .sffr-founding-entry,
+    .sffr-founding-split {
+    grid-template-columns: 1fr;
+    }
+    .sffr-founding-entry {
+    gap: 8px;
+    padding-bottom: 45px;
+    }
+    .sffr-founding-split figure {
+    max-width: 230px;
+    }
+    }
+    @media (max-width: 540px) {
+    .sffr-founding-gallery {
+    grid-template-columns: 1fr;
+    }
+    .sffr-founding-gallery a {
+    margin: 0 auto;
+    max-width: 310px;
+    }
+    }
+</style>
+<main class="sffr-founding">
+<header class="sffr-founding-hero">
+<div class="sffr-founding-hero-inner">
+<a class="sffr-founding-back" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=462070">← Back to Our History</a>
+<p class="sffr-founding-kicker">1973 to 1980</p>
+<h1>How It All Began</h1>
+<p class="sffr-founding-deck">The story of a small jogging class that became San Francisco FrontRunners and helped inspire an international movement.</p>
+</div>
+</header>
+<div class="sffr-founding-body">
+<aside class="sffr-founding-credit">
+<div>
+<strong>An original account by Bud Budlong</strong>
+<span>This first-person history has been retained as part of the club’s archive.</span>
+</div>
+</aside>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">Fall 1973</div>
+<div class="sffr-founding-content">
+<h2>Lavender U.</h2>
+<p>By the fall of 1973, a new concept in education had swept the country. “Free Universities” existed as free newspapers that listed classes for all sorts of things such as art, literature, crafts, photography, and of course “new age” subjects such as TM, TA, EST, yoga and meditation. A group of gays in San Francisco decided to start such a free newspaper and call it “Lavender U.” The organizers hoped that it would foster social and educational opportunities of special interest to gays.</p>
+<p><span class="sffr-founding-subhead">Jack and Gardner.</span> Jack Baker and Gardner Pond were friends of the Lavender U. organizers and were asked to list a class. They had an interest in furniture refinishing and decided to list a class in that. They were also runners, and at the last minute decided to change their ad to an “introduction to jogging” class. As members of the San Francisco Dolphin South End (SFDSE) Runners, one of the largest running clubs in the country, they modeled their “class” on that club, which had a “scenic run” every Sunday.</p>
+<p>They listed a two-month schedule of runs, beginning with a half-mile, adding a half-mile each week, and finishing with a five-mile run on “graduation” week.</p>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">January 1974</div>
+<div class="sffr-founding-content">
+<h2>The First Run</h2>
+<p>The first run was on the first Sunday in January 1974. It began near the south windmill in Golden Gate Park. Each week, the run was at a different “scenic” location. When the time came to renew the ad, they simply began the series over again. After repeating it a few times, they settled into a routine of listing a variety of three-to-five mile runs. For the first couple of years, the ad listed a fee of $2.00 for each series of runs, but they never bothered to collect.</p>
+<p>At some point that first year, the listing changed from “learn to jog” to “Lavender U. Joggers.” Some of the early runs were Golden Gate Bridge, Portals of the Past, Stern Grove, Miracle Mile on Folsom Street, Aquatic Park, Palace of the Legion of Honor, Lands End, Dolores Park, and of course Stow Lake. Every Sunday Jack brought a gallon of coffee. Once a month Jack or Gardner would bring doughnuts.</p>
+<figure class="sffr-founding-photo">
+<a href="https://images.clubexpress.com/801899/graphics/Circa_1974_large_1386719285.jpg" target="_blank" rel="noopener">
+<img src="https://images.clubexpress.com/801899/graphics/Circa_1974_large_1386719285.jpg" alt="Early Lavender U. Joggers members circa 1974">
+</a>
+<figcaption>Circa 1974. Select the photo to view it at full size.</figcaption>
+</figure>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">1975 to 1976</div>
+<div class="sffr-founding-content">
+<h2>Bud Joins</h2>
+<p>Bud joined the group in October 1975 at the Golden Gate Bridge run. Weekly attendance varied from five or six to 15 or 18 out of a total of 45 or so “members.” Lesbian runners were few and far between, an issue the club continued to struggle with for years. During spring and summer of 1976, Jack and Gardner increasingly asked me to schedule and lead the runs. By the end of the year I was the club leader by default. Bud soon expanded the repertoire of runs.</p>
+<p>Eventually we had 26 “scenic” runs which repeated twice a year. The group gradually grew in numbers, attracting up to 30 runners at a time. The monthly “tailgate brunch” became routine, with many runners contributing to an increasingly healthy repast. Coffee gave way to fruit juice; doughnuts gave way to trail mix. Occasionally, a group of us would go to a restaurant after the run for a real brunch.</p>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">The 1970s</div>
+<div class="sffr-founding-content">
+<h2>A Unique Role</h2>
+<p>The club played a unique role in the community at that time. In the early 70s there were only a handful of gay organizations: the gay pool, bowling, and softball leagues, Gay Rap, and the royal courts, to name a few. There were few gay activities that were not centered around the bars. There were no gay hiking, track, swimming, skiing, wrestling, bicycling, or tennis clubs, and no bands, choruses or theater groups. For many, the Lavender U. Joggers was the first gay group they had joined.</p>
+<p>For more than a few, it was their first experience knowing and being around other gays. Although many exchanged their full names, there was no membership list. In 1978, the club first staffed a water table at the San Francisco Marathon.</p>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">Summer 1978</div>
+<div class="sffr-founding-content">
+<h2>Lavender U.’s Demise</h2>
+<p>By the summer of 1978, Lavender U. newspaper had gone out of business. Not only did the club need a new way to publish the schedule of runs, but it also occurred to me that it was not good for any group to be dependent on one person. The regulars all agreed that we should reorganize and have paying members, elected officers, and bylaws.</p>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">Fall 1978</div>
+<div class="sffr-founding-content">
+<h2>Reinventing Ourselves</h2>
+<div class="sffr-founding-split">
+<div>
+<p>There was a consensus that the club should be a “running club” with all other activities secondary, that it should welcome runners of all abilities from beginners to serious competitors, that it should serve not only gays and lesbians but be open to all who wanted to join, including those who could not or would not pay. Many gays at that time would not join an organization because they were fearful of revealing their names.</p>
+<p>We modeled ourselves on the many straight running clubs in the city, especially SFDSE and PaMaKids. We wanted to join the Amateur Athletic Union, which controlled amateur running at the time, and put on and participate in road races. We held the organizational meetings throughout the fall of 1978 at Gary May’s house.</p>
+<p>Many members wanted to change the name of the club, not only because Lavender U. had ceased to exist but because many did not like the word “joggers.” We voted on “Front Runners” at the second or third meeting. Half the people who came to those meetings swear the name was their idea. They are all correct; quite a few people suggested it. It was inspired by Patricia Nell Warren’s novel. We had a nominations committee and a bylaws committee, and we established the dues at $5.00 per year.</p>
+</div>
+<figure>
+<a href="https://images.clubexpress.com/801899/graphics/9780964109964-us_1107893657.jpg" target="_blank" rel="noopener">
+<img src="https://images.clubexpress.com/801899/graphics/9780964109964-us_1107893657.jpg" alt="Cover of The Front Runner by Patricia Nell Warren">
+</a>
+</figure>
+</div>
+<p>The officers were to be elected at the first meeting in January 1979. The first two newsletters were published in December 1978 and January 1979. They contained mostly information about joining and voting. About 40 people paid their dues and became “charter members.” All but three or four listed their full names and addresses in the membership directory, a brave showing for that time which surprised us all. It was the first time that many of us knew each other’s full names.</p>
+<p>By the end of 1979 there were 75 members.</p>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">January 1979</div>
+<div class="sffr-founding-content">
+<h2>The First Officers</h2>
+<p>The first elected officers were Gary May, President; Pat Stein, Vice President; Marvin Shipley, Secretary; and Frank Churchill, Treasurer. We joined the AAU, the first gay club of any sport to do so, and Pat went regularly to their meetings as our delegate. Club meetings were held monthly at first but bi-monthly soon after.</p>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">1980</div>
+<div class="sffr-founding-content">
+<h2>The First Gay Run</h2>
+<p>The 1980 officers were Bob Plantz, President; George Fischer, Vice President; Greg Dunning, Secretary; and Jim Milton, Treasurer. The club name appeared on the 1980 T-shirt as FrontRunners, one word, which became the club’s “official” name thereafter. The Advocate magazine approached the club and asked if we would put on a race, which they would sponsor and call “Gay Run.” After much discussion about affiliating with a sponsor, the members decided to do it.</p>
+<p>There were 5K and 10K runs with awards for women and men in four or five age categories. It was a great success; about 400 runners entered.</p>
+<p><a href="https://photos.google.com/share/AF1QipO9t5rE69N_Zm73XDnkqvj2VZJJlF2kQFF9wuV8YhjTQimW2jyvTWHlZvUeo_ijaw?key=QmRCVlgyNV9yeVpZTVZFak5uT3Z0bTBZb3p1N2V3" target="_blank" rel="noopener"><strong>View photos of Pride Run shirts from previous years</strong></a></p>
+<div class="sffr-founding-gallery" aria-label="Historic Pride Run shirts">
+<a href="https://images.clubexpress.com/801899/graphics/SFFR_AIDS_Pledge_Run_226117224.jpg" target="_blank" rel="noopener"><img src="https://images.clubexpress.com/801899/graphics/SFFR_AIDS_Pledge_Run_226117224.jpg" alt="Historic SFFR AIDS Pledge Run shirt"></a>
+<a href="https://images.clubexpress.com/801899/graphics/SFFR_Gay_Lesbian_Run_1993_1111986067.jpg" target="_blank" rel="noopener"><img src="https://images.clubexpress.com/801899/graphics/SFFR_Gay_Lesbian_Run_1993_1111986067.jpg" alt="SFFR Gay and Lesbian Run 1993 shirt"></a>
+<a href="https://images.clubexpress.com/801899/graphics/SFFR_Pride_Run_2000_1821677865.jpg" target="_blank" rel="noopener"><img src="https://images.clubexpress.com/801899/graphics/SFFR_Pride_Run_2000_1821677865.jpg" alt="SFFR Pride Run 2000 shirt"></a>
+</div>
+</div>
+</article>
+<article class="sffr-founding-entry">
+<div class="sffr-founding-year">Spring 1980</div>
+<div class="sffr-founding-content">
+<h2>The First “Other” FrontRunner Club</h2>
+<p>In the spring of 1980 Bob Plantz got a call from Malcolm Robinson, who was editor of the club magazine for the New York Roadrunners, a huge club with about six or seven thousand members. It is the club that puts on the New York Marathon. Malcolm said he was starting a gay running club and wanted to call it Front Runners New York. He asked for permission to use the name. Bob explained that we did not control the name, and yes, it was OK.</p>
+<p>Malcolm was a nationally rated runner and he knew many other top runners who were gay. He liked the way that our club welcomed all runners and discarded the idea of forming a club for elite runners. Other FrontRunner clubs formed in rapid succession.</p>
+<p><em>Bud’s story ends here.</em></p>
+</div>
+</article>
+<section class="sffr-founding-cta">
+<h2>Continue through SFFR history</h2>
+<p>Explore the traditions and landmarks that followed.</p>
+<a class="sffr-founding-button" href="/traditions">Traditions &amp; Landmarks →</a>
+</section>
+</div>
+</main>

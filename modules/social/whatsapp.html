@@ -1,0 +1,631 @@
+<!--
+  SFFR WhatsApp Groups Directory
+  Public ClubExpress custom page content
+
+  Before publishing, replace:
+  REPLACE_WITH_MEMBER_ONLY_PAGE_URL
+-->
+<style>
+    .sffr-wa,
+    .sffr-wa * {
+    box-sizing: border-box;
+    }
+    .sffr-wa {
+    --wa-ink: #2f2924;
+    --wa-muted: #675e55;
+    --wa-cream: #fffaf1;
+    --wa-card: #ffffff;
+    --wa-gold: #f4ad24;
+    --wa-orange: #ef7d32;
+    --wa-coral: #de5f48;
+    --wa-green: #197a52;
+    --wa-border: #f1dfc2;
+    --wa-shadow: 0 14px 34px rgba(111, 69, 24, 0.10);
+    color: var(--wa-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--wa-cream);
+    border-radius: 24px;
+    overflow: hidden;
+    }
+    .sffr-wa a:focus-visible {
+    outline: 3px solid #2d6cdf;
+    outline-offset: 3px;
+    }
+    .sffr-wa-hero {
+    position: relative;
+    padding: 68px 28px 62px;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(135deg, #fff1ad 0%, #ffc55f 47%, #f58a45 100%);
+    }
+    .sffr-wa-hero::before,
+    .sffr-wa-hero::after {
+    position: absolute;
+    border-radius: 999px;
+    content: "";
+    opacity: 0.24;
+    }
+    .sffr-wa-hero::before {
+    width: 280px;
+    height: 280px;
+    top: -145px;
+    right: -70px;
+    background: #ffffff;
+    }
+    .sffr-wa-hero::after {
+    width: 190px;
+    height: 190px;
+    bottom: -110px;
+    left: -45px;
+    background: #c34e31;
+    }
+    .sffr-wa-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    }
+    .sffr-wa-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 8px 13px;
+    border: 1px solid rgba(86, 48, 19, 0.14);
+    border-radius: 999px;
+    color: #5b351c;
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    }
+    .sffr-wa-hero h1 {
+    margin: 0 0 18px;
+    color: #36261d;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    }
+    .sffr-wa-hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #513a2d;
+    font-size: 18px;
+    line-height: 1.72;
+    }
+    .sffr-wa-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    }
+    .sffr-wa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+    .sffr-wa-button:hover {
+    transform: translateY(-2px);
+    }
+    .sffr-wa-button-primary {
+    color: #ffffff !important;
+    background: #1e6e4d;
+    box-shadow: 0 9px 22px rgba(22, 94, 63, 0.24);
+    }
+    .sffr-wa-button-primary:hover {
+    background: #175c3f;
+    }
+    .sffr-wa-button-secondary {
+    color: #4d3422 !important;
+    border-color: rgba(77, 52, 34, 0.22);
+    background: rgba(255, 255, 255, 0.78);
+    }
+    .sffr-wa-shell {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 46px 24px 64px;
+    }
+    .sffr-wa-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: -70px auto 44px;
+    padding: 9px;
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    border: 1px solid var(--wa-border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--wa-shadow);
+    }
+    .sffr-wa-tab {
+    flex: 1 1 180px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: #594a3d !important;
+    text-align: center;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 700;
+    }
+    .sffr-wa-tab[aria-current="page"] {
+    color: #ffffff !important;
+    background: var(--wa-orange);
+    }
+    .sffr-wa-member-note {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 52px;
+    padding: 22px 24px;
+    border: 1px solid #f0d18d;
+    border-radius: 18px;
+    background: #fff4cf;
+    }
+    .sffr-wa-member-icon {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    border-radius: 15px;
+    background: #ffffff;
+    font-size: 25px;
+    }
+    .sffr-wa-member-note h2 {
+    margin: 0 0 5px;
+    color: #4c321b;
+    font-size: 19px;
+    }
+    .sffr-wa-member-note p {
+    margin: 0;
+    color: #67523e;
+    font-size: 15px;
+    line-height: 1.55;
+    }
+    .sffr-wa-member-note a:not(.sffr-wa-button) {
+    color: #8a3e20;
+    font-weight: 700;
+    }
+    .sffr-wa-how {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 60px;
+    }
+    .sffr-wa-step {
+    padding: 22px;
+    border: 1px solid var(--wa-border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    }
+    .sffr-wa-step-number {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 14px;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--wa-coral);
+    font-size: 14px;
+    font-weight: 700;
+    }
+    .sffr-wa-step h3 {
+    margin: 0 0 7px;
+    color: var(--wa-ink);
+    font-size: 18px;
+    }
+    .sffr-wa-step p {
+    margin: 0;
+    color: var(--wa-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    }
+    .sffr-wa-section {
+    scroll-margin-top: 20px;
+    margin-bottom: 58px;
+    }
+    .sffr-wa-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--wa-border);
+    }
+    .sffr-wa-section-heading h2 {
+    margin: 0;
+    color: var(--wa-ink);
+    font-size: 30px;
+    line-height: 1.2;
+    }
+    .sffr-wa-section-heading p {
+    max-width: 520px;
+    margin: 0;
+    color: var(--wa-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: right;
+    }
+    .sffr-wa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    }
+    .sffr-wa-card {
+    position: relative;
+    min-height: 100%;
+    padding: 24px;
+    overflow: hidden;
+    border: 1px solid var(--wa-border);
+    border-radius: 20px;
+    background: var(--wa-card);
+    box-shadow: 0 9px 24px rgba(91, 61, 31, 0.07);
+    }
+    .sffr-wa-card::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background: var(--card-accent, var(--wa-gold));
+    content: "";
+    }
+    .sffr-wa-card-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 17px;
+    place-items: center;
+    border-radius: 15px;
+    background: var(--icon-bg, #fff4cf);
+    font-size: 25px;
+    }
+    .sffr-wa-card h3 {
+    margin: 0 0 9px;
+    color: var(--wa-ink);
+    font-size: 20px;
+    }
+    .sffr-wa-card p {
+    margin: 0;
+    color: var(--wa-muted);
+    font-size: 15px;
+    line-height: 1.65;
+    }
+    .sffr-wa-run {
+    --card-accent: #e88b27;
+    --icon-bg: #fff0cc;
+    }
+    .sffr-wa-activity {
+    --card-accent: #d85d45;
+    --icon-bg: #ffe2d8;
+    }
+    .sffr-wa-social {
+    --card-accent: #8f6ab8;
+    --icon-bg: #efe5f8;
+    }
+    .sffr-wa-more-groups {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    margin: -18px 0 42px;
+    padding: 26px 28px;
+    border: 1px solid #d9c7e9;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #f8f0ff 0%, #fff8e8 100%);
+    }
+    .sffr-wa-more-groups-icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    place-items: center;
+    border-radius: 17px;
+    background: #ffffff;
+    box-shadow: 0 7px 18px rgba(91, 61, 31, 0.08);
+    font-size: 28px;
+    }
+    .sffr-wa-more-groups h2 {
+    margin: 0 0 7px;
+    color: var(--wa-ink);
+    font-size: 23px;
+    }
+    .sffr-wa-more-groups p {
+    margin: 0;
+    color: var(--wa-muted);
+    font-size: 15px;
+    line-height: 1.65;
+    }
+    .sffr-wa-guideline-panel {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 28px;
+    padding: 34px;
+    border-radius: 24px;
+    color: #ffffff;
+    background: #3f342c;
+    }
+    .sffr-wa-guideline-panel h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 29px;
+    }
+    .sffr-wa-guideline-panel p {
+    margin: 0;
+    color: #f1e8e0;
+    font-size: 15px;
+    line-height: 1.65;
+    }
+    .sffr-wa-guideline-panel ul {
+    margin: 0;
+    padding-left: 22px;
+    color: #ffffff;
+    line-height: 1.8;
+    }
+    .sffr-wa-guideline-panel li + li {
+    margin-top: 5px;
+    }
+    .sffr-wa-guideline-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ffd878 !important;
+    font-weight: 700;
+    }
+    .sffr-wa-footer-cta {
+    margin-top: 22px;
+    padding: 42px 24px;
+    border: 1px solid #ecd79d;
+    border-radius: 24px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff4ca 0%, #ffe5b9 100%);
+    }
+    .sffr-wa-footer-cta h2 {
+    margin: 0 0 10px;
+    color: #3c2e24;
+    font-size: 30px;
+    }
+    .sffr-wa-footer-cta p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #665143;
+    font-size: 16px;
+    line-height: 1.65;
+    }
+    .sffr-wa-help {
+    margin: 22px 0 0;
+    color: #74665a;
+    text-align: center;
+    font-size: 14px;
+    }
+    .sffr-wa-help a {
+    color: #8a3e20;
+    font-weight: 700;
+    }
+    @media (max-width: 900px) {
+    .sffr-wa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-wa-member-note {
+    grid-template-columns: auto 1fr;
+    }
+    .sffr-wa-member-note .sffr-wa-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    }
+    }
+    @media (max-width: 700px) {
+    .sffr-wa {
+    border-radius: 16px;
+    }
+    .sffr-wa-hero {
+    padding: 52px 20px 56px;
+    }
+    .sffr-wa-hero p {
+    font-size: 16px;
+    }
+    .sffr-wa-shell {
+    padding: 42px 16px 50px;
+    }
+    .sffr-wa-tabs {
+    margin-top: -64px;
+    border-radius: 15px;
+    }
+    .sffr-wa-tab {
+    flex-basis: 100%;
+    }
+    .sffr-wa-member-note,
+    .sffr-wa-how,
+    .sffr-wa-grid,
+    .sffr-wa-more-groups,
+    .sffr-wa-guideline-panel {
+    grid-template-columns: 1fr;
+    }
+    .sffr-wa-more-groups {
+    padding: 23px;
+    }
+    .sffr-wa-member-note {
+    padding: 20px;
+    }
+    .sffr-wa-member-icon {
+    width: 44px;
+    height: 44px;
+    }
+    .sffr-wa-section-heading {
+    display: block;
+    }
+    .sffr-wa-section-heading h2 {
+    font-size: 26px;
+    }
+    .sffr-wa-section-heading p {
+    margin-top: 8px;
+    text-align: left;
+    }
+    .sffr-wa-guideline-panel {
+    padding: 27px 23px;
+    }
+    .sffr-wa-actions .sffr-wa-button {
+    width: 100%;
+    }
+    }
+</style>
+<div class="sffr-wa">
+<header class="sffr-wa-hero">
+<div class="sffr-wa-hero-inner">
+<p class="sffr-wa-eyebrow"><span aria-hidden="true">💬</span> SFFR member community</p>
+<h1>Find Your People on WhatsApp</h1>
+<p>Stay connected, coordinate runs, discover events, and build community beyond our weekly workouts.</p>
+<div class="sffr-wa-actions">
+<a class="sffr-wa-button sffr-wa-button-primary" href="/joinwhatsapp">Member Access: Join WhatsApp</a>
+<a class="sffr-wa-button sffr-wa-button-secondary" href="/whatsapp-guidelines">Read Community Guidelines</a>
+</div>
+</div>
+</header>
+<main class="sffr-wa-shell">
+<nav class="sffr-wa-tabs" aria-label="WhatsApp pages">
+<a class="sffr-wa-tab" href="#groups" aria-current="page">Explore Groups</a>
+<a class="sffr-wa-tab" href="/whatsapp-guidelines">Community Guidelines</a>
+<a class="sffr-wa-tab" href="/joinwhatsapp">Member Join Page</a>
+</nav>
+<section class="sffr-wa-member-note" aria-labelledby="membership-heading">
+<div class="sffr-wa-member-icon" aria-hidden="true">🎟️</div>
+<div>
+<h2 id="membership-heading">Our WhatsApp community is primarily for current paying SFFR members</h2>
+<p>If you are already in our Club WhatsApp community but have not signed up as a paying member, please complete your membership at <a href="/signup">sffr.org/signup</a>.</p>
+</div>
+<a class="sffr-wa-button sffr-wa-button-secondary" href="/signup">Join or Renew SFFR Membership</a>
+</section>
+<div id="groups">
+<section class="sffr-wa-section" id="run-groups" aria-labelledby="run-groups-heading">
+<div class="sffr-wa-section-heading">
+<h2 id="run-groups-heading"><span aria-hidden="true">🏃</span> Run Groups</h2>
+</div>
+<div class="sffr-wa-grid">
+<article class="sffr-wa-card sffr-wa-run">
+<div class="sffr-wa-card-icon" aria-hidden="true">🌅</div>
+<h3>Monday Runners</h3>
+<p>For participants in our Monday Morning Run pilot program. Find run updates, routes, announcements, and fellow early risers.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-run">
+<div class="sffr-wa-card-icon" aria-hidden="true">🌉</div>
+<h3>Tuesday Runners</h3>
+<p>Everything related to Tuesday evenings, including carpools, routes, post-run photos, and updates from the crew.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-run">
+<div class="sffr-wa-card-icon" aria-hidden="true">🌆</div>
+<h3>Thursday Runners</h3>
+<p>Stay current on Thursday routes, coordinate carpools, share photos, and connect with fellow FrontRunners.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-run">
+<div class="sffr-wa-card-icon" aria-hidden="true">☀️</div>
+<h3>Saturday Runners</h3>
+<p>Coordinate carpools, check route details, discuss brunch plans, and share your favorite Saturday run moments.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-run">
+<div class="sffr-wa-card-icon" aria-hidden="true">🛣️</div>
+<h3>Sunday Runners</h3>
+<p>A member-organized group for Sunday long runs, recovery runs, and casual weekend miles with other runners.</p>
+</article>
+</div>
+</section>
+<section class="sffr-wa-section" id="activities" aria-labelledby="activities-heading">
+<div class="sffr-wa-section-heading">
+<h2 id="activities-heading"><span aria-hidden="true">📅</span> Club Activities &amp; Events</h2>
+</div>
+<div class="sffr-wa-grid">
+<article class="sffr-wa-card sffr-wa-activity">
+<div class="sffr-wa-card-icon" aria-hidden="true">🙌</div>
+<h3>Volunteering</h3>
+<p>Find club-led opportunities to give back, support local organizations, and volunteer alongside other SFFR members.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-activity">
+<div class="sffr-wa-card-icon" aria-hidden="true">🏅</div>
+<h3>Races</h3>
+<p>Follow SFFR Race Circuit announcements, leaderboard updates, group race plans, and other running competitions.</p>
+</article><article class="sffr-wa-card sffr-wa-social">
+<div class="sffr-wa-card-icon" aria-hidden="true">🍽️</div>
+<h3>Monthly Supper Club</h3>
+<p>Join fellow SFFR members for a monthly dinner, hosted by a volunteer who chooses a restaurant and organizes a table for 6 to 12 people.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-activity">
+<div class="sffr-wa-card-icon" aria-hidden="true">🎉</div>
+<h3>Other Events</h3>
+<p>Discover social gatherings, community events, special activities, and other FrontRunners happenings.</p>
+</article>
+</div>
+</section>
+<section class="sffr-wa-section" id="social-groups" aria-labelledby="social-groups-heading">
+<div class="sffr-wa-section-heading">
+<h2 id="social-groups-heading"><span aria-hidden="true">🌈</span> Social &amp; Community Groups</h2>
+</div>
+<div class="sffr-wa-grid">
+<article class="sffr-wa-card sffr-wa-social">
+<div class="sffr-wa-card-icon" aria-hidden="true">🎬</div>
+<h3>Movie Queens</h3>
+<p>Share movie recommendations, organize group outings, and discuss the latest releases with fellow film fans.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-social">
+<div class="sffr-wa-card-icon" aria-hidden="true">📺</div>
+<h3>TV Bingers</h3>
+<p>Share TV obsessions, trade recommendations, debate the season's villain, and mourn the character who deserved better.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-social">
+<div class="sffr-wa-card-icon" aria-hidden="true">🛍️</div>
+<h3>Marketplace</h3>
+<p>Buy, sell, trade, or give away running gear, household items, and other useful things.</p>
+</article>
+<article class="sffr-wa-card sffr-wa-social">
+<div class="sffr-wa-card-icon" aria-hidden="true">🌀</div>
+<h3>Random / Off Topic</h3>
+<p>Share memes, ask questions, discuss random thoughts, and talk about everything that does not fit elsewhere.</p>
+</article>
+</div>
+</section>
+</div>
+<aside class="sffr-wa-more-groups" aria-labelledby="more-groups-heading">
+<div class="sffr-wa-more-groups-icon" aria-hidden="true">✨</div>
+<div>
+<h2 id="more-groups-heading">There is even more to explore</h2>
+<p>The groups featured here are only a selection, not the full list. Once you join the SFFR WhatsApp Community, you can browse even more groups and find the conversations that fit your interests. <br>
+<br>
+Members are also welcome to suggest new groups that could help people connect, participate, and engage with the SFFR community.</p>
+</div>
+</aside>
+<section class="sffr-wa-guideline-panel" aria-labelledby="quick-guidelines-heading">
+<div>
+<h2 id="quick-guidelines-heading">A few group guidelines</h2>
+<p>Help us keep the SFFR WhatsApp community welcoming, useful, and inclusive for everyone.</p>
+<a class="sffr-wa-guideline-link" href="/whatsapp-guidelines">Read the full Community Guidelines →</a>
+</div>
+<ul>
+    <li>Be respectful and kind to fellow members.</li>
+    <li>Keep conversations relevant to each group's purpose.</li>
+    <li>Avoid excessive posting or repeating the same message across multiple groups.</li>
+    <li>Use Random / Off Topic when a conversation does not fit elsewhere.</li>
+</ul>
+</section>
+<section class="sffr-wa-footer-cta" aria-labelledby="join-heading">
+<h2 id="join-heading">Ready to join the conversation?</h2>
+<p>Current SFFR members can sign in to access the protected WhatsApp invitation.</p>
+<div class="sffr-wa-actions">
+<a class="sffr-wa-button sffr-wa-button-primary" href="/joinwhatsapp">Go to Member Join Page</a>
+<a class="sffr-wa-button sffr-wa-button-secondary" href="/signup">Become an SFFR Member</a>
+</div>
+</section>
+<p class="sffr-wa-help">Already a current member but having trouble joining? Email <a href="mailto:tech@sffr.org">tech@sffr.org</a>.</p>
+</main>
+</div>

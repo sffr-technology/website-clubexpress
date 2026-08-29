@@ -1,0 +1,522 @@
+<!--
+  SFFR WhatsApp Community Guidelines
+  Public ClubExpress custom page content
+
+  Before publishing, replace:
+  REPLACE_WITH_GROUP_DIRECTORY_URL
+  REPLACE_WITH_MEMBER_ONLY_PAGE_URL
+-->
+<style>
+    .sffr-wa,
+    .sffr-wa * {
+    box-sizing: border-box;
+    }
+    .sffr-wa {
+    --wa-ink: #2f2924;
+    --wa-muted: #675e55;
+    --wa-cream: #fffaf1;
+    --wa-card: #ffffff;
+    --wa-orange: #ef7d32;
+    --wa-coral: #de5f48;
+    --wa-blue: #3577a8;
+    --wa-green: #197a52;
+    --wa-border: #f1dfc2;
+    --wa-shadow: 0 14px 34px rgba(111, 69, 24, 0.10);
+    color: var(--wa-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--wa-cream);
+    border-radius: 24px;
+    overflow: hidden;
+    }
+    .sffr-wa a:focus-visible {
+    outline: 3px solid #2d6cdf;
+    outline-offset: 3px;
+    }
+    .sffr-wa-hero {
+    position: relative;
+    padding: 68px 28px 62px;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(135deg, #fff1ad 0%, #ffc55f 47%, #f58a45 100%);
+    }
+    .sffr-wa-hero::before,
+    .sffr-wa-hero::after {
+    position: absolute;
+    border-radius: 999px;
+    content: "";
+    opacity: 0.24;
+    }
+    .sffr-wa-hero::before {
+    width: 280px;
+    height: 280px;
+    top: -145px;
+    right: -70px;
+    background: #ffffff;
+    }
+    .sffr-wa-hero::after {
+    width: 190px;
+    height: 190px;
+    bottom: -110px;
+    left: -45px;
+    background: #c34e31;
+    }
+    .sffr-wa-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    }
+    .sffr-wa-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 8px 13px;
+    border: 1px solid rgba(86, 48, 19, 0.14);
+    border-radius: 999px;
+    color: #5b351c;
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    }
+    .sffr-wa-hero h1 {
+    margin: 0 0 18px;
+    color: #36261d;
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+    }
+    .sffr-wa-hero p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: #513a2d;
+    font-size: 18px;
+    line-height: 1.72;
+    }
+    .sffr-wa-approved {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 9px 14px;
+    border-radius: 999px;
+    color: #543721;
+    background: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    font-weight: 700;
+    }
+    .sffr-wa-shell {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 46px 24px 64px;
+    }
+    .sffr-wa-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: -70px auto 44px;
+    padding: 9px;
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    border: 1px solid var(--wa-border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--wa-shadow);
+    }
+    .sffr-wa-tab {
+    flex: 1 1 180px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: #594a3d !important;
+    text-align: center;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 700;
+    }
+    .sffr-wa-tab[aria-current="page"] {
+    color: #ffffff !important;
+    background: var(--wa-orange);
+    }
+    .sffr-wa-intro {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 28px;
+    margin-bottom: 26px;
+    padding: 34px;
+    border-radius: 22px;
+    color: #ffffff;
+    background: #3f342c;
+    }
+    .sffr-wa-intro h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.2;
+    }
+    .sffr-wa-intro p {
+    margin: 0;
+    color: #f0e9e2;
+    font-size: 16px;
+    line-height: 1.7;
+    }
+    .sffr-wa-values {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+    }
+    .sffr-wa-value {
+    padding: 20px;
+    border: 1px solid #efd9b1;
+    border-radius: 18px;
+    text-align: center;
+    background: #fff3cf;
+    }
+    .sffr-wa-value span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 26px;
+    }
+    .sffr-wa-value strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #483326;
+    font-size: 17px;
+    }
+    .sffr-wa-value p {
+    margin: 0;
+    color: #6a5546;
+    font-size: 13px;
+    line-height: 1.5;
+    }
+    .sffr-wa-guidelines {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    }
+    .sffr-wa-card {
+    position: relative;
+    padding: 27px;
+    overflow: hidden;
+    border: 1px solid var(--wa-border);
+    border-radius: 20px;
+    background: var(--wa-card);
+    box-shadow: 0 9px 24px rgba(91, 61, 31, 0.07);
+    }
+    .sffr-wa-card::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background: var(--accent, var(--wa-orange));
+    content: "";
+    }
+    .sffr-wa-card-wide {
+    grid-column: 1 / -1;
+    }
+    .sffr-wa-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 14px;
+    }
+    .sffr-wa-card-icon {
+    display: grid;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--icon-bg, #fff0cc);
+    font-size: 23px;
+    }
+    .sffr-wa-card h2 {
+    margin: 0;
+    color: var(--wa-ink);
+    font-size: 23px;
+    line-height: 1.25;
+    }
+    .sffr-wa-card p,
+    .sffr-wa-card li {
+    color: var(--wa-muted);
+    font-size: 15px;
+    line-height: 1.65;
+    }
+    .sffr-wa-card p {
+    margin: 0 0 12px;
+    }
+    .sffr-wa-card p:last-child {
+    margin-bottom: 0;
+    }
+    .sffr-wa-card ul {
+    margin: 0;
+    padding-left: 22px;
+    }
+    .sffr-wa-card li + li {
+    margin-top: 7px;
+    }
+    .sffr-wa-respect {
+    --accent: #d85d45;
+    --icon-bg: #ffe2d8;
+    }
+    .sffr-wa-relevant {
+    --accent: #e69b22;
+    --icon-bg: #fff0cc;
+    }
+    .sffr-wa-politics {
+    --accent: #3577a8;
+    --icon-bg: #dceefa;
+    }
+    .sffr-wa-privacy {
+    --accent: #6f63a5;
+    --icon-bg: #ebe6fa;
+    }
+    .sffr-wa-running {
+    --accent: #21855b;
+    --icon-bg: #ddf2e7;
+    }
+    .sffr-wa-not-allowed {
+    --accent: #ad4a3e;
+    --icon-bg: #f7ded9;
+    }
+    .sffr-wa-moderation {
+    --accent: #7b624b;
+    --icon-bg: #eee5dc;
+    }
+    .sffr-wa-community {
+    margin-top: 18px;
+    padding: 34px;
+    border-radius: 22px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff4ca 0%, #ffe5b9 100%);
+    }
+    .sffr-wa-community h2 {
+    margin: 0 0 10px;
+    color: #3c2e24;
+    font-size: 29px;
+    }
+    .sffr-wa-community p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #665143;
+    font-size: 16px;
+    line-height: 1.65;
+    }
+    .sffr-wa-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    }
+    .sffr-wa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+    .sffr-wa-button:hover {
+    transform: translateY(-2px);
+    }
+    .sffr-wa-button-primary {
+    color: #ffffff !important;
+    background: #1e6e4d;
+    box-shadow: 0 9px 22px rgba(22, 94, 63, 0.24);
+    }
+    .sffr-wa-button-primary:hover {
+    background: #175c3f;
+    }
+    .sffr-wa-button-secondary {
+    color: #4d3422 !important;
+    border-color: rgba(77, 52, 34, 0.20);
+    background: rgba(255, 255, 255, 0.84);
+    }
+    .sffr-wa-report {
+    margin: 20px 0 0;
+    color: #74665a;
+    text-align: center;
+    font-size: 14px;
+    }
+    .sffr-wa-report a {
+    color: #8a3e20;
+    font-weight: 700;
+    }
+    @media (max-width: 760px) {
+    .sffr-wa {
+    border-radius: 16px;
+    }
+    .sffr-wa-hero {
+    padding: 52px 20px 56px;
+    }
+    .sffr-wa-hero p {
+    font-size: 16px;
+    }
+    .sffr-wa-shell {
+    padding: 42px 16px 50px;
+    }
+    .sffr-wa-tabs {
+    margin-top: -64px;
+    border-radius: 15px;
+    }
+    .sffr-wa-tab {
+    flex-basis: 100%;
+    }
+    .sffr-wa-intro,
+    .sffr-wa-values,
+    .sffr-wa-guidelines {
+    grid-template-columns: 1fr;
+    }
+    .sffr-wa-card-wide {
+    grid-column: auto;
+    }
+    .sffr-wa-intro,
+    .sffr-wa-card,
+    .sffr-wa-community {
+    padding: 24px;
+    }
+    .sffr-wa-actions .sffr-wa-button {
+    width: 100%;
+    }
+    }
+</style>
+<div class="sffr-wa">
+<header class="sffr-wa-hero">
+<div class="sffr-wa-hero-inner">
+<p class="sffr-wa-eyebrow"><span aria-hidden="true">📱</span> SFFR community standards</p>
+<h1>WhatsApp Community Guidelines</h1>
+<p>Our WhatsApp community and other social platforms, including Strava and Facebook, help members connect, share, and build friendships beyond our weekly runs.</p>
+<p class="sffr-wa-approved">Approved and adopted by the 2026 SFFR Board, effective May 2026</p>
+</div>
+</header>
+<main class="sffr-wa-shell">
+<nav class="sffr-wa-tabs" aria-label="WhatsApp pages">
+<a class="sffr-wa-tab" href="/whatsapp">Explore Groups</a>
+<a class="sffr-wa-tab" href="#guidelines" aria-current="page">Community Guidelines</a>
+<a class="sffr-wa-tab" href="/joinwhatsapp">Member Join Page</a>
+</nav>
+<section class="sffr-wa-intro" id="guidelines" aria-labelledby="why-heading">
+<h2 id="why-heading">Why we have these guidelines</h2>
+<div>
+<p>SF FrontRunners is built on connection, inclusion, and community. With hundreds of members participating in different conversations, these guidelines help everyone feel welcome, respected, and comfortable engaging in our community spaces.</p>
+<p style="margin-top: 12px;">They are not meant to limit personal expression. They help keep official SFFR spaces focused on our shared mission: bringing people together through running, friendship, and community.</p>
+</div>
+</section>
+<section class="sffr-wa-values" aria-label="Our community values">
+<div class="sffr-wa-value">
+<span aria-hidden="true">🌈</span>
+<strong>Inclusive</strong>
+<p>All identities, paces, and experiences belong.</p>
+</div>
+<div class="sffr-wa-value">
+<span aria-hidden="true">🤝</span>
+<strong>Respectful</strong>
+<p>Kindness and consideration guide every exchange.</p>
+</div>
+<div class="sffr-wa-value">
+<span aria-hidden="true">❤️</span>
+<strong>Community First</strong>
+<p>Our shared spaces should support and uplift members.</p>
+</div>
+</section>
+<section class="sffr-wa-guidelines" aria-label="Community guidelines">
+<article class="sffr-wa-card sffr-wa-respect">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">🤝</div>
+<h2>Be Respectful</h2>
+</div>
+<ul>
+    <li>Treat everyone with kindness and respect.</li>
+    <li>Use inclusive language and honor people's pronouns.</li>
+    <li>No harassment, discrimination, or hate speech of any kind.</li>
+</ul>
+</article>
+<article class="sffr-wa-card sffr-wa-relevant">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">💬</div>
+<h2>Keep It Relevant</h2>
+</div>
+<ul>
+    <li>Use each chat for its intended purpose.</li>
+    <li>Avoid excessive messaging, spam, or repeating the same message across groups.</li>
+    <li>Be mindful of message volume, especially in large groups.</li>
+    <li>Use Random / Off Topic for conversations that do not fit elsewhere.</li>
+</ul>
+</article>
+<article class="sffr-wa-card sffr-wa-card-wide sffr-wa-politics">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">🗳️</div>
+<h2>Politics</h2>
+</div>
+<p>SFFR is a social and athletic organization, not a political one. We encourage civic engagement and recognize that many political issues are personally important to our members.</p>
+<p>As a tax-exempt nonprofit organization, SFFR must remain nonpartisan and cannot support or oppose candidates for public office. Members may participate in political activities in their personal capacities, but campaign-related advocacy or election content should not be shared in official SFFR community spaces in a way that could be interpreted as representing the organization.</p>
+<ul>
+    <li>Posts related to political candidates, campaigns, or elections are not permitted in official SFFR chats.</li>
+    <li>Please keep discussions focused on running, community, social events, and member connection.</li>
+    <li>Moderators may remove political content to help maintain an inclusive and welcoming environment.</li>
+</ul>
+</article>
+<article class="sffr-wa-card sffr-wa-privacy">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">🔒</div>
+<h2>Privacy Matters</h2>
+</div>
+<ul>
+    <li>Do not share another person's contact details, personal information, or screenshots without consent.</li>
+    <li>Respect the confidentiality of conversations.</li>
+    <li>Do not share the protected community invitation outside SFFR.</li>
+</ul>
+</article>
+<article class="sffr-wa-card sffr-wa-running">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">🏃</div>
+<h2>Running &amp; Events</h2>
+</div>
+<ul>
+    <li>Share runs, races, and meetups in their designated chats.</li>
+    <li>Encourage and support runners and walkers of every level.</li>
+    <li>Make it clear when an activity is member-organized rather than an official SFFR event.</li>
+</ul>
+</article>
+<article class="sffr-wa-card sffr-wa-not-allowed">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">🚫</div>
+<h2>What Is Not Allowed</h2>
+</div>
+<ul>
+    <li>Harassment, bullying, discrimination, or exclusionary behavior.</li>
+    <li>Unsolicited promotions or unrelated advertising.</li>
+    <li>Explicit content.</li>
+    <li>Sharing private member information without permission.</li>
+</ul>
+</article>
+<article class="sffr-wa-card sffr-wa-moderation">
+<div class="sffr-wa-card-heading">
+<div class="sffr-wa-card-icon" aria-hidden="true">⚠️</div>
+<h2>Moderation</h2>
+</div>
+<p>Admins may step in when these guidelines are not followed. Depending on the situation, content may be removed and a member may receive a reminder or warning. Repeated or serious violations may result in removal from the community.</p>
+<p>If something makes you uncomfortable or appears to violate these guidelines, contact the Board privately rather than escalating the issue in the group.</p>
+</article>
+</section>
+<section class="sffr-wa-community" aria-labelledby="community-first-heading">
+<h2 id="community-first-heading">Community First</h2>
+<p>Let’s keep this space safe, fun, useful, and inclusive for everyone.</p>
+<div class="sffr-wa-actions">
+<a class="sffr-wa-button sffr-wa-button-secondary" href="/whatsapp">Explore WhatsApp Groups</a>
+<a class="sffr-wa-button sffr-wa-button-primary" href="/joinwhatsapp">Member Access: Join WhatsApp</a>
+</div>
+</section>
+<p class="sffr-wa-report">Questions or concerns about the community? Email <a href="mailto:board@sffr.org">board@sffr.org</a>.</p>
+</main>
+</div>
