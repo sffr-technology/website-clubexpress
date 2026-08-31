@@ -1,243 +1,457 @@
+<!-- SFFR WEEKLY RUNS & WALKS LANDING PAGE -->
 <style>
-    .sffr-runs-page {
-        font-family: Arial, sans-serif;
+    .weekly-runs-page,
+    .weekly-runs-page * {
+        box-sizing: border-box;
     }
 
-    /* Hero */
-    .sffr-runs-hero {
-        background: none;
-        height: auto;
-        padding: 30px 20px;
-        border-radius: 0;
-        display: flex;
-        align-items: center;
-        margin-bottom: 25px;
+    html {
+        scroll-behavior: smooth;
     }
 
-    .sffr-runs-overlay {
-        background: none;
-        padding: 0;
-        color: #333;
-        max-width: 900px;
+    .weekly-runs-page {
+        --purple: #4b2e83;
+        --purple-dark: #34205f;
+        --purple-light: #eee8f8;
+        --pink: #d94f91;
+        --ink: #2f2f35;
+        --muted: #66636d;
+        --line: #e5deef;
+        --surface: #ffffff;
+        background: #faf9fc;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.65;
     }
 
-    .sffr-runs-overlay h1 {
-        font-size: 42px;
-        margin-bottom: 15px;
-        color: #333;
+    .weekly-runs-page a {
+        color: var(--purple);
     }
 
-    .sffr-runs-overlay p {
-        font-size: 20px;
-        line-height: 1.5;
-        color: #555;
-    }
-
-    /* Intro */
-    .sffr-intro {
-        text-align: left;
+    .weekly-runs-page img {
+        display: block;
         max-width: 100%;
-        margin: 0 0 40px;
-        padding: 0 20px;
     }
 
-    .sffr-intro h2 {
-        font-size: 32px;
-        color: #333;
-        margin-bottom: 15px;
+    .weekly-runs-container {
+        margin: 0 auto;
+        width: min(1120px, calc(100% - 40px));
     }
 
-    .sffr-intro p {
-        font-size: 17px;
-        color: #555;
-        line-height: 1.7;
-        margin-bottom: 15px;
-    }
-
-    /* Run Day Headers */
-    .sffr-run-content h3 {
-        font-size: 28px;
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
-
-    .sffr-run-content h3 a {
-        color: #0077cc;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .sffr-run-content h3 a:hover {
-        text-decoration: underline;
-    }
-
-    /* Schedule */
-    .sffr-schedule {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin-bottom: 45px;
-    }
-
-    .sffr-run-card {
-        background: white;
-        border-radius: 14px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
-        overflow: hidden;
+    .weekly-runs-hero {
+        background: #f0e8f7;
+        border-bottom: 1px solid #e2d7ee;
+        padding: 58px 0 48px;
         text-align: center;
     }
 
-    .sffr-run-photo {
-        height: 180px;
+    .weekly-runs-eyebrow {
+        color: var(--pink);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        margin: 0 0 10px;
+        text-transform: uppercase;
+    }
+
+    .weekly-runs-hero h1 {
+        color: var(--purple);
+        font-size: clamp(40px, 7vw, 64px);
+        line-height: 1.08;
+        margin: 0 0 18px;
+    }
+
+    .weekly-runs-hero-copy {
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.75;
+        margin: 0 auto;
+        max-width: 790px;
+    }
+
+    .weekly-runs-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 26px;
+    }
+
+    .weekly-runs-button {
+        align-items: center;
+        background: var(--purple);
+        border: 2px solid var(--purple);
+        border-radius: 999px;
+        color: #ffffff !important;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 800;
+        justify-content: center;
+        padding: 11px 18px;
+        text-decoration: none !important;
+    }
+
+    .weekly-runs-button-secondary {
+        background: transparent;
+        color: var(--purple) !important;
+    }
+
+    .weekly-runs-section {
+        padding: 56px 0;
+    }
+
+    .weekly-runs-section-alt {
+        background: var(--purple-light);
+        border-bottom: 1px solid var(--line);
+        border-top: 1px solid var(--line);
+    }
+
+    .weekly-runs-heading {
+        margin-bottom: 28px;
+        max-width: 790px;
+    }
+
+    .weekly-runs-heading h2 {
+        color: var(--purple);
+        font-size: clamp(30px, 4vw, 40px);
+        line-height: 1.2;
+        margin: 0 0 10px;
+    }
+
+    .weekly-runs-heading p {
+        color: var(--muted);
+        font-size: 17px;
+        margin: 0;
+    }
+
+    .weekly-runs-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .weekly-run-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: 0 10px 28px rgba(52, 32, 95, .08);
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
     }
 
-    .sffr-run-photo img {
-        width: 100%;
+    .weekly-run-card-image {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+    }
+
+    .weekly-run-card-image img {
         height: 100%;
         object-fit: cover;
+        transition: transform .25s ease;
+        width: 100%;
     }
 
-    .sffr-run-content {
+    .weekly-run-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
         padding: 25px;
     }
 
-    .sffr-run-content h3 {
-        font-size: 28px;
-        margin-bottom: 10px;
-        color: #0077cc;
+    .weekly-run-card-day {
+        color: var(--pink);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .1em;
+        margin: 0 0 7px;
+        text-transform: uppercase;
     }
 
-    .sffr-run-content p {
-        color: #555;
-        line-height: 1.5;
+    .weekly-run-card h3 {
+        color: var(--purple);
+        font-size: 27px;
+        line-height: 1.2;
+        margin: 0 0 9px;
     }
 
-    .sffr-time {
-        font-size: 22px;
-        font-weight: bold;
-        color: #333;
+    .weekly-run-card-intro {
+        color: var(--muted);
+        margin: 0 0 21px;
     }
 
-    .sffr-location {
-        margin-top: 10px;
-        font-weight: bold;
-    }
-
-    .sffr-button {
-        display: inline-block;
-        margin-top: 18px;
-        padding: 12px 30px;
-        background: #0077cc;
-        color: white !important;
-        text-decoration: none !important;
-        border-radius: 8px;
-        font-weight: bold;
-    }
-
-    /* What to Expect */
-    .sffr-expect h2 {
-        text-align: left;
-        font-size: 32px;
-        color: #333;
-        margin-bottom: 25px;
-    }
-
-    .sffr-expect-grid {
+    .weekly-run-facts {
+        border-bottom: 1px solid var(--line);
+        border-top: 1px solid var(--line);
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+        gap: 0;
+        margin-bottom: 22px;
     }
 
-    .sffr-expect-item {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
+    .weekly-run-fact {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 25px 1fr;
+        padding: 11px 0;
+    }
+
+    .weekly-run-fact + .weekly-run-fact {
+        border-top: 1px solid #f0ecf4;
+    }
+
+    .weekly-run-fact-icon {
+        font-size: 17px;
+        line-height: 1.45;
         text-align: center;
     }
 
-    .sffr-expect-item h3 {
-        color: #0077cc;
+    .weekly-run-fact strong {
+        color: var(--purple-dark);
+        display: block;
+        font-size: 13px;
     }
 
-    /* Photo gallery */
-    .sffr-gallery {
+    .weekly-run-fact span,
+    .weekly-run-fact a {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .weekly-run-card .weekly-runs-button {
+        align-self: flex-start;
+        margin-top: auto;
+    }
+
+    .weekly-runs-expect-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-top: 35px;
+        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .sffr-photo-placeholder {
-        height: 220px;
-        background: #ddd;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #777;
+    .weekly-runs-expect-card {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 26px;
     }
 
-    @media(max-width:900px) {
+    .weekly-runs-expect-icon {
+        display: block;
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
 
-        .sffr-schedule,
-        .sffr-expect-grid,
-        .sffr-gallery {
+    .weekly-runs-expect-card h3 {
+        color: var(--purple);
+        font-size: 20px;
+        margin: 0 0 8px;
+    }
+
+    .weekly-runs-expect-card p {
+        color: var(--muted);
+        margin: 0;
+    }
+
+    .weekly-runs-welcome {
+        background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+        border-radius: 24px;
+        color: #ffffff;
+        padding: clamp(30px, 5vw, 48px);
+        text-align: center;
+    }
+
+    .weekly-runs-welcome h2 {
+        color: #ffffff;
+        font-size: clamp(30px, 4vw, 40px);
+        margin: 0 0 10px;
+    }
+
+    .weekly-runs-welcome p {
+        color: rgba(255, 255, 255, .82);
+        font-size: 17px;
+        margin: 0 auto 23px;
+        max-width: 760px;
+    }
+
+    .weekly-runs-welcome .weekly-runs-button {
+        background: #ffffff;
+        border-color: #ffffff;
+        color: var(--purple) !important;
+    }
+
+    @media (hover: hover) {
+        .weekly-run-card,
+        .weekly-runs-button,
+        .weekly-runs-expect-card {
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .weekly-run-card:hover,
+        .weekly-runs-expect-card:hover {
+            box-shadow: 0 16px 36px rgba(52, 32, 95, .13);
+            transform: translateY(-2px);
+        }
+
+        .weekly-run-card:hover .weekly-run-card-image img {
+            transform: scale(1.025);
+        }
+
+        .weekly-runs-button:hover {
+            transform: translateY(-1px);
+        }
+    }
+
+    @media (max-width: 920px) {
+        .weekly-runs-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .weekly-run-card {
+            display: grid;
+            grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
+        }
+
+        .weekly-run-card-image {
+            aspect-ratio: auto;
+            min-height: 100%;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .weekly-runs-container {
+            width: min(100% - 28px, 1120px);
+        }
+
+        .weekly-runs-hero {
+            padding: 42px 0;
+        }
+
+        .weekly-runs-hero-copy {
+            font-size: 17px;
+        }
+
+        .weekly-run-card {
+            display: flex;
+        }
+
+        .weekly-run-card-image {
+            aspect-ratio: 16 / 10;
+        }
+
+        .weekly-runs-expect-grid {
             grid-template-columns: 1fr;
         }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+        .weekly-run-card,
+        .weekly-run-card-image img,
+        .weekly-runs-button,
+        .weekly-runs-expect-card {
+            transition: none;
+        }
+    }
 </style>
-<div class="sffr-runs-page">
-    <!-- Hero -->
-    <div class="sffr-runs-hero">
-        <div class="sffr-runs-overlay">
-            <h1>Weekly Runs & Walks</h1>
-        </div>
-    </div><!-- Intro -->
-    <div class="sffr-intro">
-        <h2>Find Your Pace. Find Your Community.</h2>
-        <p>Anyone is welcome to join our weekly runs and walks! Simply show up at any of our weekly meeting points!</p>
-        <p>Whether you’re training for a marathon, getting back into running, or simply looking for a fun way to meet people, you’ll find a welcoming community at SF FrontRunners.</p>
-        <p>After attending a few runs, we encourage you to support the club by becoming a member.</p>
-    </div><!-- Weekly Schedule -->
-    <div class="sffr-schedule">
-        <div class="sffr-run-card">
-            <div class="sffr-run-content">
-                <h3> <a href="https://sffr.org/content.aspx?page_id=22&club_id=801899&module_id=464093" target="_blank"> Tuesday </a></h3>
-                <div class="sffr-time">6:30 PM</div>
-                <p class="sffr-location">📍 Ferry Building</p><a class="sffr-button" href="https://maps.app.goo.gl/ZaKXgZBaabtevnQH7">Google Pin</a>
+
+<div class="weekly-runs-page">
+    <header class="weekly-runs-hero">
+        <div class="weekly-runs-container">
+            <p class="weekly-runs-eyebrow">All faces. All paces.</p>
+            <h1>Weekly Runs &amp; Walks</h1>
+            <p class="weekly-runs-hero-copy">Join San Francisco FrontRunners every Tuesday, Thursday, and Saturday. Come once as a guest, choose a comfortable distance and pace, and stay afterward for food and conversation.</p>
+            <div class="weekly-runs-hero-actions">
+                <a class="weekly-runs-button" href="#weekly-run-schedule">Find your next run</a>
+                <a class="weekly-runs-button weekly-runs-button-secondary" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=416033">Become a member</a>
             </div>
         </div>
-        <div class="sffr-run-card">
-            <div class="sffr-run-content">
-                <h3> <a href="https://sffr.org/content.aspx?page_id=22&club_id=801899&module_id=464094" target="_blank"> Thursday </a></h3>
-                <div class="sffr-time">6:30 PM</div>
-                <p class="sffr-location">📍 FITNESS SF - Castro</p><a class="sffr-button" href="https://maps.app.goo.gl/JFCTBzvra3Yw1rLC9">Google Pin</a>
+    </header>
+
+    <main>
+        <section class="weekly-runs-section" id="weekly-run-schedule">
+            <div class="weekly-runs-container">
+                <div class="weekly-runs-heading">
+                    <h2>Meet us this week</h2>
+                    <p>Each gathering is rain or shine and welcomes newcomers. Open a run page for route maps, parking guidance, host information, and everything you need for your first visit.</p>
+                </div>
+
+                <div class="weekly-runs-grid">
+                    <article class="weekly-run-card">
+                        <div class="weekly-run-card-image">
+                            <img src="https://images.clubexpress.com/801899/graphics/1-6-26_Tuesday_Run_276371192_200801062.jpeg" alt="San Francisco FrontRunners at the Tuesday evening run">
+                        </div>
+                        <div class="weekly-run-card-body">
+                            <p class="weekly-run-card-day">Tuesday · 6:30 PM</p>
+                            <h3>Tuesday Evening Run</h3>
+                            <p class="weekly-run-card-intro">Run or walk along the Embarcadero, choose an out-and-back distance, and join the group for dinner afterward.</p>
+                            <div class="weekly-run-facts">
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">📍</span><div><strong>Meeting Point</strong><a href="https://share.google/rIXxGGkIsKzTUnWMf" target="_blank" rel="noopener">SF Ferry Building, under the clock tower</a></div></div>
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">🏃</span><div><strong>Distances</strong><span>3, 4, or 5 mile run or walk options</span></div></div>
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">🍔</span><div><strong>Afterward</strong><span>Dinner together at Gott's</span></div></div>
+                            </div>
+                            <a class="weekly-runs-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=464093">Explore Tuesday</a>
+                        </div>
+                    </article>
+
+                    <article class="weekly-run-card">
+                        <div class="weekly-run-card-image">
+                            <img src="https://images.clubexpress.com/801899/graphics/Thursday_banner_99381681.png" alt="San Francisco FrontRunners at the Thursday evening run">
+                        </div>
+                        <div class="weekly-run-card-body">
+                            <p class="weekly-run-card-day">Thursday · 6:30 PM</p>
+                            <h3>Thursday Evening Run</h3>
+                            <p class="weekly-run-card-intro">Run from the Castro through Duboce Park and the Panhandle, regroup for a photo, and stay for dinner.</p>
+                            <div class="weekly-run-facts">
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">📍</span><div><strong>Meeting Point</strong><a href="https://maps.app.goo.gl/PgqqRVHRZn3bn9LZ9" target="_blank" rel="noopener">Fitness SF Castro, Market &amp; Noe</a></div></div>
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">🏃</span><div><strong>Distances</strong><span>4 and 5 mile run options</span></div></div>
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">🍽️</span><div><strong>Afterward</strong><span>Dinner together at Hi Tops</span></div></div>
+                            </div>
+                            <a class="weekly-runs-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=464094">Explore Thursday</a>
+                        </div>
+                    </article>
+
+                    <article class="weekly-run-card">
+                        <div class="weekly-run-card-image">
+                            <img src="https://images.clubexpress.com/801899/graphics/Saturday_banner_3_1755367773.png" alt="San Francisco FrontRunners at the Saturday morning run">
+                        </div>
+                        <div class="weekly-run-card-body">
+                            <p class="weekly-run-card-day">Saturday · 9:00 AM</p>
+                            <h3>Saturday Morning Run</h3>
+                            <p class="weekly-run-card-intro">Start your weekend in Golden Gate Park with dedicated walking routes, multiple run distances, and brunch afterward.</p>
+                            <div class="weekly-run-facts">
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">📍</span><div><strong>Meeting Point</strong><a href="https://share.google/g201WQXqijMaLSSvf" target="_blank" rel="noopener">Blue Heron Lake Picnic Area</a></div></div>
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">🏃</span><div><strong>Distances</strong><span>1–2 mile walk; 3–5 mile run</span></div></div>
+                                <div class="weekly-run-fact"><span class="weekly-run-fact-icon" aria-hidden="true">🥞</span><div><strong>Afterward</strong><span>Brunch at a rotating nearby location</span></div></div>
+                            </div>
+                            <a class="weekly-runs-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=464091">Explore Saturday</a>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-        <div class="sffr-run-card">
-            <div class="sffr-run-content">
-                <h3> <a href="https://sffr.org/content.aspx?page_id=22&club_id=801899&module_id=464091" target="_blank"> Saturday </a></h3>
-                <div class="sffr-time">9:00 AM</div>
-                <p class="sffr-location">📍 Blue Heron Lake Boathouse</p><a class="sffr-button" href="https://maps.app.goo.gl/LNo3LZF9kTs7QdULA">Google Pin</a>
+        </section>
+
+        <section class="weekly-runs-section weekly-runs-section-alt">
+            <div class="weekly-runs-container">
+                <div class="weekly-runs-heading">
+                    <h2>What to expect</h2>
+                    <p>You do not need to be fast, experienced, or already know someone. Show up a few minutes early and introduce yourself.</p>
+                </div>
+                <div class="weekly-runs-expect-grid">
+                    <article class="weekly-runs-expect-card"><span class="weekly-runs-expect-icon" aria-hidden="true">👋</span><h3>Meet the Group</h3><p>We gather before the run or walk, welcome newcomers, review routes, and share club announcements.</p></article>
+                    <article class="weekly-runs-expect-card"><span class="weekly-runs-expect-icon" aria-hidden="true">🏃</span><h3>Choose Your Pace</h3><p>Pick a distance and pace that feel comfortable. Runners and walkers of all abilities belong here.</p></article>
+                    <article class="weekly-runs-expect-card"><span class="weekly-runs-expect-icon" aria-hidden="true">🌈</span><h3>Stay and Connect</h3><p>Meet back with the group afterward and join members for dinner, brunch, or conversation.</p></article>
+                </div>
             </div>
-        </div>
-    </div><!-- What to Expect -->
-    <div class="sffr-expect">
-        <h2>What To Expect</h2>
-        <div class="sffr-expect-grid">
-            <div class="sffr-expect-item">
-                <h3>👋 Meet the Group</h3>
-                <p> Before the run/walk begins, everyone introduces themselves and the Run Coordinator shares announcements about upcoming club events and activities. </p>
+        </section>
+
+        <section class="weekly-runs-section">
+            <div class="weekly-runs-container">
+                <div class="weekly-runs-welcome">
+                    <h2>Your first run starts with showing up</h2>
+                    <p>Anyone may join us as a guest. After attending a few times, support the community and stay connected by becoming an SFFR member.</p>
+                    <a class="weekly-runs-button" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=416033">Explore membership</a>
+                </div>
             </div>
-            <div class="sffr-expect-item">
-                <h3>🏃 Run or Walk Your Way</h3>
-                <p> We’ll review suggested routes before heading out together. Choose a pace and distance that feels comfortable. </p>
-            </div>
-            <div class="sffr-expect-item">
-                <h3>🍻 Meet Back & Connect</h3>
-                <p> About 50 minutes later, we’ll return to the starting point to wrap up together. Many members stick around afterward to socialize, grab food, and continue the conversation.</p>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </div>
