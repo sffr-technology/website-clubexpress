@@ -24,7 +24,7 @@
 
   SLIDESHOW:
   Replace the image URLs and captions inside .sffr-welcome-slide as needed.
-  This version uses four slides and changes automatically without JavaScript.
+  This version uses four slides with automatic playback and arrow controls.
 -->
 <style>
     .sffr-welcome,.sffr-welcome *{box-sizing:border-box}
@@ -49,19 +49,26 @@
     .sffr-welcome-button{background:#fff;border:2px solid #fff;border-radius:999px;color:var(--purple-dark)!important;display:inline-block;font-size:14px;font-weight:800;padding:11px 18px;text-decoration:none!important}
     .sffr-welcome-button-alt{background:transparent;color:#fff!important}
     .sffr-welcome-slideshow{aspect-ratio:4/3;background:#1c1034;border:8px solid rgba(255,255,255,.16);border-radius:22px;box-shadow:0 24px 55px rgba(27,12,47,.34);overflow:hidden;position:relative;transform:rotate(1deg)}
-    .sffr-welcome-slide{animation:sffrWelcomeFade 28s infinite;inset:0;opacity:0;position:absolute}
-    .sffr-welcome-slide:nth-child(1){animation-delay:0s}
-    .sffr-welcome-slide:nth-child(2){animation-delay:7s}
-    .sffr-welcome-slide:nth-child(3){animation-delay:14s}
-    .sffr-welcome-slide:nth-child(4){animation-delay:21s}
+    .sffr-welcome-slide-choice{opacity:0;pointer-events:none;position:absolute}
+    .sffr-welcome-slide{inset:0;opacity:0;position:absolute;transition:opacity .55s ease;visibility:hidden}
+    #sffr-welcome-slide-1:checked~.sffr-welcome-slide-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-3,#sffr-welcome-slide-4:checked~.sffr-welcome-slide-4{opacity:1;visibility:visible}
+    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide{animation:sffrWelcomeFade 28s infinite;visibility:visible}
+    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-1{animation-delay:0s}
+    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-2{animation-delay:7s}
+    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-3{animation-delay:14s}
+    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-4{animation-delay:21s}
+    @keyframes sffrWelcomeFade{0%,20%{opacity:1}25%,95%{opacity:0}100%{opacity:1}}
     .sffr-welcome-slide a{display:block;height:100%}
     .sffr-welcome-slide img{display:block;height:100%;object-fit:cover;width:100%}
     .sffr-welcome-slide-caption{background:linear-gradient(transparent,rgba(18,8,32,.9));bottom:0;color:#fff;left:0;padding:55px 22px 18px;pointer-events:none;position:absolute;right:0}
     .sffr-welcome-slide-caption strong{display:block;font-size:17px}
     .sffr-welcome-slide-caption span{color:rgba(255,255,255,.72);font-size:12px}
-    .sffr-welcome-slide-status{bottom:18px;display:flex;gap:6px;pointer-events:none;position:absolute;right:18px;z-index:4}
-    .sffr-welcome-slide-status span{background:rgba(255,255,255,.45);border-radius:999px;height:4px;width:22px}
-    @keyframes sffrWelcomeFade{0%,20%{opacity:1}25%,95%{opacity:0}100%{opacity:1}}
+    .sffr-welcome-slide-arrows{display:none;inset:0;pointer-events:none;position:absolute;z-index:4}
+    #sffr-welcome-slide-1:checked~.sffr-welcome-slide-arrows-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-arrows-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-arrows-3,#sffr-welcome-slide-4:checked~.sffr-welcome-slide-arrows-4{display:block}
+    .sffr-welcome-slide-arrow{align-items:center;background:rgba(18,8,32,.68);border:1px solid rgba(255,255,255,.6);border-radius:50%;color:#fff;cursor:pointer;display:flex;font-family:Arial,Helvetica,sans-serif;font-size:31px;height:46px;justify-content:center;line-height:1;padding:0;pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);width:46px}
+    .sffr-welcome-slide-arrow:hover,.sffr-welcome-slide-arrow:focus-visible{background:rgba(75,46,131,.94);outline:3px solid rgba(255,255,255,.72);outline-offset:2px}
+    .sffr-welcome-slide-arrow-prev{left:14px}
+    .sffr-welcome-slide-arrow-next{right:14px}
     .sffr-welcome-proof{background:#fff;border-bottom:1px solid var(--line)}
     .sffr-welcome-proof-inner{display:grid;grid-template-columns:repeat(3,1fr)}
     .sffr-welcome-proof-item{border-right:1px solid var(--line);padding:22px;text-align:center}
@@ -116,7 +123,7 @@
     @media(hover:hover){.sffr-welcome-button,.sffr-welcome-card,.sffr-welcome-tool,.sffr-welcome-volunteer-card,.sffr-welcome-slideshow{transition:transform .2s ease,box-shadow .2s ease}.sffr-welcome-button:hover{transform:translateY(-1px)}.sffr-welcome-card:hover,.sffr-welcome-tool:hover,.sffr-welcome-volunteer-card:hover{box-shadow:0 14px 32px rgba(48,27,89,.11);transform:translateY(-2px)}.sffr-welcome-slideshow:hover{transform:rotate(0)}}
     @media(max-width:900px){.sffr-welcome-hero-grid{grid-template-columns:1fr}.sffr-welcome-slideshow{max-width:580px}.sffr-welcome-grid,.sffr-welcome-tools-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:680px){.sffr-welcome-slideshow{transform:none}.sffr-welcome-proof-inner,.sffr-welcome-grid,.sffr-welcome-tools-grid,.sffr-welcome-volunteer-grid{grid-template-columns:1fr}.sffr-welcome-proof-item{border-bottom:1px solid var(--line);border-right:0}.sffr-welcome-proof-item:last-child{border-bottom:0}.sffr-welcome-card{min-height:0}}
-    @media(prefers-reduced-motion:reduce){.sffr-welcome-slide{animation:none;opacity:0}.sffr-welcome-slide:first-child{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.sffr-welcome-slide{transition:none}}
 </style>
 <div class="sffr-welcome">
     <section class="sffr-welcome-hero">
@@ -131,32 +138,85 @@
                 </div>
             </div>
             <div class="sffr-welcome-slideshow" aria-label="SF FrontRunners community photo slideshow">
-                <div class="sffr-welcome-slide">
+                <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-1" checked>
+                <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-2">
+                <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-3">
+                <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-4">
+                <div class="sffr-welcome-slide sffr-welcome-slide-1">
                     <a href="https://images.clubexpress.com/801899/photos/original/0226b0f3-ff8c-4668-908c-c74cb4b51036_1160716828.jpg" target="_blank" rel="noopener">
                         <img src="https://images.clubexpress.com/801899/photos/original/0226b0f3-ff8c-4668-908c-c74cb4b51036_1160716828.jpg" alt="SF FrontRunners members gathering together">
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>Community beyond the miles</strong><span>Runs, friendships, celebrations, and service</span></div>
                 </div>
-                <div class="sffr-welcome-slide">
+                <div class="sffr-welcome-slide sffr-welcome-slide-2">
                     <a href="https://images.clubexpress.com/801899/graphics/Temporary_Board_Pic_1046288676.jpg" target="_blank" rel="noopener">
                         <img src="https://images.clubexpress.com/801899/graphics/Temporary_Board_Pic_1046288676.jpg" alt="SF FrontRunners club leaders">
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>Powered by our members</strong><span>Volunteer-led since 1974</span></div>
                 </div>
-                <div class="sffr-welcome-slide">
+                <div class="sffr-welcome-slide sffr-welcome-slide-3">
                     <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/saturday-run-community.jpeg" target="_blank" rel="noopener">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/saturday-run-community.jpeg" alt="SF FrontRunners members celebrating together after a Saturday run in Golden Gate Park">
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>All faces. All paces.</strong><span>Celebrating another run together in Golden Gate Park</span></div>
                 </div>
-                <div class="sffr-welcome-slide">
+                <div class="sffr-welcome-slide sffr-welcome-slide-4">
                     <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/sffr-community-banner.jpeg" target="_blank" rel="noopener">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/sffr-community-banner.jpeg" alt="SF FrontRunners members gathered outdoors behind the club banner">
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>Welcome to the community</strong><span>Friendship, movement, and belonging since 1974</span></div>
                 </div>
-                <div class="sffr-welcome-slide-status" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-1">
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-4" aria-label="Show previous community photo">‹</label>
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-2" aria-label="Show next community photo">›</label>
+                </div>
+                <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-2">
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-1" aria-label="Show previous community photo">‹</label>
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-3" aria-label="Show next community photo">›</label>
+                </div>
+                <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-3">
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-2" aria-label="Show previous community photo">‹</label>
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-4" aria-label="Show next community photo">›</label>
+                </div>
+                <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-4">
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-3" aria-label="Show previous community photo">‹</label>
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-1" aria-label="Show next community photo">›</label>
+                </div>
             </div>
         </div>
     </section>
 </div>
+<script>
+    (function () {
+        var root = document.querySelector('.sffr-welcome-slideshow');
+        if (!root) return;
+
+        var choices = Array.prototype.slice.call(root.querySelectorAll('.sffr-welcome-slide-choice'));
+        var current = 0;
+        var timer;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function startTimer() {
+            window.clearInterval(timer);
+            if (!reduceMotion) {
+                timer = window.setInterval(function () {
+                    current = (current + 1) % choices.length;
+                    choices[current].checked = true;
+                }, 7000);
+            }
+        }
+
+        choices.forEach(function (choice, index) {
+            choice.addEventListener('change', function () {
+                if (choice.checked) {
+                    current = index;
+                    startTimer();
+                }
+            });
+        });
+
+        root.classList.add('is-enhanced');
+        choices[0].checked = true;
+        startTimer();
+    }());
+</script>
