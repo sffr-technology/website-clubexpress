@@ -69,6 +69,13 @@
     .sffr-welcome-slide-arrow:hover,.sffr-welcome-slide-arrow:focus-visible{background:rgba(75,46,131,.94);outline:3px solid rgba(255,255,255,.72);outline-offset:2px}
     .sffr-welcome-slide-arrow-prev{left:14px}
     .sffr-welcome-slide-arrow-next{right:14px}
+    .sffr-welcome-lightbox{align-items:center;background:rgba(15,9,24,.94);display:none;inset:0;justify-content:center;padding:72px 22px 28px;position:fixed;z-index:10000}
+    .sffr-welcome-lightbox.is-open{display:flex}
+    .sffr-welcome-lightbox-figure{margin:0;max-height:100%;max-width:min(1200px,100%);text-align:center}
+    .sffr-welcome-lightbox-image{border-radius:12px;box-shadow:0 20px 70px rgba(0,0,0,.55);display:block;height:auto;max-height:calc(100vh - 130px);max-width:100%;object-fit:contain;width:auto}
+    .sffr-welcome-lightbox-caption{color:rgba(255,255,255,.86);font-size:14px;margin-top:13px}
+    .sffr-welcome-lightbox-close{align-items:center;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.75);border-radius:50%;color:#fff;cursor:pointer;display:flex;font-size:27px;height:48px;justify-content:center;left:18px;line-height:1;padding:0;position:absolute;top:18px;width:48px}
+    .sffr-welcome-lightbox-close:hover,.sffr-welcome-lightbox-close:focus-visible{background:var(--purple);outline:3px solid rgba(255,255,255,.65);outline-offset:3px}
     .sffr-welcome-proof{background:#fff;border-bottom:1px solid var(--line)}
     .sffr-welcome-proof-inner{display:grid;grid-template-columns:repeat(3,1fr)}
     .sffr-welcome-proof-item{border-right:1px solid var(--line);padding:22px;text-align:center}
@@ -122,7 +129,7 @@
     .sffr-welcome-footer p{margin:0}
     @media(hover:hover){.sffr-welcome-button,.sffr-welcome-card,.sffr-welcome-tool,.sffr-welcome-volunteer-card,.sffr-welcome-slideshow{transition:transform .2s ease,box-shadow .2s ease}.sffr-welcome-button:hover{transform:translateY(-1px)}.sffr-welcome-card:hover,.sffr-welcome-tool:hover,.sffr-welcome-volunteer-card:hover{box-shadow:0 14px 32px rgba(48,27,89,.11);transform:translateY(-2px)}.sffr-welcome-slideshow:hover{transform:rotate(0)}}
     @media(max-width:900px){.sffr-welcome-hero-grid{grid-template-columns:1fr}.sffr-welcome-slideshow{max-width:580px}.sffr-welcome-grid,.sffr-welcome-tools-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:680px){.sffr-welcome-slideshow{transform:none}.sffr-welcome-proof-inner,.sffr-welcome-grid,.sffr-welcome-tools-grid,.sffr-welcome-volunteer-grid{grid-template-columns:1fr}.sffr-welcome-proof-item{border-bottom:1px solid var(--line);border-right:0}.sffr-welcome-proof-item:last-child{border-bottom:0}.sffr-welcome-card{min-height:0}}
+    @media(max-width:680px){.sffr-welcome-slideshow{transform:none}.sffr-welcome-proof-inner,.sffr-welcome-grid,.sffr-welcome-tools-grid,.sffr-welcome-volunteer-grid{grid-template-columns:1fr}.sffr-welcome-proof-item{border-bottom:1px solid var(--line);border-right:0}.sffr-welcome-proof-item:last-child{border-bottom:0}.sffr-welcome-card{min-height:0}.sffr-welcome-lightbox{padding:76px 12px 18px}.sffr-welcome-lightbox-image{border-radius:8px;max-height:calc(100vh - 125px)}.sffr-welcome-lightbox-close{height:50px;left:12px;top:12px;width:50px}}
     @media(prefers-reduced-motion:reduce){.sffr-welcome-slide{transition:none}}
 </style>
 <div class="sffr-welcome">
@@ -154,12 +161,6 @@
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>Powered by our members</strong><span>Volunteer-led since 1974</span></div>
                 </div>
-                <div class="sffr-welcome-slide sffr-welcome-slide-3">
-                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/saturday-run-community.jpeg" target="_blank" rel="noopener">
-                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/saturday-run-community.jpeg" alt="SF FrontRunners members celebrating together after a Saturday run in Golden Gate Park">
-                    </a>
-                    <div class="sffr-welcome-slide-caption"><strong>All faces. All paces.</strong><span>Celebrating another run together in Golden Gate Park</span></div>
-                </div>
                 <div class="sffr-welcome-slide sffr-welcome-slide-4">
                     <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/sffr-community-banner.jpeg" target="_blank" rel="noopener">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/sffr-community-banner.jpeg" alt="SF FrontRunners members gathered outdoors behind the club banner">
@@ -186,6 +187,13 @@
         </div>
     </section>
 </div>
+<div class="sffr-welcome-lightbox" role="dialog" aria-modal="true" aria-label="Expanded community photo" aria-hidden="true">
+    <button class="sffr-welcome-lightbox-close" type="button" aria-label="Close expanded photo">×</button>
+    <figure class="sffr-welcome-lightbox-figure">
+        <img class="sffr-welcome-lightbox-image" src="" alt="">
+        <figcaption class="sffr-welcome-lightbox-caption"></figcaption>
+    </figure>
+</div>
 <script>
     (function () {
         var root = document.querySelector('.sffr-welcome-slideshow');
@@ -195,6 +203,11 @@
         var current = 0;
         var timer;
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var lightbox = document.querySelector('.sffr-welcome-lightbox');
+        var lightboxImage = lightbox.querySelector('.sffr-welcome-lightbox-image');
+        var lightboxCaption = lightbox.querySelector('.sffr-welcome-lightbox-caption');
+        var lightboxClose = lightbox.querySelector('.sffr-welcome-lightbox-close');
+        var lastFocusedElement;
 
         function startTimer() {
             window.clearInterval(timer);
@@ -213,6 +226,46 @@
                     startTimer();
                 }
             });
+        });
+
+        function openLightbox(link) {
+            var slide = link.closest('.sffr-welcome-slide');
+            var sourceImage = link.querySelector('img');
+            var caption = slide.querySelector('.sffr-welcome-slide-caption strong');
+
+            lastFocusedElement = document.activeElement;
+            lightboxImage.src = link.href;
+            lightboxImage.alt = sourceImage ? sourceImage.alt : 'Expanded SF FrontRunners community photo';
+            lightboxCaption.textContent = caption ? caption.textContent : lightboxImage.alt;
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImage.src = '';
+            document.body.style.overflow = '';
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
+
+        root.querySelectorAll('.sffr-welcome-slide a').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                openLightbox(link);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (event) {
+            if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
         });
 
         root.classList.add('is-enhanced');
