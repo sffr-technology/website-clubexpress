@@ -24,7 +24,7 @@
 
   SLIDESHOW:
   Replace the image URLs and captions inside .sffr-welcome-slide as needed.
-  This version uses four slides with automatic playback and arrow controls.
+  This version uses three slides with automatic playback and arrow controls.
 -->
 <style>
     .sffr-welcome,.sffr-welcome *{box-sizing:border-box}
@@ -51,12 +51,11 @@
     .sffr-welcome-slideshow{aspect-ratio:4/3;background:#1c1034;border:8px solid rgba(255,255,255,.16);border-radius:22px;box-shadow:0 24px 55px rgba(27,12,47,.34);overflow:hidden;position:relative;transform:rotate(1deg)}
     .sffr-welcome-slide-choice{opacity:0;pointer-events:none;position:absolute}
     .sffr-welcome-slide{inset:0;opacity:0;position:absolute;transition:opacity .55s ease;visibility:hidden}
-    #sffr-welcome-slide-1:checked~.sffr-welcome-slide-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-3,#sffr-welcome-slide-4:checked~.sffr-welcome-slide-4{opacity:1;visibility:visible}
-    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide{animation:sffrWelcomeFade 28s infinite;visibility:visible}
+    #sffr-welcome-slide-1:checked~.sffr-welcome-slide-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-3{opacity:1;visibility:visible}
+    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide{animation:sffrWelcomeFade 21s infinite;visibility:visible}
     .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-1{animation-delay:0s}
     .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-2{animation-delay:7s}
     .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-3{animation-delay:14s}
-    .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-4{animation-delay:21s}
     @keyframes sffrWelcomeFade{0%,20%{opacity:1}25%,95%{opacity:0}100%{opacity:1}}
     .sffr-welcome-slide a{display:block;height:100%}
     .sffr-welcome-slide img{display:block;height:100%;object-fit:cover;width:100%}
@@ -64,7 +63,7 @@
     .sffr-welcome-slide-caption strong{display:block;font-size:17px}
     .sffr-welcome-slide-caption span{color:rgba(255,255,255,.72);font-size:12px}
     .sffr-welcome-slide-arrows{display:none;inset:0;pointer-events:none;position:absolute;z-index:4}
-    #sffr-welcome-slide-1:checked~.sffr-welcome-slide-arrows-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-arrows-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-arrows-3,#sffr-welcome-slide-4:checked~.sffr-welcome-slide-arrows-4{display:block}
+    #sffr-welcome-slide-1:checked~.sffr-welcome-slide-arrows-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-arrows-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-arrows-3{display:block}
     .sffr-welcome-slide-arrow{align-items:center;background:rgba(18,8,32,.68);border:1px solid rgba(255,255,255,.6);border-radius:50%;color:#fff;cursor:pointer;display:flex;font-family:Arial,Helvetica,sans-serif;font-size:31px;height:46px;justify-content:center;line-height:1;padding:0;pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);width:46px}
     .sffr-welcome-slide-arrow:hover,.sffr-welcome-slide-arrow:focus-visible{background:rgba(75,46,131,.94);outline:3px solid rgba(255,255,255,.72);outline-offset:2px}
     .sffr-welcome-slide-arrow-prev{left:14px}
@@ -148,7 +147,6 @@
                 <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-1" checked>
                 <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-2">
                 <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-3">
-                <input class="sffr-welcome-slide-choice" type="radio" name="sffr-welcome-slides" id="sffr-welcome-slide-4">
                 <div class="sffr-welcome-slide sffr-welcome-slide-1">
                     <a href="https://images.clubexpress.com/801899/photos/original/0226b0f3-ff8c-4668-908c-c74cb4b51036_1160716828.jpg" target="_blank" rel="noopener">
                         <img src="https://images.clubexpress.com/801899/photos/original/0226b0f3-ff8c-4668-908c-c74cb4b51036_1160716828.jpg" alt="SF FrontRunners members gathering together">
@@ -161,14 +159,14 @@
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>Powered by our members</strong><span>Volunteer-led since 1974</span></div>
                 </div>
-                <div class="sffr-welcome-slide sffr-welcome-slide-4">
+                <div class="sffr-welcome-slide sffr-welcome-slide-3">
                     <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/sffr-community-banner.jpeg" target="_blank" rel="noopener">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/welcome-back/sffr-community-banner.jpeg" alt="SF FrontRunners members gathered outdoors behind the club banner">
                     </a>
                     <div class="sffr-welcome-slide-caption"><strong>Welcome to the community</strong><span>Friendship, movement, and belonging since 1974</span></div>
                 </div>
                 <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-1">
-                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-4" aria-label="Show previous community photo">‹</label>
+                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-3" aria-label="Show previous community photo">‹</label>
                     <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-2" aria-label="Show next community photo">›</label>
                 </div>
                 <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-2">
@@ -177,10 +175,6 @@
                 </div>
                 <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-3">
                     <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-2" aria-label="Show previous community photo">‹</label>
-                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-4" aria-label="Show next community photo">›</label>
-                </div>
-                <div class="sffr-welcome-slide-arrows sffr-welcome-slide-arrows-4">
-                    <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-prev" for="sffr-welcome-slide-3" aria-label="Show previous community photo">‹</label>
                     <label class="sffr-welcome-slide-arrow sffr-welcome-slide-arrow-next" for="sffr-welcome-slide-1" aria-label="Show next community photo">›</label>
                 </div>
             </div>
