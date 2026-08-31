@@ -1,1 +1,722 @@
-<main class="weekly-run tuesday"><header><p>Weekly Run &amp; Walk</p><h1>Tuesday Evening Run</h1><p>Join San Francisco FrontRunners for a welcoming Tuesday evening run or walk along the Embarcadero. Choose your distance, enjoy views of the bay, and stay for dinner afterward.</p></header><section><h2>About the Run</h2><ul><li><strong>When:</strong> Tuesday at 6:30 PM, rain or shine</li><li><strong>Meet:</strong> SF Ferry Building, under the clock tower</li><li><strong>Distances:</strong> 3, 4, or 5 mile run or walk options</li><li><strong>Afterward:</strong> Dinner at Gott’s</li></ul></section><section><h2>Choose Your Route</h2><h3>5 Mile North</h3><p>Flat except for the Fort Mason hill, with views of the Golden Gate Bridge, Alcatraz, and the bay. One-to-four-mile variants are easy on this out-and-back route.</p><h3>5 Mile South</h3><p>A flat out-and-back route with views of the marina, Oracle Park, and Chase Center.</p><h3>The Hill Run</h3><p>Offered during daylight saving time, adding climbing and city views.</p></section><section><h2>Everyone Is Welcome</h2><p>All ages and abilities are welcome. We are a club of all faces and all paces, and proudly include runners and walkers.</p><ul><li>Choose the distance and pace that feel right for you.</li><li>Please obey traffic signals and stay alert at crossings.</li><li>There is no bag drop at the Ferry Building.</li></ul></section><section><h2>Stay Connected</h2><p>Email <a href="mailto:tuesday@sffr.org">tuesday@sffr.org</a>.</p></section></main>
+<!-- UPDATED AUGUST 14, 2026: Includes an expandable Board-style profile card for Tuesday Evening Run Host Peter Rigano. -->
+<style>
+    * {
+    box-sizing: border-box;
+    }
+    html {
+    scroll-behavior: smooth;
+    }
+    .tuesday-page {
+    --purple: #4b2e83;
+    --purple-dark: #34205f;
+    --purple-deep: #351f63;
+    --purple-light: #eee8f8;
+    --lavender: #eee8f8;
+    --pink: #d94f91;
+    --ink: #2f2f35;
+    --muted: #66636d;
+    --blue: #1769aa;
+    --line: #e5deef;
+    --surface: #ffffff;
+    --paper: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: #faf9fc;
+    line-height: 1.65;
+    }
+    .tuesday-page a {
+    color: var(--purple);
+    }
+    .tuesday-page img {
+    display: block;
+    max-width: 100%;
+    }
+    .tuesday-container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    }
+    .tuesday-hero {
+    padding: 58px 0 38px;
+    background: #f0e8f7;
+    border-bottom: 1px solid #e2d7ee;
+    text-align: center;
+    }
+    .tuesday-eyebrow {
+    margin: 0 0 10px;
+    color: var(--pink);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    }
+    .tuesday-hero h1 {
+    margin: 0 0 18px;
+    color: var(--purple);
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.08;
+    }
+    .tuesday-hero p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.75;
+    }
+    .tuesday-hero-photo {
+    position: relative;
+    overflow: hidden;
+    margin-top: 34px;
+    border-radius: 24px;
+    box-shadow: 0 18px 44px rgba(52, 32, 95, 0.18);
+    }
+    .tuesday-hero-photo img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    }
+    .tuesday-section {
+    padding: 44px 0;
+    }
+    .tuesday-section-heading {
+    max-width: 790px;
+    margin-bottom: 24px;
+    }
+    .tuesday-section-heading h2 {
+    margin: 0 0 10px;
+    color: var(--purple);
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.2;
+    }
+    .tuesday-section-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    }
+    .tuesday-details {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+    }
+    .tuesday-detail-card {
+    min-height: 185px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 24px rgba(52, 32, 95, 0.07);
+    }
+    .tuesday-detail-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 28px;
+    }
+    .tuesday-detail-card strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--purple);
+    font-size: 17px;
+    }
+    .tuesday-detail-card p {
+    margin: 0;
+    color: var(--muted);
+    }
+    .tuesday-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: 2px solid var(--purple);
+    border-radius: 999px;
+    background: var(--purple);
+    color: #ffffff !important;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.2s ease;
+    }
+    .tuesday-button:hover,
+    .tuesday-button:focus {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+    transform: translateY(-2px);
+    }
+    .tuesday-button-secondary {
+    background: #ffffff;
+    color: var(--purple) !important;
+    }
+    .tuesday-route-list {
+    display: grid;
+    gap: 28px;
+    }
+    .tuesday-route-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: 0 10px 30px rgba(52, 32, 95, 0.08);
+    }
+    .tuesday-route-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: #ece8f2;
+    }
+    .tuesday-route-gallery img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    }
+    .tuesday-route-gallery img + img {
+    border-left: 4px solid #ffffff;
+    }
+    .tuesday-route-content {
+    padding: 28px;
+    }
+    .tuesday-route-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 12px;
+    }
+    .tuesday-route-title h3 {
+    margin: 0;
+    color: var(--purple);
+    font-size: 28px;
+    }
+    .tuesday-route-badge {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    }
+    .tuesday-route-content p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 16px;
+    }
+    .tuesday-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    }
+    .tuesday-info-panel {
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    }
+    .tuesday-info-panel h3 {
+    margin: 0 0 14px;
+    color: var(--purple);
+    font-size: 24px;
+    }
+    .tuesday-info-panel ul {
+    margin: 0;
+    padding-left: 21px;
+    color: var(--muted);
+    }
+    .tuesday-info-panel li + li {
+    margin-top: 9px;
+    }
+    .sffr-board-section-heading {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    margin-bottom: 26px;
+    }
+    .sffr-board-section-heading h2 {
+    margin: 0 0 8px;
+    color: var(--purple-deep);
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.12;
+    }
+    .sffr-board-section-heading p {
+    max-width: 690px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    }
+    .sffr-board-tap-note {
+    margin: 0;
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    }
+    .sffr-board-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 549px);
+    justify-content: center;
+    gap: 22px;
+    align-items: start;
+    }
+    .sffr-profile {
+    border: 1px solid #e6dff0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--paper);
+    box-shadow: 0 8px 25px rgba(46,32,73,.07);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .sffr-profile:hover {
+    transform: translateY(-3px);
+    border-color: #cabce0;
+    box-shadow: 0 14px 34px rgba(46,32,73,.12);
+    }
+    .sffr-profile[open] {
+    border-color: #bdaed6;
+    box-shadow: 0 15px 38px rgba(46,32,73,.13);
+    }
+    .sffr-profile summary {
+    display: grid;
+    grid-template-columns: 118px 1fr 34px;
+    gap: 18px;
+    align-items: center;
+    min-height: 154px;
+    padding: 18px;
+    list-style: none;
+    cursor: pointer;
+    }
+    .sffr-profile summary::-webkit-details-marker {
+    display: none;
+    }
+    .sffr-profile summary:focus-visible {
+    outline: 4px solid rgba(23,105,170,.28);
+    outline-offset: -4px;
+    }
+    .sffr-profile-photo-link {
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+    }
+    .sffr-profile-photo {
+    display: block;
+    width: 118px;
+    height: 118px;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--lavender);
+    transition: transform .25s ease;
+    }
+    .sffr-profile:hover .sffr-profile-photo {
+    transform: scale(1.03);
+    }
+    .sffr-profile-role {
+    margin: 0 0 5px;
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    }
+    .sffr-profile h3 {
+    margin: 0 0 2px;
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.2;
+    }
+    .sffr-pronouns {
+    margin: 0 0 8px;
+    color: #777080;
+    font-size: 13px;
+    }
+    .sffr-expand-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--purple);
+    background: var(--lavender);
+    font-size: 22px;
+    font-weight: 700;
+    transition: transform .2s ease, color .2s ease, background .2s ease;
+    }
+    .sffr-profile[open] .sffr-expand-icon {
+    transform: rotate(45deg);
+    color: #fff;
+    background: var(--purple);
+    }
+    .sffr-profile-body {
+    padding: 0 22px 24px;
+    border-top: 1px solid #eee9f4;
+    background: linear-gradient(#fff, #fcfaff);
+    }
+    .sffr-quick-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+    }
+    .sffr-fact {
+    padding: 13px 14px;
+    border-radius: 13px;
+    background: var(--lavender);
+    }
+    .sffr-fact-label {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    }
+    .sffr-fact-value {
+    display: block;
+    color: #3c3548;
+    font-size: 14px;
+    line-height: 1.45;
+    }
+    .sffr-story {
+    margin: 18px 0 0;
+    }
+    .sffr-story h4 {
+    margin: 0 0 5px;
+    color: var(--purple-deep);
+    font-size: 15px;
+    }
+    .sffr-story p {
+    margin: 0;
+    color: #554f5e;
+    font-size: 15px;
+    line-height: 1.67;
+    }
+    .tuesday-connect {
+    margin-top: 10px;
+    padding: 38px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: #ffffff;
+    text-align: center;
+    }
+    .tuesday-connect h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 34px;
+    }
+    .tuesday-connect p {
+    max-width: 740px;
+    margin: 0 auto 22px;
+    color: #f2edf9;
+    font-size: 17px;
+    }
+    .tuesday-connect-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    }
+    .tuesday-connect .tuesday-button {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: var(--purple) !important;
+    }
+    .tuesday-connect .tuesday-button-secondary {
+    background: transparent;
+    color: #ffffff !important;
+    }
+    @media (max-width: 900px) {
+    .tuesday-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tuesday-info-grid {
+    grid-template-columns: 1fr;
+    }
+    }
+    @media (max-width: 820px) {
+    .sffr-board-grid {
+    grid-template-columns: minmax(0, 1fr);
+    }
+    .sffr-board-section-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }
+    .sffr-board-tap-note {
+    white-space: normal;
+    }
+    }
+    @media (max-width: 650px) {
+    .tuesday-container {
+    width: min(calc(100% - 28px), 1120px);
+    }
+    .tuesday-hero {
+    padding-top: 38px;
+    }
+    .tuesday-hero p {
+    font-size: 17px;
+    }
+    .tuesday-details,
+    .tuesday-route-gallery {
+    grid-template-columns: 1fr;
+    }
+    .tuesday-route-gallery img {
+    height: 250px;
+    }
+    .tuesday-route-gallery img + img {
+    border-top: 4px solid #ffffff;
+    border-left: 0;
+    }
+    .tuesday-route-title {
+    align-items: flex-start;
+    flex-direction: column;
+    }
+    .tuesday-route-content,
+    .tuesday-info-panel,
+    .tuesday-connect {
+    padding: 24px;
+    }
+    }
+    @media (max-width: 560px) {
+    .sffr-profile summary {
+    grid-template-columns: 88px 1fr 30px;
+    gap: 13px;
+    min-height: 120px;
+    padding: 13px;
+    }
+    .sffr-profile-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 12px;
+    }
+    .sffr-profile h3 {
+    font-size: 20px;
+    }
+    .sffr-profile-role {
+    font-size: 10px;
+    }
+    .sffr-profile-body {
+    padding: 0 16px 20px;
+    }
+    .sffr-quick-facts {
+    grid-template-columns: 1fr;
+    }
+    }
+    @media (prefers-reduced-motion: reduce) {
+    .sffr-profile,
+    .sffr-profile-photo,
+    .sffr-expand-icon {
+    transition: none;
+    }
+    }
+</style>
+<div class="tuesday-page">
+    <header class="tuesday-hero">
+        <div class="tuesday-container">
+            <p class="tuesday-eyebrow">Weekly Run &amp; Walk</p>
+            <h1>Tuesday Evening Run</h1>
+            <p>
+                Join San Francisco FrontRunners for a welcoming Tuesday evening run or walk along the Embarcadero. Choose your distance, enjoy views of the bay, and stay for dinner with the group afterward.
+            </p>
+            <div class="tuesday-hero-photo">
+                <img src="https://images.clubexpress.com/801899/graphics/1-6-26_Tuesday_Run_276371192_200801062.jpeg" alt="San Francisco FrontRunners at the Tuesday evening run">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="tuesday-section">
+            <div class="tuesday-container">
+                <div class="tuesday-section-heading">
+                    <h2>About the Run</h2>
+                    <p>
+                        A group of 15 to 30 runners and walkers meets outside the Ferry Building underneath the clock tower. Choose a 3 mile, 4 mile, or 5 mile route, then join the group for dinner at Gott's afterward.
+                    </p>
+                </div>
+                <div class="tuesday-details">
+                    <div class="tuesday-detail-card">
+                        <span class="tuesday-detail-icon" aria-hidden="true">📅</span>
+                        <strong>Tuesday</strong>
+                        <p>6:30 PM<br>
+                            Rain or shine</p>
+                    </div>
+                    <div class="tuesday-detail-card">
+                        <span class="tuesday-detail-icon" aria-hidden="true">📍</span>
+                        <strong>Meeting Point</strong>
+                        <p><a href="https://share.google/rIXxGGkIsKzTUnWMf" target="_blank" rel="noopener">SF Ferry Building</a><br>
+                            Under the clock tower</p>
+                    </div>
+                    <div class="tuesday-detail-card">
+                        <span class="tuesday-detail-icon" aria-hidden="true">🏃</span>
+                        <strong>Distances</strong>
+                        <p>3 mile, 4 mile, and 5 mile run or walk options</p>
+                    </div>
+                    <div class="tuesday-detail-card">
+                        <span class="tuesday-detail-icon" aria-hidden="true">🍔</span>
+                        <strong>Afterward</strong>
+                        <p>Dinner together at Gott's near the Ferry Building</p>
+                    </div>
+                    <div class="tuesday-detail-card">
+                        <span class="tuesday-detail-icon" aria-hidden="true">🎒</span>
+                        <strong>Bag Drop &amp; Parking</strong>
+                        <p>No bag drop is available. Free street parking is often available near the <a href="https://maps.app.goo.gl/cnWWNDFqPB7M3xWz7" target="_blank" rel="noopener">Bay Club Gateway</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tuesday-section">
+            <div class="tuesday-container">
+                <div class="tuesday-section-heading">
+                    <h2>Choose Your Route</h2>
+                    <p>
+                        All routes begin and end at the Ferry Building. The north and south routes are out and back, so you can turn around whenever you reach your preferred distance.
+                    </p>
+                </div>
+                <div class="tuesday-route-list">
+                    <article class="tuesday-route-card">
+                        <div class="tuesday-route-gallery">
+                            <img src="https://images.clubexpress.com/801899/graphics/Tuesday_north_1648034031.jpeg" alt="Tuesday runners on the north Embarcadero route">
+                            <img src="https://images.clubexpress.com/801899/graphics/Tuesday_north_1551352476.png" alt="Map of the Tuesday north route">
+                        </div>
+                        <div class="tuesday-route-content">
+                            <div class="tuesday-route-title">
+                                <h3>5 Mile North</h3>
+                                <span class="tuesday-route-badge">1 to 4 mile variants</span>
+                            </div>
+                            <p>
+                                Our most common route follows the Embarcadero north. It is flat except for the Fort Mason hill and offers scenic views of the Golden Gate Bridge, Alcatraz, and the bay. We regroup at the top of the hill for a brief photo before returning to the Ferry Building.
+                            </p>
+                            <a class="tuesday-button" href="https://www.strava.com/activities/17932845388" target="_blank" rel="noopener">View on Strava</a>
+                        </div>
+                    </article>
+                    <article class="tuesday-route-card">
+                        <div class="tuesday-route-gallery">
+                            <img src="https://images.clubexpress.com/801899/graphics/Tuesday_south_383381707.jpeg" alt="Tuesday runners on the south Embarcadero route">
+                            <img src="https://images.clubexpress.com/801899/graphics/Tuesday_south_map_1350222469.png" alt="Map of the Tuesday south route">
+                        </div>
+                        <div class="tuesday-route-content">
+                            <div class="tuesday-route-title">
+                                <h3>5 Mile South</h3>
+                                <span class="tuesday-route-badge">1 to 4 mile variants</span>
+                            </div>
+                            <p>
+                                This route follows the Embarcadero south and is flat as a pancake, with scenic views of the marina, Oracle Park, and Chase Center. Turn around at your desired distance before returning to the Ferry Building.
+                            </p>
+                            <a class="tuesday-button" href="https://www.strava.com/activities/17201219743?_branch_match_id=1534659011583761893&amp;_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy4pSixL1EssKNDLyczL1k9zynNKLvBKSjJKsq8rSk1LLSrKzEuPTyrKLy9OLbJ1zijKz00FAAqAitQ9AAAA&amp;share_sig=IL8Y4INL1775680780&amp;utm_medium=referral&amp;utm_medium=social&amp;utm_source=android_share&amp;utm_source=com.strava" target="_blank" rel="noopener">View on Strava</a>
+                        </div>
+                    </article>
+                    <article class="tuesday-route-card">
+                        <div class="tuesday-route-gallery">
+                            <img src="https://images.clubexpress.com/801899/graphics/coit_1612033974.jpg" alt="Coit Tower on the Tuesday hill route">
+                            <img src="https://images.clubexpress.com/801899/graphics/Screenshot_2026-04-08_at_13.08.16_903676800.png" alt="Map of the Tuesday hill route">
+                        </div>
+                        <div class="tuesday-route-content">
+                            <div class="tuesday-route-title">
+                                <h3>The Hill Run</h3>
+                                <span class="tuesday-route-badge">Daylight saving time only</span>
+                            </div>
+                            <p>
+                                Our world-famous hill route is offered when evening daylight allows. It adds climbing and city views for runners looking for a more challenging Tuesday option.
+                            </p>
+                            <a class="tuesday-button" href="https://www.strava.com/activities/18021614442" target="_blank" rel="noopener">View on Strava</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="tuesday-section">
+            <div class="tuesday-container">
+                <div class="tuesday-info-grid">
+                    <div class="tuesday-info-panel">
+                        <h3>Everyone Is Welcome</h3>
+                        <p>
+                            All ages and abilities are welcome. We are a club of all faces and all paces, and we are proud to include both runners and walkers. Whether you are training for Boston or coming out for an evening walk, you will be in good company.
+                        </p>
+                    </div>
+                    <div class="tuesday-info-panel">
+                        <h3>Run Information</h3>
+                        <ul>
+                            <li>The group meets and runs rain or shine.</li>
+                            <li>Choose the distance and pace that feel right for you.</li>
+                            <li>The north and south routes can easily be shortened.</li>
+                            <li>Please obey traffic signals and stay alert at crossings.</li>
+                            <li>There is no bag drop available at the Ferry Building.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tuesday-section">
+            <div class="tuesday-container">
+                <div class="sffr-board-section-heading">
+                    <div>
+                        <h2>Tuesday Evening Run Host</h2>
+                        <p>Peter helps welcome runners and walkers, share route information, and keep our Tuesday evening community moving. Say hello when you join us at the Ferry Building.</p>
+                        <div class="sffr-board-grid">
+                            <details class="sffr-profile" open="">
+                                <summary>
+                                    <!-- Replace both photo URLs below after uploading Peter's photo to ClubExpress. -->
+                                    <a class="sffr-profile-photo-link" href="//images.clubexpress.com/801899/photos/screen/Peter_Rigano_-_Peter_Rigano_1801517680.jpg" target="_blank" rel="noopener" aria-label="View a full-size photo of Peter Rigano">
+                                        <img class="sffr-profile-photo" src="//images.clubexpress.com/801899/photos/screen/Peter_Rigano_-_Peter_Rigano_1801517680.jpg" alt="Peter Rigano">
+                                    </a>
+                                    <span>
+<span class="sffr-profile-role">Tuesday Evening Run Host</span>
+<h3>Peter Rigano</h3>
+<span class="sffr-pronouns">he/him</span>
+</span>
+                                    <span class="sffr-expand-icon" aria-hidden="true">+</span>
+                                </summary>
+                                <div class="sffr-profile-body">
+                                    <div class="sffr-quick-facts">
+                                        <div class="sffr-fact">
+                                            <span class="sffr-fact-label">Hometown</span>
+                                            <span class="sffr-fact-value">Encinitas, California</span>
+                                        </div>
+                                        <div class="sffr-fact">
+                                            <span class="sffr-fact-label">Member since</span>
+                                            <span class="sffr-fact-value">May 2022</span>
+                                        </div>
+                                        <div class="sffr-fact">
+                                            <span class="sffr-fact-label">Current shoes</span>
+                                            <span class="sffr-fact-value">Brooks Adrenaline, always</span>
+                                        </div>
+                                        <div class="sffr-fact">
+                                            <span class="sffr-fact-label">Hobbies</span>
+                                            <span class="sffr-fact-value">Cooking and experimenting with new vegan recipes</span>
+                                        </div>
+                                    </div>
+                                    <div class="sffr-story">
+                                        <h4>A proud running accomplishment</h4>
+                                        <p>Peter ran a 3:12 at the San Francisco Marathon 10 years ago after finally deciding to train seriously. He says he has not come close to that personal record since.</p>
+                                    </div>
+                                    <div class="sffr-story">
+                                        <h4>A favorite SFFR memory</h4>
+                                        <p>Peter completed his first Bay to Breakers centipede with SFFR in 2024. Back in college, a friend drove up from San Diego to run the race in a dinosaur costume and raved about it for months. Peter had wanted to join a centipede ever since.</p>
+                                    </div>
+                                    <div class="sffr-story">
+                                        <h4>Fun fact</h4>
+                                        <p>Peter is an Eagle Scout. His slightly unhinged pandemic hobby was disaster preparedness, which is how he became a licensed amateur radio operator with the call sign KN6GRF.</p>
+                                    </div>
+                                    <div class="sffr-story">
+                                        <h4>Beyond running</h4>
+                                        <p>Peter loves cooking and is always experimenting with new vegan recipes.</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tuesday-section">
+            <div class="tuesday-container">
+                <div class="tuesday-connect">
+                    <h2>Stay Connected</h2>
+                    <p>
+                        Have questions before your first Tuesday run?</p>
+                    <div class="tuesday-connect-actions">
+                        <a class="tuesday-button" href="mailto:tuesday@sffr.org">Email tuesday@sffr.org</a>
+                        <a class="tuesday-button tuesday-button-secondary" href="https://www.instagram.com/sffrontrunners/" target="_blank" rel="noopener">Message Us on Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

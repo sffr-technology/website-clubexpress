@@ -1,1 +1,531 @@
-<main class="training-program pride-10k"><h1>Pride 10K Build</h1><h2>An 8-week training program to run a faster 10K</h2><p>We’re excited to offer an eight-week group coaching program for the Pride Run / Gay Games 10K, beginning May 4, 2026.</p><section><h2>Who This Is For</h2><ul><li>Intermediate runners who have completed a few 10K races</li><li>Runners consistently completing about 15–25 miles per week</li></ul></section><section><h2>Schedule</h2><ul><li><strong>Monday, 6:30 PM:</strong> Track workout at Kezar Stadium</li><li><strong>Tuesday, 6:30 PM:</strong> Weekly Embarcadero run</li><li><strong>Thursday, 6:30 PM:</strong> Weekly Castro run</li><li><strong>Saturday, 9:00 AM:</strong> Weekly Blue Heron Lake run</li></ul></section><section><h2>Coach</h2><p>Devesh is an RRCA-certified running coach with more than 20 years of experience racing distances from 5Ks to ultramarathons.</p></section><section><h2>Cost</h2><p>Free for all SFFR members and Pride Run registrants.</p></section></main>
+<style>
+    .sffr-10k-page {
+    --sffr-purple: #51358a;
+    --sffr-purple-dark: #35235f;
+    --sffr-magenta: #a23973;
+    --sffr-blue: #176b9b;
+    --sffr-lavender: #f0ebfa;
+    --sffr-pink: #faedf4;
+    --sffr-ink: #2d3040;
+    --sffr-muted: #626777;
+    --sffr-white: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--sffr-ink);
+    background: #f8f8fb;
+    line-height: 1.65;
+    }
+    .sffr-10k-page * {
+    box-sizing: border-box;
+    }
+    .sffr-10k-page h1,
+    .sffr-10k-page h2,
+    .sffr-10k-page h3,
+    .sffr-10k-page p {
+    margin-top: 0;
+    }
+    .sffr-10k-page a:focus-visible {
+    outline: 3px solid #f1bf45;
+    outline-offset: 3px;
+    }
+    /* HERO */
+    .sffr-10k-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    align-items: stretch;
+    min-height: 510px;
+    margin: 20px;
+    background: linear-gradient(135deg, #eee6fa 0%, #faedf4 55%, #e9f4fb 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(53, 35, 95, 0.14);
+    }
+    .sffr-10k-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px 48px;
+    }
+    .sffr-10k-eyebrow {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 16px;
+    padding: 7px 13px;
+    color: var(--sffr-purple);
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(81, 53, 138, 0.18);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    }
+    .sffr-10k-hero h1 {
+    margin-bottom: 18px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.03;
+    }
+    .sffr-10k-hero p {
+    margin-bottom: 28px;
+    color: #4f4e63;
+    font-size: 20px;
+    line-height: 1.7;
+    }
+    .sffr-10k-hero-image {
+    min-height: 510px;
+    background: #ddd5eb;
+    }
+    .sffr-10k-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    }
+    /* SHARED */
+    .sffr-10k-section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 65px 20px;
+    }
+    .sffr-10k-section-heading {
+    max-width: 770px;
+    margin-bottom: 32px;
+    }
+    .sffr-10k-section-heading h2 {
+    margin-bottom: 12px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.2;
+    }
+    .sffr-10k-section-heading p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    .sffr-10k-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    color: var(--sffr-white) !important;
+    background: var(--sffr-purple);
+    border: 2px solid var(--sffr-purple);
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+    }
+    .sffr-10k-button:hover {
+    color: var(--sffr-white) !important;
+    background: var(--sffr-purple-dark);
+    border-color: var(--sffr-purple-dark);
+    box-shadow: 0 8px 18px rgba(81, 53, 138, 0.24);
+    transform: translateY(-2px);
+    }
+    /* PROGRAM OVERVIEW */
+    .sffr-10k-overview {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    }
+    .sffr-10k-overview-card {
+    padding: 25px 18px;
+    background: var(--sffr-white);
+    border: 1px solid #e2ddec;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 7px 20px rgba(53, 35, 95, 0.07);
+    }
+    .sffr-10k-overview-icon {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 28px;
+    }
+    .sffr-10k-overview-card strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--sffr-purple);
+    font-size: 23px;
+    line-height: 1.2;
+    }
+    .sffr-10k-overview-card span {
+    color: var(--sffr-muted);
+    font-size: 15px;
+    font-weight: 700;
+    }
+    /* WHO IT IS FOR */
+    .sffr-10k-audience-wrap {
+    background: var(--sffr-white);
+    }
+    .sffr-10k-audience {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    }
+    .sffr-10k-audience-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+    padding: 28px;
+    background: #fbfafd;
+    border: 1px solid #e2ddec;
+    border-left: 5px solid var(--sffr-magenta);
+    border-radius: 14px;
+    }
+    .sffr-10k-audience-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: var(--sffr-white);
+    background: var(--sffr-magenta);
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 800;
+    }
+    .sffr-10k-audience-card h3 {
+    margin-bottom: 7px;
+    color: var(--sffr-purple-dark);
+    font-size: 21px;
+    }
+    .sffr-10k-audience-card p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    }
+    /* WEEKLY SCHEDULE */
+    .sffr-10k-schedule {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    }
+    .sffr-10k-schedule-card {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    overflow: hidden;
+    background: var(--sffr-white);
+    border: 1px solid #e2ddec;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(53, 35, 95, 0.06);
+    }
+    .sffr-10k-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 12px;
+    color: var(--sffr-white);
+    background: linear-gradient(
+    145deg,
+    var(--sffr-purple),
+    var(--sffr-magenta)
+    );
+    text-align: center;
+    }
+    .sffr-10k-day strong {
+    font-size: 16px;
+    text-transform: uppercase;
+    }
+    .sffr-10k-day span {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    }
+    .sffr-10k-schedule-copy {
+    padding: 22px;
+    }
+    .sffr-10k-schedule-copy h3 {
+    margin-bottom: 6px;
+    color: var(--sffr-purple-dark);
+    font-size: 20px;
+    }
+    .sffr-10k-schedule-copy p {
+    margin-bottom: 0;
+    color: var(--sffr-muted);
+    }
+    /* COACH AND COST */
+    .sffr-10k-support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    }
+    .sffr-10k-support-card {
+    padding: 32px;
+    border-radius: 16px;
+    }
+    .sffr-10k-coach-card {
+    background: var(--sffr-lavender);
+    border: 1px solid #ddd1f0;
+    }
+    .sffr-10k-cost-card {
+    color: var(--sffr-white);
+    background: linear-gradient(135deg, var(--sffr-purple-dark), #593880);
+    box-shadow: 0 10px 25px rgba(53, 35, 95, 0.18);
+    }
+    .sffr-10k-support-card h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+    }
+    .sffr-10k-coach-card h2 {
+    color: var(--sffr-purple-dark);
+    }
+    .sffr-10k-cost-card h2 {
+    color: var(--sffr-white);
+    }
+    .sffr-10k-support-card p {
+    margin-bottom: 0;
+    font-size: 17px;
+    }
+    .sffr-10k-coach-card p {
+    color: #55556a;
+    }
+    .sffr-10k-cost-card p {
+    color: #f0eaf8;
+    }
+    .sffr-10k-free {
+    display: block;
+    margin-bottom: 10px;
+    color: #f5cdea;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    }
+    /* CTA */
+    .sffr-10k-cta {
+    margin: 0 20px 20px;
+    padding: 55px 25px;
+    background: linear-gradient(135deg, #eee6fa, #faedf4);
+    border-radius: 20px;
+    text-align: center;
+    }
+    .sffr-10k-cta-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    }
+    .sffr-10k-cta h2 {
+    margin-bottom: 14px;
+    color: var(--sffr-purple-dark);
+    font-size: clamp(30px, 4vw, 40px);
+    }
+    .sffr-10k-cta p {
+    margin-bottom: 25px;
+    color: var(--sffr-muted);
+    font-size: 18px;
+    }
+    @media (max-width: 900px) {
+    .sffr-10k-hero {
+    grid-template-columns: 1fr;
+    }
+    .sffr-10k-hero-image {
+    min-height: 420px;
+    order: -1;
+    }
+    .sffr-10k-overview,
+    .sffr-10k-schedule {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    }
+    @media (max-width: 680px) {
+    .sffr-10k-hero {
+    min-height: 0;
+    margin: 12px;
+    border-radius: 15px;
+    }
+    .sffr-10k-hero-copy {
+    padding: 34px 24px 38px;
+    }
+    .sffr-10k-hero-image {
+    min-height: 320px;
+    }
+    .sffr-10k-hero h1 {
+    font-size: 42px;
+    }
+    .sffr-10k-hero p {
+    font-size: 17px;
+    }
+    .sffr-10k-section {
+    padding: 48px 12px;
+    }
+    .sffr-10k-overview,
+    .sffr-10k-audience,
+    .sffr-10k-schedule,
+    .sffr-10k-support-grid {
+    grid-template-columns: 1fr;
+    }
+    .sffr-10k-schedule-card {
+    grid-template-columns: 92px minmax(0, 1fr);
+    }
+    .sffr-10k-support-card {
+    padding: 27px 23px;
+    }
+    .sffr-10k-cta {
+    margin: 0 12px 12px;
+    padding: 44px 20px;
+    }
+    .sffr-10k-button {
+    width: 100%;
+    }
+    }
+</style>
+<div class="sffr-10k-page">
+    <section class="sffr-10k-hero">
+        <div class="sffr-10k-hero-copy">
+            <span class="sffr-10k-eyebrow">Eight-week group coaching program</span>
+            <h1>Pride 10K Build</h1>
+            <p>
+                Train with SF FrontRunners and Coach Devesh to run a faster Pride Run or
+                Gay Games 10K. The program begins Monday, May 4, 2026.
+            </p>
+            <div>
+                <a class="sffr-10k-button" href="https://docs.google.com/forms/d/e/1FAIpQLSd-Vn_kjMyYVyJTkx3WByr0po8wJEJ-U4_6UKVECl6HHCHVeQ/viewform?usp=send_form" target="_blank" rel="noopener">Sign up for the program</a>
+            </div>
+        </div>
+        <div class="sffr-10k-hero-image">
+            <img src="https://images.clubexpress.com/801899/graphics/73-DSCF7619_22803223.jpg" alt="SF FrontRunners training together">
+        </div>
+    </section>
+    <section class="sffr-10k-section">
+        <div class="sffr-10k-section-heading">
+            <h2>The program at a glance</h2>
+            <p>
+                A focused group training experience designed to build speed,
+                consistency, and confidence for your next 10K.
+            </p>
+        </div>
+        <div class="sffr-10k-overview">
+            <div class="sffr-10k-overview-card">
+                <span class="sffr-10k-overview-icon" aria-hidden="true">📅</span>
+                <strong>8 weeks</strong>
+                <span>Beginning May 4, 2026</span>
+            </div>
+            <div class="sffr-10k-overview-card">
+                <span class="sffr-10k-overview-icon" aria-hidden="true">🏃</span>
+                <strong>4 runs</strong>
+                <span>Every week</span>
+            </div>
+            <div class="sffr-10k-overview-card">
+                <span class="sffr-10k-overview-icon" aria-hidden="true">📈</span>
+                <strong>15–25 miles</strong>
+                <span>Current weekly base</span>
+            </div>
+            <div class="sffr-10k-overview-card">
+                <span class="sffr-10k-overview-icon" aria-hidden="true">🌈</span>
+                <strong>Free</strong>
+                <span>For eligible participants</span>
+            </div>
+        </div>
+    </section>
+    <section class="sffr-10k-audience-wrap">
+        <div class="sffr-10k-section">
+            <div class="sffr-10k-section-heading">
+                <h2>Who this program is for</h2>
+                <p>
+                    The Pride 10K Build is intended for intermediate runners who already
+                    have a consistent running base.
+                </p>
+            </div>
+            <div class="sffr-10k-audience">
+                <article class="sffr-10k-audience-card">
+                    <div class="sffr-10k-audience-number">1</div>
+                    <div>
+                        <h3>10K experience</h3>
+                        <p>You have completed a few 10K races and are ready to improve.</p>
+                    </div>
+                </article>
+                <article class="sffr-10k-audience-card">
+                    <div class="sffr-10k-audience-number">2</div>
+                    <div>
+                        <h3>Consistent mileage</h3>
+                        <p>You currently run approximately 15–25 miles per week.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="sffr-10k-section">
+        <div class="sffr-10k-section-heading">
+            <h2>Your weekly schedule</h2>
+            <p>
+                The program combines a Monday track workout with three established SF
+                FrontRunners weekly runs.
+            </p>
+        </div>
+        <div class="sffr-10k-schedule">
+            <article class="sffr-10k-schedule-card">
+                <div class="sffr-10k-day">
+                    <strong>Mon</strong>
+                    <span>6:30 PM</span>
+                </div>
+                <div class="sffr-10k-schedule-copy">
+                    <h3>Evening Track Workout</h3>
+                    <p>Kezar Stadium, 670 Kezar Drive, San Francisco</p>
+                </div>
+            </article>
+            <article class="sffr-10k-schedule-card">
+                <div class="sffr-10k-day">
+                    <strong>Tue</strong>
+                    <span>6:30 PM</span>
+                </div>
+                <div class="sffr-10k-schedule-copy">
+                    <h3>Weekly Run</h3>
+                    <p>Embarcadero</p>
+                </div>
+            </article>
+            <article class="sffr-10k-schedule-card">
+                <div class="sffr-10k-day">
+                    <strong>Thu</strong>
+                    <span>6:30 PM</span>
+                </div>
+                <div class="sffr-10k-schedule-copy">
+                    <h3>Weekly Run</h3>
+                    <p>Castro</p>
+                </div>
+            </article>
+            <article class="sffr-10k-schedule-card">
+                <div class="sffr-10k-day">
+                    <strong>Sat</strong>
+                    <span>9:00 AM</span>
+                </div>
+                <div class="sffr-10k-schedule-copy">
+                    <h3>Weekly Run</h3>
+                    <p>Blue Heron Lake</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="sffr-10k-section">
+        <div class="sffr-10k-support-grid">
+            <article class="sffr-10k-support-card sffr-10k-coach-card">
+                <h2>Meet Coach Devesh</h2>
+                <p>
+                    Devesh is an RRCA-certified running coach with more than 20 years of
+                    experience racing distances from 5Ks to ultramarathons.
+                </p>
+            </article>
+            <article class="sffr-10k-support-card sffr-10k-cost-card">
+                <span class="sffr-10k-free">Free</span>
+                <h2>No program fee</h2>
+                <p>
+                    Participation is free for all SF FrontRunners members and Pride Run
+                    registrants.
+                </p>
+            </article>
+        </div>
+    </section>
+    <section class="sffr-10k-cta">
+        <div class="sffr-10k-cta-inner">
+            <h2>Build toward a faster 10K</h2>
+            <p>
+                Join Coach Devesh and fellow runners for eight weeks of structured group
+                training.
+            </p>
+            <a class="sffr-10k-button" href="https://docs.google.com/forms/d/e/1FAIpQLSd-Vn_kjMyYVyJTkx3WByr0po8wJEJ-U4_6UKVECl6HHCHVeQ/viewform?usp=send_form" target="_blank" rel="noopener">Complete the sign-up form</a>
+        </div>
+    </section>
+</div>
