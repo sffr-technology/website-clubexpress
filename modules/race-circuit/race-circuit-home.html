@@ -1,0 +1,1086 @@
+<!--
+  SFFR 2026 RACE CIRCUIT HOME
+  Recommended ClubExpress quick link: sffr.org/racecircuit
+  Paste this entire file into the ClubExpress HTML editor for module 780323.
+
+  PHOTO AREA:
+  Two photo spaces are included in the hero. To add your photos, replace each
+  .sffr-rch-photo-placeholder div with an image like this:
+  <img src="//images.clubexpress.com/801899/photos/screen/20220625-080807_332827340.jpg" alt="Describe the SFFR members pictured">
+-->
+<style>
+    .sffr-rch,
+    .sffr-rch * {
+    box-sizing: border-box;
+    }
+    .sffr-rch {
+    --ink: #28242f;
+    --muted: #696370;
+    --purple: #4b2e83;
+    --purple-dark: #301c5b;
+    --purple-soft: #f3eef9;
+    --gold: #f2b63d;
+    --gold-soft: #fff6dd;
+    --coral: #e96e5f;
+    --green: #2f7a5c;
+    --green-soft: #edf7f2;
+    --paper: #fffdf8;
+    --line: #dfd7e8;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    overflow: hidden;
+    }
+    .sffr-rch a {
+    color: var(--purple);
+    }
+    .sffr-rch-inner,
+    .sffr-rch-section {
+    margin: 0 auto;
+    max-width: 1140px;
+    }
+    /* Hero */
+    .sffr-rch-hero {
+    background:
+    radial-gradient(circle at 91% 7%, rgba(242, 182, 61, .24) 0 110px, transparent 111px),
+    radial-gradient(circle at 68% 93%, rgba(255, 255, 255, .08) 0 165px, transparent 166px),
+    linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: #fff;
+    padding: clamp(52px, 7vw, 88px) 22px;
+    }
+    .sffr-rch-hero-inner {
+    align-items: center;
+    display: grid;
+    gap: clamp(34px, 6vw, 70px);
+    grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+    }
+    .sffr-rch-kicker,
+    .sffr-rch-label {
+    color: #f8d67e;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .15em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    }
+    .sffr-rch-hero h1 {
+    color: #fff;
+    font-size: clamp(43px, 6vw, 70px);
+    letter-spacing: -.045em;
+    line-height: 1.02;
+    margin: 0 0 20px;
+    max-width: 760px;
+    }
+    .sffr-rch-hero-copy {
+    color: rgba(255, 255, 255, .86);
+    font-size: clamp(18px, 2vw, 21px);
+    margin: 0;
+    max-width: 690px;
+    }
+    .sffr-rch-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-top: 29px;
+    }
+    .sffr-rch-button {
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: var(--purple-dark) !important;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 11px 18px;
+    text-decoration: none;
+    }
+    .sffr-rch-button-alt {
+    background: transparent;
+    color: #fff !important;
+    }
+    /* Two-photo hero area */
+    .sffr-rch-photo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 360px;
+    position: relative;
+    }
+    .sffr-rch-photo {
+    background: rgba(255, 255, 255, .1);
+    border: 5px solid rgba(255, 255, 255, .9);
+    border-radius: 20px;
+    box-shadow: 0 18px 42px rgba(22, 10, 48, .28);
+    min-height: 275px;
+    overflow: hidden;
+    position: relative;
+    }
+    .sffr-rch-photo:first-child {
+    margin: 0 -18px 42px 0;
+    transform: rotate(-3deg);
+    z-index: 1;
+    }
+    .sffr-rch-photo:last-child {
+    margin: 56px 0 0 -18px;
+    transform: rotate(3deg);
+    z-index: 2;
+    }
+    .sffr-rch-photo-button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    cursor: zoom-in;
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    }
+    .sffr-rch-photo-button:focus-visible {
+    outline: 4px solid #f8d67e;
+    outline-offset: -9px;
+    }
+    .sffr-rch-photo img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s ease;
+    width: 100%;
+    }
+    .sffr-rch-photo-placeholder {
+    align-items: center;
+    background:
+    linear-gradient(145deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04)),
+    var(--purple-dark);
+    color: rgba(255, 255, 255, .86);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 700;
+    height: 100%;
+    justify-content: center;
+    letter-spacing: .03em;
+    min-height: 275px;
+    padding: 24px;
+    text-align: center;
+    }
+    .sffr-rch-photo-placeholder span {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 8px;
+    }
+    /* Shared sections */
+    .sffr-rch-section {
+    padding: clamp(58px, 8vw, 88px) 22px;
+    }
+    .sffr-rch-section-soft {
+    background: var(--purple-soft);
+    max-width: none;
+    }
+    .sffr-rch-section-soft > .sffr-rch-inner {
+    padding-left: 22px;
+    padding-right: 22px;
+    }
+    .sffr-rch-heading {
+    margin-bottom: 30px;
+    max-width: 800px;
+    }
+    .sffr-rch-label {
+    color: var(--coral);
+    }
+    .sffr-rch-heading h2 {
+    color: var(--purple-dark);
+    font-size: clamp(31px, 5vw, 47px);
+    letter-spacing: -.035em;
+    line-height: 1.1;
+    margin: 0 0 12px;
+    }
+    .sffr-rch-heading p {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+    }
+    /* How it works */
+    .sffr-rch-steps {
+    counter-reset: step;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(4, 1fr);
+    }
+    .sffr-rch-step {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(48, 28, 91, .05);
+    padding: 24px;
+    text-align: left;
+    }
+    .sffr-rch-step:before {
+    align-items: center;
+    background: var(--purple);
+    border-radius: 50%;
+    color: #fff;
+    content: counter(step);
+    counter-increment: step;
+    display: flex;
+    font-size: 13px;
+    font-weight: 800;
+    height: 36px;
+    justify-content: center;
+    margin-bottom: 21px;
+    width: 36px;
+    }
+    .sffr-rch-step h3 {
+    color: var(--purple-dark);
+    font-size: 19px;
+    margin: 0 0 7px;
+    }
+    .sffr-rch-step p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+    }
+    /* Participation and recognition */
+    .sffr-rch-two-col {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: .9fr 1.1fr;
+    }
+    .sffr-rch-info {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 29px;
+    text-align: left;
+    }
+    .sffr-rch-info h3 {
+    color: var(--purple-dark);
+    font-size: 25px;
+    margin: 0 0 13px;
+    }
+    .sffr-rch-info p,
+    .sffr-rch-info li {
+    color: var(--muted);
+    }
+    .sffr-rch-info ul {
+    margin: 0;
+    padding-left: 22px;
+    text-align: left;
+    }
+    .sffr-rch-info li + li {
+    margin-top: 8px;
+    }
+    .sffr-rch-awards {
+    display: grid;
+    gap: 13px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    }
+    .sffr-rch-award {
+    background: var(--gold-soft);
+    border: 1px solid #eed391;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    }
+    .sffr-rch-award b {
+    color: var(--coral);
+    display: block;
+    font-size: 30px;
+    letter-spacing: -.04em;
+    line-height: 1;
+    }
+    .sffr-rch-award strong {
+    color: var(--purple-dark);
+    display: block;
+    font-size: 16px;
+    margin-top: 9px;
+    }
+    .sffr-rch-award p {
+    color: #6c5525;
+    font-size: 12px;
+    margin: 5px 0 0;
+    }
+    /* Track choices */
+    .sffr-rch-boards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    }
+    .sffr-rch-board {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 10px 28px rgba(48, 28, 91, .07);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: left;
+    }
+    .sffr-rch-board-head {
+    background: var(--purple-soft);
+    border-bottom: 1px solid var(--line);
+    padding: 27px;
+    }
+    .sffr-rch-board:nth-child(2) .sffr-rch-board-head {
+    background: var(--green-soft);
+    }
+    .sffr-rch-board-head span {
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    }
+    .sffr-rch-board-head h3 {
+    color: var(--purple-dark);
+    font-size: 28px;
+    letter-spacing: -.03em;
+    margin: 6px 0 0;
+    }
+    .sffr-rch-board-body {
+    flex: 1;
+    padding: 25px;
+    }
+    .sffr-rch-board-body p {
+    color: var(--muted);
+    margin: 0 0 18px;
+    }
+    .sffr-rch-board-body ul {
+    color: var(--muted);
+    margin: 0;
+    padding-left: 22px;
+    text-align: left;
+    }
+    .sffr-rch-board-body li + li {
+    margin-top: 7px;
+    }
+    .sffr-rch-board-links {
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 17px 25px;
+    }
+    .sffr-rch-board-links a {
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    }
+    /* Points */
+    .sffr-rch-points {
+    background: var(--purple-dark);
+    border-radius: 20px;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 24px;
+    overflow: hidden;
+    }
+    .sffr-rch-point {
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, .18);
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 21px 14px;
+    }
+    .sffr-rch-point:last-child {
+    border-right: 0;
+    }
+    .sffr-rch-point b {
+    align-items: center;
+    background: rgba(255, 255, 255, .12);
+    border-radius: 50%;
+    color: #f8d67e;
+    display: flex;
+    font-size: 19px;
+    height: 43px;
+    justify-content: center;
+    width: 43px;
+    }
+    .sffr-rch-point span {
+    color: rgba(255, 255, 255, .72);
+    font-size: 12px;
+    }
+    .sffr-rch-point strong {
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    }
+    /* Sports Basement partnership */
+    .sffr-rch-sponsor-section {
+    background:
+    radial-gradient(circle at 92% 14%, rgba(242, 182, 61, .18) 0 130px, transparent 131px),
+    linear-gradient(145deg, #173e32, #245d49);
+    color: #fff;
+    max-width: none;
+    }
+    .sffr-rch-sponsor-section > .sffr-rch-inner {
+    padding-left: 22px;
+    padding-right: 22px;
+    }
+    .sffr-rch-sponsor-heading {
+    align-items: end;
+    display: grid;
+    gap: 26px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr);
+    margin-bottom: 30px;
+    }
+    .sffr-rch-sponsor-heading .sffr-rch-label {
+    color: #f8d67e;
+    }
+    .sffr-rch-sponsor-heading h2 {
+    color: #fff;
+    font-size: clamp(31px, 5vw, 47px);
+    letter-spacing: -.035em;
+    line-height: 1.1;
+    margin: 0 0 12px;
+    }
+    .sffr-rch-sponsor-heading p {
+    color: rgba(255, 255, 255, .8);
+    font-size: 17px;
+    margin: 0;
+    max-width: 760px;
+    }
+    .sffr-rch-sponsor-badge {
+    align-items: center;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 16px;
+    color: #fff;
+    display: flex;
+    gap: 13px;
+    justify-self: end;
+    max-width: 300px;
+    padding: 16px 18px;
+    }
+    .sffr-rch-sponsor-badge-icon {
+    align-items: center;
+    background: var(--gold);
+    border-radius: 50%;
+    color: #173e32;
+    display: flex;
+    flex: 0 0 42px;
+    font-size: 20px;
+    height: 42px;
+    justify-content: center;
+    }
+    .sffr-rch-sponsor-badge span {
+    color: rgba(255, 255, 255, .66);
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    }
+    .sffr-rch-sponsor-badge strong {
+    color: #fff;
+    display: block;
+    font-size: 17px;
+    line-height: 1.25;
+    margin-top: 2px;
+    }
+    .sffr-rch-sponsor-card {
+    background: #fff;
+    border-radius: 21px;
+    box-shadow: 0 18px 45px rgba(8, 32, 24, .24);
+    color: var(--ink);
+    display: grid;
+    gap: 0;
+    grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
+    overflow: hidden;
+    }
+    .sffr-rch-discount-summary {
+    background: var(--gold-soft);
+    border-right: 1px solid #eed391;
+    padding: clamp(26px, 4vw, 38px);
+    }
+    .sffr-rch-discount-summary h3 {
+    color: var(--purple-dark);
+    font-size: 27px;
+    letter-spacing: -.025em;
+    margin: 0 0 7px;
+    }
+    .sffr-rch-discount-dates {
+    color: #6c5525;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 24px;
+    }
+    .sffr-rch-discount-rates {
+    display: grid;
+    gap: 11px;
+    grid-template-columns: 1fr 1fr;
+    }
+    .sffr-rch-discount-rate {
+    background: #fff;
+    border: 1px solid #eed391;
+    border-radius: 14px;
+    padding: 17px;
+    }
+    .sffr-rch-discount-rate b {
+    color: var(--coral);
+    display: block;
+    font-size: 31px;
+    letter-spacing: -.04em;
+    line-height: 1;
+    }
+    .sffr-rch-discount-rate span {
+    color: var(--purple-dark);
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 7px;
+    }
+    .sffr-rch-discount-details {
+    padding: clamp(26px, 4vw, 38px);
+    }
+    .sffr-rch-discount-details h3 {
+    color: var(--purple-dark);
+    font-size: 24px;
+    margin: 0 0 9px;
+    }
+    .sffr-rch-discount-details p {
+    color: var(--muted);
+    margin: 0 0 20px;
+    }
+    .sffr-rch-code {
+    align-items: center;
+    background: var(--purple-soft);
+    border: 1px dashed #a992c7;
+    border-radius: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    justify-content: space-between;
+    margin-bottom: 21px;
+    padding: 14px 16px;
+    }
+    .sffr-rch-code span {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    }
+    .sffr-rch-code strong {
+    color: var(--purple-dark);
+    font-size: 17px;
+    letter-spacing: .06em;
+    }
+    .sffr-rch-sponsor-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 17px;
+    }
+    .sffr-rch-sponsor-actions .sffr-rch-button {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: #fff !important;
+    }
+    .sffr-rch-sponsor-actions .sffr-rch-exclusions {
+    font-size: 13px;
+    font-weight: 800;
+    }
+    /* Resources */
+    .sffr-rch-links {
+    display: grid;
+    gap: 13px;
+    grid-template-columns: repeat(4, 1fr);
+    }
+    .sffr-rch-links a {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 21px;
+    text-decoration: none;
+    }
+    .sffr-rch-links span {
+    color: var(--coral);
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    margin-bottom: 18px;
+    }
+    .sffr-rch-links strong {
+    color: var(--purple-dark);
+    display: block;
+    font-size: 17px;
+    line-height: 1.25;
+    }
+    .sffr-rch-links p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 7px 0 0;
+    }
+    /* Contact */
+    .sffr-rch-contact {
+    background: var(--purple-dark);
+    color: #fff;
+    padding: clamp(48px, 7vw, 70px) 22px;
+    text-align: center;
+    }
+    .sffr-rch-contact h2 {
+    color: #fff;
+    font-size: clamp(30px, 5vw, 44px);
+    letter-spacing: -.03em;
+    margin: 0 0 9px;
+    }
+    .sffr-rch-contact p {
+    color: rgba(255, 255, 255, .75);
+    margin: 0 auto 22px;
+    max-width: 640px;
+    }
+    /* Click-to-open photo lightbox */
+    .sffr-rch-lightbox[hidden] {
+    display: none;
+    }
+    .sffr-rch-lightbox {
+    align-items: center;
+    background: rgba(18, 10, 31, .94);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+    position: fixed;
+    z-index: 99999;
+    }
+    .sffr-rch-lightbox-dialog {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 1120px;
+    position: relative;
+    width: 100%;
+    }
+    .sffr-rch-lightbox-image {
+    background: #120a1f;
+    border-radius: 14px;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, .48);
+    display: block;
+    height: auto;
+    max-height: calc(100vh - 110px);
+    max-width: 100%;
+    object-fit: contain;
+    width: auto;
+    }
+    .sffr-rch-lightbox-close {
+    align-items: center;
+    appearance: none;
+    background: #fff;
+    border: 0;
+    border-radius: 999px;
+    color: var(--purple-dark);
+    cursor: pointer;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    height: 44px;
+    justify-content: center;
+    line-height: 1;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 44px;
+    z-index: 2;
+    }
+    .sffr-rch-lightbox-close:focus-visible {
+    outline: 4px solid #f8d67e;
+    outline-offset: 3px;
+    }
+    @media (hover: hover) {
+    .sffr-rch-button,
+    .sffr-rch-board,
+    .sffr-rch-step,
+    .sffr-rch-sponsor-card,
+    .sffr-rch-links a {
+    transition: box-shadow .2s ease, transform .2s ease;
+    }
+    .sffr-rch-button:hover {
+    transform: translateY(-1px);
+    }
+    .sffr-rch-board:hover,
+    .sffr-rch-step:hover,
+    .sffr-rch-sponsor-card:hover,
+    .sffr-rch-links a:hover {
+    box-shadow: 0 14px 32px rgba(48, 28, 91, .11);
+    transform: translateY(-2px);
+    }
+    .sffr-rch-photo-button:hover img {
+    transform: scale(1.035);
+    }
+    }
+    @media (max-width: 900px) {
+    .sffr-rch-hero-inner {
+    grid-template-columns: 1fr;
+    }
+    .sffr-rch-photo-pair {
+    margin: 0 auto;
+    max-width: 560px;
+    width: 100%;
+    }
+    .sffr-rch-steps,
+    .sffr-rch-links {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .sffr-rch-two-col {
+    grid-template-columns: 1fr;
+    }
+    .sffr-rch-sponsor-heading,
+    .sffr-rch-sponsor-card {
+    grid-template-columns: 1fr;
+    }
+    .sffr-rch-sponsor-badge {
+    justify-self: start;
+    }
+    .sffr-rch-discount-summary {
+    border-bottom: 1px solid #eed391;
+    border-right: 0;
+    }
+    }
+    @media (max-width: 680px) {
+    .sffr-rch-hero {
+    padding-top: 46px;
+    }
+    .sffr-rch-photo-pair {
+    min-height: 280px;
+    }
+    .sffr-rch-photo,
+    .sffr-rch-photo-placeholder {
+    min-height: 215px;
+    }
+    .sffr-rch-boards,
+    .sffr-rch-steps,
+    .sffr-rch-links {
+    grid-template-columns: 1fr;
+    }
+    .sffr-rch-awards {
+    grid-template-columns: 1fr;
+    }
+    .sffr-rch-discount-rates {
+    grid-template-columns: 1fr;
+    }
+    .sffr-rch-points {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .sffr-rch-point:nth-child(2) {
+    border-right: 0;
+    }
+    .sffr-rch-point:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+    }
+    @media (max-width: 440px) {
+    .sffr-rch-photo-pair {
+    min-height: 250px;
+    }
+    .sffr-rch-photo,
+    .sffr-rch-photo-placeholder {
+    min-height: 185px;
+    }
+    .sffr-rch-photo:first-child {
+    margin-right: -10px;
+    }
+    .sffr-rch-photo:last-child {
+    margin-left: -10px;
+    }
+    .sffr-rch-lightbox {
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    .sffr-rch-lightbox-image {
+    border-radius: 10px;
+    max-height: calc(100vh - 90px);
+    }
+    .sffr-rch-lightbox-close {
+    height: 42px;
+    right: 8px;
+    top: 8px;
+    width: 42px;
+    }
+    }
+    @media (prefers-reduced-motion: reduce) {
+    .sffr-rch-photo img {
+    transition: none;
+    }
+    }
+</style>
+<div class="sffr-rch">
+    <section class="sffr-rch-hero">
+        <div class="sffr-rch-inner sffr-rch-hero-inner">
+            <div>
+                <p class="sffr-rch-kicker">Run it. Walk it. Celebrate it.</p>
+                <h1>SFFR x Sports Basement 2026 Race Circuit</h1>
+                <p class="sffr-rch-hero-copy">Pick a race from the SFFR Race Circuit, meet your running and walking buddies at the start line, and have some fun chasing your next finish.</p>
+                <div class="sffr-rch-actions">
+                    <a class="sffr-rch-button" href="//sffr.org/racecalendar">Explore the race calendar</a>
+                    <a class="sffr-rch-button sffr-rch-button-alt" href="//docs.google.com/forms/d/e/1FAIpQLSd6q-eVQA4KA1diFQhKvtw42E7-LawA5zXyqkoQlwHimOjMWQ/viewform" target="_blank" rel="noopener">Submit a completed race</a>
+                </div>
+            </div>
+            <div class="sffr-rch-photo-pair" aria-label="Space for two SF FrontRunners race photos">
+                <div class="sffr-rch-photo">
+                    <button class="sffr-rch-photo-button" type="button" data-lightbox-src="//images.clubexpress.com/801899/photos/screen/WhatsApp_Image_2026-02-14_at_10.39.21_289371486.jpeg" data-lightbox-alt="SF FrontRunners members at a club race" aria-label="Open the first SF FrontRunners race photo" aria-haspopup="dialog">
+                        <img src="//images.clubexpress.com/801899/photos/screen/WhatsApp_Image_2026-02-14_at_10.39.21_289371486.jpeg" alt="SF FrontRunners members at a club race">
+                    </button>
+                </div>
+                <div class="sffr-rch-photo">
+                    <button class="sffr-rch-photo-button" type="button" data-lightbox-src="//images.clubexpress.com/801899/photos/screen/20220625-080807_332827340.jpg" data-lightbox-alt="SF FrontRunners members celebrating together" aria-label="Open the second SF FrontRunners race photo" aria-haspopup="dialog">
+                        <img src="//images.clubexpress.com/801899/photos/screen/20220625-080807_332827340.jpg" alt="SF FrontRunners members celebrating together">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 1. HOW IT WORKS -->
+    <section class="sffr-rch-section">
+        <div class="sffr-rch-heading">
+            <p class="sffr-rch-label">How it works</p>
+            <h2>From start line to standings</h2>
+            <p>Choose a race, enjoy the miles, then tell us about your finish. We will take care of the leaderboard.</p>
+        </div>
+        <div class="sffr-rch-steps">
+            <article class="sffr-rch-step">
+                <h3>Choose a race</h3>
+                <p>Pick an official Race Circuit event or a certified race anywhere in the world.</p>
+            </article>
+            <article class="sffr-rch-step">
+                <h3>Complete it</h3>
+                <p>Run or walk in person, or participate virtually when the organizer offers that option.</p>
+            </article>
+            <article class="sffr-rch-step">
+                <h3>Submit your finish</h3>
+                <p>Complete one Race Completion Form for every event you finish.</p>
+            </article>
+            <article class="sffr-rch-step">
+                <h3>Follow your progress</h3>
+                <p>Check your leaderboard for recorded races, points, and season totals.</p>
+            </article>
+        </div>
+    </section>
+    <!-- 2. WHO CAN PARTICIPATE -->
+    <section class="sffr-rch-section sffr-rch-section-soft">
+        <div class="sffr-rch-inner">
+            <div class="sffr-rch-heading">
+                <p class="sffr-rch-label">Who can participate</p>
+                <h2>The circuit is for active SFFR members</h2>
+                <p>Whether you are chasing a personal best or simply looking for a fun race with friends, there is a place for you.</p>
+            </div>
+            <div class="sffr-rch-two-col">
+                <article class="sffr-rch-info">
+                    <h3>Eligibility</h3>
+                    <ul>
+                        <li>Active SF FrontRunners members who have paid their 2026 dues</li>
+                        <li>In-person and organizer-supported virtual participation</li>
+                        <li>Official calendar races completed before the End-of-Year Party</li>
+                        <li>Qualifying California FrontRunners events of 5K or longer</li>
+                    </ul>
+                </article>
+                <article class="sffr-rch-info">
+                    <h3>Recognition</h3>
+                    <p>The Race Circuit rewards participation, consistency, and personal progress.</p>
+                    <div class="sffr-rch-awards">
+                        <div class="sffr-rch-award">
+                            <b>6+</b>
+                            <strong>Finisher</strong>
+                            <p>Earn at least six points.</p>
+                        </div>
+                        <div class="sffr-rch-award">
+                            <b>24</b>
+                            <strong>Finisher awards</strong>
+                            <p>Available to the first 24 finishers.</p>
+                        </div>
+                        <div class="sffr-rch-award">
+                            <b>2</b>
+                            <strong>Runners of the Year</strong>
+                            <p>Most points and most races.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- 3. CHOOSE YOUR TRACK -->
+    <section class="sffr-rch-section">
+        <div class="sffr-rch-heading">
+            <p class="sffr-rch-label">Choose your track</p>
+            <h2>Two ways to follow your progress</h2>
+            <p>Race the official SFFR circuit, log adventures elsewhere, or do both. Every finish is worth celebrating.</p>
+        </div>
+        <div class="sffr-rch-boards">
+            <article class="sffr-rch-board">
+                <div class="sffr-rch-board-head">
+                    <span>Official SFFR calendar</span>
+                    <h3>Race Circuit Leaderboard</h3>
+                </div>
+                <div class="sffr-rch-board-body">
+                    <p>Tracks races that are part of the official SF FrontRunners Race Circuit.</p>
+                    <ul>
+                        <li>Earn points toward awards and recognition</li>
+                        <li>Support local and regional events</li>
+                        <li>Race alongside fellow SFFR members</li>
+                    </ul>
+                </div>
+                <div class="sffr-rch-board-links">
+                    <a href="//sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=780336">View leaderboard</a>
+                    <a href="//sffr.org/racecalendar">View calendar</a>
+                </div>
+            </article>
+            <article class="sffr-rch-board">
+                <div class="sffr-rch-board-head">
+                    <span>Anywhere in the world</span>
+                    <h3>Global Leaderboard</h3>
+                </div>
+                <div class="sffr-rch-board-body">
+                    <p>Tracks certified running and walking events completed locally, nationally, or internationally.</p>
+                    <ul>
+                        <li>Celebrate races outside the official circuit</li>
+                        <li>Document adventures around the world</li>
+                        <li>Share accomplishments with the club</li>
+                    </ul>
+                </div>
+                <div class="sffr-rch-board-links">
+                    <a href="//sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=780338">View leaderboard</a>
+                    <a href="//sffr.org/leaderboards">Compare leaderboards</a>
+                </div>
+            </article>
+        </div>
+        <div class="sffr-rch-points" aria-label="Race Circuit point values">
+            <div class="sffr-rch-point"><b>1</b><span><strong>5K</strong>point</span></div>
+            <div class="sffr-rch-point"><b>2</b><span><strong>10K</strong>points</span></div>
+            <div class="sffr-rch-point"><b>4</b><span><strong>Half Marathon</strong>points</span></div>
+            <div class="sffr-rch-point"><b>8</b><span><strong>Full Marathon</strong>points</span></div>
+        </div>
+    </section>
+    <!-- 4. SPORTS BASEMENT PARTNERSHIP -->
+    <section class="sffr-rch-section sffr-rch-sponsor-section">
+        <div class="sffr-rch-inner">
+            <div class="sffr-rch-sponsor-heading">
+                <div>
+                    <p class="sffr-rch-label">Official Race Circuit sponsor</p>
+                    <h2>SFFR is partnering with Sports Basement</h2>
+                    <p>Sports Basement is the official sponsor of the SFFR Race Circuit. At the end of the year, members recognized as Race Circuit Finishers or Runners of the Year will receive Sports Basement gift cards.</p>
+                </div>
+                <div class="sffr-rch-sponsor-badge" aria-label="Sports Basement is the official sponsor of the SFFR Race Circuit">
+                    <div class="sffr-rch-sponsor-badge-icon" aria-hidden="true">★</div>
+                    <div><span>In partnership with</span><strong>Sports Basement</strong></div>
+                </div>
+            </div>
+            <div class="sffr-rch-sponsor-card">
+                <div class="sffr-rch-discount-summary">
+                    <h3>Member discount</h3>
+                    <p class="sffr-rch-discount-dates">Available August 8–22, 2026</p>
+                    <div class="sffr-rch-discount-rates">
+                        <div class="sffr-rch-discount-rate"><b>20% off</b><span>Basementeers</span></div>
+                        <div class="sffr-rch-discount-rate"><b>11% off</b><span>Non-Basementeers</span></div>
+                    </div>
+                </div>
+                <div class="sffr-rch-discount-details">
+                    <h3>Shopping online?</h3>
+                    <p>Use the SFFR link below and enter the code at checkout to receive your member discount.</p>
+                    <div class="sffr-rch-code"><span>Discount code</span><strong>FRONTRUNNERS</strong></div>
+                    <div class="sffr-rch-sponsor-actions">
+                        <a class="sffr-rch-button" href="https://sffr.us2.list-manage.com/track/click?u=b2405e9db3d53cfef658dc9e2&amp;id=11e59378c5&amp;e=3120914688" target="_blank" rel="noopener">Shop Sports Basement</a>
+                        <a class="sffr-rch-exclusions" href="https://sffr.us2.list-manage.com/track/click?u=b2405e9db3d53cfef658dc9e2&amp;id=de6b8a0c66&amp;e=3120914688" target="_blank" rel="noopener">View discount exclusions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 5. RACE CIRCUIT RESOURCES -->
+    <section class="sffr-rch-section sffr-rch-section-soft">
+        <div class="sffr-rch-inner">
+            <div class="sffr-rch-heading">
+                <p class="sffr-rch-label">Race Circuit resources</p>
+                <h2>Everything in one place</h2>
+            </div>
+            <div class="sffr-rch-links">
+                <a href="//sffr.org/racecalendar">
+                    <span>01</span>
+                    <strong>2026 Race Calendar</strong>
+                    <p>Dates, distances, discounts, and registration links.</p>
+                </a>
+                <a href="//sffr.org/leaderboards">
+                    <span>02</span>
+                    <strong>How the Leaderboards Work</strong>
+                    <p>Compare the two leaderboards and understand recognition.</p>
+                </a>
+                <a href="//sffr.org/racefaq">
+                    <span>03</span>
+                    <strong>Race Circuit FAQ</strong>
+                    <p>Quick answers about eligibility, reporting, and awards.</p>
+                </a>
+                <a href="//sffr.org/whatsapp">
+                    <span>04</span>
+                    <strong>Races WhatsApp Group</strong>
+                    <p>Updates, race plans, questions, and member connections.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="sffr-rch-contact">
+        <div class="sffr-rch-inner">
+            <h2>Have a race question?</h2>
+            <p>Contact the Team Captain with eligibility questions, race suggestions, or missing results.</p>
+            <a class="sffr-rch-button" href="mailto:teamcaptain@sffr.org">Email teamcaptain@sffr.org</a>
+        </div>
+    </section>
+    <div class="sffr-rch-lightbox" role="dialog" aria-modal="true" aria-label="Expanded race photo" hidden="">
+        <div class="sffr-rch-lightbox-dialog">
+            <button class="sffr-rch-lightbox-close" type="button" aria-label="Close expanded photo">×</button>
+            <img class="sffr-rch-lightbox-image" src="" alt="">
+        </div>
+    </div>
+</div>
+<script>
+(function () {
+    var page = document.querySelector('.sffr-rch');
+    if (!page) return;
+
+    var lightbox = page.querySelector('.sffr-rch-lightbox');
+    var lightboxImage = page.querySelector('.sffr-rch-lightbox-image');
+    var closeButton = page.querySelector('.sffr-rch-lightbox-close');
+    var photoButtons = page.querySelectorAll('.sffr-rch-photo-button');
+    var lastFocusedElement = null;
+    var previousBodyOverflow = '';
+
+    function openLightbox(button) {
+        var imageSource = button.getAttribute('data-lightbox-src');
+        var imageAlt = button.getAttribute('data-lightbox-alt') || 'Expanded SF FrontRunners race photo';
+
+        lastFocusedElement = button;
+        lightboxImage.src = imageSource;
+        lightboxImage.alt = imageAlt;
+        lightbox.hidden = false;
+        previousBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+    }
+
+    function closeLightbox() {
+        if (lightbox.hidden) return;
+        lightbox.hidden = true;
+        lightboxImage.src = '';
+        document.body.style.overflow = previousBodyOverflow;
+        if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    for (var i = 0; i < photoButtons.length; i += 1) {
+        photoButtons[i].addEventListener('click', function () {
+            openLightbox(this);
+        });
+    }
+
+    closeButton.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', function (event) {
+        if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
+}());
+</script>
