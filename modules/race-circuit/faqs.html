@@ -1,1 +1,209 @@
-<main class="race-circuit-faq"><header><p>SFFR 2026 Race Circuit</p><h1>Questions answered. Shoes ready.</h1><p>Everything you need to choose races, report finishes, follow the leaderboards, and understand recognition.</p></header><section><h2>Race Circuit Basics</h2><details><summary>What is the purpose of the SFFR Race Circuit?</summary><p>It encourages members to support their health and well-being through local and regional running and walking events.</p></details><details><summary>How long does the Race Circuit run?</summary><p>From February 1 through the day before the December 12, 2026 End-of-Year Party.</p></details><details><summary>Which events count?</summary><p>Only events on the official 2026 Race Calendar count toward the Race Circuit.</p></details><details><summary>Can walkers participate?</summary><p>Yes. Many 5K events welcome walkers, and some 10K and virtual events do too.</p></details></section><section><h2>Points and Reporting</h2><details><summary>How do I report a completed race?</summary><p>Complete the Race Completion Form after an eligible event.</p></details><details><summary>How do I become a Race Circuit Finisher?</summary><p>Earn at least six points. The first 24 finishers receive a $25 gift card at the End-of-Year Party.</p></details></section><section><h2>Leaderboards and Recognition</h2><details><summary>What is the difference between the leaderboards?</summary><p>The Race Circuit Leaderboard tracks official calendar events and local participation. The Global Leaderboard recognizes certified events completed anywhere in the world, including Circuit events.</p></details><details><summary>How do I become Runner of the Year?</summary><p>Score the most points or complete the most races. Each of the two honorees receives a $200 gift card.</p></details><details><summary>Does the Global Leaderboard offer prizes?</summary><p>Not currently. It offers recognition, encouragement, and a shared record of member achievements.</p></details></section><section><h2>Still have a question?</h2><p>Email <a href="mailto:teamcaptain@sffr.org">teamcaptain@sffr.org</a>.</p></section></main>
+<!--
+  SFFR RACE CIRCUIT FAQ
+  Recommended ClubExpress quick link: sffr.org/racefaq
+  Paste this entire file into the ClubExpress HTML editor for module 782913.
+-->
+<style>
+    .sffr-faq, .sffr-faq * { box-sizing: border-box; }
+    .sffr-faq {
+    --ink: #28242f; --muted: #696370; --purple: #4b2e83; --purple-dark: #301c5b;
+    --purple-soft: #f3eef9; --gold: #f2b63d; --gold-soft: #fff6dd;
+    --coral: #e96e5f; --green: #2f7a5c; --paper: #fffdf8; --line: #dfd7e8;
+    background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65; overflow: hidden;
+    }
+    .sffr-faq a { color: var(--purple); }
+    .sffr-faq-hero {
+    background:
+    radial-gradient(circle at 88% 18%, rgba(242,182,61,.24) 0 100px, transparent 101px),
+    radial-gradient(circle at 78% 85%, rgba(255,255,255,.08) 0 150px, transparent 151px),
+    linear-gradient(135deg, var(--purple-dark), var(--purple));
+    color: #fff; padding: clamp(54px, 8vw, 94px) 22px;
+    }
+    .sffr-faq-hero-inner, .sffr-faq-section { margin: 0 auto; max-width: 1120px; }
+    .sffr-faq-kicker { color: #f8d67e; font-size: 13px; font-weight: 800; letter-spacing: .15em; margin: 0 0 14px; text-transform: uppercase; }
+    .sffr-faq-hero h1 { color: #fff; font-size: clamp(42px, 7vw, 70px); letter-spacing: -.045em; line-height: 1.02; margin: 0 0 20px; max-width: 850px; }
+    .sffr-faq-hero-copy { color: rgba(255,255,255,.84); font-size: clamp(17px, 2vw, 20px); margin: 0; max-width: 720px; }
+    .sffr-faq-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .sffr-faq-button { background: #fff; border: 2px solid #fff; border-radius: 999px; color: var(--purple-dark) !important; display: inline-block; font-size: 14px; font-weight: 800; padding: 11px 18px; text-decoration: none; }
+    .sffr-faq-button-alt { background: transparent; color: #fff !important; }
+    .sffr-faq-stats { background: #fff; border-bottom: 1px solid var(--line); }
+    .sffr-faq-stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); margin: auto; max-width: 1120px; }
+    .sffr-faq-stat { border-right: 1px solid var(--line); padding: 22px 18px; text-align: center; }
+    .sffr-faq-stat:last-child { border-right: 0; }
+    .sffr-faq-stat strong { color: var(--purple-dark); display: block; font-size: 18px; }
+    .sffr-faq-stat span { color: var(--muted); display: block; font-size: 12px; margin-top: 3px; }
+    .sffr-faq-section { padding: clamp(56px, 8vw, 86px) 22px; }
+    .sffr-faq-intro { display: grid; gap: 42px; grid-template-columns: .8fr 1.2fr; margin-bottom: 42px; }
+    .sffr-faq-label { color: var(--coral); font-size: 12px; font-weight: 800; letter-spacing: .14em; margin: 0 0 12px; text-transform: uppercase; }
+    .sffr-faq-intro h2, .sffr-faq-group h2 { color: var(--purple-dark); letter-spacing: -.03em; line-height: 1.12; margin: 0; }
+    .sffr-faq-intro h2 { font-size: clamp(31px, 5vw, 46px); }
+    .sffr-faq-intro > p { color: var(--muted); font-size: 17px; margin: 0; }
+    .sffr-faq-guide { align-items: center; background: var(--gold-soft); border: 1px solid #eed391; border-radius: 18px; display: grid; gap: 28px; grid-template-columns: 1fr auto; margin-bottom: 55px; padding: 25px 28px; }
+    .sffr-faq-guide strong { color: var(--purple-dark); display: block; font-size: 20px; }
+    .sffr-faq-guide p { color: #6f5729; font-size: 14px; margin: 5px 0 0; }
+    .sffr-faq-guide a { background: var(--purple); border-radius: 999px; color: #fff !important; font-size: 13px; font-weight: 800; padding: 11px 17px; text-decoration: none; white-space: nowrap; }
+    .sffr-faq-group { margin-top: 54px; scroll-margin-top: 30px; }
+    .sffr-faq-group:first-of-type { margin-top: 0; }
+    .sffr-faq-group h2 { font-size: clamp(26px, 4vw, 35px); margin-bottom: 17px; }
+    .sffr-faq-list { display: grid; gap: 11px; }
+    .sffr-faq details { background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 5px 18px rgba(48,28,91,.045); overflow: hidden; }
+    .sffr-faq summary { color: var(--purple-dark); cursor: pointer; font-size: 16px; font-weight: 800; list-style: none; padding: 20px 56px 20px 21px; position: relative; }
+    .sffr-faq summary::-webkit-details-marker { display: none; }
+    .sffr-faq summary::after { align-items: center; background: var(--purple-soft); border-radius: 50%; color: var(--purple); content: "+"; display: flex; font-size: 20px; height: 29px; justify-content: center; position: absolute; right: 18px; top: 17px; width: 29px; }
+    .sffr-faq details[open] summary::after { content: "−"; }
+    .sffr-faq-answer { border-top: 1px solid var(--line); color: var(--muted); padding: 18px 21px 22px; }
+    .sffr-faq-answer p { margin: 0; }
+    .sffr-faq-answer p + p { margin-top: 12px; }
+    .sffr-faq-answer a { font-weight: 800; }
+    .sffr-faq-contact { background: var(--purple-soft); border-radius: 20px; margin-top: 64px; padding: 33px; text-align: center; }
+    .sffr-faq-contact h2 { color: var(--purple-dark); font-size: 28px; margin: 0 0 8px; }
+    .sffr-faq-contact p { color: var(--muted); margin: 0; }
+    .sffr-faq-contact a { display: inline-block; font-weight: 800; margin-top: 13px; }
+    @media (hover: hover) {
+    .sffr-faq details, .sffr-faq-button, .sffr-faq-guide a { transition: transform .2s ease, box-shadow .2s ease; }
+    .sffr-faq details:hover { box-shadow: 0 10px 25px rgba(48,28,91,.09); }
+    .sffr-faq-button:hover, .sffr-faq-guide a:hover { transform: translateY(-1px); }
+    }
+    @media (max-width: 760px) {
+    .sffr-faq-stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .sffr-faq-stat:nth-child(2) { border-right: 0; }
+    .sffr-faq-stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .sffr-faq-intro { grid-template-columns: 1fr; gap: 17px; }
+    .sffr-faq-guide { grid-template-columns: 1fr; }
+    .sffr-faq-guide a { justify-self: start; }
+    }
+</style>
+<div class="sffr-faq">
+    <section class="sffr-faq-hero">
+        <div class="sffr-faq-hero-inner">
+            <p class="sffr-faq-kicker">SFFR 2026 Race Circuit</p>
+            <h1>Questions answered. Shoes ready.</h1>
+            <p class="sffr-faq-hero-copy">Everything you need to choose races, report finishes, follow the leaderboards, and understand recognition.</p>
+            <div class="sffr-faq-actions">
+                <a class="sffr-faq-button" href="https://sffr.org/racecalendar">View race calendar</a>
+                <a class="sffr-faq-button sffr-faq-button-alt" href="https://docs.google.com/forms/d/e/1FAIpQLSd6q-eVQA4KA1diFQhKvtw42E7-LawA5zXyqkoQlwHimOjMWQ/viewform" target="_blank" rel="noopener">Submit a completed race</a>
+                <a class="sffr-faq-button sffr-faq-button-alt" href="https://docs.google.com/document/d/10jGNN3FVwH6erbwmbZ3ANRacMtMn9uT_ZEpHGLPUAXc/edit?usp=drivesdk" target="_blank" rel="noopener">Read official rules</a>
+            </div>
+        </div>
+    </section>
+    <div class="sffr-faq-stats">
+        <div class="sffr-faq-stats-inner">
+            <div class="sffr-faq-stat"><strong>February 1</strong><span>Race Circuit begins</span></div>
+            <div class="sffr-faq-stat"><strong>6 points</strong><span>Finisher threshold</span></div>
+            <div class="sffr-faq-stat"><strong>First 24</strong><span>Finisher gift cards</span></div>
+            <div class="sffr-faq-stat"><strong>Worldwide</strong><span>Global races welcome</span></div>
+        </div>
+    </div>
+    <section class="sffr-faq-section">
+        <div class="sffr-faq-intro">
+            <div>
+                <p class="sffr-faq-label">Race Circuit FAQ</p>
+                <h2>Start with the basics</h2>
+            </div>
+            <p>Open any question below for a concise answer. The official rules remain the final source for eligibility, points, recognition, and awards.</p>
+        </div>
+        <div class="sffr-faq-guide">
+            <div><strong>Want the complete leaderboard explanation?</strong>
+                <p>See how the Race Circuit and Global leaderboards differ, how results are submitted, and what recognition is available.</p>
+            </div>
+            <a href="https://sffr.org/leaderboards">How the leaderboards work</a>
+        </div>
+        <section class="sffr-faq-group" id="race-circuit-basics">
+            <h2>Race Circuit basics</h2>
+            <div class="sffr-faq-list">
+                <details><summary>What is the purpose of the SFFR Race Circuit?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>The Race Circuit encourages members to support their health and well-being through running and walking while participating in local and regional events throughout the greater Bay Area and California.</p>
+                    </div>
+                </details>
+                <details><summary>Where can I read the official rules?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Read the <a href="https://docs.google.com/document/d/10jGNN3FVwH6erbwmbZ3ANRacMtMn9uT_ZEpHGLPUAXc/edit?usp=drivesdk" target="_blank" rel="noopener">2026 Race Circuit Rules</a>. The rules are the final source for point values, eligibility, recognition, and awards.</p>
+                    </div>
+                </details>
+                <details open=""><summary>How long does the Race Circuit run?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>The 2026 Race Circuit begins February 1 and ends a day before the club's End-of-Year Party (12th December, 2026).</p>
+                    </div>
+                </details>
+                <details open=""><summary>Which events count toward the Race Circuit?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Only events included on the official <a href="https://sffr.org/racecalendar">2026 Race Calendar</a> count toward the Race Circuit. The calendar also includes available discount codes and special registration links.</p>
+                    </div>
+                </details>
+                <details open=""><summary>Can walkers participate?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Yes. Many 5K events welcome walkers, and some 10K events do as well. Virtual events can also offer walkers more distance options. Check each race organizer's website for time limits and participation details.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <section class="sffr-faq-group" id="points-reporting">
+            <h2>Points and reporting</h2>
+            <div class="sffr-faq-list">
+                <details open=""><summary>Why does the Race Circuit use points?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Points provide a simple way to track progress, encourage participation, and add some friendly competition for members who enjoy it.</p>
+                    </div>
+                </details>
+                <details open=""><summary>How do I report a completed race?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>After finishing an eligible event, complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6q-eVQA4KA1diFQhKvtw42E7-LawA5zXyqkoQlwHimOjMWQ/viewform" target="_blank" rel="noopener">Race Completion Form</a>. Reminders may also be shared in the Races WhatsApp group and the weekly Footweb.</p>
+                    </div>
+                </details>
+                <details open=""><summary>How do I become a Race Circuit Finisher?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Earn at least six points from eligible Race Circuit events. The first 24 finishers receive a $25 gift card at the End-of-Year Party.</p>
+                    </div>
+                </details>
+                <details open=""><summary>Where can I check my progress?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Visit the <a href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=780336">Race Circuit Leaderboard</a> to see your recorded races and current points.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <section class="sffr-faq-group" id="leaderboards-recognition">
+            <h2>Leaderboards and recognition</h2>
+            <div class="sffr-faq-list">
+                <details open=""><summary>What is the purpose of the leaderboards?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>The leaderboards document members' accomplishments, encourage progress, and make it easier for the club to celebrate everyone's effort. Friendly competition is welcome, but community recognition is the larger goal.</p>
+                    </div>
+                </details>
+                <details open=""><summary>What is the difference between the two leaderboards?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>The Race Circuit Leaderboard tracks official calendar events and local community participation. The Global Leaderboard recognizes certified running and walking events completed anywhere in the world, including Race Circuit events.</p>
+                        <p>See the full comparison on <a href="https://sffr.org/leaderboards">How the Leaderboards Work</a>.</p>
+                    </div>
+                </details>
+                <details open=""><summary>How do I become Race Circuit Runner of the Year?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Score the most points or complete the most races. Two Race Circuit Runner of the Year recognitions are presented at the End-of-Year Party (12th Dec 2026), each with a $200 gift card prize.</p>
+                    </div>
+                </details>
+                <details open=""><summary>Where does prize funding come from?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Some of the money SFFR receives by volunteering at water stations for race events is earmarked for Race Circuit prizes.</p>
+                    </div>
+                </details>
+                <details open=""><summary>Which races can be submitted to the Global Leaderboard?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Any certified walking or running event held anywhere in the world may be included if it is completed between January 1 and the day before the End-of-Year Party (12th Dec, 2026). When submitting, choose “GLOBAL LEADERBOARD” in the event dropdown.</p>
+                    </div>
+                </details>
+                <details open=""><summary>Does the Global Leaderboard offer prizes?</summary>
+                    <div class="sffr-faq-answer">
+                        <p>Not currently. It offers recognition, encouragement, bragging rights, and a shared record of members' achievements. SFFR may explore a prize budget in future years.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <section class="sffr-faq-contact">
+            <h2>Still have a question?</h2>
+            <p>Send feedback, questions, or Race Circuit ideas to the Team Captain.</p>
+            <a href="mailto:teamcaptain@sffr.org">teamcaptain@sffr.org</a>
+        </section>
+    </section>
+</div>
