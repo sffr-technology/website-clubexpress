@@ -72,24 +72,25 @@
     .sffr-welcome-heading h2{color:var(--purple-dark);font-size:clamp(31px,5vw,47px);letter-spacing:-.035em;line-height:1.1;margin:0 0 12px}
     .sffr-welcome-heading p{color:var(--muted);font-size:17px;margin:0}
     .sffr-welcome-grid{display:grid;gap:15px;grid-template-columns:repeat(3,1fr)}
-    .sffr-welcome-card{background:#fff;border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;min-height:285px;padding:25px;text-decoration:none!important}
+    .sffr-welcome-card{background:#fff;border:1px solid var(--line);border-radius:18px;cursor:pointer;display:flex;flex-direction:column;min-height:250px;padding:25px;position:relative;text-decoration:none!important}
+    .sffr-welcome-card::after{align-items:center;background:var(--purple-soft);border-radius:999px;color:var(--purple);content:"→";display:flex;font-size:18px;font-weight:800;height:34px;justify-content:center;margin-top:auto;width:34px}
+    .sffr-welcome-card:focus-visible{box-shadow:0 0 0 4px rgba(75,46,131,.22);outline:3px solid var(--purple);outline-offset:3px}
     .sffr-welcome-card-icon{align-items:center;background:var(--purple-soft);border-radius:13px;color:var(--purple);display:flex;font-size:23px;height:48px;justify-content:center;margin-bottom:24px;width:48px}
     .sffr-welcome-card:nth-child(3n+2) .sffr-welcome-card-icon{background:var(--green-soft);color:var(--green)}
     .sffr-welcome-card:nth-child(3n) .sffr-welcome-card-icon{background:var(--gold-soft);color:#805d14}
     .sffr-welcome-card h3{color:var(--purple-dark);font-size:21px;line-height:1.25;margin:0 0 8px}
     .sffr-welcome-card p{color:var(--muted);font-size:14px;margin:0 0 22px}
-    .sffr-welcome-card-link{color:var(--purple);font-size:13px;font-weight:800;margin-top:auto}
     .sffr-welcome-board-card{background:linear-gradient(145deg,var(--purple-dark),var(--purple));border-color:var(--purple);color:#fff}
     .sffr-welcome-board-card .sffr-welcome-card-icon{background:rgba(255,255,255,.14);color:#fff}
     .sffr-welcome-board-card h3{color:#fff}
     .sffr-welcome-board-card p{color:rgba(255,255,255,.72)}
+    .sffr-welcome-board-card::after{background:rgba(255,255,255,.14);color:#fff}
     .sffr-welcome-board-details{border-left:3px solid var(--gold);margin:3px 0 21px;padding-left:13px}
     .sffr-welcome-board-details strong{color:#fff;display:block;font-size:14px}
     .sffr-welcome-board-details time{color:#f8d67e;display:block;font-size:13px;font-weight:800;margin-top:3px}
-    .sffr-welcome-board-card .sffr-welcome-button{align-self:flex-start;margin-top:auto;padding:9px 15px}
     .sffr-welcome-thursday-card{background:linear-gradient(145deg,#edf7f2,#eef6fb);border-color:#75b9a0;box-shadow:inset 0 4px 0 var(--green)}
     .sffr-welcome-thursday-card .sffr-welcome-card-icon{background:#fff;color:var(--green);box-shadow:0 5px 15px rgba(47,122,92,.16)}
-    .sffr-welcome-thursday-card .sffr-welcome-card-link{color:var(--green)}
+    .sffr-welcome-thursday-card::after{background:#fff;color:var(--green)}
     .sffr-welcome-learn{background:#fff;border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
     .sffr-welcome-volunteer{background:var(--purple-soft);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
     .sffr-welcome-volunteer-grid{display:grid;gap:18px;grid-template-columns:1fr 1fr}
@@ -125,31 +126,25 @@
         <div class="sffr-welcome-grid">
             <a class="sffr-welcome-card" href="https://sffr.org/whatsapp"><span class="sffr-welcome-card-icon" aria-hidden="true">💬</span>
                 <h3>WhatsApp Community</h3>
-                <p>Join run groups, receive updates, coordinate plans, and connect with fellow members between events.</p>
-                <span class="sffr-welcome-card-link">Explore member groups →</span></a>
+                <p>Join run groups, receive updates, coordinate plans, and connect with fellow members between events.</p></a>
             <a class="sffr-welcome-card" href="https://sffr.org/events"><span class="sffr-welcome-card-icon" aria-hidden="true">📅</span>
                 <h3>Upcoming Events</h3>
-                <p>See socials, dinners, volunteer days, races, special runs, and other events on the club calendar.</p>
-                <span class="sffr-welcome-card-link">View the calendar →</span></a>
+                <p>See socials, dinners, volunteer days, races, special runs, and other events on the club calendar.</p></a>
             <a class="sffr-welcome-card sffr-welcome-thursday-card" href="https://sffr.org/content.aspx?page_id=22&amp;club_id=801899&amp;module_id=464094"><span class="sffr-welcome-card-icon" aria-hidden="true">📍</span>
                 <h3>New Thursday Run Location</h3>
-                <p>Beginning September 10, meet on the back patio of the Eureka Valley/Harvey Milk Memorial Branch Library at 1 Jose Sarria Ct. Enter through the main entrance and continue past the main desk to the patio.</p>
-                <span class="sffr-welcome-card-link">View Thursday run details →</span></a>
+                <p>Beginning September 10, meet on the back patio of the Eureka Valley/Harvey Milk Memorial Branch Library at 1 Jose Sarria Ct. Enter through the main entrance and continue past the main desk to the patio.</p></a>
             <!-- BOARD MEETING: Replace the date and time below. Point sffr.org/boardmeeting to the current Zoom meeting URL. -->
-            <article class="sffr-welcome-card sffr-welcome-board-card"><span class="sffr-welcome-card-icon" aria-hidden="true">💻</span>
+            <a class="sffr-welcome-card sffr-welcome-board-card" href="https://sjsu.zoom.us/j/83902632815" target="_blank" rel="noopener"><span class="sffr-welcome-card-icon" aria-hidden="true">💻</span>
                 <h3>Attend the Next Board Meeting</h3>
                 <p>Board Meetings are open to members only. Attend a board meeting to learn more about the decisions shaping the club.</p>
                 <div class="sffr-welcome-board-details"><strong>September Board Meeting</strong><time>Sunday, Sep 13th, 2026<br>
-                    11:00AM - 2:00PM Pacific</time></div>
-                <a class="sffr-welcome-button" href="https://sjsu.zoom.us/j/83902632815" target="_blank" rel="noopener">Join meeting on Zoom</a></article>
+                    11:00AM - 2:00PM Pacific</time></div></a>
             <a class="sffr-welcome-card" href="https://sffr.org/content.aspx?page_id=78&amp;club_id=801899"><span class="sffr-welcome-card-icon" aria-hidden="true">👋</span>
                 <h3>Member Directory</h3>
-                <p>Find fellow members and strengthen the connections that make our large club feel more personal.</p>
-                <span class="sffr-welcome-card-link">Open the directory →</span></a>
+                <p>Find fellow members and strengthen the connections that make our large club feel more personal.</p></a>
             <a class="sffr-welcome-card" href="#volunteer"><span class="sffr-welcome-card-icon" aria-hidden="true">✨</span>
                 <h3>Help Shape the Club</h3>
-                <p>Share a skill, volunteer at an event, host a gathering, or bring an idea to life with fellow members.</p>
-                <span class="sffr-welcome-card-link">Explore ways to contribute ↓</span></a>
+                <p>Share a skill, volunteer at an event, host a gathering, or bring an idea to life with fellow members.</p></a>
         </div>
     </section>
     <section class="sffr-welcome-learn" id="learn-about-sffr">
@@ -161,28 +156,22 @@
             <div class="sffr-welcome-grid">
                 <a class="sffr-welcome-card" href="https://sffr.org/runs"><span class="sffr-welcome-card-icon" aria-hidden="true">🏃</span>
                     <h3>Weekly Runs &amp; Walks</h3>
-                    <p>Find meeting locations, times, routes, pace information, and updates for each weekly gathering.</p>
-                    <span class="sffr-welcome-card-link">Explore weekly runs →</span></a>
+                    <p>Find meeting locations, times, routes, pace information, and updates for each weekly gathering.</p></a>
                 <a class="sffr-welcome-card" href="https://sffr.org/racecircuit"><span class="sffr-welcome-card-icon" aria-hidden="true">🏅</span>
                     <h3>Race Circuit</h3>
-                    <p>Learn how members participate in races, earn points, follow leaderboards, and celebrate finishes.</p>
-                    <span class="sffr-welcome-card-link">Explore the Race Circuit →</span></a>
+                    <p>Learn how members participate in races, earn points, follow leaderboards, and celebrate finishes.</p></a>
                 <a class="sffr-welcome-card" href="/history"><span class="sffr-welcome-card-icon" aria-hidden="true">📚</span>
                     <h3>Club History</h3>
-                    <p>Travel through the decades and see how SF FrontRunners grew with San Francisco’s LGBTQ+ community.</p>
-                    <span class="sffr-welcome-card-link">Explore our history →</span></a>
+                    <p>Travel through the decades and see how SF FrontRunners grew with San Francisco’s LGBTQ+ community.</p></a>
                 <a class="sffr-welcome-card" href="https://sffr.org/halloffame"><span class="sffr-welcome-card-icon" aria-hidden="true">🏛️</span>
                     <h3>Hall of Fame</h3>
-                    <p>Meet the volunteers who served on the Board of Directors and helped guide the club through the years.</p>
-                    <span class="sffr-welcome-card-link">Explore club leadership →</span></a>
+                    <p>Meet the volunteers who served on the Board of Directors and helped guide the club through the years.</p></a>
                 <a class="sffr-welcome-card" href="https://sffr.org/foundingstory"><span class="sffr-welcome-card-icon" aria-hidden="true">🌱</span>
                     <h3>Read the Founding Story</h3>
-                    <p>Discover how an introduction-to-jogging group became the world’s first FrontRunners club.</p>
-                    <span class="sffr-welcome-card-link">Read the founding story →</span></a>
+                    <p>Discover how an introduction-to-jogging group became the world’s first FrontRunners club.</p></a>
                 <a class="sffr-welcome-card" href="https://sffr.org/traditions"><span class="sffr-welcome-card-icon" aria-hidden="true">🌈</span>
                     <h3>Explore Club Traditions</h3>
-                    <p>Learn about the gatherings, places, memorials, and shared rituals that connect generations of members.</p>
-                    <span class="sffr-welcome-card-link">Explore our traditions →</span></a>
+                    <p>Learn about the gatherings, places, memorials, and shared rituals that connect generations of members.</p></a>
             </div>
         </div>
     </section>
