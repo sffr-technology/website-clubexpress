@@ -60,24 +60,22 @@
     .sffr-rc-month-heading p { color: var(--coral); font-size: 12px; font-weight: 800; letter-spacing: .12em; margin: 0; }
     .sffr-rc-month-heading h2 { color: var(--purple-dark); font-size: clamp(28px, 4vw, 38px); letter-spacing: -.03em; margin: 0; }
     .sffr-rc-month-heading span { color: var(--muted); font-size: 13px; font-weight: 700; }
-    .sffr-rc-grid { display: grid; gap: 15px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .sffr-rc-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 24px rgba(48,28,91,.06); display: grid; grid-template-columns: 90px 1fr; min-height: 230px; overflow: hidden; }
+    .sffr-rc-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sffr-rc-card { background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 6px 18px rgba(48,28,91,.06); color:inherit!important; cursor:pointer; display:grid; grid-template-columns:76px 1fr; min-height:148px; overflow:hidden; text-decoration:none!important; }
+    .sffr-rc-card:focus-visible { outline:3px solid var(--purple); outline-offset:3px; }
     .sffr-rc-date { align-items: center; background: var(--purple-soft); border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; padding: 18px 10px; text-align: center; }
     .sffr-rc-date span { color: var(--purple); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
     .sffr-rc-date strong { color: var(--purple-dark); font-size: 29px; letter-spacing: -.04em; line-height: 1; margin-top: 8px; }
-    .sffr-rc-body { display: flex; flex-direction: column; padding: 23px; }
+    .sffr-rc-body { display: flex; flex-direction: column; justify-content:center; padding: 17px 19px; }
     .sffr-rc-tags { display: flex; flex-wrap: wrap; gap: 7px; }
     .sffr-rc-distance, .sffr-rc-type { border-radius: 999px; display: inline-block; font-size: 11px; font-weight: 800; padding: 5px 9px; }
     .sffr-rc-distance { background: #edf7f2; color: var(--green); }
     .sffr-rc-type { background: var(--gold-soft); color: #7b5712; }
-    .sffr-rc-body h3 { color: var(--purple-dark); font-size: 21px; letter-spacing: -.02em; line-height: 1.25; margin: 14px 0 12px; }
-    .sffr-rc-promo { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+    .sffr-rc-body h3 { color: var(--purple-dark); font-size: 19px; letter-spacing: -.02em; line-height: 1.25; margin: 10px 0 8px; }
+    .sffr-rc-promo { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
     .sffr-rc-promo span { color: var(--muted); font-size: 12px; font-weight: 700; }
     .sffr-rc-promo code { background: var(--gold-soft); border: 1px dashed #d6a233; border-radius: 6px; color: #65460b; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 800; padding: 4px 7px; }
-    .sffr-rc-note { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 12px; }
-    .sffr-rc-link { align-items: center; color: var(--purple) !important; display: flex; font-size: 13px; font-weight: 800; gap: 7px; margin-top: auto; text-decoration: none; }
-    .sffr-rc-link span { font-size: 16px; }
-    .sffr-rc-link-muted { color: var(--muted) !important; }
+    .sffr-rc-note { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0; }
     /* Sports Basement partnership */
     .sffr-rc-sponsor-section {
     background:
@@ -145,7 +143,7 @@
     .sffr-rc-hero-card { display: none; }
     .sffr-rc-intro, .sffr-rc-calendar { padding-left: 16px; padding-right: 16px; }
     .sffr-rc-grid { grid-template-columns: 1fr; }
-    .sffr-rc-card { grid-template-columns: 76px 1fr; min-height: 220px; }
+    .sffr-rc-card { grid-template-columns:68px 1fr; min-height:136px; }
     .sffr-rc-date strong { font-size: 25px; }
     .sffr-rc-body { padding: 20px; }
     .sffr-rc-month-heading { grid-template-columns: auto 1fr; }
@@ -195,14 +193,14 @@
                 <span>1 race</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://sanfranciscohalfmarathon.org/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Feb</span><strong>1</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K, 10K, Half Marathon</span></div>
                         <h3>San Francisco Half Marathon</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>SFFRONTRUNNERS</code></p>
-                        <a class="sffr-rc-link" href="https://sanfranciscohalfmarathon.org/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-march">
@@ -212,30 +210,30 @@
                 <span>3 races</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://www.ymcasf.org/event/lny-run/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Mar</span><strong>1</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K, 10K, Virtual</span></div>
                         <h3>Lunar New Year Run</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>FrontRunners26</code></p>
-                        <a class="sffr-rc-link" href="https://www.ymcasf.org/event/lny-run/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://napavalleymarathon.org/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Mar</span><strong>1</strong></div>
                     <div class="sffr-rc-body">
-                        <div class="sffr-rc-tags"><span class="sffr-rc-distance">Full, Half</span></div>
+                        <div class="sffr-rc-tags"><span class="sffr-rc-distance">Full, Half</span><span class="sffr-rc-type">Sold out</span></div>
                         <h3>Napa Valley Marathon</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>SFFRONTRUNNERS</code></p>
-                        <a class="sffr-rc-link sffr-rc-link-muted" href="https://napavalleymarathon.org/" target="_blank" rel="noopener">Sold out <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://oaklandmarathon.com" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Mar</span><strong>22</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Full, Half, 10K, 5K, Virtual</span></div>
                         <h3>Oakland Marathon</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>SFFR26OM</code></p>
-                        <a class="sffr-rc-link" href="https://oaklandmarathon.com" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-april">
@@ -245,30 +243,30 @@
                 <span>3 races</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://raceroster.com/events/2026/106727/2026-romancing-the-island-half-marathon-and-10k" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Apr</span><strong>11</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Half, 10K</span><span class="sffr-rc-type">Trail</span></div>
                         <h3>TRAIL: Romancing the Island</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>FRONTRUNNERS</code></p>
-                        <a class="sffr-rc-link" href="https://raceroster.com/events/2026/106727/2026-romancing-the-island-half-marathon-and-10k" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://www.hiller.org/event/airport-runway-run/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Apr</span><strong>12</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">10K, 5K</span></div>
                         <h3>Airport Runway Run</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>SFFRARR26</code></p>
-                        <a class="sffr-rc-link" href="https://www.hiller.org/event/airport-runway-run/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://impalaracingteam.org/impala-stampede" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Apr</span><strong>19</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K</span></div>
                         <h3>Impala Stampede 5K</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>FRONTRUNNERS5</code></p>
-                        <a class="sffr-rc-link" href="https://impalaracingteam.org/impala-stampede" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-may">
@@ -278,37 +276,37 @@
                 <span>4 races</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://baybridgehalf.com/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>May</span><strong>3</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Half, 5K</span></div>
                         <h3>Bay Bridge Half Marathon</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>FRONTRUNNERS10</code></p>
-                        <a class="sffr-rc-link" href="https://baybridgehalf.com/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://sffr.org/handlers/celinks.ashx?id=149388" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>May</span><strong>3</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K</span></div>
                         <h3>Jim Tracy 5K, Walk &amp; Roll to Cure ALS</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>runJT5K</code></p>
-                        <a class="sffr-rc-link" href="https://sffr.org/handlers/celinks.ashx?id=149388" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://www.baytobreakers.com/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>May</span><strong>17</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">12K, 15K</span></div>
                         <h3>Bay to Breakers</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>SFFRB2B</code></p>
-                        <a class="sffr-rc-link" href="https://www.baytobreakers.com/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://sffr.org/handlers/celinks.ashx?id=147755" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>May</span><strong>30</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K</span><span class="sffr-rc-type">Pride run</span></div>
                         <h3>Riverside FrontRunners Pride Run</h3>
-                        <a class="sffr-rc-link" href="https://sffr.org/handlers/celinks.ashx?id=147755" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-june">
@@ -318,28 +316,28 @@
                 <span>3 races</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://sffr.org/handlers/celinks.ashx?id=149389" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Jun</span><strong>6</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">10K, 5K</span></div>
                         <h3>Running is my High</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>frontrunners</code></p>
-                        <a class="sffr-rc-link" href="https://sffr.org/handlers/celinks.ashx?id=149389" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://runsignup.com/Race/CA/Sacramento/SacramentoPrideRun" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Jun</span><strong>13</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K</span><span class="sffr-rc-type">Pride run</span></div>
                         <h3>Sacramento Front Runners Pride Run</h3>
-                        <a class="sffr-rc-link" href="https://runsignup.com/Race/CA/Sacramento/SacramentoPrideRun" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://www.sffr.org/priderun" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Jun</span><strong>27</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">10K, 5K, Virtual</span><span class="sffr-rc-type">Pride run</span></div>
                         <h3>SFFR Pride Run</h3>
-                        <a class="sffr-rc-link" href="https://www.sffr.org/priderun" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-july">
@@ -349,13 +347,13 @@
                 <span>1 race</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://www.thesfmarathon.com/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Jul</span><strong>25–26</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Ultra, Full, Half, 10K, 5K, Virtual</span></div>
                         <h3>San Francisco Marathon</h3>
-                        <a class="sffr-rc-link" href="https://www.thesfmarathon.com/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-august">
@@ -365,22 +363,22 @@
                 <span>2 races</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://santarosamarathon.com/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Aug</span><strong>22–23</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Full, Half, 10K, 5K, Virtual</span></div>
                         <h3>Santa Rosa Marathon</h3>
                         <p class="sffr-rc-promo"><span>Member discount</span><code>SFFRONTRUNNERS26</code></p>
-                        <a class="sffr-rc-link" href="https://santarosamarathon.com/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://www.spartan.com/en/races/nothern-california" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Aug</span><strong>29–30</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">10K, 5K Obstacle Course</span><span class="sffr-rc-type">Obstacle</span></div>
                         <h3>NorCal Spartan Event Weekend</h3>
                         <p class="sffr-rc-note">12 free 10K promo codes are available. Pay only the processing fee. Contact the Team Captain.</p>
-                        <a class="sffr-rc-link" href="https://www.spartan.com/en/races/nothern-california" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-september">
@@ -390,14 +388,14 @@
                 <span>1 race</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://www.spartantrail.com/san-jose/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Sep</span><strong>27</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">31 Mile, Half, 10K</span><span class="sffr-rc-type">Trail</span></div>
                         <h3>Spartan's San Jose Trail Challenge</h3>
                         <p class="sffr-rc-note">12 free 10K promo codes are available. Pay only the processing fee. Contact the Team Captain.</p>
-                        <a class="sffr-rc-link" href="https://www.spartantrail.com/san-jose/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-october">
@@ -407,13 +405,13 @@
                 <span>1 race</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://eastbayfrontrunners.org/pride-run" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Oct</span><strong>10</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">10K, 5K, Virtual</span><span class="sffr-rc-type">Pride run</span></div>
                         <h3>East Bay Front Runners Pride Run</h3>
-                        <a class="sffr-rc-link" href="https://eastbayfrontrunners.org/pride-run" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-november">
@@ -423,27 +421,27 @@
                 <span>3 races</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://www.palmspringspriderun.com/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Nov</span><strong>7</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">5K, Virtual</span><span class="sffr-rc-type">Pride run</span></div>
                         <h3>Palm Springs Pride Run</h3>
-                        <a class="sffr-rc-link" href="https://www.palmspringspriderun.com/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://www.montereybayhalfmarathon.org/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Nov</span><strong>7–8</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Half, 5K</span></div>
                         <h3>Monterey Bay Half Marathon</h3>
-                        <a class="sffr-rc-link" href="https://www.montereybayhalfmarathon.org/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
-                <article class="sffr-rc-card">
+                        </div>
+                </a>
+                <a class="sffr-rc-card" href="https://berkeleyhalfmarathon.com/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Nov</span><strong>15</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Half, 10K, 5K, Virtual</span></div>
                         <h3>Berkeley Half Marathon</h3>
-                        <a class="sffr-rc-link" href="https://berkeleyhalfmarathon.com/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
         <section class="sffr-rc-month" id="sffr-december">
@@ -453,13 +451,13 @@
                 <span>1 race</span>
             </header>
             <div class="sffr-rc-grid">
-                <article class="sffr-rc-card">
+                <a class="sffr-rc-card" href="https://runsra.org/california-international-marathon/" target="_blank" rel="noopener">
                     <div class="sffr-rc-date"><span>Dec</span><strong>3</strong></div>
                     <div class="sffr-rc-body">
                         <div class="sffr-rc-tags"><span class="sffr-rc-distance">Full</span></div>
                         <h3>California International Marathon</h3>
-                        <a class="sffr-rc-link" href="https://runsra.org/california-international-marathon/" target="_blank" rel="noopener">Race details <span aria-hidden="true">↗</span></a></div>
-                </article>
+                        </div>
+                </a>
             </div>
         </section>
     </section>
