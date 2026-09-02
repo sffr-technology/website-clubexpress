@@ -463,53 +463,6 @@
     font-size: 17px;
     font-weight: 700;
     }
-    /* VOLUNTEERS */
-    .sffr-pride-volunteer-section {
-    scroll-margin-top: 24px;
-    }
-    .sffr-pride-volunteer-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-    gap: 35px;
-    align-items: center;
-    padding: 38px;
-    color: var(--sffr-white);
-    background: linear-gradient(135deg, var(--sffr-purple-dark), #4d2a68);
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(47, 23, 77, 0.18);
-    }
-    .sffr-pride-volunteer-card h2 {
-    margin-bottom: 10px;
-    color: var(--sffr-white);
-    font-size: 32px;
-    }
-    .sffr-pride-volunteer-card p {
-    margin-bottom: 0;
-    color: #eee5f3;
-    font-size: 17px;
-    }
-    .sffr-pride-volunteer-jobs {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin: 22px 0 0;
-    padding: 0;
-    list-style: none;
-    }
-    .sffr-pride-volunteer-jobs li {
-    padding: 10px 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 9px;
-    font-size: 15px;
-    font-weight: 700;
-    }
-    .sffr-pride-volunteer-action {
-    text-align: center;
-    }
-    .sffr-pride-volunteer-action .sffr-pride-button {
-    width: 100%;
-    max-width: 310px;
-    }
     /* RECAP */
     .sffr-pride-recap-wrap {
     background: var(--sffr-white);
@@ -583,8 +536,7 @@
     }
     @media (max-width: 900px) {
     .sffr-pride-feature,
-    .sffr-pride-beneficiary,
-    .sffr-pride-volunteer-card {
+    .sffr-pride-beneficiary {
     grid-template-columns: 1fr;
     }
     .sffr-pride-details,
@@ -593,9 +545,6 @@
     }
     .sffr-pride-ticket-featured {
     transform: none;
-    }
-    .sffr-pride-volunteer-action {
-    text-align: left;
     }
     .sffr-pride-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -621,10 +570,6 @@
     .sffr-pride-button {
     width: 100%;
     }
-    .sffr-pride-volunteer-card {
-    padding: 29px 23px;
-    }
-    .sffr-pride-volunteer-jobs,
     .sffr-pride-stats,
     .sffr-pride-link-grid {
     grid-template-columns: 1fr;
@@ -649,7 +594,6 @@
             </p>
             <div class="sffr-pride-actions">
                 <a class="sffr-pride-button" href="https://form.jotform.com/sffr/2026-fundraiser" target="_blank" rel="noopener">Buy tickets</a>
-                <a class="sffr-pride-button sffr-pride-button-light" href="#sffr-drag-brunch-volunteer">Volunteer at the event</a>
             </div>
         </div>
     </section>
@@ -803,29 +747,6 @@
             <div class="sffr-pride-impact-card">
                 <strong>$50,000</strong>
                 <span>Record-breaking projected 2026 Pride Run donation</span>
-            </div>
-        </div>
-    </section>
-    <section class="sffr-pride-section sffr-pride-volunteer-section" id="sffr-drag-brunch-volunteer">
-        <div class="sffr-pride-volunteer-card">
-            <div>
-                <h2>Help make the brunch happen</h2>
-                <p>
-                    We are looking for volunteers to help welcome guests and keep the
-                    event running smoothly. Sign up for a 2–3 hour shift. No special
-                    experience is required.
-                </p>
-                <ul class="sffr-pride-volunteer-jobs">
-                    <li>✓ Event setup</li>
-                    <li>✓ Guest check-in</li>
-                    <li>✓ Bartending</li>
-                    <li>✓ Costco shopping</li>
-                    <li>✓ Event logistics</li>
-                    <li>✓ Event teardown</li>
-                </ul>
-            </div>
-            <div class="sffr-pride-volunteer-action">
-                <a class="sffr-pride-button sffr-pride-button-light" href="https://forms.gle/bkVNw9VaVhRjKNma6" target="_blank" rel="noopener">Sign up to volunteer</a>
             </div>
         </div>
     </section>
