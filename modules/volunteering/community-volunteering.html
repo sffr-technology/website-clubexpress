@@ -1,198 +1,89 @@
 <style>
-    .sffr-volunteer-page {
-        font-family: Arial, sans-serif;
-    }
-
-    /* Hero */
-    .sffr-volunteer-hero {
-        padding: 30px 20px 35px;
-        margin-bottom: 25px;
-    }
-
-    .sffr-volunteer-hero h1 {
-        font-size: 42px;
-        color: #333;
-        margin-bottom: 18px;
-    }
-
-    .sffr-volunteer-hero p {
-        font-size: 18px;
-        line-height: 1.8;
-        color: #555;
-        max-width: 900px;
-        margin-bottom: 18px;
-    }
-
-    /* Section Header */
-    .sffr-section-title {
-        font-size: 32px;
-        color: #333;
-        margin: 35px 20px 20px;
-    }
-
-    /* Opportunity Card */
-    .sffr-opportunity-card {
-        background: white;
-        border-radius: 14px;
-        padding: 30px;
-        margin: 0 20px 35px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-        border-left: 6px solid #0077cc;
-    }
-
-    .sffr-opportunity-card h2 {
-        font-size: 28px;
-        color: #0077cc;
-        margin-bottom: 15px;
-    }
-
-    .sffr-opportunity-card p {
-        font-size: 16px;
-        line-height: 1.7;
-        color: #555;
-    }
-
-    /* Event Details */
-    .sffr-event-details {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        margin-top: 25px;
-    }
-
-    .sffr-event-detail {
-        background: #f5f7fa;
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .sffr-event-detail h3 {
-        margin: 0 0 8px;
-        color: #0077cc;
-        font-size: 16px;
-    }
-
-    .sffr-event-detail p {
-        margin: 0;
-        font-size: 15px;
-        color: #444;
-    }
-
-    /* Button */
-    .sffr-volunteer-button {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 30px;
-        background: #0077cc;
-        color: white !important;
-        text-decoration: none !important;
-        border-radius: 8px;
-        font-weight: bold;
-    }
-
-    .sffr-volunteer-button:hover {
-        opacity: .85;
-    }
-
-    /* Disabled Button */
-    .sffr-volunteer-button-disabled {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 30px;
-        background: #bdbdbd;
-        color: white !important;
-        text-decoration: none !important;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: not-allowed;
-    }
-
-    /* Volunteer Hero Image */
-    .sffr-volunteer-image {
-        height: 500px;
-        max-height: 60vh;
-        margin: 0 20px 35px;
-        border-radius: 14px;
-        overflow: hidden;
-    }
-
-    .sffr-volunteer-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background: #f5f5f5;
-    }
-
-    /* Responsive */
-    @media(max-width:768px) {
-        .sffr-volunteer-image {
-            height: 220px;
-        }
-
-        .sffr-event-details {
-            grid-template-columns: 1fr;
-        }
-
-        .sffr-volunteer-hero h1 {
-            font-size: 32px;
-        }
-    }
+    .sffr-community,.sffr-community *{box-sizing:border-box}
+    .sffr-community{--ink:#292431;--muted:#6c6672;--plum:#4b2e83;--plum-dark:#301b59;--lav:#f3eef9;--gold:#f3b93f;--gold-soft:#fff6dd;--coral:#e96e5f;--green:#2f7a5c;--line:#e2dae8;background:#fffdf8;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;overflow:hidden}
+    .sffr-community a{color:var(--plum)}
+    .sffr-community-inner,.sffr-community-section{margin:0 auto;max-width:1160px}
+    .sffr-community-hero{background:radial-gradient(circle at 91% 10%,rgba(243,185,63,.23) 0 115px,transparent 116px),linear-gradient(135deg,var(--plum-dark),var(--plum));color:#fff;padding:clamp(52px,7vw,86px) 22px}
+    .sffr-community-hero-grid{align-items:center;display:grid;gap:clamp(34px,6vw,70px);grid-template-columns:minmax(0,1fr) minmax(330px,.82fr)}
+    .sffr-community-kicker,.sffr-community-label{color:#f8d67e;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 14px;text-transform:uppercase}
+    .sffr-community-hero h1{color:#fff;font-size:clamp(42px,6vw,68px);letter-spacing:-.045em;line-height:1.02;margin:0 0 20px}
+    .sffr-community-hero-copy{color:rgba(255,255,255,.83);font-size:clamp(17px,2vw,20px);margin:0;max-width:700px}
+    .sffr-community-hero-copy+.sffr-community-hero-copy{margin-top:13px}
+    .sffr-community-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+    .sffr-community-button{background:#fff;border:2px solid #fff;border-radius:999px;color:var(--plum-dark)!important;display:inline-block;font-size:14px;font-weight:800;padding:11px 18px;text-decoration:none!important}
+    .sffr-community-button-alt{background:transparent;color:#fff!important}
+    .sffr-community-hero-photo{background:#fff;border:7px solid rgba(255,255,255,.16);border-radius:22px;box-shadow:0 24px 55px rgba(27,12,47,.34);display:block;overflow:hidden;transform:rotate(1deg)}
+    .sffr-community-hero-photo img{aspect-ratio:4/3;display:block;height:auto;object-fit:cover;width:100%}
+    .sffr-community-nav{background:#fff;border-bottom:1px solid var(--line)}
+    .sffr-community-nav-inner{display:flex;gap:8px;overflow-x:auto;padding:14px 22px;scrollbar-width:none}
+    .sffr-community-nav-inner::-webkit-scrollbar{display:none}
+    .sffr-community-nav a{background:var(--lav);border-radius:999px;flex:0 0 auto;font-size:13px;font-weight:800;padding:7px 12px;text-decoration:none}
+    .sffr-community-section{padding:clamp(56px,8vw,86px) 22px;scroll-margin-top:24px}
+    .sffr-community-section-tinted{background:var(--lav);max-width:none}
+    .sffr-community-section-tinted>.sffr-community-inner{padding-left:22px;padding-right:22px}
+    .sffr-community-heading{margin-bottom:28px;max-width:800px}
+    .sffr-community-label{color:var(--coral)}
+    .sffr-community-heading h2{color:var(--plum-dark);font-size:clamp(31px,5vw,47px);letter-spacing:-.035em;line-height:1.1;margin:0 0 11px}
+    .sffr-community-heading p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-community-empty{align-items:center;background:linear-gradient(145deg,#fff6dd,#fffaf0);border:1px solid #efd48f;border-radius:20px;display:grid;gap:22px;grid-template-columns:auto minmax(0,1fr) auto;padding:27px}
+    .sffr-community-empty-icon{align-items:center;background:#fff;border-radius:50%;display:flex;font-size:27px;height:60px;justify-content:center;width:60px}
+    .sffr-community-empty h3{color:var(--plum-dark);font-size:23px;margin:0 0 4px}
+    .sffr-community-empty p{color:var(--muted);margin:0}
+    .sffr-community-empty .sffr-community-button{background:var(--plum);border-color:var(--plum);color:#fff!important;white-space:nowrap}
+    .sffr-community-list{align-items:start;display:grid;gap:14px;grid-template-columns:1fr 1fr}
+    .sffr-community-card{align-self:start;background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:0 8px 24px rgba(48,27,89,.06);overflow:hidden}
+    .sffr-community-card summary{align-items:center;cursor:pointer;display:grid;gap:18px;grid-template-columns:84px minmax(0,1fr) auto;list-style:none;padding:20px}
+    .sffr-community-card summary::-webkit-details-marker{display:none}
+    .sffr-community-date{align-items:center;background:var(--plum-dark);border-radius:13px;color:#fff;display:flex;flex-direction:column;font-size:11px;font-weight:800;justify-content:center;letter-spacing:.08em;min-height:72px;padding:9px;text-align:center;text-transform:uppercase}
+    .sffr-community-date strong{color:#f8d67e;font-size:21px;letter-spacing:-.03em;line-height:1.1;margin:3px 0}
+    .sffr-community-card h3{color:var(--plum-dark);font-size:20px;line-height:1.25;margin:0 0 5px}
+    .sffr-community-card summary p{color:var(--muted);font-size:13px;margin:0}
+    .sffr-community-toggle{align-items:center;background:var(--lav);border-radius:50%;color:var(--plum);display:flex;font-size:21px;height:32px;justify-content:center;width:32px}
+    .sffr-community-card[open] .sffr-community-toggle{font-size:0}
+    .sffr-community-card[open] .sffr-community-toggle:after{content:'×';font-size:21px}
+    .sffr-community-card-body{border-top:1px solid var(--line);color:var(--muted);padding:19px 22px 23px}
+    .sffr-community-card-body>p{margin:0 0 17px}
+    .sffr-community-details{display:grid;gap:9px;grid-template-columns:repeat(3,1fr)}
+    .sffr-community-detail{background:var(--lav);border-radius:11px;padding:13px}
+    .sffr-community-detail strong{color:var(--plum-dark);display:block;font-size:12px;margin-bottom:3px}
+    .sffr-community-detail span{display:block;font-size:12px;line-height:1.45}
+    .sffr-community-callout{background:linear-gradient(135deg,var(--plum-dark),var(--plum));border-radius:21px;color:#fff;display:grid;gap:28px;grid-template-columns:minmax(0,1fr) auto;padding:clamp(28px,5vw,42px)}
+    .sffr-community-callout h2{color:#fff;font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;margin:0 0 8px}
+    .sffr-community-callout p{color:rgba(255,255,255,.75);margin:0;max-width:720px}
+    .sffr-community-callout .sffr-community-button{align-self:center}
+    .sffr-community-footer{background:#1f102c;color:rgba(255,255,255,.72);padding:25px 22px;text-align:center}
+    .sffr-community-footer p{margin:0}
+    @media(hover:hover){.sffr-community-button,.sffr-community-card,.sffr-community-hero-photo{transition:transform .2s ease,box-shadow .2s ease}.sffr-community-button:hover{transform:translateY(-1px)}.sffr-community-card:hover{box-shadow:0 14px 32px rgba(48,27,89,.11)}.sffr-community-hero-photo:hover{transform:rotate(0)}}
+    @media(max-width:850px){.sffr-community-hero-grid{grid-template-columns:1fr}.sffr-community-hero-photo{max-width:580px;transform:none}.sffr-community-empty,.sffr-community-callout{grid-template-columns:1fr}.sffr-community-empty-icon{display:none}.sffr-community-empty .sffr-community-button,.sffr-community-callout .sffr-community-button{justify-self:start}}
+    @media(max-width:680px){.sffr-community-list,.sffr-community-details{grid-template-columns:1fr}.sffr-community-card summary{grid-template-columns:70px minmax(0,1fr) auto;padding:15px}.sffr-community-date{min-height:66px}.sffr-community-hero-photo{display:none}}
 </style>
-<div class="sffr-volunteer-page">
-    <!-- Hero -->
-    <div class="sffr-volunteer-hero">
-        <h1>Community Volunteering 🤝</h1>
-        <p> SF FrontRunners believes in giving back beyond our weekly runs. Throughout the year, we come together as a club to support organizations, community events, and causes that make a positive impact in San Francisco and beyond. </p>
-        <p> These group volunteer opportunities are a great way to represent SF FrontRunners, meet fellow members, and make a difference together. </p>
-    </div>
-    <div class="sffr-volunteer-image"> <img src="//images.clubexpress.com/801899/photos/original/10-DSCF2070_1656197792.jpg" alt="SF FrontRunners volunteering together"> </div> <!-- Upcoming Opportunity -->
-    <h2 class="sffr-section-title">Upcoming Opportunity</h2> <!--    <h2 class="sffr-section-title">Past Opportunities</h2>    <div class="sffr-opportunity-card">        <h2>🌲 Strawberry Hill Trail Improvement</h2>        <p> Join SF FrontRunners as we give back to one of San Francisco’s beautiful outdoor spaces. We’ll be working together on a trail improvement project at Strawberry Hill, helping maintain and improve the trails that our community enjoys. </p>        <div class="sffr-event-details">            <div class="sffr-event-detail">                <h3>📅 Date</h3>                <p>Saturday, August 15</p>                <p>Time TBD</p>            </div>            <div class="sffr-event-detail">                <h3>📍 Location</h3>                <p>Strawberry Hill</p>                <p>Golden Gate Park</p>            </div>            <div class="sffr-event-detail">                <h3>👟 Who Can Join?</h3>                <p>All SFFR Members & Friends</p>            </div>        </div> <a class="sffr-volunteer-button" href="https://forms.gle/KGpJReQHfxWGCKgF8"> I'm Interested </a>    </div>    -->
-    <!-- Past Opportunities -->
-    <h2 class="sffr-section-title">Past Opportunities</h2>
-    <div class="sffr-opportunity-card">
-        <h2>🌲 Strawberry Hill Trail Improvement</h2>
-        <p> Join SF FrontRunners as we give back to one of San Francisco’s beautiful outdoor spaces. We’ll be working together on a trail improvement project at Strawberry Hill, helping maintain and improve the trails that our community enjoys. </p>
-        <div class="sffr-event-details">
-            <div class="sffr-event-detail">
-                <h3>📅 Date</h3>
-                <p>Saturday, August 15</p>
-                <p>Time TBD</p>
+<div class="sffr-community">
+    <section class="sffr-community-hero">
+        <div class="sffr-community-inner sffr-community-hero-grid">
+            <div>
+                <p class="sffr-community-kicker">Give back together</p>
+                <h1>Community Volunteering</h1>
+                <p class="sffr-community-hero-copy">SF FrontRunners believes in giving back beyond our weekly runs. Throughout the year, we support organizations, community events, and causes that make a positive impact in San Francisco and beyond.</p>
+                <p class="sffr-community-hero-copy">Group volunteer opportunities are a meaningful way to represent SFFR, meet fellow members, and make a difference together.</p>
+                <div class="sffr-community-actions"><a class="sffr-community-button" href="#upcoming">See upcoming opportunities</a><a class="sffr-community-button sffr-community-button-alt" href="https://sffr.org/getinvolved">Help run the club</a></div>
             </div>
-            <div class="sffr-event-detail">
-                <h3>📍 Location</h3>
-                <p>Strawberry Hill</p>
-                <p>Golden Gate Park</p>
+            <a class="sffr-community-hero-photo" href="//images.clubexpress.com/801899/photos/original/10-DSCF2070_1656197792.jpg" target="_blank" rel="noopener" aria-label="Open the full-size community volunteer photo"><img src="//images.clubexpress.com/801899/photos/original/10-DSCF2070_1656197792.jpg" alt="SF FrontRunners members volunteering together"></a>
+        </div>
+    </section>
+    <nav class="sffr-community-nav" aria-label="Community volunteering sections"><div class="sffr-community-inner sffr-community-nav-inner"><a href="#upcoming">Upcoming</a><a href="#past">Past opportunities</a><a href="#suggest">Suggest an opportunity</a></div></nav>
+    <section class="sffr-community-section" id="upcoming">
+        <div class="sffr-community-heading"><p class="sffr-community-label">Volunteer with SFFR</p><h2>Upcoming Opportunities</h2><p>Join other members for a group project supporting our wider community.</p></div>
+        <div class="sffr-community-empty"><span class="sffr-community-empty-icon" aria-hidden="true">🌱</span><div><h3>More opportunities are on the way</h3><p>There are no active community volunteer sign-ups right now. Check back soon or suggest a project for the club.</p></div><a class="sffr-community-button" href="#suggest">Suggest an opportunity</a></div>
+    </section>
+    <section class="sffr-community-section sffr-community-section-tinted" id="past">
+        <div class="sffr-community-inner">
+            <div class="sffr-community-heading"><p class="sffr-community-label">Community impact</p><h2>Past Opportunities</h2><p>Open a card to see how members have shown up for San Francisco's parks, runners, and neighborhoods.</p></div>
+            <div class="sffr-community-list">
+                <details class="sffr-community-card"><summary><span class="sffr-community-date">August<strong>15</strong>2026</span><div><h3>🌲 Strawberry Hill Trail Improvement</h3><p>Trail stewardship in Golden Gate Park</p></div><span class="sffr-community-toggle" aria-hidden="true">+</span></summary><div class="sffr-community-card-body"><p>SF FrontRunners helped maintain and improve trails at one of San Francisco's beautiful outdoor spaces.</p><div class="sffr-community-details"><div class="sffr-community-detail"><strong>Location</strong><span>Strawberry Hill<br>Golden Gate Park</span></div><div class="sffr-community-detail"><strong>Participation</strong><span>SFFR members and friends</span></div><div class="sffr-community-detail"><strong>Project</strong><span>Trail improvement</span></div></div></div></details>
+                <details class="sffr-community-card"><summary><span class="sffr-community-date">July<strong>26</strong>2026</span><div><h3>🏃 San Francisco Marathon Water Station</h3><p>Hydration and encouragement for race participants</p></div><span class="sffr-community-toggle" aria-hidden="true">+</span></summary><div class="sffr-community-card-body"><p>Members cheered on runners, handed out hydration, and brought SFFR community energy to one of San Francisco's biggest running events.</p><div class="sffr-community-details"><div class="sffr-community-detail"><strong>Time</strong><span>4:45–10:10 AM</span></div><div class="sffr-community-detail"><strong>Location</strong><span>Water Stop #5<br>Conzelman Road</span></div><div class="sffr-community-detail"><strong>Participation</strong><span>SFFR members and friends</span></div></div></div></details>
             </div>
-            <div class="sffr-event-detail">
-                <h3>👟 Who Can Join?</h3>
-                <p>All SFFR Members & Friends</p>
-            </div>
-        </div> <span class="sffr-volunteer-button-disabled"> I'm Interested </span>
-    </div>
-    <div class="sffr-opportunity-card">
-        <h2>🏃 San Francisco Marathon Water Station</h2>
-        <p> SF FrontRunners came together to support runners at the San Francisco Marathon! Volunteers cheered on participants, handed out hydration, and brought our community energy to one of San Francisco’s biggest running events. </p>
-        <div class="sffr-event-details">
-            <div class="sffr-event-detail">
-                <h3>📅 Date</h3>
-                <p>Sunday, July 26</p>
-                <p>4:45AM - 10:10AM</p>
-            </div>
-            <div class="sffr-event-detail">
-                <h3>📍 Location</h3>
-                <p>Water Stop #5</p>
-                <p> Conzelman Rd / Southbound Commuter Lot (Golden Gate Bridge) </p>
-            </div>
-            <div class="sffr-event-detail">
-                <h3>👟 Who Can Join?</h3>
-                <p>All SFFR Members & Friends</p>
-            </div>
-        </div> <span class="sffr-volunteer-button-disabled"> I'm Interested </span>
-    </div> <!-- Future Opportunities -->
-    <h2 class="sffr-section-title">More Ways to Give Back</h2>
-    <div class="sffr-opportunity-card">
-        <h2>🌈 Community Impact</h2>
-        <p> We’re always looking for opportunities to support LGBTQ+ organizations, local nonprofits, races, and community events. Check back here for upcoming volunteer opportunities with SF FrontRunners. </p>
-    </div>
+        </div>
+    </section>
+    <section class="sffr-community-section" id="suggest"><div class="sffr-community-callout"><div><h2>Know a cause that could use our help?</h2><p>We are always looking for opportunities to support LGBTQ+ organizations, local nonprofits, races, parks, and community events.</p></div><a class="sffr-community-button" href="https://forms.gle/bkVNw9VaVhRjKNma6" target="_blank" rel="noopener">Suggest an opportunity</a></div></section>
+    <footer class="sffr-community-footer"><p>Together, we help make our community stronger, healthier, and more connected.</p></footer>
 </div>
