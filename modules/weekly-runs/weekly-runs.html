@@ -22,6 +22,9 @@
         color: var(--ink);
         font-family: Arial, Helvetica, sans-serif;
         line-height: 1.65;
+        max-width: 100%;
+        overflow-x: hidden;
+        width: 100%;
     }
 
     .weekly-runs-page a {
@@ -35,6 +38,7 @@
 
     .weekly-runs-container {
         margin: 0 auto;
+        max-width: 1120px;
         width: min(1120px, calc(100% - 40px));
     }
 
@@ -216,6 +220,7 @@
         color: var(--muted);
         font-size: 13px;
         line-height: 1.45;
+        overflow-wrap: anywhere;
     }
 
     .weekly-run-card .weekly-runs-button {
@@ -320,27 +325,75 @@
 
     @media (max-width: 700px) {
         .weekly-runs-container {
-            width: min(100% - 28px, 1120px);
+            max-width: calc(100% - 28px);
+            width: 100%;
         }
 
         .weekly-runs-hero {
             padding: 42px 0;
         }
 
+        .weekly-runs-hero h1 {
+            font-size: clamp(36px, 11vw, 48px);
+        }
+
         .weekly-runs-hero-copy {
             font-size: 17px;
         }
 
+        .weekly-runs-section {
+            padding: 44px 0;
+        }
+
         .weekly-run-card {
             display: flex;
+            min-width: 0;
         }
 
         .weekly-run-card-image {
             aspect-ratio: 16 / 10;
+            min-height: 0;
+        }
+
+        .weekly-run-card-body {
+            min-width: 0;
+            padding: 21px;
+        }
+
+        .weekly-run-card h3 {
+            font-size: 24px;
+        }
+
+        .weekly-run-fact {
+            grid-template-columns: 22px minmax(0, 1fr);
+        }
+
+        .weekly-run-fact > div {
+            min-width: 0;
         }
 
         .weekly-runs-expect-grid {
             grid-template-columns: 1fr;
+        }
+
+        .weekly-runs-expect-card {
+            padding: 22px;
+        }
+
+        .weekly-runs-welcome {
+            border-radius: 18px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .weekly-runs-hero-actions {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .weekly-runs-button {
+            max-width: 100%;
+            width: 100%;
         }
     }
 
