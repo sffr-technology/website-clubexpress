@@ -49,13 +49,14 @@
     .sffr-home-heading p{color:var(--muted);font-size:17px;margin:0}
     .sffr-home-schedule{background:#fff;border-bottom:1px solid var(--line)}
     .sffr-home-schedule-grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-    .sffr-home-meetup{background:var(--paper);border:1px solid var(--line);border-radius:18px;display:grid;gap:13px;grid-template-columns:auto 1fr;padding:23px}
+    .sffr-home-meetup{background:var(--paper);border:1px solid var(--line);border-radius:18px;display:grid;gap:13px;grid-template-columns:auto 1fr;padding:23px;text-decoration:none!important}
     .sffr-home-meetup-day{align-items:center;background:var(--purple);border-radius:13px;color:#fff;display:flex;font-size:12px;font-weight:800;height:48px;justify-content:center;letter-spacing:.06em;text-transform:uppercase;width:48px}
     .sffr-home-meetup:nth-child(2) .sffr-home-meetup-day{background:var(--pink)}
     .sffr-home-meetup:nth-child(3) .sffr-home-meetup-day{background:var(--green)}
     .sffr-home-meetup strong{color:var(--purple-dark);display:block;font-size:18px;line-height:1.2;margin:2px 0 4px}
     .sffr-home-meetup span{color:var(--muted);display:block;font-size:13px}
     .sffr-home-meetup .sffr-home-meetup-day{color:#fff;display:flex;font-size:12px}
+    .sffr-home-meetup:focus-visible{box-shadow:0 0 0 4px var(--gold);outline:3px solid var(--purple-dark);outline-offset:3px}
     .sffr-home-community{background:var(--purple-soft)}
     .sffr-home-community-grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .sffr-home-card{background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column;min-height:300px;padding:27px}
@@ -119,15 +120,15 @@
 <p>Come once as a guest, choose a comfortable distance and pace, and stay afterward for food and conversation.</p>
 </div>
 <div class="sffr-home-schedule-grid">
-<article class="sffr-home-meetup"><span class="sffr-home-meetup-day">Tue</span>
+<a class="sffr-home-meetup" href="https://sffr.org/tuesday"><span class="sffr-home-meetup-day">Tue</span>
 <div><strong>6:30 PM</strong><span>Ferry Building</span></div>
-</article>
-<article class="sffr-home-meetup"><span class="sffr-home-meetup-day">Thu</span>
+</a>
+<a class="sffr-home-meetup" href="https://sffr.org/thursday"><span class="sffr-home-meetup-day">Thu</span>
 <div><strong>6:30 PM</strong><span>Market Street &amp; Noe Street</span></div>
-</article>
-<article class="sffr-home-meetup"><span class="sffr-home-meetup-day">Sat</span>
+</a>
+<a class="sffr-home-meetup" href="https://sffr.org/saturday"><span class="sffr-home-meetup-day">Sat</span>
 <div><strong>9:00 AM</strong><span>Blue Heron Lake</span></div>
-</article>
+</a>
 </div>
 </div>
 </section>
