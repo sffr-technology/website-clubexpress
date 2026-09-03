@@ -1,0 +1,853 @@
+<!--
+  Source newsletter: SFFR Footweb | September 3, 2026
+  Source URL: https://mailchi.mp/sffr/sffr-footweb-week-1-1123-9319767?e=ddd15108ce
+-->
+<style>
+    .sffr-week,
+    .sffr-week * {
+    box-sizing: border-box;
+    }
+    .sffr-week {
+    --ink: #292431;
+    --muted: #6c6672;
+    --purple: #4b2e83;
+    --purple-dark: #301b59;
+    --purple-soft: #f3eef9;
+    --gold: #f3b93f;
+    --gold-soft: #fff6dd;
+    --coral: #e96e5f;
+    --green: #2f7a5c;
+    --green-soft: #edf7f2;
+    --blue: #176d99;
+    --paper: #fffdf8;
+    --surface: #ffffff;
+    --line: #e5ddec;
+    --shadow: 0 18px 48px rgba(48, 27, 89, .10);
+    background: #f8f4fb;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    overflow: hidden;
+    }
+    .sffr-week a {
+    color: var(--purple);
+    }
+    .sffr-week-inner {
+    margin: 0 auto;
+    max-width: 1180px;
+    }
+    .sffr-week-section {
+    padding: clamp(56px, 7vw, 84px) 24px;
+    }
+    .sffr-week-kicker,
+    .sffr-week-label {
+    color: var(--coral);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .15em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    }
+    .sffr-week-heading {
+    margin-bottom: 30px;
+    max-width: 780px;
+    }
+    .sffr-week-heading h2 {
+    color: var(--purple-dark);
+    font-size: clamp(31px, 5vw, 47px);
+    letter-spacing: -.035em;
+    line-height: 1.1;
+    margin: 0 0 12px;
+    }
+    .sffr-week-heading p {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+    }
+    .sffr-week-intro {
+    background:
+    radial-gradient(circle at 6% 12%, rgba(243, 185, 63, .18) 0 105px, transparent 106px),
+    linear-gradient(135deg, #2e194f 0%, #4b2e83 52%, #69499a 100%);
+    color: #fff;
+    padding: clamp(48px, 7vw, 78px) 24px;
+    }
+    .sffr-week-intro-grid {
+    align-items: center;
+    display: grid;
+    gap: clamp(34px, 5vw, 66px);
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .86fr);
+    }
+    .sffr-week-intro .sffr-week-kicker {
+    color: #f8d67e;
+    }
+    .sffr-week-intro h1 {
+    color: #fff;
+    font-size: clamp(40px, 5.6vw, 64px);
+    letter-spacing: -.045em;
+    line-height: 1.03;
+    margin: 0 0 19px;
+    }
+    .sffr-week-intro-copy {
+    color: rgba(255, 255, 255, .83);
+    font-size: clamp(16px, 1.7vw, 18px);
+    margin: 0;
+    max-width: 680px;
+    }
+    .sffr-week-intro-copy + .sffr-week-intro-copy {
+    margin-top: 15px;
+    }
+    .sffr-week-intro a {
+    color: #f8d67e;
+    font-weight: 800;
+    }
+    .sffr-week-signature {
+    color: #f8d67e;
+    font-size: 13px;
+    font-weight: 800;
+    margin: 24px 0 0;
+    }
+    .sffr-week-hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 26px;
+    }
+    .sffr-week-hero-detail {
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .20);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 8px 12px;
+    }
+    .sffr-week-hero-photo {
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, .34);
+    border-radius: 24px;
+    box-shadow: 0 26px 60px rgba(22, 10, 46, .34);
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    transform: rotate(1.2deg);
+    }
+    .sffr-week-hero-photo img {
+    aspect-ratio: 4 / 3;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+    }
+    .sffr-week-hero-photo figcaption {
+    background: linear-gradient(transparent, rgba(26, 14, 46, .92));
+    bottom: 0;
+    color: #fff;
+    font-size: 13px;
+    left: 0;
+    padding: 48px 22px 18px;
+    position: absolute;
+    right: 0;
+    }
+    .sffr-week-hero-photo figcaption strong {
+    color: #f8d67e;
+    display: block;
+    font-size: 12px;
+    letter-spacing: .1em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    }
+    .sffr-week-announcements,
+    .sffr-week-spotlight,
+    .sffr-week-meetings {
+    background: #fff;
+    }
+    .sffr-week-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-week-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 276px;
+    padding: 28px;
+    position: relative;
+    }
+    .sffr-week-card-icon {
+    align-items: center;
+    background: var(--purple-soft);
+    border-radius: 13px;
+    display: flex;
+    font-size: 23px;
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 23px;
+    width: 50px;
+    }
+    .sffr-week-card:nth-child(3n+2) .sffr-week-card-icon {
+    background: var(--green-soft);
+    }
+    .sffr-week-card:nth-child(3n) .sffr-week-card-icon {
+    background: var(--gold-soft);
+    }
+    .sffr-week-card h3 {
+    color: var(--purple-dark);
+    font-size: 21px;
+    line-height: 1.25;
+    margin: 0 0 9px;
+    }
+    .sffr-week-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 18px;
+    }
+    .sffr-week-card-meta {
+    color: var(--coral);
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    }
+    .sffr-week-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 14px;
+    margin-top: auto;
+    }
+    .sffr-week-link {
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    }
+    .sffr-week-discount-card {
+    background: linear-gradient(145deg, var(--gold-soft), #fff0e8);
+    border-color: #f0c567;
+    box-shadow: inset 0 4px 0 var(--coral);
+    }
+    .sffr-week-code {
+    background: #fff;
+    border: 1px dashed #d6a233;
+    border-radius: 10px;
+    color: #65460b;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    margin: 0 0 17px;
+    padding: 9px 11px;
+    }
+    .sffr-week-compact-list {
+    display: grid;
+    gap: 12px;
+    }
+    .sffr-week-compact-card {
+    align-items: center;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    min-height: 0;
+    padding: 18px 20px;
+    }
+    .sffr-week-compact-card .sffr-week-card-icon {
+    flex: 0 0 auto;
+    margin: 0;
+    }
+    .sffr-week-compact-main {
+    color: inherit !important;
+    min-width: 0;
+    text-decoration: none;
+    }
+    .sffr-week-compact-main .sffr-week-card-meta {
+    margin-bottom: 3px;
+    }
+    .sffr-week-compact-main h3 {
+    margin-bottom: 3px;
+    }
+    .sffr-week-compact-main p {
+    margin: 0;
+    }
+    .sffr-week-compact-main:focus-visible {
+    border-radius: 8px;
+    outline: 3px solid rgba(75, 46, 131, .3);
+    outline-offset: 5px;
+    }
+    .sffr-week-compact-card .sffr-week-card-actions {
+    justify-content: flex-end;
+    margin: 0;
+    max-width: 220px;
+    text-align: right;
+    }
+    .sffr-week-compact-card .sffr-week-code {
+    margin: 0;
+    text-align: center;
+    }
+    .sffr-week-compact-card.sffr-week-discount-card {
+    grid-template-columns: auto minmax(0, 1fr) minmax(150px, auto) auto;
+    }
+    .sffr-week-events,
+    .sffr-week-races {
+    background:
+    radial-gradient(circle at 94% 0, rgba(243, 185, 63, .20) 0 90px, transparent 91px),
+    var(--purple-soft);
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    }
+    .sffr-week-event-list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .sffr-week-event {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    }
+    .sffr-week-event-date {
+    align-items: center;
+    background: var(--purple-dark);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
+    padding: 14px 22px;
+    text-align: left;
+    }
+    .sffr-week-event-date span {
+    color: #f8d67e;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    }
+    .sffr-week-event-date strong {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 0;
+    }
+    .sffr-week-event-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+    }
+    .sffr-week-event-body h3 {
+    color: var(--purple-dark);
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    }
+    .sffr-week-event-body p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 18px;
+    }
+    .sffr-week-event-body .sffr-week-link:first-of-type {
+    margin-top: auto;
+    }
+    .sffr-week-event-body .sffr-week-link + .sffr-week-link {
+    margin-left: 0;
+    margin-top: 5px;
+    }
+    .sffr-week-spotlight-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+    overflow: hidden;
+    }
+    .sffr-week-spotlight-photo-wrap {
+    background: var(--purple-soft);
+    min-height: 440px;
+    }
+    .sffr-week-spotlight-photo {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    }
+    .sffr-week-spotlight-body {
+    padding: clamp(28px, 5vw, 48px);
+    }
+    .sffr-week-spotlight-body h3 {
+    color: var(--purple-dark);
+    font-size: 32px;
+    letter-spacing: -.03em;
+    line-height: 1.1;
+    margin: 0 0 5px;
+    }
+    .sffr-week-spotlight-role {
+    color: var(--coral);
+    font-size: 13px;
+    font-weight: 800;
+    margin: 0 0 22px;
+    text-transform: uppercase;
+    }
+    .sffr-week-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+    }
+    .sffr-week-facts span {
+    background: var(--purple-soft);
+    border-radius: 999px;
+    color: #564866;
+    font-size: 12px;
+    padding: 7px 11px;
+    }
+    .sffr-week-qa {
+    border-top: 1px solid var(--line);
+    padding-top: 19px;
+    }
+    .sffr-week-qa + .sffr-week-qa {
+    margin-top: 17px;
+    }
+    .sffr-week-qa strong {
+    color: var(--purple-dark);
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    }
+    .sffr-week-qa p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+    }
+    .sffr-week-spotlight-cta {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 24px;
+    text-decoration: none;
+    }
+    .sffr-week-meeting-card {
+    align-items: center;
+    background: linear-gradient(145deg, #fffdf8, var(--gold-soft));
+    border: 1px solid #efd58a;
+    border-radius: 22px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding: 28px;
+    }
+    .sffr-week-meeting-icon {
+    align-items: center;
+    background: var(--purple-dark);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    font-size: 27px;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+    }
+    .sffr-week-meeting-card h3 {
+    color: var(--purple-dark);
+    font-size: 23px;
+    margin: 0 0 4px;
+    }
+    .sffr-week-meeting-card p {
+    color: var(--muted);
+    margin: 0;
+    }
+    .sffr-week-meeting-button {
+    background: var(--purple);
+    border-radius: 999px;
+    color: #fff !important;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 11px 18px;
+    text-decoration: none;
+    white-space: nowrap;
+    }
+    .sffr-week-race-tools {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-bottom: 22px;
+    padding: 20px 22px;
+    }
+    .sffr-week-race-tools .sffr-week-link {
+    font-size: 14px;
+    }
+    @media (hover: hover) {
+    .sffr-week-card,
+    .sffr-week-event,
+    .sffr-week-spotlight-card,
+    .sffr-week-hero-photo {
+    transition: box-shadow .2s ease, transform .2s ease;
+    }
+    .sffr-week-card:hover,
+    .sffr-week-event:hover,
+    .sffr-week-spotlight-card:hover {
+    box-shadow: 0 14px 32px rgba(48, 27, 89, .11);
+    transform: translateY(-2px);
+    }
+    .sffr-week-hero-photo:hover {
+    transform: rotate(0) translateY(-2px);
+    }
+    }
+    @media (max-width: 900px) {
+    .sffr-week-intro-grid,
+    .sffr-week-spotlight-card {
+    grid-template-columns: 1fr;
+    }
+    .sffr-week-event-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-week-hero-photo {
+    max-width: 680px;
+    transform: none;
+    }
+    .sffr-week-spotlight-photo-wrap {
+    max-height: 560px;
+    }
+    }
+    @media (max-width: 680px) {
+    .sffr-week-grid,
+    .sffr-week-event-list {
+    grid-template-columns: 1fr;
+    }
+    .sffr-week-card {
+    min-height: 0;
+    }
+    .sffr-week-compact-card,
+    .sffr-week-compact-card.sffr-week-discount-card {
+    align-items: flex-start;
+    grid-template-columns: auto minmax(0, 1fr);
+    }
+    .sffr-week-compact-card .sffr-week-card-actions,
+    .sffr-week-compact-card .sffr-week-code {
+    grid-column: 2;
+    justify-content: flex-start;
+    max-width: none;
+    text-align: left;
+    }
+    .sffr-week-event-date strong {
+    font-size: 18px;
+    }
+    .sffr-week-spotlight-photo-wrap {
+    min-height: 340px;
+    }
+    .sffr-week-meeting-card {
+    align-items: flex-start;
+    grid-template-columns: auto minmax(0, 1fr);
+    }
+    .sffr-week-meeting-button {
+    grid-column: 1 / -1;
+    text-align: center;
+    }
+    }
+</style>
+<div class="sffr-week">
+  <section class="sffr-week-intro">
+    <div class="sffr-week-inner sffr-week-intro-grid">
+      <div>
+        <p class="sffr-week-kicker">Footweb · September 3, 2026</p>
+        <h1>What’s Happening This Week</h1>
+        <p class="sffr-week-intro-copy">Congrats to everyone who participated in and completed the Spartan 10K Obstacle Course this past weekend! A major shoutout and thank you to Jason Matsuoka for providing promo codes that allowed everyone to register for basically free.</p>
+        <p class="sffr-week-intro-copy">In other news, we did have another event this past weekend 💃👑🥂🍳, but stay tuned for more info in a future Footweb.</p>
+        <div class="sffr-week-hero-details" aria-label="Featured dates">
+          <span class="sffr-week-hero-detail">Member Survey · Due Sep 6</span>
+          <span class="sffr-week-hero-detail">Thursday meetup moves · Sep 10</span>
+          <span class="sffr-week-hero-detail">Pride Run Director · Apply by Sep 12</span>
+        </div>
+        <p class="sffr-week-signature">Nick Messing<br>SFFR President</p>
+      </div>
+      <figure class="sffr-week-hero-photo">
+        <img src="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/f92a5051-c530-8a24-4622-90338c628c3a.jpg" alt="Photo featured in the September 3, 2026 SFFR Footweb newsletter">
+        <figcaption><strong>September 3 Footweb</strong>Celebrating another active weekend with San Francisco FrontRunners.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sffr-week-section sffr-week-announcements">
+    <div class="sffr-week-inner">
+      <div class="sffr-week-heading">
+        <p class="sffr-week-label">Announcements</p>
+        <h2>News for SFFR members</h2>
+        <p>A new Thursday meetup location, upcoming deadlines, donation opportunities, and ways to volunteer.</p>
+      </div>
+      <div class="sffr-week-compact-list">
+
+        <article class="sffr-week-card sffr-week-compact-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">📍</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/QJbxk_Rpd8Q?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">Beginning Thursday, September 10</span>
+            <h3>New Thursday Run Meetup Location</h3>
+            <p>Our Thursday fun run/walk now welcomes an average of 50–60 runners and walkers each week. Beginning September 10, the group will meet at the Eureka Valley/Harvey Milk Memorial Branch Library, 1 Jose Sarria Ct, San Francisco, CA 94114. If you drive, please do not park in the library parking lot.</p>
+          </a>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/QJbxk_Rpd8Q?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">View the new meetup location →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🏳️‍🌈</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/1Bx90BOXv4r?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">Apply by Saturday, September 12</span>
+            <h3>Apply to Be the 2027 Pride Run Race Director</h3>
+            <p>Help make a meaningful impact on one of SFFR’s signature events. The appointment begins October 1, 2026 and concludes by July 31, 2027. The Pride Run Director brings our community together while supporting a deserving beneficiary.</p>
+          </a>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/1Bx90BOXv4r?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Apply →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">📢</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/17BUFviJy0f?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">Last chance · Due Sunday, September 6</span>
+            <h3>Complete the Member Survey</h3>
+            <p>Your feedback helps the Board understand what’s working well and where the club can improve. Take a few minutes to share your thoughts by September 6.</p>
+          </a>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/17BUFviJy0f?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Take the survey →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">👟</div>
+          <div class="sffr-week-compact-main">
+            <span class="sffr-week-card-meta">Through September 12</span>
+            <h3>Shoe Drive: Donate Your Used Shoes</h3>
+            <p>Bring old running shoes to any Saturday morning run/walk through September 12. Bob Callori will collect them at second circle and donate them to Community Thrift Store, with proceeds going to the Bay Area Rainbow Symphony.</p>
+          </div>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/MuXKljqJ6vY?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Community Thrift Store</a>
+            <a class="sffr-week-link" href="https://us.list-manage.com/y6YzvxNoqfn?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Bay Area Rainbow Symphony</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🌈</div>
+          <a class="sffr-week-compact-main" href="mailto:hbussie@gmail.com">
+            <span class="sffr-week-card-meta">October 10 · Volunteers 8:00–11:00 AM · Race 9:00 AM</span>
+            <h3>Volunteer for the East Bay Pride Run</h3>
+            <p>East Bay Front Runners and Walkers is seeking 40 volunteers for multiple assignments at its annual Pride Run by Lake Merritt in Oakland.</p>
+          </a>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="mailto:hbussie@gmail.com">Email Hitesh Bussie →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🙋‍♂️</div>
+          <a class="sffr-week-compact-main" href="mailto:dylan@glbthistory.org">
+            <span class="sffr-week-card-meta">October 17 · Generally 4:00–9:00 PM</span>
+            <h3>GLBT Historical Society Reunion Gala Volunteers Needed</h3>
+            <p>This year’s Reunion Gala will take place at the Westin St. Francis. Volunteer support is needed across several areas throughout the evening.</p>
+          </a>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="mailto:dylan@glbthistory.org">Email Dylan Shurts →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sffr-week-section sffr-week-events">
+    <div class="sffr-week-inner">
+      <div class="sffr-week-heading">
+        <p class="sffr-week-label">Upcoming events</p>
+        <h2>Make plans with the club</h2>
+      </div>
+      <div class="sffr-week-event-list">
+
+        <article class="sffr-week-event">
+          <div class="sffr-week-event-date"><span>Sep</span><strong>11</strong></div>
+          <div class="sffr-week-event-body">
+            <h3>Dolly Parton Movie Tribute Night</h3>
+            <p>Bob Callori and Chris Goodwin are hosting a SFFR movie night at their home. Arrive at 6:30 PM for food, with <em>9 to 5</em> starting around 7:30 PM. The Board will provide pizza, soda, water, and cookies. Feel free to bring anything else to eat or drink to share. RSVP by September 10 so the hosts know how much pizza to order.</p>
+            <a class="sffr-week-link" href="https://us.list-manage.com/wslw7VcxgC3?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">RSVP →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-event">
+          <div class="sffr-week-event-date"><span>Sep</span><strong>18–20</strong></div>
+          <div class="sffr-week-event-body">
+            <h3>SoCal Front Runner Weekend</h3>
+            <p>SFFR has been invited to the 3rd Annual SoCal Front Runner Weekend in San Diego with Front Runners from San Diego, Palm Springs, Los Angeles, Long Beach, and Riverside.</p>
+            <a class="sffr-week-link" href="https://us.list-manage.com/rGmI8LZwrxo?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">View the full schedule</a>
+            <a class="sffr-week-link" href="https://us.list-manage.com/ZfV562veMA9?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">RSVP for activities and meals →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-event">
+          <div class="sffr-week-event-date"><span>Sep</span><strong>25</strong></div>
+          <div class="sffr-week-event-body">
+            <h3>September Social at Dolores Park</h3>
+            <p>Join the monthly social Friday at 5:30 PM for a potluck picnic dinner. The group will find a spot along Dolores Street between Cumberland and 20th. Bring food and/or drinks to share; the Board will provide sandwiches and chips.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sffr-week-section sffr-week-spotlight">
+    <div class="sffr-week-inner">
+      <div class="sffr-week-heading">
+        <p class="sffr-week-label">Member spotlight</p>
+        <h2>Meet Clayton Bullock</h2>
+      </div>
+      <article class="sffr-week-spotlight-card">
+        <div class="sffr-week-spotlight-photo-wrap">
+          <img class="sffr-week-spotlight-photo" src="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/673546ab-440c-4f4d-e437-d60be153170b.jpg" alt="Photo of SFFR member Clayton Bullock featured in the September 3, 2026 Footweb">
+        </div>
+        <div class="sffr-week-spotlight-body">
+          <h3>Clayton Bullock</h3>
+          <p class="sffr-week-spotlight-role">SFFR member since 1993</p>
+          <div class="sffr-week-facts">
+            <span>San Diego, CA</span>
+            <span>ASICS Gel-Cumulus 27</span>
+            <span>Chamber music</span>
+          </div>
+          <div class="sffr-week-qa">
+            <strong>Favorite running/walking shoes</strong>
+            <p>ASICS Gel-Cumulus 27.</p>
+          </div>
+          <div class="sffr-week-qa">
+            <strong>Biggest running/walking accomplishment</strong>
+            <p>(Cue nostalgic soundtrack.) Clayton ran his first marathon in San Francisco in 1996 after several rough years working science jobs with an undergraduate biology degree. He had been running for five years and prepared with training runs whose distances he estimated from paper maps. SFFR members encouraged him along the way. He finished in under three hours, only later realizing that was an important benchmark when club members called to congratulate him. The next day, a trophy for third place in his age division arrived on his doorstep. He remembers that nothing could upset him for the rest of that week.</p>
+          </div>
+          <div class="sffr-week-qa">
+            <strong>Favorite SFFR memory</strong>
+            <p>“I love that so many SFFR people also come to the BARS concerts and other arts activities. I love our expanded community.”</p>
+          </div>
+          <div class="sffr-week-qa">
+            <strong>Fun or unexpected fact</strong>
+            <p>“I take harpsichord lessons and conduct myself with the restraint and decorum of a virtuous 18th century princess.”</p>
+          </div>
+          <div class="sffr-week-qa">
+            <strong>Favorite non-running/walking hobby</strong>
+            <p>Chamber music.</p>
+          </div>
+          <a class="sffr-week-spotlight-cta" href="https://us.list-manage.com/9jOrfUJDPE0?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Submit a future member spotlight →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sffr-week-section sffr-week-meetings">
+    <div class="sffr-week-inner">
+      <div class="sffr-week-heading">
+        <p class="sffr-week-label">Upcoming meeting</p>
+        <h2>Join the Board meeting</h2>
+      </div>
+      <article class="sffr-week-meeting-card">
+        <div class="sffr-week-meeting-icon" aria-hidden="true">🗣️</div>
+        <div>
+          <h3>SFFR Board Meeting</h3>
+          <p>Sunday, September 13 · 11:15 AM · Zoom</p>
+        </div>
+        <a class="sffr-week-meeting-button" href="https://us.list-manage.com/1AfeDUdOZej?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Join on Zoom</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="sffr-week-section sffr-week-races">
+    <div class="sffr-week-inner">
+      <div class="sffr-week-heading">
+        <p class="sffr-week-label">SFFR × Sports Basement Race Circuit</p>
+        <h2>Upcoming races and discounts</h2>
+        <p>Register, report completed races, and track your progress on the SFFR leaderboards.</p>
+      </div>
+
+      <nav class="sffr-week-race-tools" aria-label="Race Circuit links">
+        <a class="sffr-week-link" href="https://us.list-manage.com/fOovTdntEj2?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Full race circuit calendar and discount codes</a>
+        <a class="sffr-week-link" href="https://us.list-manage.com/QMifCOTueQ_?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Submit a completed race</a>
+        <a class="sffr-week-link" href="https://us.list-manage.com/gEaxD05xeaw?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Race Circuit Leaderboard</a>
+        <a class="sffr-week-link" href="https://us.list-manage.com/KWuzUoZ5RBW?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Global Leaderboard</a>
+      </nav>
+
+      <div class="sffr-week-compact-list">
+
+        <article class="sffr-week-card sffr-week-compact-card sffr-week-discount-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">⛰️</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/PWmpZ3PuHAd?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">September 27 · 11:00 AM</span>
+            <h3>Spartan San Jose Trail Challenge</h3>
+            <p>FREE promotional codes valued at $87 are available for the 10K. Pay only the processing fee and join the SFFR team. There is no virtual option. Contact Jason Matsuoka in WhatsApp for a unique code, or Team Captain Ryan Susa with questions.</p>
+          </a>
+          <span class="sffr-week-code">FREE UNIQUE CODE · CONTACT JASON</span>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/PWmpZ3PuHAd?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Register</a>
+            <a class="sffr-week-link" href="mailto:teamcaptain@sffr.org">Email Ryan Susa</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card sffr-week-discount-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🌈</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/13vOIMsfemu?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">October 10</span>
+            <h3>East Bay Front Runners Pride Run</h3>
+            <p>Support our sister club across the bridge and save $5 on the 5K or 10K. The discount also applies to the virtual run option.</p>
+          </a>
+          <span class="sffr-week-code">CODE: IFR5OFF</span>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/13vOIMsfemu?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Register →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card sffr-week-discount-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🌉</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/oqrQzZg0cu9?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">November 1</span>
+            <h3>Golden Gate Half Marathon</h3>
+            <p>Save $10 on the 5K or half marathon. The discount includes the virtual run option.</p>
+          </a>
+          <span class="sffr-week-code">CODE: SFFR26</span>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/oqrQzZg0cu9?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Register →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card sffr-week-discount-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🌴</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/13NvEHxbEfl?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">November 7</span>
+            <h3>Palm Springs Front Runners Pride Run 5K</h3>
+            <p>Save $5 on the 5K. There is no virtual option.</p>
+          </a>
+          <span class="sffr-week-code">CODE: IF$26</span>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/13NvEHxbEfl?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Register →</a>
+          </div>
+        </article>
+
+        <article class="sffr-week-card sffr-week-compact-card sffr-week-discount-card">
+          <div class="sffr-week-card-icon" aria-hidden="true">🐻</div>
+          <a class="sffr-week-compact-main" href="https://us.list-manage.com/7OLEuZFrSnA?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">
+            <span class="sffr-week-card-meta">November 15 · Code valid through October 15</span>
+            <h3>Berkeley Half Marathon</h3>
+            <p>Save 20% on the 5K, 10K, or half marathon, including virtual options.</p>
+          </a>
+          <span class="sffr-week-code">CODE: SFFRONTRUNNERS20</span>
+          <div class="sffr-week-card-actions">
+            <a class="sffr-week-link" href="https://us.list-manage.com/7OLEuZFrSnA?e=ddd15108ce&amp;c2id=1c9e3934677d0c1ef23793ecf063bb1c" target="_blank" rel="noopener">Register →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</div>
