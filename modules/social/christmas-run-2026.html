@@ -1,0 +1,160 @@
+<!--
+  SFFR CHRISTMAS RUN 2026
+  Recommended ClubExpress quick link: sffr.org/christmas
+  Future assets:
+  - assets/social/christmas-run-2026.jpg
+  - assets/social/christmas-run-strava-routes-2026.jpg
+  Paste this entire fragment into the ClubExpress HTML editor.
+-->
+<style>
+    .sffr-christmas,.sffr-christmas *{box-sizing:border-box}
+    .sffr-christmas{--ink:#27332e;--muted:#607068;--evergreen:#1f664c;--evergreen-dark:#103d2e;--red:#a83b42;--red-dark:#7e2930;--cream:#fffaf1;--cream-deep:#f5eddd;--gold:#d7ad4f;--line:#d9e3dc;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;overflow:hidden}
+    .sffr-christmas a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .sffr-christmas-inner,.sffr-christmas-section{margin:0 auto;max-width:1120px}
+    .sffr-christmas-hero{background:radial-gradient(circle at 92% 8%,rgba(255,238,184,.15) 0 115px,transparent 116px),linear-gradient(135deg,var(--evergreen-dark),var(--evergreen) 58%,#39745b);color:#fff;padding:clamp(58px,8vw,94px) 22px}
+    .sffr-christmas-hero-grid{align-items:center;display:grid;gap:clamp(38px,7vw,74px);grid-template-columns:minmax(0,1fr) minmax(320px,440px)}
+    .sffr-christmas-eyebrow,.sffr-christmas-label{color:#f0ce77;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 15px;text-transform:uppercase}
+    .sffr-christmas-hero h1{color:#fff;font-size:clamp(43px,7vw,72px);letter-spacing:-.05em;line-height:1;margin:0 0 21px;max-width:670px}
+    .sffr-christmas-hero-copy{color:rgba(255,255,255,.84);font-size:clamp(18px,2vw,21px);margin:0;max-width:660px}
+    .sffr-christmas-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:29px}
+    .sffr-christmas-button{background:var(--red);border:2px solid var(--red);border-radius:999px;color:#fff!important;display:inline-flex;font-size:14px;font-weight:800;justify-content:center;padding:11px 19px;text-decoration:none!important}
+    .sffr-christmas-button-alt{background:transparent;border-color:rgba(255,255,255,.72);color:#fff!important}
+    .sffr-christmas-visual{display:grid;gap:17px}
+    .sffr-christmas-photo{background:#e8efe9;border:7px solid rgba(255,255,255,.17);border-radius:23px;box-shadow:0 24px 56px rgba(6,37,27,.32);margin:0;overflow:hidden;transform:rotate(-1deg)}
+    .sffr-christmas-photo a{display:block;text-decoration:none!important}
+    .sffr-christmas-photo img{aspect-ratio:4/3;background:linear-gradient(135deg,#dfe9e2,#cdded2);color:var(--evergreen-dark);display:block;height:auto;min-height:300px;object-fit:cover;width:100%}
+    .sffr-christmas-photo figcaption{background:#fff;color:var(--muted);font-size:12px;padding:10px 14px;text-align:center}
+    .sffr-christmas-date-card{background:#fff;border:7px solid rgba(255,255,255,.17);border-radius:24px;box-shadow:0 22px 50px rgba(6,37,27,.3);color:var(--ink);overflow:hidden;transform:rotate(1deg)}
+    .sffr-christmas-date-top{background:var(--red);color:#fff;font-size:14px;font-weight:800;letter-spacing:.12em;padding:12px 20px;text-align:center;text-transform:uppercase}
+    .sffr-christmas-date-body{padding:27px 25px 25px;text-align:center}
+    .sffr-christmas-date-body span{color:var(--red-dark);display:block;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .sffr-christmas-date-body strong{color:var(--evergreen-dark);display:block;font-size:56px;letter-spacing:-.06em;line-height:1;margin:5px 0 14px}
+    .sffr-christmas-date-body p{color:var(--muted);font-size:14px;margin:0}
+    .sffr-christmas-date-body p+p{margin-top:5px}
+    .sffr-christmas-date-body b{color:var(--ink)}
+    .sffr-christmas-closure-wrap{background:#fff;border-bottom:1px solid var(--line)}
+    .sffr-christmas-closure{margin:0 auto;max-width:1120px;padding:24px 22px}
+    .sffr-christmas-closure-card{align-items:center;background:#fff1f1;border:1px solid #e9bfc2;border-left:6px solid var(--red);border-radius:16px;display:grid;gap:17px;grid-template-columns:auto minmax(0,1fr);padding:19px 21px}
+    .sffr-christmas-closure-icon{font-size:27px}
+    .sffr-christmas-closure-card strong{color:var(--red-dark);display:block;font-size:17px;margin-bottom:2px}
+    .sffr-christmas-closure-card p{color:#72565a;font-size:14px;margin:0}
+    .sffr-christmas-section{padding:clamp(58px,8vw,88px) 22px}
+    .sffr-christmas-heading{margin-bottom:29px;max-width:800px}
+    .sffr-christmas-label{color:var(--red-dark)}
+    .sffr-christmas-heading h2{color:var(--evergreen-dark);font-size:clamp(32px,5vw,47px);letter-spacing:-.04em;line-height:1.08;margin:0 0 12px}
+    .sffr-christmas-heading p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-christmas-plan{display:grid;gap:17px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .sffr-christmas-plan-card{background:#fff;border:1px solid var(--line);border-radius:19px;box-shadow:0 9px 25px rgba(16,61,46,.07);padding:25px}
+    .sffr-christmas-plan-icon{align-items:center;background:#edf5ef;border-radius:14px;display:flex;font-size:25px;height:50px;justify-content:center;margin-bottom:20px;width:50px}
+    .sffr-christmas-plan-card:nth-child(2) .sffr-christmas-plan-icon{background:#fff0f0}
+    .sffr-christmas-plan-card:nth-child(3) .sffr-christmas-plan-icon{background:#fbf2d9}
+    .sffr-christmas-plan-card h3{color:var(--evergreen-dark);font-size:22px;line-height:1.2;margin:0 0 8px}
+    .sffr-christmas-plan-card p{color:var(--muted);font-size:14px;margin:0}
+    .sffr-christmas-routes-wrap{background:var(--cream-deep);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
+    .sffr-christmas-routes{padding:clamp(58px,8vw,88px) 22px}
+    .sffr-christmas-route-grid{align-items:start;display:grid;gap:30px;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr)}
+    .sffr-christmas-route-options{display:grid;gap:13px}
+    .sffr-christmas-route-option{align-items:center;background:#fff;border:1px solid var(--line);border-radius:17px;display:grid;gap:17px;grid-template-columns:66px minmax(0,1fr);padding:18px}
+    .sffr-christmas-route-distance{align-items:center;background:var(--red);border-radius:13px;color:#fff;display:flex;flex-direction:column;font-size:11px;font-weight:800;height:66px;justify-content:center;letter-spacing:.08em;text-transform:uppercase}
+    .sffr-christmas-route-distance strong{color:#fff;font-size:25px;letter-spacing:-.04em;line-height:1}
+    .sffr-christmas-route-option:nth-child(2) .sffr-christmas-route-distance{background:var(--evergreen)}
+    .sffr-christmas-route-option h3{color:var(--evergreen-dark);font-size:19px;margin:0 0 3px}
+    .sffr-christmas-route-option p{color:var(--muted);font-size:13px;margin:0}
+    .sffr-christmas-route-map{background:#e3ece6;border:2px dashed #8daf99;border-radius:20px;margin:0;overflow:hidden}
+    .sffr-christmas-route-map a{display:block;text-decoration:none!important}
+    .sffr-christmas-route-map img{background:linear-gradient(135deg,#edf4ef,#dae7dd);color:var(--muted);display:block;min-height:340px;object-fit:contain;width:100%}
+    .sffr-christmas-route-map figcaption{background:#fff;color:var(--muted);font-size:13px;padding:12px 16px;text-align:center}
+    .sffr-christmas-arrival{align-items:center;background:linear-gradient(135deg,var(--red-dark),var(--red));border-radius:23px;color:#fff;display:grid;gap:30px;grid-template-columns:minmax(0,1fr) auto;padding:clamp(28px,5vw,43px)}
+    .sffr-christmas-arrival h2{color:#fff;font-size:clamp(29px,4vw,40px);letter-spacing:-.035em;line-height:1.1;margin:0 0 8px}
+    .sffr-christmas-arrival p{color:rgba(255,255,255,.83);margin:0;max-width:700px}
+    .sffr-christmas-arrival .sffr-christmas-button{align-self:center;background:#fff;border-color:#fff;color:var(--red-dark)!important;white-space:nowrap}
+    .sffr-christmas-footer{background:var(--evergreen-dark);color:rgba(255,255,255,.74);padding:24px 22px;text-align:center}
+    .sffr-christmas-footer p{margin:0}
+    @media(hover:hover){.sffr-christmas-button,.sffr-christmas-plan-card,.sffr-christmas-photo,.sffr-christmas-date-card{transition:box-shadow .2s ease,transform .2s ease}.sffr-christmas-button:hover{transform:translateY(-1px)}.sffr-christmas-plan-card:hover{box-shadow:0 14px 32px rgba(16,61,46,.13);transform:translateY(-2px)}.sffr-christmas-photo:hover,.sffr-christmas-date-card:hover{transform:rotate(0)}}
+    @media(max-width:800px){.sffr-christmas-hero-grid,.sffr-christmas-route-grid,.sffr-christmas-arrival{grid-template-columns:1fr}.sffr-christmas-visual{max-width:560px}.sffr-christmas-photo,.sffr-christmas-date-card{transform:none}.sffr-christmas-date-card{max-width:390px}.sffr-christmas-arrival .sffr-christmas-button{justify-self:start}.sffr-christmas-plan{grid-template-columns:1fr}}
+    @media(max-width:520px){.sffr-christmas-hero{padding:48px 18px}.sffr-christmas-section,.sffr-christmas-routes{padding-left:18px;padding-right:18px}.sffr-christmas-actions{align-items:stretch;flex-direction:column}.sffr-christmas-button{width:100%}.sffr-christmas-date-body strong{font-size:49px}.sffr-christmas-closure{padding-left:18px;padding-right:18px}.sffr-christmas-closure-card{align-items:start;grid-template-columns:1fr}.sffr-christmas-arrival .sffr-christmas-button{justify-self:stretch}.sffr-christmas-plan-card{padding:22px}.sffr-christmas-route-map img{min-height:250px}}
+    @media(prefers-reduced-motion:reduce){.sffr-christmas-button,.sffr-christmas-plan-card,.sffr-christmas-photo,.sffr-christmas-date-card{transition:none}}
+</style>
+
+<div class="sffr-christmas">
+    <section class="sffr-christmas-hero">
+        <div class="sffr-christmas-inner sffr-christmas-hero-grid">
+            <div>
+                <p class="sffr-christmas-eyebrow">Christmas Day 2026</p>
+                <h1>Make Christmas morning merry.</h1>
+                <p class="sffr-christmas-hero-copy">If you are looking for company on Christmas morning, spend part of the holiday with SF FrontRunners. Join us for a run through Golden Gate Park and stay afterward for a casual post-run hang.</p>
+                <div class="sffr-christmas-actions">
+                    <a class="sffr-christmas-button" href="https://www.google.com/maps/search/?api=1&amp;query=McLaren+Lodge+Golden+Gate+Park+San+Francisco+CA" target="_blank" rel="noopener">Get directions</a>
+                    <a class="sffr-christmas-button sffr-christmas-button-alt" href="#christmas-plan">See the plan</a>
+                </div>
+            </div>
+            <div class="sffr-christmas-visual">
+                <figure class="sffr-christmas-photo">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/christmas-run-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Christmas run group photo">
+                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/christmas-run-2026.jpg" alt="SF FrontRunners gathered outside McLaren Lodge for the Christmas run">
+                        <figcaption>Christmas morning with SF FrontRunners</figcaption>
+                    </a>
+                </figure>
+                <aside class="sffr-christmas-date-card" aria-label="Christmas run date, time, and location">
+                    <div class="sffr-christmas-date-top">Friday</div>
+                    <div class="sffr-christmas-date-body">
+                        <span>December</span>
+                        <strong>25</strong>
+                        <p><b>10:00 AM</b></p>
+                        <p>In front of McLaren Lodge<br>Golden Gate Park</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="sffr-christmas-closure-wrap" aria-label="Christmas Eve schedule notice">
+        <div class="sffr-christmas-closure">
+            <div class="sffr-christmas-closure-card"><span class="sffr-christmas-closure-icon" aria-hidden="true">🔔</span><div><strong>No Thursday evening run on Christmas Eve</strong><p>The regularly scheduled Thursday evening run will not take place on December 24. Join us the following morning for the Christmas Day run instead.</p></div></div>
+        </div>
+    </section>
+
+    <section class="sffr-christmas-section" id="christmas-plan">
+        <div class="sffr-christmas-heading">
+            <p class="sffr-christmas-label">Our Christmas morning</p>
+            <h2>A simple plan for a festive start</h2>
+            <p>Come for the run, the company, or both. Everyone who wants to share part of Christmas Day with the club is welcome.</p>
+        </div>
+        <div class="sffr-christmas-plan">
+            <article class="sffr-christmas-plan-card"><span class="sffr-christmas-plan-icon" aria-hidden="true">📍</span><h3>Meet at 10:00 AM</h3><p>Find the group in front of McLaren Lodge at the east end of Golden Gate Park.</p></article>
+            <article class="sffr-christmas-plan-card"><span class="sffr-christmas-plan-icon" aria-hidden="true">🏃</span><h3>Choose your distance</h3><p>Head into the park with the group for either a 3-mile or 5-mile Christmas run.</p></article>
+            <article class="sffr-christmas-plan-card"><span class="sffr-christmas-plan-icon" aria-hidden="true">☕</span><h3>Stay and hang out</h3><p>Stick around after the run for an easygoing holiday hang with fellow FrontRunners.</p></article>
+        </div>
+    </section>
+
+    <section class="sffr-christmas-routes-wrap">
+        <div class="sffr-christmas-inner sffr-christmas-routes">
+            <div class="sffr-christmas-heading">
+                <p class="sffr-christmas-label">Strava routes</p>
+                <h2>Choose 3 miles or 5 miles</h2>
+                <p>Pick the distance that works for your Christmas morning. Both options begin with the group at McLaren Lodge.</p>
+            </div>
+            <div class="sffr-christmas-route-grid">
+                <div class="sffr-christmas-route-options">
+                    <article class="sffr-christmas-route-option"><span class="sffr-christmas-route-distance"><strong>3</strong> miles</span><div><h3>3-mile option</h3><p>A shorter route for anyone who wants more time for the rest of their Christmas Day.</p></div></article>
+                    <article class="sffr-christmas-route-option"><span class="sffr-christmas-route-distance"><strong>5</strong> miles</span><div><h3>5-mile option</h3><p>A longer option for runners who want a few more miles through Golden Gate Park.</p></div></article>
+                </div>
+                <figure class="sffr-christmas-route-map">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/christmas-run-strava-routes-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Christmas Strava route map">
+                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/christmas-run-strava-routes-2026.jpg" alt="Strava map showing the 3-mile and 5-mile Christmas run routes">
+                        <figcaption>Strava map for the 3-mile and 5-mile routes</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="sffr-christmas-section">
+        <div class="sffr-christmas-arrival">
+            <div><h2>We’ll meet you at McLaren Lodge</h2><p>Friday, December 25 at 10:00 AM in front of the lodge in Golden Gate Park.</p></div>
+            <a class="sffr-christmas-button" href="https://www.google.com/maps/search/?api=1&amp;query=McLaren+Lodge+Golden+Gate+Park+San+Francisco+CA" target="_blank" rel="noopener">Open the map</a>
+        </div>
+    </section>
+
+    <footer class="sffr-christmas-footer"><p>All faces. All paces. All are welcome.</p></footer>
+</div>
