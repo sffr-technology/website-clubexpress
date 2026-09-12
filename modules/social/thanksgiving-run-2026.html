@@ -1,0 +1,145 @@
+<!--
+  SFFR THANKSGIVING RUN 2026
+  Recommended ClubExpress quick link: sffr.org/thanksgiving
+  Paste this entire fragment into the ClubExpress HTML editor.
+-->
+<style>
+    .sffr-thanksgiving,.sffr-thanksgiving *{box-sizing:border-box}
+    .sffr-thanksgiving{--ink:#342a27;--muted:#6d625d;--plum:#512d4f;--plum-dark:#382038;--pumpkin:#bd512b;--pumpkin-dark:#91391d;--sage:#356b52;--cream:#fff9ee;--cream-deep:#f8ecd6;--gold:#e6a93c;--line:#ead9c4;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;overflow:hidden}
+    .sffr-thanksgiving a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .sffr-thanksgiving-inner,.sffr-thanksgiving-section{margin:0 auto;max-width:1120px}
+    .sffr-thanksgiving-hero{background:radial-gradient(circle at 8% 12%,rgba(255,213,132,.17) 0 105px,transparent 106px),linear-gradient(135deg,var(--plum-dark),var(--plum) 54%,#754039);color:#fff;padding:clamp(58px,8vw,94px) 22px;position:relative}
+    .sffr-thanksgiving-hero-grid{align-items:center;display:grid;gap:clamp(38px,7vw,76px);grid-template-columns:minmax(0,1fr) minmax(320px,440px)}
+    .sffr-thanksgiving-eyebrow,.sffr-thanksgiving-label{color:#f3c96f;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 15px;text-transform:uppercase}
+    .sffr-thanksgiving-hero h1{color:#fff;font-size:clamp(43px,7vw,72px);letter-spacing:-.05em;line-height:1;margin:0 0 21px;max-width:670px}
+    .sffr-thanksgiving-hero-copy{color:rgba(255,255,255,.84);font-size:clamp(18px,2vw,21px);margin:0;max-width:660px}
+    .sffr-thanksgiving-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:29px}
+    .sffr-thanksgiving-button{background:var(--pumpkin);border:2px solid var(--pumpkin);border-radius:999px;color:#fff!important;display:inline-flex;font-size:14px;font-weight:800;justify-content:center;padding:11px 19px;text-decoration:none!important}
+    .sffr-thanksgiving-button-alt{background:transparent;border-color:rgba(255,255,255,.7);color:#fff!important}
+    .sffr-thanksgiving-visual{display:grid;gap:17px}
+    .sffr-thanksgiving-photo{background:#fff;border:7px solid rgba(255,255,255,.14);border-radius:23px;box-shadow:0 24px 56px rgba(24,10,23,.3);margin:0;overflow:hidden;transform:rotate(-1deg)}
+    .sffr-thanksgiving-photo a{display:block;text-decoration:none!important}
+    .sffr-thanksgiving-photo img{aspect-ratio:4/3;display:block;height:auto;object-fit:cover;width:100%}
+    .sffr-thanksgiving-photo figcaption{background:#fff;color:var(--muted);font-size:12px;padding:10px 14px;text-align:center}
+    .sffr-thanksgiving-date-card{background:#fff;border:7px solid rgba(255,255,255,.14);border-radius:25px;box-shadow:0 24px 56px rgba(24,10,23,.32);color:var(--ink);overflow:hidden;transform:rotate(1.5deg)}
+    .sffr-thanksgiving-date-top{background:var(--pumpkin);color:#fff;font-size:14px;font-weight:800;letter-spacing:.12em;padding:12px 20px;text-align:center;text-transform:uppercase}
+    .sffr-thanksgiving-date-body{padding:29px 25px 27px;text-align:center}
+    .sffr-thanksgiving-date-body span{color:var(--pumpkin-dark);display:block;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .sffr-thanksgiving-date-body strong{color:var(--plum-dark);display:block;font-size:58px;letter-spacing:-.06em;line-height:1;margin:5px 0 15px}
+    .sffr-thanksgiving-date-body p{color:var(--muted);font-size:14px;margin:0}
+    .sffr-thanksgiving-date-body p+p{margin-top:5px}
+    .sffr-thanksgiving-date-body b{color:var(--ink)}
+    .sffr-thanksgiving-section{padding:clamp(58px,8vw,88px) 22px}
+    .sffr-thanksgiving-heading{margin-bottom:29px;max-width:790px}
+    .sffr-thanksgiving-label{color:var(--pumpkin-dark)}
+    .sffr-thanksgiving-heading h2{color:var(--plum-dark);font-size:clamp(32px,5vw,47px);letter-spacing:-.04em;line-height:1.08;margin:0 0 12px}
+    .sffr-thanksgiving-heading p{color:var(--muted);font-size:17px;margin:0}
+    .sffr-thanksgiving-plan{display:grid;gap:17px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .sffr-thanksgiving-plan-card{background:#fff;border:1px solid var(--line);border-radius:19px;box-shadow:0 9px 25px rgba(81,45,79,.06);padding:25px}
+    .sffr-thanksgiving-plan-icon{align-items:center;background:var(--cream-deep);border-radius:14px;display:flex;font-size:25px;height:50px;justify-content:center;margin-bottom:20px;width:50px}
+    .sffr-thanksgiving-plan-card:nth-child(2) .sffr-thanksgiving-plan-icon{background:#fbe4d7}
+    .sffr-thanksgiving-plan-card:nth-child(3) .sffr-thanksgiving-plan-icon{background:#e8f2ec}
+    .sffr-thanksgiving-plan-card h3{color:var(--plum-dark);font-size:22px;line-height:1.2;margin:0 0 8px}
+    .sffr-thanksgiving-plan-card p{color:var(--muted);font-size:14px;margin:0}
+    .sffr-thanksgiving-routes-wrap{background:var(--cream-deep);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
+    .sffr-thanksgiving-routes{padding:clamp(58px,8vw,88px) 22px}
+    .sffr-thanksgiving-route-grid{align-items:start;display:grid;gap:30px;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr)}
+    .sffr-thanksgiving-route-options{display:grid;gap:13px}
+    .sffr-thanksgiving-route-option{align-items:center;background:#fff;border:1px solid var(--line);border-radius:17px;display:grid;gap:17px;grid-template-columns:66px minmax(0,1fr);padding:18px}
+    .sffr-thanksgiving-route-distance{align-items:center;background:var(--pumpkin);border-radius:13px;color:#fff;display:flex;flex-direction:column;font-size:11px;font-weight:800;height:66px;justify-content:center;letter-spacing:.08em;text-transform:uppercase}
+    .sffr-thanksgiving-route-distance strong{color:#fff;font-size:25px;letter-spacing:-.04em;line-height:1}
+    .sffr-thanksgiving-route-option:nth-child(2) .sffr-thanksgiving-route-distance{background:var(--sage)}
+    .sffr-thanksgiving-route-option h3{color:var(--plum-dark);font-size:19px;margin:0 0 3px}
+    .sffr-thanksgiving-route-option p{color:var(--muted);font-size:13px;margin:0}
+    .sffr-thanksgiving-route-map{background:#f3e5cf;border:2px dashed #cda875;border-radius:20px;margin:0;overflow:hidden}
+    .sffr-thanksgiving-route-map a{display:block;text-decoration:none!important}
+    .sffr-thanksgiving-route-map img{background:linear-gradient(135deg,#f8ecd6,#efe0c8);color:var(--muted);display:block;min-height:340px;object-fit:contain;width:100%}
+    .sffr-thanksgiving-route-map figcaption{background:#fff;color:var(--muted);font-size:13px;padding:12px 16px;text-align:center}
+    .sffr-thanksgiving-arrival{align-items:center;background:linear-gradient(135deg,var(--pumpkin-dark),var(--pumpkin));border-radius:23px;color:#fff;display:grid;gap:30px;grid-template-columns:minmax(0,1fr) auto;padding:clamp(28px,5vw,43px)}
+    .sffr-thanksgiving-arrival h2{color:#fff;font-size:clamp(29px,4vw,40px);letter-spacing:-.035em;line-height:1.1;margin:0 0 8px}
+    .sffr-thanksgiving-arrival p{color:rgba(255,255,255,.82);margin:0;max-width:700px}
+    .sffr-thanksgiving-arrival .sffr-thanksgiving-button{align-self:center;background:#fff;border-color:#fff;color:var(--pumpkin-dark)!important;white-space:nowrap}
+    .sffr-thanksgiving-footer{background:var(--plum-dark);color:rgba(255,255,255,.72);padding:24px 22px;text-align:center}
+    .sffr-thanksgiving-footer p{margin:0}
+    @media(hover:hover){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:box-shadow .2s ease,transform .2s ease}.sffr-thanksgiving-button:hover{transform:translateY(-1px)}.sffr-thanksgiving-plan-card:hover{box-shadow:0 14px 32px rgba(81,45,79,.11);transform:translateY(-2px)}.sffr-thanksgiving-photo:hover,.sffr-thanksgiving-date-card:hover{transform:rotate(0)}}
+    @media(max-width:800px){.sffr-thanksgiving-hero-grid,.sffr-thanksgiving-route-grid,.sffr-thanksgiving-arrival{grid-template-columns:1fr}.sffr-thanksgiving-visual{max-width:560px}.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transform:none}.sffr-thanksgiving-date-card{max-width:390px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:start}.sffr-thanksgiving-plan{grid-template-columns:1fr}}
+    @media(max-width:520px){.sffr-thanksgiving-hero{padding:48px 18px}.sffr-thanksgiving-section,.sffr-thanksgiving-routes{padding-left:18px;padding-right:18px}.sffr-thanksgiving-actions{align-items:stretch;flex-direction:column}.sffr-thanksgiving-button{width:100%}.sffr-thanksgiving-date-body strong{font-size:49px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:stretch}.sffr-thanksgiving-plan-card{padding:22px}.sffr-thanksgiving-route-map img{min-height:250px}}
+    @media(prefers-reduced-motion:reduce){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:none}}
+</style>
+
+<div class="sffr-thanksgiving">
+    <section class="sffr-thanksgiving-hero">
+        <div class="sffr-thanksgiving-inner sffr-thanksgiving-hero-grid">
+            <div>
+                <p class="sffr-thanksgiving-eyebrow">Thanksgiving Day 2026</p>
+                <h1>No plans? Run with us.</h1>
+                <p class="sffr-thanksgiving-hero-copy">If Thanksgiving feels a little quiet this year, you have a place with SF FrontRunners. Start the day outside, move together through Golden Gate Park, and stay for a casual post-run hang.</p>
+                <div class="sffr-thanksgiving-actions">
+                    <a class="sffr-thanksgiving-button" href="https://www.google.com/maps/search/?api=1&amp;query=McLaren+Lodge+Golden+Gate+Park+San+Francisco+CA" target="_blank" rel="noopener">Get directions</a>
+                    <a class="sffr-thanksgiving-button sffr-thanksgiving-button-alt" href="#thanksgiving-plan">See the plan</a>
+                </div>
+            </div>
+            <div class="sffr-thanksgiving-visual">
+                <figure class="sffr-thanksgiving-photo">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Thanksgiving run photo">
+                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-2026.jpg" alt="SF FrontRunners gathered outside McLaren Lodge for a Thanksgiving run">
+                        <figcaption>Thanksgiving morning with SF FrontRunners</figcaption>
+                    </a>
+                </figure>
+                <aside class="sffr-thanksgiving-date-card" aria-label="Thanksgiving run date, time, and location">
+                    <div class="sffr-thanksgiving-date-top">Thursday</div>
+                    <div class="sffr-thanksgiving-date-body">
+                        <span>November</span>
+                        <strong>26</strong>
+                        <p><b>10:00 AM</b></p>
+                        <p>In front of McLaren Lodge<br>Golden Gate Park</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="sffr-thanksgiving-section" id="thanksgiving-plan">
+        <div class="sffr-thanksgiving-heading">
+            <p class="sffr-thanksgiving-label">Our morning together</p>
+            <h2>A simple plan for a meaningful day</h2>
+            <p>Come for the run, the company, or both. The point is to make sure nobody who wants community on Thanksgiving has to spend the morning alone.</p>
+        </div>
+        <div class="sffr-thanksgiving-plan">
+            <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">📍</span><h3>Meet at 10:00 AM</h3><p>Find the group in front of McLaren Lodge at the east end of Golden Gate Park.</p></article>
+            <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">🏃</span><h3>Choose your distance</h3><p>Head into the park with the group for either a 3-mile or 5-mile Thanksgiving run.</p></article>
+            <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">☕</span><h3>Stay and hang out</h3><p>Stick around after the run for an easygoing post-run hang with fellow FrontRunners.</p></article>
+        </div>
+    </section>
+
+    <section class="sffr-thanksgiving-routes-wrap">
+        <div class="sffr-thanksgiving-inner sffr-thanksgiving-routes">
+            <div class="sffr-thanksgiving-heading">
+                <p class="sffr-thanksgiving-label">Strava routes</p>
+                <h2>Choose 3 miles or 5 miles</h2>
+                <p>Pick the distance that works for your Thanksgiving morning. Both options begin with the group at McLaren Lodge.</p>
+            </div>
+            <div class="sffr-thanksgiving-route-grid">
+                <div class="sffr-thanksgiving-route-options">
+                    <article class="sffr-thanksgiving-route-option"><span class="sffr-thanksgiving-route-distance"><strong>3</strong> miles</span><div><h3>3-mile option</h3><p>A shorter route for anyone who wants more time for the rest of their Thanksgiving day.</p></div></article>
+                    <article class="sffr-thanksgiving-route-option"><span class="sffr-thanksgiving-route-distance"><strong>5</strong> miles</span><div><h3>5-mile option</h3><p>A longer option for runners who want a few more miles through Golden Gate Park.</p></div></article>
+                </div>
+                <figure class="sffr-thanksgiving-route-map">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-routes-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Thanksgiving Strava route map">
+                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-routes-2026.jpg" alt="Strava map showing the 3-mile and 5-mile Thanksgiving run routes">
+                        <figcaption>Strava map for the 3-mile and 5-mile routes</figcaption>
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="sffr-thanksgiving-section">
+        <div class="sffr-thanksgiving-arrival">
+            <div><h2>We’ll meet you at McLaren Lodge</h2><p>Thursday, November 26 at 10:00 AM in front of the lodge in Golden Gate Park.</p></div>
+            <a class="sffr-thanksgiving-button" href="https://www.google.com/maps/search/?api=1&amp;query=McLaren+Lodge+Golden+Gate+Park+San+Francisco+CA" target="_blank" rel="noopener">Open the map</a>
+        </div>
+    </section>
+
+    <footer class="sffr-thanksgiving-footer"><p>All faces. All paces. All are welcome.</p></footer>
+</div>
