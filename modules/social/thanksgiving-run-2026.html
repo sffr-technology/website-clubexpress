@@ -1,6 +1,9 @@
 <!--
   SFFR THANKSGIVING RUN 2026
   Recommended ClubExpress quick link: sffr.org/thanksgiving
+  Future route assets:
+  - assets/social/thanksgiving-run-strava-3-mile-2026.jpg
+  - assets/social/thanksgiving-run-strava-5-mile-2026.jpg
   Paste this entire fragment into the ClubExpress HTML editor.
 -->
 <style>
@@ -43,28 +46,25 @@
     .sffr-thanksgiving-plan-card p{color:var(--muted);font-size:14px;margin:0}
     .sffr-thanksgiving-routes-wrap{background:var(--cream-deep);border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
     .sffr-thanksgiving-routes{padding:clamp(58px,8vw,88px) 22px}
-    .sffr-thanksgiving-route-grid{align-items:start;display:grid;gap:30px;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr)}
-    .sffr-thanksgiving-route-options{display:grid;gap:13px}
-    .sffr-thanksgiving-route-option{align-items:center;background:#fff;border:1px solid var(--line);border-radius:17px;display:grid;gap:17px;grid-template-columns:66px minmax(0,1fr);padding:18px}
-    .sffr-thanksgiving-route-distance{align-items:center;background:var(--pumpkin);border-radius:13px;color:#fff;display:flex;flex-direction:column;font-size:11px;font-weight:800;height:66px;justify-content:center;letter-spacing:.08em;text-transform:uppercase}
-    .sffr-thanksgiving-route-distance strong{color:#fff;font-size:25px;letter-spacing:-.04em;line-height:1}
-    .sffr-thanksgiving-route-option:nth-child(2) .sffr-thanksgiving-route-distance{background:var(--sage)}
-    .sffr-thanksgiving-route-option h3{color:var(--plum-dark);font-size:19px;margin:0 0 3px}
-    .sffr-thanksgiving-route-option p{color:var(--muted);font-size:13px;margin:0}
-    .sffr-thanksgiving-route-map{background:#f3e5cf;border:2px dashed #cda875;border-radius:20px;margin:0;overflow:hidden}
-    .sffr-thanksgiving-route-map a{display:block;text-decoration:none!important}
-    .sffr-thanksgiving-route-map img{background:linear-gradient(135deg,#f8ecd6,#efe0c8);color:var(--muted);display:block;min-height:340px;object-fit:contain;width:100%}
-    .sffr-thanksgiving-route-map figcaption{background:#fff;color:var(--muted);font-size:13px;padding:12px 16px;text-align:center}
+    .sffr-thanksgiving-route-grid{display:grid;gap:25px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .sffr-thanksgiving-route-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 9px 25px rgba(81,45,79,.07);overflow:hidden}
+    .sffr-thanksgiving-route-card>a{display:block;text-decoration:none!important}
+    .sffr-thanksgiving-route-card img{aspect-ratio:16/10;background:linear-gradient(135deg,#f8ecd6,#efe0c8);color:var(--muted);display:block;min-height:250px;object-fit:cover;width:100%}
+    .sffr-thanksgiving-route-content{padding:23px}
+    .sffr-thanksgiving-route-tag{color:var(--pumpkin-dark);display:block;font-size:11px;font-weight:800;letter-spacing:.11em;margin-bottom:7px;text-transform:uppercase}
+    .sffr-thanksgiving-route-card:nth-child(2) .sffr-thanksgiving-route-tag{color:var(--sage)}
+    .sffr-thanksgiving-route-card h3{color:var(--plum-dark);font-size:23px;line-height:1.2;margin:0 0 8px}
+    .sffr-thanksgiving-route-card p{color:var(--muted);font-size:14px;margin:0}
     .sffr-thanksgiving-arrival{align-items:center;background:linear-gradient(135deg,var(--pumpkin-dark),var(--pumpkin));border-radius:23px;color:#fff;display:grid;gap:30px;grid-template-columns:minmax(0,1fr) auto;padding:clamp(28px,5vw,43px)}
     .sffr-thanksgiving-arrival h2{color:#fff;font-size:clamp(29px,4vw,40px);letter-spacing:-.035em;line-height:1.1;margin:0 0 8px}
     .sffr-thanksgiving-arrival p{color:rgba(255,255,255,.82);margin:0;max-width:700px}
     .sffr-thanksgiving-arrival .sffr-thanksgiving-button{align-self:center;background:#fff;border-color:#fff;color:var(--pumpkin-dark)!important;white-space:nowrap}
     .sffr-thanksgiving-footer{background:var(--plum-dark);color:rgba(255,255,255,.72);padding:24px 22px;text-align:center}
     .sffr-thanksgiving-footer p{margin:0}
-    @media(hover:hover){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:box-shadow .2s ease,transform .2s ease}.sffr-thanksgiving-button:hover{transform:translateY(-1px)}.sffr-thanksgiving-plan-card:hover{box-shadow:0 14px 32px rgba(81,45,79,.11);transform:translateY(-2px)}.sffr-thanksgiving-photo:hover,.sffr-thanksgiving-date-card:hover{transform:rotate(0)}}
+    @media(hover:hover){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:box-shadow .2s ease,transform .2s ease}.sffr-thanksgiving-button:hover{transform:translateY(-1px)}.sffr-thanksgiving-plan-card:hover,.sffr-thanksgiving-route-card:hover{box-shadow:0 14px 32px rgba(81,45,79,.11);transform:translateY(-2px)}.sffr-thanksgiving-photo:hover,.sffr-thanksgiving-date-card:hover{transform:rotate(0)}}
     @media(max-width:800px){.sffr-thanksgiving-hero-grid,.sffr-thanksgiving-route-grid,.sffr-thanksgiving-arrival{grid-template-columns:1fr}.sffr-thanksgiving-visual{max-width:560px}.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transform:none}.sffr-thanksgiving-date-card{max-width:390px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:start}.sffr-thanksgiving-plan{grid-template-columns:1fr}}
-    @media(max-width:520px){.sffr-thanksgiving-hero{padding:48px 18px}.sffr-thanksgiving-section,.sffr-thanksgiving-routes{padding-left:18px;padding-right:18px}.sffr-thanksgiving-actions{align-items:stretch;flex-direction:column}.sffr-thanksgiving-button{width:100%}.sffr-thanksgiving-date-body strong{font-size:49px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:stretch}.sffr-thanksgiving-plan-card{padding:22px}.sffr-thanksgiving-route-map img{min-height:250px}}
-    @media(prefers-reduced-motion:reduce){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:none}}
+    @media(max-width:520px){.sffr-thanksgiving-hero{padding:48px 18px}.sffr-thanksgiving-section,.sffr-thanksgiving-routes{padding-left:18px;padding-right:18px}.sffr-thanksgiving-actions{align-items:stretch;flex-direction:column}.sffr-thanksgiving-button{width:100%}.sffr-thanksgiving-date-body strong{font-size:49px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:stretch}.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-content{padding:22px}.sffr-thanksgiving-route-card img{min-height:220px}}
+    @media(prefers-reduced-motion:reduce){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:none}}
 </style>
 
 <div class="sffr-thanksgiving">
@@ -115,21 +115,19 @@
     <section class="sffr-thanksgiving-routes-wrap">
         <div class="sffr-thanksgiving-inner sffr-thanksgiving-routes">
             <div class="sffr-thanksgiving-heading">
-                <p class="sffr-thanksgiving-label">Strava routes</p>
-                <h2>Choose 3 miles or 5 miles</h2>
+                <p class="sffr-thanksgiving-label">Route options</p>
+                <h2>Choose Your Route</h2>
                 <p>Pick the distance that works for your Thanksgiving morning. Both options begin with the group at McLaren Lodge.</p>
             </div>
             <div class="sffr-thanksgiving-route-grid">
-                <div class="sffr-thanksgiving-route-options">
-                    <article class="sffr-thanksgiving-route-option"><span class="sffr-thanksgiving-route-distance"><strong>3</strong> miles</span><div><h3>3-mile option</h3><p>A shorter route for anyone who wants more time for the rest of their Thanksgiving day.</p></div></article>
-                    <article class="sffr-thanksgiving-route-option"><span class="sffr-thanksgiving-route-distance"><strong>5</strong> miles</span><div><h3>5-mile option</h3><p>A longer option for runners who want a few more miles through Golden Gate Park.</p></div></article>
-                </div>
-                <figure class="sffr-thanksgiving-route-map">
-                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-routes-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Thanksgiving Strava route map">
-                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-routes-2026.jpg" alt="Strava map showing the 3-mile and 5-mile Thanksgiving run routes">
-                        <figcaption>Strava map for the 3-mile and 5-mile routes</figcaption>
-                    </a>
-                </figure>
+                <article class="sffr-thanksgiving-route-card">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-3-mile-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size 3-mile Thanksgiving route screenshot"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-3-mile-2026.jpg" alt="Strava screenshot of the 3-mile Thanksgiving run route"></a>
+                    <div class="sffr-thanksgiving-route-content"><span class="sffr-thanksgiving-route-tag">3 miles</span><h3>3 Mile Route</h3><p>A shorter option for anyone who wants more time for the rest of their Thanksgiving day.</p></div>
+                </article>
+                <article class="sffr-thanksgiving-route-card">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-5-mile-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size 5-mile Thanksgiving route screenshot"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-5-mile-2026.jpg" alt="Strava screenshot of the 5-mile Thanksgiving run route"></a>
+                    <div class="sffr-thanksgiving-route-content"><span class="sffr-thanksgiving-route-tag">5 miles</span><h3>5 Mile Route</h3><p>A longer option for runners who want a few more miles through Golden Gate Park.</p></div>
+                </article>
             </div>
         </div>
     </section>
