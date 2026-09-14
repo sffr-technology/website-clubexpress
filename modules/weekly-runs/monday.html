@@ -3,12 +3,43 @@
     <head>
     </head>
     <body class="editor-body" style="zoom: 100%;">
+        <div class="monday-page">
         <section class="hero">
+        <p class="eyebrow">Weekly Run &amp; Walk</p>
         <h1>Monday Morning Run</h1>
         <p>
         Start your week with San Francisco FrontRunners! Join our Summer 2026 pilot
         program for an easy, social, no-drop neighborhood run followed by coffee.
         </p>
+        <div class="monday-slideshow" role="region" aria-roledescription="carousel" aria-label="Monday Morning Run photos" tabindex="0">
+            <div class="monday-slides" aria-live="off">
+                <figure class="monday-slide is-active" aria-hidden="false">
+                    <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-coffee-2026-08-24.jpeg" alt="Monday runners enjoying coffee together after the run">
+                    <figcaption>Monday runners enjoying coffee together</figcaption>
+                </figure>
+                <figure class="monday-slide" aria-hidden="true">
+                    <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-group-2026-08-24.jpeg" alt="Monday Morning Run group gathered at Mission Dolores Park">
+                    <figcaption>The Monday Morning Run group at Mission Dolores Park</figcaption>
+                </figure>
+                <figure class="monday-slide" aria-hidden="true">
+                    <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-coffee-2026-08-31.jpeg" alt="Monday runners stopping for coffee near the J Church line">
+                    <figcaption>A post-run coffee stop near the J Church line</figcaption>
+                </figure>
+                <figure class="monday-slide" aria-hidden="true">
+                    <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-street-2026-08-31.jpeg" alt="Monday runners heading down a San Francisco neighborhood street">
+                    <figcaption>Running through the neighborhood on Monday morning</figcaption>
+                </figure>
+            </div>
+            <button class="monday-slide-arrow monday-slide-prev" type="button" aria-label="Show previous Monday run photo">‹</button>
+            <button class="monday-slide-arrow monday-slide-next" type="button" aria-label="Show next Monday run photo">›</button>
+            <div class="monday-slide-dots" aria-label="Choose a Monday run photo">
+                <button class="monday-slide-dot is-active" type="button" aria-label="Show photo 1 of 4" aria-current="true"></button>
+                <button class="monday-slide-dot" type="button" aria-label="Show photo 2 of 4"></button>
+                <button class="monday-slide-dot" type="button" aria-label="Show photo 3 of 4"></button>
+                <button class="monday-slide-dot" type="button" aria-label="Show photo 4 of 4"></button>
+            </div>
+            <p class="monday-slide-status" aria-live="polite">Photo 1 of 4</p>
+        </div>
         </section>
         <div class="container">
         <div class="card">
@@ -133,6 +164,7 @@
         <strong>Monday Runners</strong> WhatsApp group chat for route updates, announcements, and
         community conversation.
         </p>
+        </div>
         </div>
         </div>
         <style>
@@ -262,5 +294,365 @@
             overflow-wrap:break-word;
             }
         </style>
+        <style>
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
+            body.editor-body {
+            margin: 0;
+            overflow-x: hidden;
+            }
+            .monday-page {
+            --purple: #4b2e83;
+            --purple-dark: #34205f;
+            --purple-light: #eee8f8;
+            --pink: #d94f91;
+            --ink: #2f2f35;
+            --muted: #66636d;
+            --line: #e5deef;
+            --surface: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ink);
+            background: #faf9fc;
+            line-height: 1.65;
+            overflow-wrap: break-word;
+            }
+            .monday-page a { color: var(--purple); }
+            .monday-page img { display: block; max-width: 100%; }
+            .monday-page .hero {
+            padding: 58px 20px 38px;
+            background: #f0e8f7;
+            border-bottom: 1px solid #e2d7ee;
+            color: var(--ink);
+            text-align: center;
+            }
+            .monday-page .eyebrow {
+            margin: 0 0 10px;
+            color: var(--pink);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            }
+            .monday-page .hero h1 {
+            margin: 0 0 18px;
+            color: var(--purple);
+            font-size: clamp(40px, 7vw, 64px);
+            line-height: 1.08;
+            }
+            .monday-page .hero p:not(.eyebrow) {
+            max-width: 780px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 19px;
+            line-height: 1.75;
+            }
+            .monday-page .monday-slideshow {
+            position: relative;
+            width: min(820px, calc(100% - 40px));
+            aspect-ratio: 16 / 10;
+            margin: 34px auto 0;
+            overflow: hidden;
+            border: 8px solid rgba(255,255,255,.72);
+            border-radius: 24px;
+            background: var(--purple-dark);
+            box-shadow: 0 18px 44px rgba(52,32,95,.18);
+            }
+            .monday-page .monday-slideshow:focus-visible {
+            outline: 4px solid rgba(75,46,131,.34);
+            outline-offset: 5px;
+            }
+            .monday-page .monday-slides,
+            .monday-page .monday-slide {
+            position: absolute;
+            inset: 0;
+            }
+            .monday-page .monday-slide {
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s ease;
+            }
+            .monday-page .monday-slide.is-active {
+            opacity: 1;
+            visibility: visible;
+            }
+            .monday-page .monday-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+            .monday-page .monday-slide figcaption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 60px 72px 20px;
+            background: linear-gradient(transparent,rgba(25,13,46,.9));
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            }
+            .monday-page .monday-slide-arrow {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            padding: 0 0 3px;
+            transform: translateY(-50%);
+            border: 1px solid rgba(255,255,255,.7);
+            border-radius: 50%;
+            background: rgba(31,16,58,.72);
+            color: #ffffff;
+            cursor: pointer;
+            font: 31px/1 Arial, Helvetica, sans-serif;
+            }
+            .monday-page .monday-slide-arrow:hover,
+            .monday-page .monday-slide-arrow:focus-visible {
+            background: rgba(75,46,131,.96);
+            outline: 3px solid rgba(255,255,255,.78);
+            outline-offset: 2px;
+            }
+            .monday-page .monday-slide-prev { left: 14px; }
+            .monday-page .monday-slide-next { right: 14px; }
+            .monday-page .monday-slide-dots {
+            position: absolute;
+            z-index: 4;
+            right: 0;
+            bottom: 10px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            gap: 9px;
+            }
+            .monday-page .monday-slide-dot {
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 0 1px 5px rgba(0,0,0,.35);
+            cursor: pointer;
+            }
+            .monday-page .monday-slide-dot.is-active { background: #ffffff; }
+            .monday-page .monday-slide-dot:focus-visible {
+            outline: 3px solid var(--pink);
+            outline-offset: 3px;
+            }
+            .monday-page .monday-slide-status {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+            }
+            .monday-page .container {
+            width: min(1120px, calc(100% - 40px));
+            max-width: none;
+            margin: 0 auto;
+            padding: 44px 0;
+            }
+            .monday-page .card {
+            margin: 0 0 28px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--surface);
+            box-shadow: 0 10px 30px rgba(52, 32, 95, .08);
+            }
+            .monday-page .card h2 {
+            margin: 0 0 12px;
+            color: var(--purple);
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.2;
+            }
+            .monday-page .card > p {
+            color: var(--muted);
+            font-size: 17px;
+            }
+            .monday-page .details {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+            }
+            .monday-page .detail-box {
+            min-height: 185px;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-left: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--surface);
+            color: var(--muted);
+            box-shadow: 0 8px 24px rgba(52, 32, 95, .07);
+            }
+            .monday-page .detail-box strong {
+            color: var(--purple);
+            font-size: 17px;
+            }
+            .monday-page .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            }
+            .monday-page .gallery > div {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--surface);
+            }
+            .monday-page .gallery img {
+            width: 100%;
+            height: 330px;
+            border: 0;
+            border-radius: 0;
+            object-fit: cover;
+            }
+            .monday-page .caption {
+            margin: 0;
+            padding: 15px 20px;
+            color: var(--muted);
+            font-weight: 700;
+            }
+            .monday-page .routes {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            }
+            .monday-page .route-card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: var(--surface);
+            box-shadow: 0 10px 30px rgba(52, 32, 95, .08);
+            }
+            .monday-page .route-card > img {
+            width: 100%;
+            height: 320px;
+            object-fit: contain;
+            background: #f4f1f8;
+            }
+            .monday-page .route-card .content { padding: 28px; }
+            .monday-page .route-card h3 {
+            margin: 0 0 12px;
+            color: var(--purple);
+            font-size: 28px;
+            line-height: 1.2;
+            }
+            .monday-page .route-card p { color: var(--muted); }
+            .monday-page .card:nth-last-child(2),
+            .monday-page .card:last-child {
+            border-color: #ded3ec;
+            }
+            .monday-page .card:last-child {
+            background: var(--purple);
+            color: #ffffff;
+            text-align: center;
+            }
+            .monday-page .card:last-child h2,
+            .monday-page .card:last-child p,
+            .monday-page .card:last-child a { color: #ffffff; }
+            .monday-page ul { padding-left: 21px; color: var(--muted); }
+            .monday-page li + li { margin-top: 9px; }
+            @media (max-width: 900px) {
+            .monday-page .details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            }
+            @media (max-width: 700px) {
+            .monday-page .hero { padding: 44px 14px 32px; }
+            .monday-page .hero h1 { font-size: clamp(36px, 12vw, 48px); }
+            .monday-page .hero p:not(.eyebrow) { font-size: 17px; }
+            .monday-page .monday-slideshow {
+            width: min(100% - 8px, 820px);
+            aspect-ratio: 4 / 5;
+            border-width: 5px;
+            border-radius: 20px;
+            }
+            .monday-page .monday-slide figcaption { padding: 52px 58px 18px; font-size: 14px; }
+            .monday-page .monday-slide-arrow { width: 42px; height: 42px; }
+            .monday-page .monday-slide-prev { left: 10px; }
+            .monday-page .monday-slide-next { right: 10px; }
+            .monday-page .container { width: min(100% - 28px, 1120px); padding: 34px 0; }
+            .monday-page .details,
+            .monday-page .gallery,
+            .monday-page .routes { grid-template-columns: 1fr; }
+            .monday-page .detail-box { min-height: 0; }
+            .monday-page .gallery img,
+            .monday-page .route-card > img { height: auto; }
+            .monday-page .card,
+            .monday-page .route-card .content { padding: 24px; }
+            }
+        </style>
+        <script>
+            (function () {
+                var slideshow = document.querySelector('.monday-slideshow');
+                if (!slideshow) return;
+
+                var slides = Array.prototype.slice.call(slideshow.querySelectorAll('.monday-slide'));
+                var dots = Array.prototype.slice.call(slideshow.querySelectorAll('.monday-slide-dot'));
+                var previous = slideshow.querySelector('.monday-slide-prev');
+                var next = slideshow.querySelector('.monday-slide-next');
+                var status = slideshow.querySelector('.monday-slide-status');
+                var current = 0;
+                var timer;
+                var touchStartX = 0;
+                var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                function showSlide(index, restartTimer) {
+                    current = (index + slides.length) % slides.length;
+                    slides.forEach(function (slide, slideIndex) {
+                        var active = slideIndex === current;
+                        slide.classList.toggle('is-active', active);
+                        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+                    });
+                    dots.forEach(function (dot, dotIndex) {
+                        var active = dotIndex === current;
+                        dot.classList.toggle('is-active', active);
+                        if (active) dot.setAttribute('aria-current', 'true');
+                        else dot.removeAttribute('aria-current');
+                    });
+                    status.textContent = 'Photo ' + (current + 1) + ' of ' + slides.length;
+                    if (restartTimer) startTimer();
+                }
+
+                function startTimer() {
+                    window.clearInterval(timer);
+                    if (!reduceMotion) {
+                        timer = window.setInterval(function () {
+                            showSlide(current + 1, false);
+                        }, 6000);
+                    }
+                }
+
+                previous.addEventListener('click', function () { showSlide(current - 1, true); });
+                next.addEventListener('click', function () { showSlide(current + 1, true); });
+                dots.forEach(function (dot, index) {
+                    dot.addEventListener('click', function () { showSlide(index, true); });
+                });
+                slideshow.addEventListener('keydown', function (event) {
+                    if (event.key === 'ArrowLeft') { event.preventDefault(); showSlide(current - 1, true); }
+                    if (event.key === 'ArrowRight') { event.preventDefault(); showSlide(current + 1, true); }
+                });
+                slideshow.addEventListener('mouseenter', function () { window.clearInterval(timer); });
+                slideshow.addEventListener('mouseleave', startTimer);
+                slideshow.addEventListener('focusin', function () { window.clearInterval(timer); });
+                slideshow.addEventListener('focusout', startTimer);
+                slideshow.addEventListener('touchstart', function (event) {
+                    touchStartX = event.changedTouches[0].clientX;
+                }, { passive: true });
+                slideshow.addEventListener('touchend', function (event) {
+                    var distance = event.changedTouches[0].clientX - touchStartX;
+                    if (Math.abs(distance) > 50) showSlide(current + (distance < 0 ? 1 : -1), true);
+                }, { passive: true });
+
+                showSlide(0, false);
+                startTimer();
+            }());
+        </script>
     </body>
 </html>
