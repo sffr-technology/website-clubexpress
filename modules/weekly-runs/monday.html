@@ -69,24 +69,34 @@
     background: var(--purple-dark);
     box-shadow: 0 18px 44px rgba(52, 32, 95, .18);
     }
-    .monday-slideshow:focus-visible {
-    outline: 4px solid rgba(75, 46, 131, .34);
-    outline-offset: 5px;
+    .monday-slide-choice {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
     }
     .monday-slides {
     position: relative;
+    height: 560px;
+    overflow: hidden;
     }
     .monday-slide {
     display: none;
+    width: 100%;
+    height: 100%;
     margin: 0;
     }
-    .monday-slide.is-active {
+    #monday-run-slide-1:checked ~ .monday-slides .monday-slide-1,
+    #monday-run-slide-2:checked ~ .monday-slides .monday-slide-2,
+    #monday-run-slide-3:checked ~ .monday-slides .monday-slide-3,
+    #monday-run-slide-4:checked ~ .monday-slides .monday-slide-4 {
     display: block;
     animation: mondayFade .45s ease;
     }
     .monday-slide img {
     width: 100%;
-    height: 560px;
+    height: 100%;
     object-fit: cover;
     }
     @keyframes mondayFade {
@@ -97,7 +107,7 @@
     position: absolute;
     z-index: 3;
     top: 50%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 46px;
@@ -123,6 +133,12 @@
     .monday-slide-next {
     right: 14px;
     }
+    #monday-run-slide-1:checked ~ .monday-slide-arrows .monday-slide-arrows-1,
+    #monday-run-slide-2:checked ~ .monday-slide-arrows .monday-slide-arrows-2,
+    #monday-run-slide-3:checked ~ .monday-slide-arrows .monday-slide-arrows-3,
+    #monday-run-slide-4:checked ~ .monday-slide-arrows .monday-slide-arrows-4 {
+    display: flex;
+    }
     .monday-slide-dots {
     position: absolute;
     z-index: 4;
@@ -143,20 +159,18 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, .35);
     cursor: pointer;
     }
-    .monday-slide-dot.is-active {
+    #monday-run-slide-1:checked ~ .monday-slide-dots label:nth-child(1),
+    #monday-run-slide-2:checked ~ .monday-slide-dots label:nth-child(2),
+    #monday-run-slide-3:checked ~ .monday-slide-dots label:nth-child(3),
+    #monday-run-slide-4:checked ~ .monday-slide-dots label:nth-child(4) {
     background: #ffffff;
     }
-    .monday-slide-dot:focus-visible {
+    #monday-run-slide-1:focus-visible ~ .monday-slide-dots label:nth-child(1),
+    #monday-run-slide-2:focus-visible ~ .monday-slide-dots label:nth-child(2),
+    #monday-run-slide-3:focus-visible ~ .monday-slide-dots label:nth-child(3),
+    #monday-run-slide-4:focus-visible ~ .monday-slide-dots label:nth-child(4) {
     outline: 3px solid var(--pink);
     outline-offset: 3px;
-    }
-    .monday-slide-status {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
     }
     .monday-section {
     padding: 44px 0;
@@ -343,7 +357,7 @@
     .monday-hero-copy {
     font-size: 17px;
     }
-    .monday-slide img {
+    .monday-slides {
     height: 520px;
     }
     .monday-slide-arrow {
@@ -379,7 +393,10 @@
     }
     }
     @media (prefers-reduced-motion: reduce) {
-    .monday-slide.is-active {
+    #monday-run-slide-1:checked ~ .monday-slides .monday-slide-1,
+    #monday-run-slide-2:checked ~ .monday-slides .monday-slide-2,
+    #monday-run-slide-3:checked ~ .monday-slides .monday-slide-3,
+    #monday-run-slide-4:checked ~ .monday-slides .monday-slide-4 {
     animation: none;
     }
     }
@@ -392,30 +409,41 @@
             <p class="monday-hero-copy">
                 Start your week with San Francisco FrontRunners! Join us every Monday for an easy, social, no-drop neighborhood run followed by coffee.
             </p>
-            <div class="monday-slideshow" role="region" aria-roledescription="carousel" aria-label="Monday Morning Run photos" tabindex="0">
-                <div class="monday-slides" aria-live="off">
-                    <figure class="monday-slide is-active" aria-hidden="false">
+            <div class="monday-slideshow" role="region" aria-roledescription="carousel" aria-label="Monday Morning Run photos">
+                <input class="monday-slide-choice" type="radio" name="monday-run-slides" id="monday-run-slide-1" checked aria-label="Show photo 1 of 4">
+                <input class="monday-slide-choice" type="radio" name="monday-run-slides" id="monday-run-slide-2" aria-label="Show photo 2 of 4">
+                <input class="monday-slide-choice" type="radio" name="monday-run-slides" id="monday-run-slide-3" aria-label="Show photo 3 of 4">
+                <input class="monday-slide-choice" type="radio" name="monday-run-slides" id="monday-run-slide-4" aria-label="Show photo 4 of 4">
+                <div class="monday-slides">
+                    <figure class="monday-slide monday-slide-1">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-coffee-2026-08-24.jpeg" alt="Monday runners enjoying coffee together after the run">
                     </figure>
-                    <figure class="monday-slide" aria-hidden="true">
+                    <figure class="monday-slide monday-slide-2">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-group-2026-08-24.jpeg" alt="Monday Morning Run group gathered at Mission Dolores Park">
                     </figure>
-                    <figure class="monday-slide" aria-hidden="true">
+                    <figure class="monday-slide monday-slide-3">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-coffee-2026-08-31.jpeg" alt="Monday runners stopping for coffee near the J Church line">
                     </figure>
-                    <figure class="monday-slide" aria-hidden="true">
+                    <figure class="monday-slide monday-slide-4">
                         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/monday/monday-run-street-2026-08-31.jpeg" alt="Monday runners heading down a San Francisco neighborhood street">
                     </figure>
                 </div>
-                <button class="monday-slide-arrow monday-slide-prev" type="button" aria-label="Show previous Monday run photo">‹</button>
-                <button class="monday-slide-arrow monday-slide-next" type="button" aria-label="Show next Monday run photo">›</button>
-                <div class="monday-slide-dots" aria-label="Choose a Monday run photo">
-                    <button class="monday-slide-dot is-active" type="button" aria-label="Show photo 1 of 4" aria-current="true"></button>
-                    <button class="monday-slide-dot" type="button" aria-label="Show photo 2 of 4"></button>
-                    <button class="monday-slide-dot" type="button" aria-label="Show photo 3 of 4"></button>
-                    <button class="monday-slide-dot" type="button" aria-label="Show photo 4 of 4"></button>
+                <div class="monday-slide-arrows" aria-hidden="true">
+                    <label class="monday-slide-arrow monday-slide-prev monday-slide-arrows-1" for="monday-run-slide-4">‹</label>
+                    <label class="monday-slide-arrow monday-slide-next monday-slide-arrows-1" for="monday-run-slide-2">›</label>
+                    <label class="monday-slide-arrow monday-slide-prev monday-slide-arrows-2" for="monday-run-slide-1">‹</label>
+                    <label class="monday-slide-arrow monday-slide-next monday-slide-arrows-2" for="monday-run-slide-3">›</label>
+                    <label class="monday-slide-arrow monday-slide-prev monday-slide-arrows-3" for="monday-run-slide-2">‹</label>
+                    <label class="monday-slide-arrow monday-slide-next monday-slide-arrows-3" for="monday-run-slide-4">›</label>
+                    <label class="monday-slide-arrow monday-slide-prev monday-slide-arrows-4" for="monday-run-slide-3">‹</label>
+                    <label class="monday-slide-arrow monday-slide-next monday-slide-arrows-4" for="monday-run-slide-1">›</label>
                 </div>
-                <p class="monday-slide-status" aria-live="polite">Photo 1 of 4</p>
+                <div class="monday-slide-dots" aria-label="Choose a Monday run photo">
+                    <label class="monday-slide-dot" for="monday-run-slide-1" title="Show photo 1 of 4"></label>
+                    <label class="monday-slide-dot" for="monday-run-slide-2" title="Show photo 2 of 4"></label>
+                    <label class="monday-slide-dot" for="monday-run-slide-3" title="Show photo 3 of 4"></label>
+                    <label class="monday-slide-dot" for="monday-run-slide-4" title="Show photo 4 of 4"></label>
+                </div>
             </div>
         </div>
     </header>
@@ -551,69 +579,3 @@
         </section>
     </main>
 </div>
-<script>
-    (function () {
-        var slideshow = document.querySelector('.monday-slideshow');
-        if (!slideshow) return;
-
-        var slides = Array.prototype.slice.call(slideshow.querySelectorAll('.monday-slide'));
-        var dots = Array.prototype.slice.call(slideshow.querySelectorAll('.monday-slide-dot'));
-        var previous = slideshow.querySelector('.monday-slide-prev');
-        var next = slideshow.querySelector('.monday-slide-next');
-        var status = slideshow.querySelector('.monday-slide-status');
-        var current = 0;
-        var timer;
-        var touchStartX = 0;
-        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        function showSlide(index, restartTimer) {
-            current = (index + slides.length) % slides.length;
-            slides.forEach(function (slide, slideIndex) {
-                var active = slideIndex === current;
-                slide.classList.toggle('is-active', active);
-                slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-            });
-            dots.forEach(function (dot, dotIndex) {
-                var active = dotIndex === current;
-                dot.classList.toggle('is-active', active);
-                if (active) dot.setAttribute('aria-current', 'true');
-                else dot.removeAttribute('aria-current');
-            });
-            status.textContent = 'Photo ' + (current + 1) + ' of ' + slides.length;
-            if (restartTimer) startTimer();
-        }
-
-        function startTimer() {
-            window.clearInterval(timer);
-            if (!reduceMotion) {
-                timer = window.setInterval(function () {
-                    showSlide(current + 1, false);
-                }, 6000);
-            }
-        }
-
-        previous.addEventListener('click', function () { showSlide(current - 1, true); });
-        next.addEventListener('click', function () { showSlide(current + 1, true); });
-        dots.forEach(function (dot, index) {
-            dot.addEventListener('click', function () { showSlide(index, true); });
-        });
-        slideshow.addEventListener('keydown', function (event) {
-            if (event.key === 'ArrowLeft') { event.preventDefault(); showSlide(current - 1, true); }
-            if (event.key === 'ArrowRight') { event.preventDefault(); showSlide(current + 1, true); }
-        });
-        slideshow.addEventListener('mouseenter', function () { window.clearInterval(timer); });
-        slideshow.addEventListener('mouseleave', startTimer);
-        slideshow.addEventListener('focusin', function () { window.clearInterval(timer); });
-        slideshow.addEventListener('focusout', startTimer);
-        slideshow.addEventListener('touchstart', function (event) {
-            touchStartX = event.changedTouches[0].clientX;
-        }, { passive: true });
-        slideshow.addEventListener('touchend', function (event) {
-            var distance = event.changedTouches[0].clientX - touchStartX;
-            if (Math.abs(distance) > 50) showSlide(current + (distance < 0 ? 1 : -1), true);
-        }, { passive: true });
-
-        showSlide(0, false);
-        startTimer();
-    }());
-</script>
