@@ -5,6 +5,7 @@
     <body class="editor-body" style="zoom: 100%;">
         <div class="monday-page">
         <section class="hero">
+        <div class="monday-hero-inner">
         <p class="eyebrow">Weekly Run &amp; Walk</p>
         <h1>Monday Morning Run</h1>
         <p>
@@ -35,6 +36,7 @@
                 <button class="monday-slide-dot" type="button" aria-label="Show photo 4 of 4"></button>
             </div>
             <p class="monday-slide-status" aria-live="polite">Photo 1 of 4</p>
+        </div>
         </div>
         </section>
         <div class="container">
@@ -314,11 +316,15 @@
             .monday-page a { color: var(--purple); }
             .monday-page img { display: block; max-width: 100%; }
             .monday-page .hero {
-            padding: 58px 20px 38px;
+            padding: 58px 0 38px;
             background: #f0e8f7;
             border-bottom: 1px solid #e2d7ee;
             color: var(--ink);
             text-align: center;
+            }
+            .monday-page .monday-hero-inner {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
             }
             .monday-page .eyebrow {
             margin: 0 0 10px;
@@ -343,7 +349,8 @@
             }
             .monday-page .monday-slideshow {
             position: relative;
-            width: min(820px, calc(100% - 40px));
+            width: 100%;
+            max-width: 820px;
             margin: 34px auto 0;
             overflow: hidden;
             border: 8px solid rgba(255,255,255,.72);
@@ -351,33 +358,29 @@
             background: var(--purple-dark);
             box-shadow: 0 18px 44px rgba(52,32,95,.18);
             }
-            .monday-page .monday-slideshow::before {
-            display: block;
-            padding-top: 62.5%;
-            content: "";
-            }
             .monday-page .monday-slideshow:focus-visible {
             outline: 4px solid rgba(75,46,131,.34);
             outline-offset: 5px;
             }
-            .monday-page .monday-slides,
+            .monday-page .monday-slides {
+            position: relative;
+            }
             .monday-page .monday-slide {
             position: absolute;
             inset: 0;
-            }
-            .monday-page .monday-slide {
             margin: 0;
             opacity: 0;
             visibility: hidden;
             transition: opacity .5s ease;
             }
             .monday-page .monday-slide.is-active {
+            position: relative;
             opacity: 1;
             visibility: visible;
             }
             .monday-page .monday-slide img {
             width: 100%;
-            height: 100%;
+            height: 512px;
             object-fit: cover;
             }
             .monday-page .monday-slide-arrow {
@@ -551,15 +554,16 @@
             .monday-page .details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             }
             @media (max-width: 700px) {
-            .monday-page .hero { padding: 44px 14px 32px; }
+            .monday-page .hero { padding: 44px 0 32px; }
+            .monday-page .monday-hero-inner { width: min(100% - 28px, 1120px); }
             .monday-page .hero h1 { font-size: clamp(36px, 12vw, 48px); }
             .monday-page .hero p:not(.eyebrow) { font-size: 17px; }
             .monday-page .monday-slideshow {
-            width: min(100% - 8px, 820px);
+            width: 100%;
             border-width: 5px;
             border-radius: 20px;
             }
-            .monday-page .monday-slideshow::before { padding-top: 125%; }
+            .monday-page .monday-slide img { height: 520px; }
             .monday-page .monday-slide-arrow { width: 42px; height: 42px; }
             .monday-page .monday-slide-prev { left: 10px; }
             .monday-page .monday-slide-next { right: 10px; }
