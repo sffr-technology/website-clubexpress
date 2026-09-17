@@ -28,8 +28,8 @@
     .sffr-home-kicker,.sffr-home-label{color:#f8d67e;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 15px;text-transform:uppercase}
     .sffr-home-hero h1{color:#fff;font-size:clamp(47px,7vw,76px);letter-spacing:-.05em;line-height:.98;margin:0 0 23px;max-width:650px}
     .sffr-home-hero-copy{color:rgba(255,255,255,.84);font-size:clamp(18px,2vw,21px);margin:0;max-width:650px}
-    .sffr-home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .sffr-home-button{background:var(--pink);border:2px solid var(--pink);border-radius:999px;color:#fff!important;display:inline-block;font-size:14px;font-weight:800;padding:12px 21px;text-decoration:none!important}
+    .sffr-home-actions{display:grid;gap:12px;grid-template-columns:repeat(2,max-content);margin-top:30px}
+    .sffr-home-button{background:var(--pink);border:2px solid var(--pink);border-radius:999px;color:#fff!important;display:inline-block;font-size:14px;font-weight:800;padding:12px 21px;text-align:center;text-decoration:none!important}
     .sffr-home-button-alt{background:#fff;border-color:#fff;color:var(--purple-dark)!important}
     .sffr-home-button-donate{background:var(--green);border-color:var(--green);color:#fff!important}
     .sffr-home-button-guest{background:var(--blue);border-color:var(--blue);color:#fff!important}
@@ -89,7 +89,7 @@
     .sffr-home-footer-note p{font-size:13px;margin:0}
     @media(hover:hover){.sffr-home-button,.sffr-home-card,.sffr-home-meetup,.sffr-home-photo{transition:transform .2s ease,box-shadow .2s ease}.sffr-home-button:hover{transform:translateY(-2px)}.sffr-home-card:hover,.sffr-home-meetup:hover{box-shadow:0 15px 34px rgba(46,23,78,.1);transform:translateY(-2px)}.sffr-home-photo:hover{transform:rotate(0)}}
     @media(max-width:920px){.sffr-home-hero-grid{grid-template-columns:1fr}.sffr-home-photo{max-width:680px}.sffr-home-schedule-grid,.sffr-home-community-grid{grid-template-columns:repeat(2,1fr)}.sffr-home-story-grid{grid-template-columns:1fr}.sffr-home-story-mark{max-width:360px}}
-    @media(max-width:700px){.sffr-home-proof-grid,.sffr-home-schedule-grid{grid-template-columns:1fr}.sffr-home-proof-item{border-bottom:1px solid var(--line);border-right:0}.sffr-home-proof-item:last-child{border-bottom:0}.sffr-home-community-grid{grid-template-columns:1fr}.sffr-home-card{min-height:0}.sffr-home-photo{transform:none}.sffr-home-actions{align-items:stretch;flex-direction:column}.sffr-home-button{text-align:center}}
+    @media(max-width:700px){.sffr-home-proof-grid,.sffr-home-schedule-grid{grid-template-columns:1fr}.sffr-home-proof-item{border-bottom:1px solid var(--line);border-right:0}.sffr-home-proof-item:last-child{border-bottom:0}.sffr-home-community-grid{grid-template-columns:1fr}.sffr-home-card{min-height:0}.sffr-home-photo{transform:none}.sffr-home-actions{grid-template-columns:1fr}.sffr-home-button{text-align:center}}
 </style>
 <div class="sffr-home">
 <section class="sffr-home-hero">
