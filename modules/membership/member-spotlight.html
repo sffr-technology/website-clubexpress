@@ -1,0 +1,906 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SFFR Member Spotlight</title>
+        <style>
+            * { box-sizing: border-box; }
+            .sffr-spotlight-page {
+            --ink: #432817;
+            --muted: #745b48;
+            --orange: #dc651f;
+            --orange-deep: #a83f12;
+            --amber: #f3a51f;
+            --yellow: #ffd96b;
+            --cream: #fff8e9;
+            --peach: #ffead8;
+            --paper: #ffffff;
+            --line: #f2d7b8;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow: hidden;
+            }
+            .sffr-spotlight-page a { color: inherit; }
+            .sffr-spotlight-page img { max-width: 100%; }
+            .sffr-spotlight-hero {
+            position: relative;
+            isolation: isolate;
+            padding: 76px 24px 64px;
+            background:
+            radial-gradient(circle at 10% 5%, rgba(255, 217, 107, .9), transparent 28%),
+            radial-gradient(circle at 91% 10%, rgba(255, 181, 112, .75), transparent 26%),
+            linear-gradient(135deg, #fff9df 0%, #ffefd5 55%, #ffe0ca 100%);
+            border-bottom: 1px solid #f1d2ad;
+            }
+            .sffr-spotlight-hero:before,
+            .sffr-spotlight-hero:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            border-radius: 999px;
+            opacity: .75;
+            }
+            .sffr-spotlight-hero:before {
+            width: 190px;
+            height: 190px;
+            right: 8%;
+            bottom: -105px;
+            background: #ffc34d;
+            }
+            .sffr-spotlight-hero:after {
+            width: 78px;
+            height: 78px;
+            right: 23%;
+            top: 30px;
+            background: #f47a33;
+            }
+            .sffr-spotlight-hero-inner,
+            .sffr-spotlight-main,
+            .sffr-spotlight-footer-inner {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            }
+            .sffr-spotlight-kicker {
+            margin: 0 0 10px;
+            color: var(--orange-deep);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            }
+            .sffr-spotlight-hero h1 {
+            max-width: 780px;
+            margin: 0 0 18px;
+            color: #6f3012;
+            font-size: clamp(42px, 7vw, 70px);
+            line-height: 1.02;
+            letter-spacing: -.04em;
+            }
+            .sffr-spotlight-hero p {
+            max-width: 760px;
+            margin: 0;
+            color: #6f4d37;
+            font-size: clamp(17px, 2.1vw, 21px);
+            line-height: 1.72;
+            }
+            .sffr-spotlight-main { padding: 48px 22px 72px; }
+            .sffr-spotlight-heading {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
+            gap: 24px;
+            margin-bottom: 24px;
+            }
+            .sffr-spotlight-heading h2 {
+            margin: 0 0 8px;
+            color: #793512;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.12;
+            }
+            .sffr-spotlight-heading p {
+            max-width: 700px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 17px;
+            }
+            .sffr-spotlight-tap-note {
+            color: var(--orange-deep) !important;
+            font-size: 13px !important;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            }
+            .sffr-spotlight-tools {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 26px;
+            padding: 14px;
+            border: 1px solid #f2d5b2;
+            border-radius: 18px;
+            background: rgba(255,255,255,.72);
+            box-shadow: 0 8px 24px rgba(125, 70, 22, .06);
+            }
+            .sffr-spotlight-search {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 16px;
+            border: 1px solid #eac79e;
+            border-radius: 12px;
+            color: var(--ink);
+            background: #fff;
+            font: inherit;
+            font-size: 16px;
+            }
+            .sffr-spotlight-search:focus {
+            outline: 4px solid rgba(243, 165, 31, .25);
+            border-color: var(--amber);
+            }
+            .sffr-spotlight-count {
+            flex: 0 0 auto;
+            min-width: 92px;
+            color: #8e471d;
+            font-size: 13px;
+            font-weight: 800;
+            text-align: center;
+            }
+            .sffr-spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            align-items: start;
+            }
+            .sffr-spotlight-column {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            gap: 22px;
+            }
+            .sffr-member-profile {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--paper);
+            box-shadow: 0 8px 25px rgba(104, 53, 15, .07);
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+            }
+            .sffr-member-profile:hover {
+            transform: translateY(-3px);
+            border-color: #e7b978;
+            box-shadow: 0 15px 34px rgba(104, 53, 15, .12);
+            }
+            .sffr-member-profile[open] {
+            border-color: #e5ac61;
+            box-shadow: 0 15px 38px rgba(104, 53, 15, .13);
+            }
+            .sffr-member-profile[hidden] { display: none !important; }
+            .sffr-member-profile summary {
+            display: grid;
+            grid-template-columns: 118px 1fr 34px;
+            gap: 18px;
+            align-items: center;
+            min-height: 154px;
+            padding: 18px;
+            list-style: none;
+            cursor: pointer;
+            }
+            .sffr-member-profile summary::-webkit-details-marker { display: none; }
+            .sffr-member-profile summary:focus-visible {
+            outline: 4px solid rgba(243, 165, 31, .28);
+            outline-offset: -4px;
+            }
+            .sffr-member-photo-link {
+            display: block;
+            border-radius: 15px;
+            overflow: hidden;
+            }
+            .sffr-member-photo {
+            display: block;
+            width: 118px;
+            height: 118px;
+            object-fit: cover;
+            object-position: center top;
+            background: var(--peach);
+            transition: transform .25s ease;
+            }
+            .sffr-member-profile:hover .sffr-member-photo { transform: scale(1.03); }
+            .sffr-member-label {
+            display: block;
+            margin: 0 0 5px;
+            color: var(--orange);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            }
+            .sffr-member-profile h3 {
+            margin: 0 0 5px;
+            color: var(--ink);
+            font-size: 24px;
+            line-height: 1.2;
+            }
+            .sffr-member-subtitle {
+            display: block;
+            color: #846953;
+            font-size: 13px;
+            line-height: 1.45;
+            }
+            .sffr-member-expand {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: var(--orange-deep);
+            background: #fff0c6;
+            font-size: 22px;
+            font-weight: 700;
+            transition: transform .2s ease, color .2s ease, background .2s ease;
+            }
+            .sffr-member-profile[open] .sffr-member-expand {
+            transform: rotate(45deg);
+            color: #fff;
+            background: var(--orange);
+            }
+            .sffr-member-body {
+            padding: 0 22px 24px;
+            border-top: 1px solid #f5e3cc;
+            background: linear-gradient(#fff, #fffaf2);
+            }
+            .sffr-member-facts {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+            }
+            .sffr-member-fact {
+            padding: 13px 14px;
+            border-radius: 13px;
+            background: #fff0c9;
+            }
+            .sffr-member-fact-label {
+            display: block;
+            margin-bottom: 2px;
+            color: #a44715;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            }
+            .sffr-member-fact-value {
+            display: block;
+            color: #5a3b26;
+            font-size: 14px;
+            line-height: 1.45;
+            }
+            .sffr-member-story { margin: 18px 0 0; }
+            .sffr-member-story h4 {
+            margin: 0 0 5px;
+            color: #813710;
+            font-size: 15px;
+            }
+            .sffr-member-story p {
+            margin: 0;
+            color: #654c3b;
+            font-size: 15px;
+            line-height: 1.67;
+            }
+            .sffr-spotlight-empty {
+            display: none;
+            margin: 20px 0 0;
+            padding: 24px;
+            border: 1px dashed #dfa766;
+            border-radius: 18px;
+            color: #704525;
+            background: #fff4df;
+            text-align: center;
+            }
+            .sffr-spotlight-footer {
+            padding: 58px 22px;
+            color: #4d2b18;
+            background: linear-gradient(135deg, #ffd769, #ffb650 56%, #ff9866);
+            }
+            .sffr-spotlight-footer-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 30px;
+            }
+            .sffr-spotlight-footer h2 {
+            margin: 0 0 8px;
+            color: #5e2e11;
+            font-size: clamp(28px, 4vw, 40px);
+            }
+            .sffr-spotlight-footer p {
+            max-width: 720px;
+            margin: 0;
+            color: #6b4125;
+            font-size: 17px;
+            }
+            .sffr-spotlight-footer-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 12px 23px;
+            border: 2px solid #863a12;
+            border-radius: 999px;
+            color: #fff !important;
+            background: #943e13;
+            font-weight: 800;
+            text-decoration: none !important;
+            white-space: nowrap;
+            }
+            .sffr-spotlight-footer-button:hover { background: #6f2c0b; }
+            @media (max-width: 820px) {
+            .sffr-spotlight-hero { padding-top: 56px; }
+            .sffr-spotlight-grid { grid-template-columns: 1fr; }
+            .sffr-spotlight-column { display: contents; }
+            .sffr-member-profile { order: var(--sffr-card-order, 0); }
+            .sffr-spotlight-heading { grid-template-columns: 1fr; gap: 10px; }
+            .sffr-spotlight-tap-note { white-space: normal; }
+            .sffr-spotlight-footer-inner { grid-template-columns: 1fr; }
+            .sffr-spotlight-footer-button { justify-self: start; }
+            }
+            @media (max-width: 560px) {
+            .sffr-spotlight-hero { padding: 48px 18px 46px; }
+            .sffr-spotlight-main { padding: 30px 14px 52px; }
+            .sffr-spotlight-tools { align-items: stretch; flex-direction: column; }
+            .sffr-spotlight-count { min-width: 0; text-align: left; }
+            .sffr-member-profile summary {
+            grid-template-columns: 88px 1fr 30px;
+            gap: 13px;
+            min-height: 120px;
+            padding: 13px;
+            }
+            .sffr-member-photo { width: 88px; height: 88px; border-radius: 12px; }
+            .sffr-member-profile h3 { font-size: 20px; }
+            .sffr-member-label { font-size: 10px; }
+            .sffr-member-body { padding: 0 16px 20px; }
+            .sffr-member-facts { grid-template-columns: 1fr; }
+            .sffr-spotlight-footer { padding: 44px 20px; }
+            .sffr-spotlight-footer-button { width: 100%; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+            .sffr-member-profile,
+            .sffr-member-photo,
+            .sffr-member-expand { transition: none; }
+            }
+        </style>
+    </head>
+    <body style="margin: 0px; zoom: 100%;" class="editor-body">
+        <div class="sffr-spotlight-page">
+        <header class="sffr-spotlight-hero">
+        <div class="sffr-spotlight-hero-inner">
+        <p class="sffr-spotlight-kicker">The people who make SFFR shine</p>
+        <h1>2026 Member Spotlight</h1>
+        <p>Every week an SFFR Member is featured on our Footweb. Every member brings a different story to the club. Meet the runners, walkers, volunteers, adventurers, artists, cooks, and friends who make San Francisco FrontRunners feel like home.</p>
+        </div>
+        </header>
+        <main class="sffr-spotlight-main">
+        <section aria-labelledby="member-spotlight-heading">
+        <div class="sffr-spotlight-heading">
+        <div>
+        <h2 id="member-spotlight-heading">Meet our members</h2>
+        <p>From first 5Ks to races on all seven continents, these stories remind us that there is no single way to be a FrontRunner.</p>
+        </div>
+        <p class="sffr-spotlight-tap-note">Tap a card to read their story</p>
+        </div>
+        <div class="sffr-spotlight-tools" role="search">
+        <input class="sffr-spotlight-search" id="sffr-member-search" type="search" placeholder="Search by name, hometown, shoes, or hobby" aria-label="Search member spotlights">
+        <span class="sffr-spotlight-count" id="sffr-member-count" aria-live="polite">24 members</span>
+        </div>
+        <div class="sffr-spotlight-grid" id="sffr-spotlight-grid"></div>
+        <p class="sffr-spotlight-empty" id="sffr-spotlight-empty">No member spotlights match that search. Try another name, place, shoe, or hobby.</p>
+        </section>
+        </main>
+        <footer class="sffr-spotlight-footer">
+        <div class="sffr-spotlight-footer-inner">
+        <div>
+        <h2>Want to be featured?</h2>
+        <p>We would love to share your SFFR story too. Send us a photo and a few fun details about your running, walking, and life beyond the club.</p>
+        </div>
+        <a class="sffr-spotlight-footer-button" href="https://docs.google.com/forms/d/e/1FAIpQLScGrDFxAa3hop_mG7UbG1qc8drSH7VxvYVgG3pjrvaYnqv6xw/viewform">Share your story</a>
+        </div>
+        </footer>
+        </div>
+        <script>
+    (function () {
+var members = [
+        {
+          name: "Andy Doyle",
+          initials: "AD",
+          image: "//images.clubexpress.com/801899/graphics/Andy_965590508.jpg",
+          hometown: "South Vienna, Ohio, about ten miles from Springfield",
+          joined: "February 2024",
+          shoes: "Saucony Endorphin Speed 5",
+          hobbies: "Swimming, stand-up paddleboarding, hiking, and surfing",
+          achievement: "Andy has come close to breaking a seven-minute-per-mile pace in recent 5Ks and the Christmas Relays. He credits much of that progress to the energy and encouragement of his fellow FrontRunners.",
+          memory: "He will always remember the radical hospitality of his first few SFFR runs, the new friendships he made, and finally reaching the point when he no longer needed a heating pad every night.",
+          funFact: "Andy became a beginner surfer shortly after moving to San Francisco in 2020 and would love to meet other beginners who want company in the water."
+        },
+        {
+          name: "Ben Hu",
+          initials: "BH",
+          image: "//images.clubexpress.com/801899/photos/original/ben_hu_55498300.jpg",
+          hometown: "Potomac, Maryland",
+          joined: "Around 2001",
+          shoes: "ASICS GT-1000",
+          hobbies: "Swimming in the Bay, reading, and travel",
+          achievement: "Ben completed eight marathons, including New York City, London, Washington, D.C., and Walt Disney World.",
+          memory: "A long-ago Yosemite camping weekend stands out for the hiking, time together away from running, and plenty of friendly gossip.",
+          funFact: "As an anesthesiologist, Ben joins medical missions that repair cleft lips and care for survivors of female genital mutilation. He recently returned from Madagascar."
+        },
+        {
+          name: "Bevan Doyle Dufty",
+          initials: "BD",
+          image: "//images.clubexpress.com/801899/photos/original/bevan_doyle_dufty_148750410.jpg",
+          hometown: "New York City",
+          joined: "DC FrontRunners in 1982, followed by LA and SF FrontRunners",
+          shoes: "Saucony maximum-cushion shoes",
+          hobbies: "Playing Mexican Train with FrontRunner friends",
+          achievement: "Bevan beat Rafael Mandelman by one second at the 2025 Pride Run, a result he has happily shared with hundreds of people.",
+          memory: "While active with DC FrontRunners, Bevan organized a Sapphic Strut to welcome more women runners. About a dozen women joined, creating a memorable chapter in the club's history.",
+          funFact: "Billie Holiday was Bevan's godmother, Gloria Swanson was his stepmother, and Shirley Chisholm was his first boss."
+        },
+        {
+          name: "Bob Callori",
+          initials: "BC",
+          image: "//images.clubexpress.com/801899/photos/original/bob_callori_1436753962.jpg",
+          hometown: "Jersey City and Hackensack, New Jersey",
+          joined: "2000",
+          shoes: "HOKA Arahi",
+          hobbies: "Archiving club history",
+          achievement: "Bob won eight gold medals at the 2010 Cologne Gay Games while competing in track and field and the 5K.",
+          memory: "A special SFFR memory was receiving the club's Lifetime Service Award from 2011 President Mike DeLeon.",
+          funFact: "Bob has taught at SFSU, UC Berkeley, and Autodesk University, and wrote eight computer-aided design books that were published in eight languages.",
+          extraLink: "//drive.google.com/drive/folders/1R56HCdQYYlK0LcpSZjWt4ytgGqf0_omj?usp=sharing",
+          extraLinkText: "Explore Bob's FrontRunner archive"
+        },
+        {
+          name: "Brendan Herger",
+          initials: "BH",
+          image: "//images.clubexpress.com/801899/graphics/Brendan_1319925081.jpeg",
+          hometown: "San Francisco",
+          joined: "April 2023",
+          shoes: "A black pair selected by the experts at A Runner's Mind",
+          hobbies: "Kayaking and volunteering with ETC to help disabled and at-risk youth get out on the water in Sausalito",
+          achievement: "Brendan completed the 2023 San Francisco Marathon, where the city's hills made the experience especially challenging and rewarding.",
+          memory: "He treasures the many post-run dinners at Gott's and the friendships formed along the way.",
+          funFact: "Brendan met a kangaroo last year."
+        },
+        {
+          name: "Calvin Lau",
+          initials: "CL",
+          image: "//images.clubexpress.com/801899/photos/original/calvin_lau_581250753.jpg",
+          hometown: "El Cerrito, California",
+          joined: "2024",
+          shoes: "ASICS Gel Kayano with custom insoles",
+          hobbies: "Festivals, concerts, books, movies, travel, and two cats",
+          achievement: "Calvin's first San Francisco Marathon transformed a difficult year and opened up his social world through run clubs. Seeing the FrontRunners water station near mile 24 gave him an unforgettable push to the finish.",
+          memory: "The 50th Anniversary Bash brought different generations of the community together for a special night of cocktails, dressing up, dancing, and plenty of cackling.",
+          funFact: "Calvin has officiated one and a half weddings."
+        },
+        {
+          name: "Chidu Nadig",
+          initials: "CN",
+          image: "//images.clubexpress.com/801899/graphics/Chidu_2_449381527.jpeg",
+          hometown: "Bengaluru, India",
+          joined: "February 2022",
+          hobbies: "Tennis, skiing, and motorcycles",
+          achievement: "Chidu runs for fun and for the social side of the sport. He is especially proud of running with the SFFR Centipede at Bay to Breakers, volunteering and participating in the Pride Run, and joining the club's New Year's run across the Golden Gate Bridge.",
+          memory: "Spending the holidays with SFFR means a great deal to Chidu. As an immigrant with family spread around the world, he treasures celebrating with his chosen family in San Francisco, especially while bartending and serving drinks to his running friends at the end-of-year parties.",
+          funFact: "Chidu likes to think he is a pretty good cook."
+        },
+        {
+          name: "Christopher Goodwin",
+          initials: "CG",
+          image: "//images.clubexpress.com/801899/photos/original/christopher_goodwin_212149084.jpg",
+          hometown: "Washington, D.C. area",
+          joined: "January 2004",
+          shoes: "Searching for a replacement for the New Balance Rebel V3",
+          hobbies: "Playing classical guitar",
+          achievement: "At a 400-meter race near Auburn, Christopher executed a precise race strategy and won by half a shoe length. His fastest-ever time ranked him ninth in the United States for his age group, but the greater victory was realizing that he was already an athlete.",
+          memory: "It is a close call between his first Pride Run and the original Coyote Challenge, which began as training for Tough Mudder events.",
+          funFact: "Christopher once had a frightening near-death experience on Mount Shasta that left him with a powerful new perspective."
+        },
+        {
+          name: "Chuck Louden",
+          initials: "CL",
+          image: "//images.clubexpress.com/801899/photos/original/chuck_louden_938812986.jpg",
+          hometown: "Marblehead, Massachusetts",
+          joined: "1987",
+          shoes: "HOKA for the extra cushioning",
+          hobbies: "Theater criticism and Bay Area culture",
+          achievement: "Chuck ran the 100th Boston Marathon in 1996. He grew up watching the finish and never imagined that one day his entire family would see him run it.",
+          memory: "Some favorite FrontRunner memories include traveling with club friends to Sydney, Amsterdam, Chicago, and Paris.",
+          funFact: "Chuck coaches middle-school cross country and track and loves seeing young athletes get excited about running."
+        },
+        {
+          name: "Clayton Bullock",
+          initials: "CB",
+          image: "//images.clubexpress.com/801899/photos/original/clayton_bullock_889222587.jpg",
+          hometown: "San Diego",
+          joined: "1993",
+          shoes: "ASICS Gel-Cumulus 27",
+          hobbies: "Chamber music",
+          achievement: "Clayton ran his first marathon in San Francisco in 1996 in under three hours. He did not realize that was a major benchmark until club members called to congratulate him and a third-place age-group trophy appeared on his doorstep the next day.",
+          memory: "Clayton loves seeing SFFR friends at BARS concerts and other arts activities and values the expanded community they have created together.",
+          funFact: "Clayton takes harpsichord lessons and conducts himself with the restraint and decorum of a virtuous 18th-century princess."
+        },
+        {
+          name: "Cole Carvour",
+          initials: "CC",
+          image: "//images.clubexpress.com/801899/photos/screen/Carvour_Cole_photo_-_Cole_Carvour_57745652.jpg",
+          hometown: "Born in Columbus, Ohio, and raised in Chattanooga, Tennessee",
+          joined: "March 2023",
+          shoes: "ASICS Gel Kayano",
+          hobbies: "Dancing, including freeform, salsa, and bachata",
+          achievement: "Cole completed the Carmel Marathon during his senior year of college and the Paris Marathon in 2015. Knees willing, he hopes to run at least one more.",
+          memory: "His first time crossing the Golden Gate Bridge on foot was during SFFR's rainy New Year's Day run. Everyone was soaked, but it was an exhilarating way to begin the year.",
+          funFact: "Cole studied Irish step dance for more than ten years and trained dogs and taught dog-agility classes as a teenager."
+        },
+        {
+          name: "Dave Parker",
+          initials: "DP",
+          image: "//images.clubexpress.com/801899/photos/original/dave_parker_290575305.jpg",
+          hometown: "Rockford, Illinois",
+          joined: "September 2018",
+          shoes: "Saucony Guide 18",
+          hobbies: "3D printing replacement parts and anti-ice whistles",
+          achievement: "Dave survived running a full mile as a sixth grader during the 1987 Presidential Fitness Test. According to Strava, he has now completed 4,027 fitness tests.",
+          memory: "A wet and windy half-marathon water station on the former Great Highway became a favorite shared adventure. Dave recommends volunteering as one of the best ways to experience a race.",
+          funFact: "Dave was born in England and lived there until age ten. His local dialect quickly returns when he visits or spends time around other British people."
+        },
+        {
+          name: "David Adams",
+          initials: "DA",
+          image: "//images.clubexpress.com/801899/photos/original/david_adams_1685679400.jpg",
+          hometown: "Havertown, Pennsylvania",
+          joined: "2022, after his first Pride Run",
+          shoes: "Altra Paradigm",
+          hobbies: "Making ice cream, especially rum raisin",
+          achievement: "David completed the 2024 San Francisco Marathon after anxiety kept him from racing in 2017. Training with club friends made it one of the most challenging and rewarding physical experiences of his life.",
+          memory: "His favorite memory is the 2025 Pride Run and the friendships he formed with the event's committee members.",
+          funFact: "David uses running to help teach every level of high-school mathematics."
+        },
+        {
+          name: "Devesh Khatu",
+          initials: "DK",
+          image: "//images.clubexpress.com/801899/photos/original/devesh_khatu_1391162039.jpg",
+          hometown: "Mumbai and Pune, India",
+          joined: "2003",
+          shoes: "ASICS Gel Kayano",
+          hobbies: "Crosswords, travel, food, photography, blogging, movies, museums, volunteering, and fundraising",
+          achievement: "Devesh qualified for the Boston Marathon by running his marathon personal record of 3:19 in Chicago.",
+          memory: "At the 2007 SFFR annual banquet, Gary Pfitzer approached Devesh after he received an award. They got together shortly afterward and have now been best friends for nearly 20 years.",
+          funFact: "Devesh was not naturally athletic growing up. He began running seriously after testing positive for HIV in 2003 and joined SFFR that same year."
+        },
+        {
+          name: "Gary Pfitzer",
+          initials: "GP",
+          image: "//images.clubexpress.com/801899/photos/original/gary_pfitzer_813425122.jpg",
+          hometown: "Pittsburgh, Cincinnati, and Ridgewood, New Jersey",
+          joined: "SFFR in 1997, after joining FrontRunners Boston in 1988",
+          shoes: "Altra Via Olympus and HOKA Bondi",
+          hobbies: "Reading, languages, exploring, food, friends, and family",
+          achievement: "Gary has completed a Half Ironman and the Boston Marathon, but he is proudest of keeping running in his life from high school onward while adapting to injuries along the way.",
+          memory: "Across 38 years with FrontRunners, the club has created many of Gary's deepest friendships and perhaps 75 percent of his social life. He is profoundly grateful for that community.",
+          funFact: "Sometimes Gary arrives at a FrontRunners event and, poof, he is a pink unicorn."
+        },
+        {
+          name: "Georg von Braunschweig",
+          initials: "GB",
+          image: "//images.clubexpress.com/801899/photos/original/georg_von_braunschweig_579553157.jpg",
+          hometown: "Königstein im Taunus, Germany",
+          joined: "November 2021, after 20 years with BayLands FrontRunners",
+          shoes: "ASICS GT-2000",
+          hobbies: "Photography, snowboarding, cars, and building his house",
+          achievement: "Georg completed his first marathon in San Francisco in 2003 in 5:09, almost exactly twice the winner's time. He achieved his personal goal of reaching the finish line without a stretcher.",
+          memory: "He remembers chicken salad croissant sandwiches at The Grind and the club's 50th anniversary party, a celebration he would gladly repeat every year.",
+          funFact: "Georg supported his student lifestyle in university by working as a party DJ."
+        },
+        {
+          name: "Glenn Galang",
+          initials: "GG",
+          image: "//images.clubexpress.com/801899/photos/original/glenn_galang_1460463980.jpg",
+          hometown: "Quezon City, Philippines and San Francisco",
+          joined: "Mid-1990s",
+          shoes: "ASICS Gel Kayano",
+          hobbies: "Exploring the world",
+          achievement: "Glenn finished Ironman Switzerland and the Kona Half Ironman.",
+          memory: "He loved traveling to the Palm Springs Pride Run with SFFR friends and seeing his son and their friend volunteer at the SFFR Pride Run.",
+          funFact: "Glenn is a rescue-certified scuba diver who loves diving, even though he gets seasick."
+        },
+        {
+          name: "Grace Diamond",
+          initials: "GD",
+          image: "//images.clubexpress.com/801899/photos/original/grace_diamond_1996089995.jpg",
+          hometown: "Florham Park, New Jersey",
+          joined: "2023 or 2024, with FrontRunners since 2015",
+          shoes: "Adidas Adizero Adios Pro Evo 1 for running and HOKA for walking",
+          hobbies: "Volunteering with the Junior League and Spinsters of San Francisco",
+          achievement: "Grace is proud of her 3:25:47 New York City Marathon personal record and her 4:54 mile at the New Jersey sectional championships.",
+          memory: "She treasures regaining her speed with SFFR and marching in the 2015 New York City Pride Parade with more than 100 FrontRunners dancing down Fifth Avenue to the Stonewall Inn.",
+          funFact: "Grace spent her high-school summers at intensive running camps."
+        },
+        {
+          name: "Henry Ly",
+          initials: "HL",
+          image: "//images.clubexpress.com/801899/photos/original/henry_ly_83406090.jpg",
+          hometown: "San Diego, California",
+          joined: "A rainy Tuesday in February 2024",
+          shoes: "ASICS Novablast 5",
+          hobbies: "Reading in the park and spending time with his dog, Zuko",
+          achievement: "Henry completed the Boston Marathon despite a running injury. The difficult training block and thoughtful decisions required to reach the start made crossing the iconic finish line especially meaningful.",
+          memory: "SFFR's first Bay to Breakers Centipede in 2024 arrived just before his birthday and became a celebration of running, new community, personal growth, and resilience.",
+          funFact: "Henry played the cello for many years in his youth."
+        },
+        {
+          name: "James Berneking",
+          initials: "JB",
+          image: "//images.clubexpress.com/801899/photos/screen/James_Berneking_-_James_Berneking_1896408371.jpg",
+          hometown: "Sequim, Washington",
+          joined: "October 2022",
+          shoes: "On Cloudmonster 2",
+          hobbies: "Skiing and exploring this beautiful corner of the world",
+          achievement: "James completed his first Olympic-distance triathlon at the Gay Games in Valencia.",
+          memory: "While training for the triathlon, James's SFFR family helped him shop for a bike, took him open-water swimming, cycled with him, supported his brick training, and encouraged him every step of the way.",
+          funFact: "Some of James's earliest running involved chasing, and being chased by, the cows whenever they escaped his family's pasture."
+        },
+        {
+          name: "Julius Vaughn",
+          initials: "JV",
+          image: "//images.clubexpress.com/801899/photos/original/julius_vaughn_1252431793.jpg",
+          hometown: "Tampa, Florida",
+          joined: "February 2026",
+          shoes: "Brooks Ghost 17",
+          hobbies: "Singing and karaoke",
+          achievement: "Julius is most proud of finding the courage to complete his first 5K. It took an hour and 20 minutes, and his time has improved greatly since, but the deeper lesson was learning not to let fear of other people's opinions hold him back.",
+          memory: "During the YMCA Lunar New Year 5K, another member tapped Julius on the back, smiled, and gave him a thumbs-up while running past. It is the little things that stay with him.",
+          funFact: "Julius was a Grand Marshal for St. Petersburg Pride in 2022 and perfected his queen wave from the top of the car."
+        },
+        {
+          name: "Matthew Kaea",
+          initials: "MK",
+          image: "//images.clubexpress.com/801899/photos/original/matthew_kaea_1930323500.jpg",
+          hometown: "Napa, Idaho, near Boise",
+          joined: "2024",
+          shoes: "Nike Alphafly 3 and Nike Winflo 12",
+          hobbies: "Reading, the SFFR book club, and gardening",
+          achievement: "Matthew set a 2:52 marathon personal record at the 2019 Seoul Marathon and has completed every World Marathon Major, most in under three hours. He also won the pre-pandemic Pride Meet 5K hosted by the San Francisco Track and Field Club.",
+          memory: "Volunteering at SFFR's 2026 San Francisco Marathon water station was an intense and rewarding way to support the running community. He also convinced a friend to join SFFR because of the book club.",
+          funFact: "Matthew has completed the Escape from Alcatraz Triathlon seven years in a row, along with many Olympic and half-Ironman triathlons and one full Ironman."
+        },
+        {
+          name: "Michael Cavallaro Park",
+          initials: "MCP",
+          image: "//images.clubexpress.com/801899/photos/original/image1_1087386449.jpeg",
+          hometown: "Perth Amboy, New Jersey",
+          joined: "2023",
+          shoes: "Saucony Endorphin Elite",
+          hobbies: "Exploring new places and wine tasting",
+          achievement: "Michael has completed five of the six Abbott World Marathon Majors and is looking forward to running Boston in April to complete his Six Star journey.",
+          memory: "During a 2024 Saturday run with less than a ten-percent chance of rain, the sky chose violence near Ocean Beach. Torrential rain soaked everyone, including their shoes and socks.",
+          funFact: "Since Smite 2 launched at the end of 2024, Michael has played 3,538 hours. He confirms that he is okay and occasionally touches grass."
+        },
+        {
+          name: "Mike Terry",
+          initials: "MT",
+          image: "//images.clubexpress.com/801899/photos/original/mike_terry_388149632.jpg",
+          hometown: "Evanston, Illinois",
+          joined: "2019, after joining Front Runners New York in 2007",
+          shoes: "Saucony Ride from A Runner's Mind",
+          hobbies: "Intricate Liberty jigsaw puzzles",
+          achievement: "Mike competed in the 2012 Ironman World Championship in Kona, enduring the heat and humidity of the ancient lava fields.",
+          memory: "The club's 50th Anniversary Bash in 2024 remains a favorite. After six months of preparation, everyone contributed their talents and created an unforgettable celebration.",
+          funFact: "Mike attended culinary school for a year in his twenties, which made him much tidier and more organized."
+        },
+        {
+          name: "Nicholas Gonsalves",
+          initials: "NG",
+          image: "//images.clubexpress.com/801899/photos/original/nicholas_gonsalves_1122470319.jpg",
+          hometown: "Madison, Connecticut",
+          joined: "2018",
+          shoes: "Brooks",
+          hobbies: "Traveling",
+          achievement: "Nicholas recently ran a 5K in 26:06.",
+          memory: "He fondly remembers the Saturday brunch crowd at Squat & Gobble before it closed.",
+          funFact: "Nicholas taught himself to use a pogo stick and can still stay surprisingly balanced."
+        },
+        {
+          name: "Nick Stark",
+          initials: "NS",
+          image: "//images.clubexpress.com/801899/photos/original/nick_stark_1487774395.jpg",
+          hometown: "Gregory, South Dakota",
+          joined: "January 2024",
+          shoes: "Brooks Adrenaline, with Nike Alphaflys ready for Sydney",
+          hobbies: "Live music and playing piano",
+          achievement: "Nick ran a marathon in Antarctica in 2017 as part of his quest to complete one on all seven continents. At one point, runners had to pause for a penguin crossing.",
+          memory: "Thursday runs have introduced Nick to some of his closest friends. He loves the mix of catching up with familiar faces, meeting someone new, and continuing the conversation at Hi Tops afterward.",
+          funFact: "Nick grew up on a South Dakota ranch and had a pet buffalo who was surprisingly gentle, though slightly less cooperative than a golden retriever."
+        },
+        {
+          name: "Peter Rigano",
+          initials: "PR",
+          image: "//images.clubexpress.com/801899/photos/original/Peter_Rigano_-_Peter_Rigano_1801517680.jpg",
+          hometown: "Encinitas, California",
+          joined: "May 2022",
+          shoes: "Brooks Adrenaline",
+          hobbies: "Cooking and experimenting with vegan recipes",
+          achievement: "Peter ran a 3:12 at the San Francisco Marathon after deciding to train seriously. Ten years later, that personal record still stands.",
+          memory: "His first Bay to Breakers centipede in 2024 fulfilled a goal that began in college, when a friend ran the race in a dinosaur costume and talked about it for months.",
+          funFact: "Peter is an Eagle Scout and a licensed ham radio operator. His call sign is KN6GRF."
+        },
+        {
+          name: "Ricky Gonzales",
+          initials: "RG",
+          image: "//images.clubexpress.com/801899/photos/original/ricky_gonzales_550558051.jpg",
+          hometown: "Farmington, New Mexico",
+          joined: "2019, after joining DC FrontRunners in 2013",
+          shoes: "ASICS Novablast",
+          hobbies: "Skiing, hiking, camping, and board games",
+          achievement: "After years of knee pain and disappointing races, Ricky ran the Chicago Marathon in 2:55, his fastest marathon in more than ten years and comfortably under his Boston qualifying time.",
+          memory: "Ricky treasures discovering trail running with SFFR, including Angel Island, the Tahoe Ragnar relay, and two wonderfully chaotic Dipsea races.",
+          funFact: "When he is not running, Ricky can often be found walking Finn, his mini goldendoodle, around Corona Heights."
+        },
+        {
+          name: "Ryan Kimsey",
+          initials: "RK",
+          image: "//images.clubexpress.com/801899/photos/original/ryan_kimsey_1029473379.jpg",
+          hometown: "Portsmouth, Ohio",
+          joined: "October 2025",
+          shoes: "Brooks",
+          hobbies: "Learning languages",
+          achievement: "Ryan completed his first 5K in Oahu in fall 2025.",
+          memory: "He values the optimistic spirit of Saturday runs in Golden Gate Park, where everyone seems genuinely happy to run and see one another.",
+          funFact: "Ryan has seen Madonna live at least ten times and speaks English, Spanish, French, and German to varying degrees. He recently began learning Brazilian Portuguese."
+        },
+        {
+          name: "Ryan Susa",
+          initials: "RS",
+          image: "https://images.clubexpress.com/801899/graphics/Ryan_2112621990.jpeg",
+          hometown: "Hawaii",
+          joined: "2023",
+          shoes: "On Cloudmonster and On Cloudboom Strike",
+          hobbies: "Hiking, traveling, craft cocktails, and trying new restaurants",
+          achievement: "Ryan finished his first marathon, the San Francisco Marathon, in 3:43.",
+          memory: "He fondly remembers traveling with fellow SFFR runners to complete the Monterey Bay Half Marathon.",
+          funFact: "Despite growing up in Hawaii, Ryan is a terrible swimmer."
+        },
+        {
+          name: "Sheila Repeta",
+          initials: "SR",
+          image: "//images.clubexpress.com/801899/photos/original/Sheila_482840666.PNG",
+          hometown: "Elgin, Illinois",
+          joined: "March 2025",
+          shoes: "Altra Torin for the street and Altra Lone Peak for the trail",
+          hobbies: "Hiking, backpacking, and frolicking on coastal bluffs",
+          achievement: "Sheila qualified for the Boston Marathon on her first marathon.",
+          memory: "The 2026 Pride Run was Sheila's first race after surgery, and the encouragement she received from everyone made it especially meaningful.",
+          funFact: "According to her son, Sheila can single-handedly finish a box of Thin Mints when she is in her feelings."
+        },
+        {
+          name: "Steven Bracco",
+          initials: "SB",
+          image: "//images.clubexpress.com/801899/photos/original/steven_bracco_1012648859.jpg",
+          hometown: "Petaluma, California",
+          joined: "Around 2014",
+          shoes: "ASICS GT-2000",
+          hobbies: "Snow skiing",
+          achievement: "On a hot New York summer day, Steven and his partner Shawn set out to run around Manhattan. What they expected to be a half marathon became nearly 20 miles after all the trail switchbacks and turnarounds.",
+          memory: "As a regular Thursday runner, Steven has loved watching the group grow from roughly ten people to 40 or 50 on many weeks.",
+          funFact: "Despite usually running shirtless, Steven does own a shirt. He is also an Eagle Scout who grew up taking weeklong, 50-mile backpacking trips in the Sierra."
+        }
+      ];
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function memberPhotoPath(name) {
+        var fileName = String(name)
+          .split(",")[0]
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "_")
+          .replace(/^_+|_+$/g, "");
+
+        return "//images.clubexpress.com/801899/photos/original/" + fileName + ".jpg";
+      }
+
+      function memberCard(member, index) {
+        var photo = member.image || memberPhotoPath(member.name);
+        var placeholder = "//placehold.co/600x600/F8C76A/753510?text=" + encodeURIComponent(member.initials);
+        var extra = member.extraLink
+          ? '<div class="sffr-member-story"><h4>From the archive</h4><p><a href="' + escapeHtml(member.extraLink) + '" target="_blank" rel="noopener">' + escapeHtml(member.extraLinkText) + '</a></p></div>'
+          : "";
+
+        return '<details class="sffr-member-profile" style="--sffr-card-order:' + (index + 1) + '" data-search="' +
+          escapeHtml([member.name, member.hometown, member.joined, member.shoes, member.hobbies, member.achievement, member.memory, member.funFact].join(" ").toLowerCase()) + '">' +
+          '<summary>' +
+            '<a class="sffr-member-photo-link" href="' + photo + '" target="_blank" rel="noopener" aria-label="View photo of ' + escapeHtml(member.name) + '">' +
+              '<img class="sffr-member-photo" data-photo="' + photo + '" data-placeholder="' + placeholder + '" data-member-name="' + escapeHtml(member.name) + '" alt="Photo of ' + escapeHtml(member.name) + '">' +
+            '</a>' +
+            '<span>' +
+              '<span class="sffr-member-label">Member</span>' +
+              '<h3>' + escapeHtml(member.name) + '</h3>' +
+              '<span class="sffr-member-subtitle">Member since ' + escapeHtml(member.joined) + '</span>' +
+            '</span>' +
+            '<span class="sffr-member-expand" aria-hidden="true">+</span>' +
+          '</summary>' +
+          '<div class="sffr-member-body">' +
+            '<div class="sffr-member-facts">' +
+              '<div class="sffr-member-fact"><span class="sffr-member-fact-label">Hometown</span><span class="sffr-member-fact-value">' + escapeHtml(member.hometown) + '</span></div>' +
+              '<div class="sffr-member-fact"><span class="sffr-member-fact-label">Member since</span><span class="sffr-member-fact-value">' + escapeHtml(member.joined) + '</span></div>' +
+              '<div class="sffr-member-fact"><span class="sffr-member-fact-label">Current shoes</span><span class="sffr-member-fact-value">' + escapeHtml(member.shoes) + '</span></div>' +
+              '<div class="sffr-member-fact"><span class="sffr-member-fact-label">Beyond running</span><span class="sffr-member-fact-value">' + escapeHtml(member.hobbies) + '</span></div>' +
+            '</div>' +
+            '<div class="sffr-member-story"><h4>A proud accomplishment</h4><p>' + escapeHtml(member.achievement) + '</p></div>' +
+            '<div class="sffr-member-story"><h4>A favorite FrontRunner memory</h4><p>' + escapeHtml(member.memory) + '</p></div>' +
+            '<div class="sffr-member-story"><h4>Fun fact</h4><p>' + escapeHtml(member.funFact) + '</p></div>' +
+            extra +
+          '</div>' +
+        '</details>';
+      }
+
+      var grid = document.getElementById("sffr-spotlight-grid");
+      var leftColumn = document.createElement("div");
+      var rightColumn = document.createElement("div");
+      leftColumn.className = "sffr-spotlight-column";
+      rightColumn.className = "sffr-spotlight-column";
+
+      members.forEach(function (member, index) {
+        var holder = document.createElement("div");
+        holder.innerHTML = memberCard(member, index);
+        var card = holder.firstElementChild;
+        var photo = card.querySelector(".sffr-member-photo");
+
+        photo.addEventListener("error", function () {
+          var placeholder = photo.getAttribute("data-placeholder");
+          var memberName = photo.getAttribute("data-member-name");
+          var photoLink = photo.parentElement;
+
+          photo.src = placeholder;
+          photo.alt = "Placeholder photo for " + memberName;
+          photoLink.href = placeholder;
+          photoLink.setAttribute("aria-label", "View placeholder photo for " + memberName);
+        }, { once: true });
+
+        photo.src = photo.getAttribute("data-photo");
+        (index % 2 === 0 ? leftColumn : rightColumn).appendChild(card);
+      });
+
+      grid.appendChild(leftColumn);
+      grid.appendChild(rightColumn);
+
+      var search = document.getElementById("sffr-member-search");
+      var count = document.getElementById("sffr-member-count");
+      var empty = document.getElementById("sffr-spotlight-empty");
+      var cards = Array.prototype.slice.call(document.querySelectorAll(".sffr-member-profile"));
+
+      search.addEventListener("input", function () {
+        var query = search.value.trim().toLowerCase();
+        var visible = 0;
+
+        cards.forEach(function (card) {
+          var matches = !query || card.getAttribute("data-search").indexOf(query) !== -1;
+          card.hidden = !matches;
+          if (matches) visible += 1;
+        });
+
+        count.textContent = visible + (visible === 1 ? " member" : " members");
+        empty.style.display = visible ? "none" : "block";
+      });
+    }());
+  </script>
+    </body>
+</html>
