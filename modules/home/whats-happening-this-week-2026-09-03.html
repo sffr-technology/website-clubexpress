@@ -133,11 +133,12 @@
     transform: rotate(1.2deg);
     }
     .sffr-week-hero-photo img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
     display: block;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+    max-height: none;
     }
     .sffr-week-hero-photo figcaption {
     background: linear-gradient(transparent, rgba(26, 14, 46, .92));
@@ -370,13 +371,17 @@
     }
     .sffr-week-spotlight-photo-wrap {
     background: var(--purple-soft);
-    min-height: 440px;
+    min-height: 0;
+    align-self: start;
+    max-height: none;
     }
     .sffr-week-spotlight-photo {
     display: block;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     width: 100%;
+    max-height: none;
+    aspect-ratio: auto;
     }
     .sffr-week-spotlight-body {
     padding: clamp(28px, 5vw, 48px);
@@ -517,7 +522,7 @@
     transform: none;
     }
     .sffr-week-spotlight-photo-wrap {
-    max-height: 560px;
+    max-height: none;
     }
     }
     @media (max-width: 680px) {
@@ -544,7 +549,7 @@
     font-size: 18px;
     }
     .sffr-week-spotlight-photo-wrap {
-    min-height: 340px;
+    min-height: 0;
     }
     .sffr-week-meeting-card {
     align-items: flex-start;

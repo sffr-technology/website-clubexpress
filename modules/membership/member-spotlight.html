@@ -194,18 +194,22 @@
             }
             .sffr-member-photo-link {
             display: block;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            }
+            align-self: start;
+    }
             .sffr-member-photo {
             display: block;
             width: 118px;
-            height: 118px;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             object-position: center top;
             background: var(--peach);
             transition: transform .25s ease;
-            }
+            max-height: none;
+            aspect-ratio: auto;
+            border-radius: 20px;
+    }
             .sffr-member-profile:hover .sffr-member-photo { transform: scale(1.03); }
             .sffr-member-label {
             display: block;
@@ -356,7 +360,7 @@
             min-height: 120px;
             padding: 13px;
             }
-            .sffr-member-photo { width: 88px; height: 88px; border-radius: 12px; }
+            .sffr-member-photo { width: 88px; height: auto; border-radius: 20px; }
             .sffr-member-profile h3 { font-size: 20px; }
             .sffr-member-label { font-size: 10px; }
             .sffr-member-body { padding: 0 16px 20px; }
