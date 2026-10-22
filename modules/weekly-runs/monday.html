@@ -1,4 +1,6 @@
-<!-- UPDATED SEPTEMBER 13, 2026: Rebuilt to match the Tuesday and Thursday weekly-run page templates. -->
+<!-- UPDATED OCTOBER 22, 2026: Matched Thursday layout and added Monday host profiles.
+James spotlight: October 22 Footweb / Member Spotlight responses.
+Mitchell host background: August 20 Footweb; spotlight details pending source. -->
 <style>
     * {
     box-sizing: border-box;
@@ -9,21 +11,23 @@
     .monday-page {
     --purple: #4b2e83;
     --purple-dark: #34205f;
+    --purple-deep: #351f63;
     --purple-light: #eee8f8;
+    --lavender: #eee8f8;
     --pink: #d94f91;
     --ink: #2f2f35;
     --muted: #66636d;
+    --blue: #1769aa;
     --line: #e5deef;
     --surface: #ffffff;
+    --paper: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--ink);
     background: #faf9fc;
     line-height: 1.65;
-    overflow: hidden;
     }
     .monday-page a {
     color: var(--purple);
-    overflow-wrap: anywhere;
     }
     .monday-page img {
     display: block;
@@ -44,7 +48,7 @@
     color: var(--pink);
     font-size: 14px;
     font-weight: 800;
-    letter-spacing: .12em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     }
     .monday-hero h1 {
@@ -53,12 +57,504 @@
     font-size: clamp(40px, 7vw, 64px);
     line-height: 1.08;
     }
-    .monday-hero-copy {
+    .monday-hero p {
     max-width: 780px;
     margin: 0 auto;
     color: var(--muted);
     font-size: 19px;
     line-height: 1.75;
+    }
+    .monday-hero-photo {
+    position: relative;
+    overflow: hidden;
+    margin-top: 34px;
+    border-radius: 24px;
+    box-shadow: 0 18px 44px rgba(52, 32, 95, 0.18);
+    }
+    .monday-hero-photo img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    }
+    .monday-move-notice {
+    max-width: 920px;
+    margin: 30px auto 0;
+    padding: 25px;
+    border: 2px solid #d94f91;
+    border-radius: 20px;
+    background: #fff7fb;
+    box-shadow: 0 10px 28px rgba(87, 38, 75, .1);
+    text-align: left;
+    }
+    .monday-move-label {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: #d94f91;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    }
+    .monday-move-notice h2 {
+    margin: 0 0 9px;
+    color: var(--purple);
+    font-size: clamp(24px, 4vw, 31px);
+    line-height: 1.2;
+    }
+    .monday-move-notice p {
+    max-width: none;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.65;
+    }
+    .monday-move-notice p + p {
+    margin-top: 9px;
+    }
+    .monday-move-notice a {
+    font-weight: 800;
+    }
+    .monday-section {
+    padding: 44px 0;
+    }
+    .monday-section-heading {
+    max-width: 790px;
+    margin-bottom: 24px;
+    }
+    .monday-section-heading h2 {
+    margin: 0 0 10px;
+    color: var(--purple);
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.2;
+    }
+    .monday-section-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    }
+    .monday-details {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+    }
+    .monday-detail-card {
+    min-height: 185px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 8px 24px rgba(52, 32, 95, 0.07);
+    }
+    .monday-detail-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 28px;
+    }
+    .monday-detail-card strong {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--purple);
+    font-size: 17px;
+    }
+    .monday-detail-card p {
+    margin: 0;
+    color: var(--muted);
+    }
+    .monday-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: 2px solid var(--purple);
+    border-radius: 999px;
+    background: var(--purple);
+    color: #ffffff !important;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.2s ease;
+    }
+    .monday-button:hover,
+    .monday-button:focus {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+    transform: translateY(-2px);
+    }
+    .monday-button-secondary {
+    background: #ffffff;
+    color: var(--purple) !important;
+    }
+    .monday-route-list {
+    display: grid;
+    gap: 28px;
+    }
+    .monday-route-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: 0 10px 30px rgba(52, 32, 95, 0.08);
+    }
+    .monday-route-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: #ece8f2;
+    }
+    .monday-route-gallery img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    }
+    .monday-route-gallery img + img {
+    border-left: 4px solid #ffffff;
+    }
+    .monday-route-gallery-single {
+    grid-template-columns: 1fr;
+    }
+    .monday-route-map {
+    object-fit: contain !important;
+    background: #f4f1f8;
+    }
+    .monday-route-content {
+    padding: 28px;
+    }
+    .monday-route-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 12px;
+    }
+    .monday-route-title h3 {
+    margin: 0;
+    color: var(--purple);
+    font-size: 28px;
+    }
+    .monday-route-badge {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    }
+    .monday-route-content p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 16px;
+    }
+    .monday-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    }
+    .monday-info-panel {
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    }
+    .monday-info-panel h3 {
+    margin: 0 0 14px;
+    color: var(--purple);
+    font-size: 24px;
+    }
+    .monday-info-panel ul {
+    margin: 0;
+    padding-left: 21px;
+    color: var(--muted);
+    }
+    .monday-info-panel li + li {
+    margin-top: 9px;
+    }
+    .sffr-board-section-heading {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    margin-bottom: 26px;
+    }
+    .sffr-board-section-heading h2 {
+    margin: 0 0 8px;
+    color: var(--purple-deep);
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.12;
+    }
+    .sffr-board-section-heading p {
+    max-width: 690px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    }
+    .sffr-board-tap-note {
+    margin: 0;
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    }
+    .sffr-board-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+    }
+    .sffr-profile {
+    border: 1px solid #e6dff0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--paper);
+    box-shadow: 0 8px 25px rgba(46,32,73,.07);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .sffr-profile:hover {
+    transform: translateY(-3px);
+    border-color: #cabce0;
+    box-shadow: 0 14px 34px rgba(46,32,73,.12);
+    }
+    .sffr-profile[open] {
+    border-color: #bdaed6;
+    box-shadow: 0 15px 38px rgba(46,32,73,.13);
+    }
+    .sffr-profile summary {
+    display: grid;
+    grid-template-columns: 118px 1fr 34px;
+    gap: 18px;
+    align-items: center;
+    min-height: 154px;
+    padding: 18px;
+    list-style: none;
+    cursor: pointer;
+    }
+    .sffr-profile summary::-webkit-details-marker {
+    display: none;
+    }
+    .sffr-profile summary:focus-visible {
+    outline: 4px solid rgba(23,105,170,.28);
+    outline-offset: -4px;
+    }
+    .sffr-profile-photo-link {
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+    }
+    .sffr-profile-photo {
+    display: block;
+    width: 118px;
+    height: 118px;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--lavender);
+    transition: transform .25s ease;
+    }
+    .sffr-profile:hover .sffr-profile-photo {
+    transform: scale(1.03);
+    }
+    .sffr-profile-role {
+    margin: 0 0 5px;
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    }
+    .sffr-profile h3 {
+    margin: 0 0 2px;
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.2;
+    }
+    .sffr-pronouns {
+    margin: 0 0 8px;
+    color: #777080;
+    font-size: 13px;
+    }
+    .sffr-expand-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--purple);
+    background: var(--lavender);
+    font-size: 22px;
+    font-weight: 700;
+    transition: transform .2s ease, color .2s ease, background .2s ease;
+    }
+    .sffr-profile[open] .sffr-expand-icon {
+    transform: rotate(45deg);
+    color: #fff;
+    background: var(--purple);
+    }
+    .sffr-profile-body {
+    padding: 0 22px 24px;
+    border-top: 1px solid #eee9f4;
+    background: linear-gradient(#fff, #fcfaff);
+    }
+    .sffr-quick-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+    }
+    .sffr-fact {
+    padding: 13px 14px;
+    border-radius: 13px;
+    background: var(--lavender);
+    }
+    .sffr-fact-label {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    }
+    .sffr-fact-value {
+    display: block;
+    color: #3c3548;
+    font-size: 14px;
+    line-height: 1.45;
+    }
+    .sffr-story {
+    margin: 18px 0 0;
+    }
+    .sffr-story h4 {
+    margin: 0 0 5px;
+    color: var(--purple-deep);
+    font-size: 15px;
+    }
+    .sffr-story p {
+    margin: 0;
+    color: #554f5e;
+    font-size: 15px;
+    line-height: 1.67;
+    }
+    .monday-connect {
+    margin-top: 10px;
+    padding: 38px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: #ffffff;
+    text-align: center;
+    }
+    .monday-connect h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 34px;
+    }
+    .monday-connect p {
+    max-width: 740px;
+    margin: 0 auto 22px;
+    color: #f2edf9;
+    font-size: 17px;
+    }
+    .monday-connect-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    }
+    .monday-connect .monday-button {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: var(--purple) !important;
+    }
+    .monday-connect .monday-button-secondary {
+    background: transparent;
+    color: #ffffff !important;
+    }
+    @media (max-width: 900px) {
+    .monday-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .monday-info-grid {
+    grid-template-columns: 1fr;
+    }
+    }
+    @media (max-width: 820px) {
+    .sffr-board-grid {
+    grid-template-columns: 1fr;
+    }
+    .sffr-board-section-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }
+    .sffr-board-tap-note {
+    white-space: normal;
+    }
+    }
+    @media (max-width: 650px) {
+    .monday-container {
+    width: min(calc(100% - 28px), 1120px);
+    }
+    .monday-hero {
+    padding-top: 38px;
+    }
+    .monday-hero p {
+    font-size: 17px;
+    }
+    .monday-details,
+    .monday-route-gallery {
+    grid-template-columns: 1fr;
+    }
+    .monday-route-gallery img {
+    height: 250px;
+    }
+    .monday-route-gallery img + img {
+    border-top: 4px solid #ffffff;
+    border-left: 0;
+    }
+    .monday-route-title {
+    align-items: flex-start;
+    flex-direction: column;
+    }
+    .monday-route-content,
+    .monday-info-panel,
+    .monday-connect {
+    padding: 24px;
+    }
+    }
+    @media (max-width: 560px) {
+    .sffr-profile summary {
+    grid-template-columns: 88px 1fr 30px;
+    gap: 13px;
+    min-height: 120px;
+    padding: 13px;
+    }
+    .sffr-profile-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 12px;
+    }
+    .sffr-profile h3 {
+    font-size: 20px;
+    }
+    .sffr-profile-role {
+    font-size: 10px;
+    }
+    .sffr-profile-body {
+    padding: 0 16px 20px;
+    }
+    .sffr-quick-facts {
+    grid-template-columns: 1fr;
+    }
+    }
+    @media (prefers-reduced-motion: reduce) {
+    .sffr-profile,
+    .sffr-profile-photo,
+    .sffr-expand-icon {
+    transition: none;
+    }
     }
     .monday-slideshow {
     position: relative;
@@ -172,56 +668,6 @@
     outline: 3px solid var(--pink);
     outline-offset: 3px;
     }
-    .monday-section {
-    padding: 44px 0;
-    }
-    .monday-section + .monday-section {
-    padding-top: 18px;
-    }
-    .monday-section-heading {
-    max-width: 790px;
-    margin-bottom: 24px;
-    }
-    .monday-section-heading h2 {
-    margin: 0 0 10px;
-    color: var(--purple);
-    font-size: clamp(30px, 4vw, 40px);
-    line-height: 1.2;
-    }
-    .monday-section-heading p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 17px;
-    }
-    .monday-details {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 28px;
-    }
-    .monday-detail-card {
-    min-height: 185px;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: var(--surface);
-    box-shadow: 0 8px 24px rgba(52, 32, 95, .07);
-    }
-    .monday-detail-icon {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 28px;
-    }
-    .monday-detail-card strong {
-    display: block;
-    margin-bottom: 7px;
-    color: var(--purple);
-    font-size: 17px;
-    }
-    .monday-detail-card p {
-    margin: 0;
-    color: var(--muted);
-    }
     .monday-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -247,159 +693,26 @@
     font-weight: 700;
     text-align: center;
     }
-    .monday-route-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-    }
-    .monday-route-card {
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    background: var(--surface);
-    box-shadow: 0 10px 30px rgba(52, 32, 95, .08);
-    }
-    .monday-route-card > img {
-    width: 100%;
-    height: 320px;
-    object-fit: contain;
-    background: #f4f1f8;
-    }
-    .monday-route-content {
-    padding: 28px;
-    }
-    .monday-route-content h3 {
-    margin: 0 0 12px;
-    color: var(--purple);
-    font-size: 28px;
-    line-height: 1.2;
-    }
-    .monday-route-content p {
-    margin: 0 0 18px;
-    color: var(--muted);
-    }
-    .monday-route-content p:last-child {
-    margin-bottom: 0;
-    }
-    .monday-route-link {
-    font-weight: 800;
-    }
-    .monday-info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-    }
-    .monday-info-panel {
-    padding: 28px;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    background: var(--surface);
-    }
-    .monday-info-panel h2 {
-    margin: 0 0 14px;
-    color: var(--purple);
-    font-size: 24px;
-    }
-    .monday-info-panel p {
-    margin: 0;
-    color: var(--muted);
-    }
-    .monday-info-panel p + p {
-    margin-top: 14px;
-    }
-    .monday-info-panel ul {
-    margin: 0;
-    padding-left: 21px;
-    color: var(--muted);
-    }
-    .monday-info-panel p + ul {
-    margin-top: 12px;
-    }
-    .monday-info-panel li + li {
-    margin-top: 9px;
-    }
-    .monday-connect {
-    padding: 34px;
-    border-radius: 22px;
-    background: var(--purple);
-    color: #ffffff;
-    text-align: center;
-    }
-    .monday-connect h2 {
-    margin: 0 0 10px;
-    color: #ffffff;
-    font-size: clamp(30px, 4vw, 40px);
-    }
-    .monday-connect p {
-    max-width: 780px;
-    margin: 0 auto;
-    font-size: 17px;
-    }
-    .monday-connect a {
-    color: #ffffff;
-    font-weight: 800;
-    }
-    @media (max-width: 900px) {
-    .monday-details {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    }
-    @media (max-width: 700px) {
-    .monday-container {
-    width: min(100% - 28px, 1120px);
-    }
-    .monday-hero {
-    padding: 44px 0 32px;
-    }
-    .monday-hero h1 {
-    font-size: clamp(36px, 12vw, 48px);
-    }
-    .monday-hero-copy {
-    font-size: 17px;
-    }
-    .monday-slides {
-    height: 520px;
-    }
-    .monday-slide-arrow {
-    width: 42px;
-    height: 42px;
-    }
-    .monday-slide-prev {
-    left: 10px;
-    }
-    .monday-slide-next {
-    right: 10px;
-    }
-    .monday-section {
-    padding: 34px 0;
-    }
-    .monday-details,
-    .monday-gallery,
-    .monday-route-list,
-    .monday-info-grid {
-    grid-template-columns: 1fr;
-    }
-    .monday-detail-card {
-    min-height: 0;
-    }
-    .monday-gallery img,
-    .monday-route-card > img {
-    height: auto;
-    }
-    .monday-route-content,
-    .monday-info-panel,
-    .monday-connect {
-    padding: 24px;
-    }
-    }
-    @media (prefers-reduced-motion: reduce) {
-    #monday-run-slide-1:checked ~ .monday-slides .monday-slide-1,
-    #monday-run-slide-2:checked ~ .monday-slides .monday-slide-2,
-    #monday-run-slide-3:checked ~ .monday-slides .monday-slide-3,
-    #monday-run-slide-4:checked ~ .monday-slides .monday-slide-4 {
-    animation: none;
-    }
-    }
+
+.monday-page { overflow: hidden; }
+.monday-page a { overflow-wrap: anywhere; }
+.monday-page .monday-details { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.monday-hero .monday-eyebrow { margin-bottom: 10px; color: var(--pink); font-size: 14px; line-height: 1.65; }
+.monday-host-heading { margin-bottom: 24px; }
+.monday-host-heading h2 { margin: 0 0 10px; color: var(--purple); font-size: clamp(30px, 4vw, 40px); line-height: 1.2; }
+.monday-host-heading p { margin: 0; color: var(--muted); font-size: 17px; }
+.monday-host-note { margin-top: 10px !important; font-size: 14px !important; }
+.monday-host-initials { display: grid; place-items: center; border-radius: 15px; color: var(--purple); font-size: 30px; font-weight: 800; }
+.monday-info-panel p { margin: 0; color: var(--muted); }
+.monday-info-panel p + ul, .monday-info-panel ul + p { margin-top: 14px; }
+@media (max-width: 900px) { .monday-page .monday-details { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 650px) {
+.monday-page .monday-details, .monday-gallery { grid-template-columns: 1fr; }
+.monday-gallery img { height: auto; }
+.monday-slides { height: 420px; }
+.monday-detail-card { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .monday-slide { animation: none !important; } }
 </style>
 <div class="monday-page">
     <header class="monday-hero">
@@ -510,30 +823,24 @@
                     <h2>Choose Your Route</h2>
                 </div>
                 <div class="monday-route-list">
-                    <article class="monday-route-card">
-                        <img src="//s3.amazonaws.com/ClubExpressClubFiles/801899/graphics/Screenshot_2026-08-02_at_14.20.32_643446590.png" alt="4 Mile Route">
+                    <article class="monday-route-card"><div class="monday-route-gallery monday-route-gallery-single"><img src="//s3.amazonaws.com/ClubExpressClubFiles/801899/graphics/Screenshot_2026-08-02_at_14.20.32_643446590.png" class="monday-route-map" alt="Map of the Monday 4 mile route"></div>
                         <div class="monday-route-content">
-                            <h3>4 Mile Route</h3>
+                            <div class="monday-route-title"><h3>4 Mile Run/Walk</h3><span class="monday-route-badge">4 miles</span></div>
                             <p>
                                 A scenic neighborhood loop through the Mission, Noe Valley, and the Castro. Perfect for participants looking for a relaxed weekday morning run/walk.
                             </p>
                             <p><strong>Pace:</strong> Approximately 10:00 min/mile</p>
-                            <p><strong>Strava Route:</strong><br>
-                                <a class="monday-route-link" href="https://www.strava.com/routes/3516829273642060024" target="_blank" rel="noopener">https://www.strava.com/routes/3516829273642060024</a>
-                            </p>
+                            <a class="monday-button" href="https://www.strava.com/routes/3516829273642060024" target="_blank" rel="noopener">View Route on Strava</a>
                         </div>
                     </article>
-                    <article class="monday-route-card">
-                        <img src="//s3.amazonaws.com/ClubExpressClubFiles/801899/graphics/Screenshot_2026-08-02_at_14.22.24_129300062.png" alt="6 Mile Route">
+                    <article class="monday-route-card"><div class="monday-route-gallery monday-route-gallery-single"><img src="//s3.amazonaws.com/ClubExpressClubFiles/801899/graphics/Screenshot_2026-08-02_at_14.22.24_129300062.png" class="monday-route-map" alt="Map of the Monday 6 mile route"></div>
                         <div class="monday-route-content">
-                            <h3>6 Mile Route</h3>
+                            <div class="monday-route-title"><h3>6 Mile Run/Walk</h3><span class="monday-route-badge">6 miles</span></div>
                             <p>
                                 A longer route that includes Holly Park before returning through Noe Valley and the Castro.
                             </p>
                             <p><strong>Pace:</strong> Approximately 8:30 min/mile</p>
-                            <p><strong>Strava Route:</strong><br>
-                                <a class="monday-route-link" href="https://www.strava.com/routes/3516836402851016774" target="_blank" rel="noopener">https://www.strava.com/routes/3516836402851016774</a>
-                            </p>
+                            <a class="monday-button" href="https://www.strava.com/routes/3516836402851016774" target="_blank" rel="noopener">View Route on Strava</a>
                         </div>
                     </article>
                 </div>
@@ -543,7 +850,7 @@
             <div class="monday-container">
                 <div class="monday-info-grid">
                     <div class="monday-info-panel">
-                        <h2>Run/Walk Information</h2>
+                        <h3>Run/Walk Information</h3>
                         <ul>
                             <li>Both pace groups are <strong>no-drop</strong>.</li>
                             <li>If the 6 mile pace feels too challenging, runners may join the 4 mile group during the first half of the route.</li>
@@ -554,7 +861,7 @@
                         </ul>
                     </div>
                     <div class="monday-info-panel">
-                        <h2>Coffee Afterwards</h2>
+                        <h3>Coffee Afterwards</h3>
                         <p>After the run/walk we'll grab coffee together. Current possibilities include:</p>
                         <ul>
                             <li>Spike's Coffee &amp; Tea</li>
@@ -567,13 +874,13 @@
                 </div>
             </div>
         </section>
+<section class="monday-section"><div class="monday-container"><div class="monday-host-heading"><h2>Monday Morning Run/Walk Hosts</h2><p>Say hello to James Kraemer and Mitchell Haynes when you join us on Monday morning.</p><p class="monday-host-note">Select a host to learn more.</p></div><div class="sffr-board-grid"><details class="sffr-profile"><summary><a class="sffr-profile-photo-link" href="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/ef373f02-efa7-2448-15dc-b4b0ab611456.jpeg" target="_blank" rel="noopener" aria-label="View a full-size photo of James Kraemer"><img class="sffr-profile-photo" src="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/ef373f02-efa7-2448-15dc-b4b0ab611456.jpeg" alt="James Kraemer"></a><span><span class="sffr-profile-role">Monday Morning Run/Walk Host</span><h3>James Kraemer</h3></span><span class="sffr-expand-icon" aria-hidden="true">+</span></summary><div class="sffr-profile-body"><div class="sffr-quick-facts"><div class="sffr-fact"><span class="sffr-fact-label">Hometown</span><span class="sffr-fact-value">Palo Alto, California</span></div><div class="sffr-fact"><span class="sffr-fact-label">Member since</span><span class="sffr-fact-value">May 2026</span></div><div class="sffr-fact"><span class="sffr-fact-label">Current shoes</span><span class="sffr-fact-value">Saucony Endorphin Speed 5</span></div><div class="sffr-fact"><span class="sffr-fact-label">Hobbies</span><span class="sffr-fact-value">Trying new restaurants and bars</span></div></div><div class="sffr-story"><h4>A proud running accomplishment</h4><p>James completed his first marathon in Providence, Rhode Island, in 2017. He began running in 2015 and never imagined going farther than a 10K. Training for and finishing a marathon brought an amazing sense of accomplishment and confidence in what he could achieve with preparation.</p></div><div class="sffr-story"><h4>A favorite SFFR memory</h4><p>After 12 years in Boston, James moved back to San Francisco in May 2026. SFFR’s welcoming community has made his return amazing and filled with new friends.</p></div><div class="sffr-story"><h4>Fun fact</h4><p>James studied Russian for two years in college and studied abroad in St. Petersburg.</p></div><div class="sffr-story"><h4>Beyond running</h4><p>James enjoys trying new restaurants and bars.</p></div></div></details><details class="sffr-profile"><summary><span class="sffr-profile-photo monday-host-initials" aria-hidden="true">MH</span><span><span class="sffr-profile-role">Monday Morning Run/Walk Host</span><h3>Mitchell Haynes</h3></span><span class="sffr-expand-icon" aria-hidden="true">+</span></summary><div class="sffr-profile-body"><div class="sffr-story"><h4>Helping launch Monday mornings</h4><p>Mitchell coordinated the new routes for SFFR’s inaugural Monday Morning Run/Walk in August 2026. Join him at Mission Dolores Park to start the week with the group.</p></div></div></details></div></div></section>
         <section class="monday-section">
             <div class="monday-container">
                 <div class="monday-connect">
                     <h2>Stay Connected</h2>
-                    <p>
-                        Have questions or want to connect with the group before your first Monday Morning Run/Walk? Email us at <a href="mailto:monday@sffr.org">monday@sffr.org</a> or join the <strong>Monday Runners</strong> WhatsApp group chat for route updates, announcements, and community conversation.
-                    </p>
+<p>Have questions before your first Monday Morning Run/Walk? Join the <strong>Monday Runners</strong> WhatsApp group chat for route updates, announcements, and community conversation.</p>
+<div class="monday-connect-actions"><a class="monday-button" href="mailto:monday@sffr.org">Email monday@sffr.org</a><a class="monday-button monday-button-secondary" href="https://www.instagram.com/sffrontrunners/" target="_blank" rel="noopener">Message Us on Instagram</a></div>
                 </div>
             </div>
         </section>
