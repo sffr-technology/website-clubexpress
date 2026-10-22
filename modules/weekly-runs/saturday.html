@@ -57,21 +57,6 @@
     font-size: 19px;
     line-height: 1.75;
     }
-    .saturday-hero-photo {
-    position: relative;
-    overflow: hidden;
-    margin-top: 34px;
-    border-radius: 24px;
-    box-shadow: 0 26px 60px rgba(22, 10, 46, .34);
-    border: 1px solid rgba(255, 255, 255, .34);
-    }
-    .saturday-hero-photo img {
-    width: 100%;
-    max-height: none;
-    object-fit: contain;
-    height: auto;
-    aspect-ratio: auto;
-    }
     /* TEMPORARY AUGUST 8 ANNOUNCEMENT STYLES: Remove after Saturday, August 8. */
     .saturday-special-alert {
     max-width: 880px;
@@ -348,6 +333,126 @@
     padding: 24px;
     }
     }
+
+    /* Manual, script-free carousel: native radio keys and touch-size controls. */
+    .saturday-carousel {
+        position: relative;
+        max-width: 960px;
+        margin: 34px auto 0;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,.34);
+        border-radius: 24px;
+        background: var(--purple-dark);
+        box-shadow: 0 26px 60px rgba(22,10,46,.34);
+    }
+    .saturday-photo-choice {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        opacity: 0;
+    }
+    .saturday-photo-stage {
+        position: relative;
+        height: clamp(260px, 52vw, 600px);
+    }
+    .saturday-photo-slide {
+        display: none;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    .saturday-photo-slide img {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        object-fit: contain;
+    }
+    .saturday-photo-arrows label {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(255,255,255,.7);
+        border-radius: 50%;
+        background: rgba(31,16,58,.85);
+        color: #fff;
+        cursor: pointer;
+        font: 32px/1 Arial, Helvetica, sans-serif;
+        touch-action: manipulation;
+    }
+    .saturday-photo-prev { left: 10px; }
+    .saturday-photo-next { right: 10px; }
+    .saturday-photo-arrows label:hover { background: var(--purple); }
+    .saturday-photo-dots {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 6px;
+        background: var(--purple-dark);
+    }
+    .saturday-photo-dots label {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+    .saturday-photo-dots label::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+    }
+    .saturday-carousel-help {
+        display: block;
+        padding: 0 16px 14px;
+        color: #fff;
+        font-size: 13px;
+    }
+    @media (max-width: 650px) {
+        .saturday-carousel { border-radius: 18px; }
+        .saturday-photo-stage { height: clamp(240px, 90vw, 480px); }
+        .saturday-photo-arrows label { width: 44px; height: 44px; }
+        .saturday-photo-prev { left: 6px; }
+        .saturday-photo-next { right: 6px; }
+        .saturday-photo-dots { padding: 6px 0; }
+    }
+    #saturday-photo-1:checked ~ .saturday-photo-stage .saturday-photo-slide-1 { display: block; }
+    #saturday-photo-1:checked ~ .saturday-photo-stage .saturday-photo-arrows-1 { display: flex; }
+    #saturday-photo-1:checked ~ .saturday-photo-dots label:nth-child(1)::before { background: #fff; }
+    #saturday-photo-1:focus-visible ~ .saturday-photo-dots label:nth-child(1) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
+    #saturday-photo-2:checked ~ .saturday-photo-stage .saturday-photo-slide-2 { display: block; }
+    #saturday-photo-2:checked ~ .saturday-photo-stage .saturday-photo-arrows-2 { display: flex; }
+    #saturday-photo-2:checked ~ .saturday-photo-dots label:nth-child(2)::before { background: #fff; }
+    #saturday-photo-2:focus-visible ~ .saturday-photo-dots label:nth-child(2) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
+    #saturday-photo-3:checked ~ .saturday-photo-stage .saturday-photo-slide-3 { display: block; }
+    #saturday-photo-3:checked ~ .saturday-photo-stage .saturday-photo-arrows-3 { display: flex; }
+    #saturday-photo-3:checked ~ .saturday-photo-dots label:nth-child(3)::before { background: #fff; }
+    #saturday-photo-3:focus-visible ~ .saturday-photo-dots label:nth-child(3) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
+    #saturday-photo-4:checked ~ .saturday-photo-stage .saturday-photo-slide-4 { display: block; }
+    #saturday-photo-4:checked ~ .saturday-photo-stage .saturday-photo-arrows-4 { display: flex; }
+    #saturday-photo-4:checked ~ .saturday-photo-dots label:nth-child(4)::before { background: #fff; }
+    #saturday-photo-4:focus-visible ~ .saturday-photo-dots label:nth-child(4) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
+    #saturday-photo-5:checked ~ .saturday-photo-stage .saturday-photo-slide-5 { display: block; }
+    #saturday-photo-5:checked ~ .saturday-photo-stage .saturday-photo-arrows-5 { display: flex; }
+    #saturday-photo-5:checked ~ .saturday-photo-dots label:nth-child(5)::before { background: #fff; }
+    #saturday-photo-5:focus-visible ~ .saturday-photo-dots label:nth-child(5) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
+    #saturday-photo-6:checked ~ .saturday-photo-stage .saturday-photo-slide-6 { display: block; }
+    #saturday-photo-6:checked ~ .saturday-photo-stage .saturday-photo-arrows-6 { display: flex; }
+    #saturday-photo-6:checked ~ .saturday-photo-dots label:nth-child(6)::before { background: #fff; }
+    #saturday-photo-6:focus-visible ~ .saturday-photo-dots label:nth-child(6) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
+    #saturday-photo-7:checked ~ .saturday-photo-stage .saturday-photo-slide-7 { display: block; }
+    #saturday-photo-7:checked ~ .saturday-photo-stage .saturday-photo-arrows-7 { display: flex; }
+    #saturday-photo-7:checked ~ .saturday-photo-dots label:nth-child(7)::before { background: #fff; }
+    #saturday-photo-7:focus-visible ~ .saturday-photo-dots label:nth-child(7) { outline: 3px solid #f3b93f; outline-offset: -4px; border-radius: 10px; }
 </style>
 <div class="saturday-page">
 <header class="saturday-hero">
@@ -357,9 +462,40 @@
 <p>
 Start your weekend with San Francisco FrontRunners in Golden Gate Park. Choose a run/walk from 1 to 5 miles, meet participants of every pace, and stay for brunch with the group afterward.
 </p>
-<div class="saturday-hero-photo">
-<img src="https://images.clubexpress.com/801899/graphics/Saturday_banner_3_1755367773.png" alt="San Francisco FrontRunners at the Saturday morning run/walk">
-</div>
+<div class="saturday-carousel" role="region" aria-roledescription="carousel" aria-label="Saturday Morning Run/Walk photos" aria-describedby="saturday-photo-help">
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-1" aria-label="Photo 1 of 7: San Francisco FrontRunners at the Saturday morning run/walk" checked>
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-2" aria-label="Photo 2 of 7: Saturday runners and walkers gathered on the lawn in Golden Gate Park">
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-3" aria-label="Photo 3 of 7: Four Saturday participants posing together outside after the run/walk">
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-4" aria-label="Photo 4 of 7: Saturday participants and dogs gathered in blue and pink FrontRunners shirts">
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-5" aria-label="Photo 5 of 7: FrontRunners sharing coffee and food on picnic blankets in the park">
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-6" aria-label="Photo 6 of 7: FrontRunners enjoying brunch together at a long restaurant table">
+<input class="saturday-photo-choice" type="radio" name="saturday-photos" id="saturday-photo-7" aria-label="Photo 7 of 7: FrontRunners sharing dim sum around a restaurant table">
+<div class="saturday-photo-stage">
+<figure class="saturday-photo-slide saturday-photo-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 7"><img src="https://images.clubexpress.com/801899/graphics/Saturday_banner_3_1755367773.png" alt="San Francisco FrontRunners at the Saturday morning run/walk" decoding="async" fetchpriority="high"></figure>
+<figure class="saturday-photo-slide saturday-photo-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 7"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/saturday/saturday-group-sunshine.jpeg" alt="Saturday runners and walkers gathered on the lawn in Golden Gate Park" decoding="async" loading="lazy"></figure>
+<figure class="saturday-photo-slide saturday-photo-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 7"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/saturday/saturday-friends.jpeg" alt="Four Saturday participants posing together outside after the run/walk" decoding="async" loading="lazy"></figure>
+<figure class="saturday-photo-slide saturday-photo-slide-4" role="group" aria-roledescription="slide" aria-label="4 of 7"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/saturday/saturday-club-shirts.jpeg" alt="Saturday participants and dogs gathered in blue and pink FrontRunners shirts" decoding="async" loading="lazy"></figure>
+<figure class="saturday-photo-slide saturday-photo-slide-5" role="group" aria-roledescription="slide" aria-label="5 of 7"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/saturday/saturday-picnic.jpeg" alt="FrontRunners sharing coffee and food on picnic blankets in the park" decoding="async" loading="lazy"></figure>
+<figure class="saturday-photo-slide saturday-photo-slide-6" role="group" aria-roledescription="slide" aria-label="6 of 7"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/saturday/saturday-brunch.jpeg" alt="FrontRunners enjoying brunch together at a long restaurant table" decoding="async" loading="lazy"></figure>
+<figure class="saturday-photo-slide saturday-photo-slide-7" role="group" aria-roledescription="slide" aria-label="7 of 7"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/weekly-runs/saturday/saturday-dim-sum.jpeg" alt="FrontRunners sharing dim sum around a restaurant table" decoding="async" loading="lazy"></figure>
+<div class="saturday-photo-arrows" aria-hidden="true">
+<label class="saturday-photo-prev saturday-photo-arrows-1" for="saturday-photo-7" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-1" for="saturday-photo-2" title="Next photo">›</label>
+<label class="saturday-photo-prev saturday-photo-arrows-2" for="saturday-photo-1" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-2" for="saturday-photo-3" title="Next photo">›</label>
+<label class="saturday-photo-prev saturday-photo-arrows-3" for="saturday-photo-2" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-3" for="saturday-photo-4" title="Next photo">›</label>
+<label class="saturday-photo-prev saturday-photo-arrows-4" for="saturday-photo-3" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-4" for="saturday-photo-5" title="Next photo">›</label>
+<label class="saturday-photo-prev saturday-photo-arrows-5" for="saturday-photo-4" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-5" for="saturday-photo-6" title="Next photo">›</label>
+<label class="saturday-photo-prev saturday-photo-arrows-6" for="saturday-photo-5" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-6" for="saturday-photo-7" title="Next photo">›</label>
+<label class="saturday-photo-prev saturday-photo-arrows-7" for="saturday-photo-6" title="Previous photo">‹</label><label class="saturday-photo-next saturday-photo-arrows-7" for="saturday-photo-1" title="Next photo">›</label>
+</div></div>
+<div class="saturday-photo-dots">
+<label for="saturday-photo-1" title="Show photo 1 of 7" aria-label="Show photo 1 of 7"></label>
+<label for="saturday-photo-2" title="Show photo 2 of 7" aria-label="Show photo 2 of 7"></label>
+<label for="saturday-photo-3" title="Show photo 3 of 7" aria-label="Show photo 3 of 7"></label>
+<label for="saturday-photo-4" title="Show photo 4 of 7" aria-label="Show photo 4 of 7"></label>
+<label for="saturday-photo-5" title="Show photo 5 of 7" aria-label="Show photo 5 of 7"></label>
+<label for="saturday-photo-6" title="Show photo 6 of 7" aria-label="Show photo 6 of 7"></label>
+<label for="saturday-photo-7" title="Show photo 7 of 7" aria-label="Show photo 7 of 7"></label>
+</div><small class="saturday-carousel-help" id="saturday-photo-help">Choose a photo with the arrows or dots. Keyboard: Tab to the carousel, then use the arrow keys.</small></div>
 </div>
 </header>
 <main>
