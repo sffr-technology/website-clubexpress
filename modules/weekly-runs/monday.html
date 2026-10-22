@@ -563,7 +563,8 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
     margin: 34px auto 0;
     border-radius: 24px;
     background: var(--purple-dark);
-    box-shadow: 0 18px 44px rgba(52, 32, 95, .18);
+    box-shadow: 0 26px 60px rgba(22, 10, 46, .34);
+    border: 1px solid rgba(255, 255, 255, .34);
     }
     .monday-slide-choice {
     position: absolute;
@@ -574,13 +575,13 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
     }
     .monday-slides {
     position: relative;
-    height: 560px;
+    height: auto;
     overflow: hidden;
     }
     .monday-slide {
     display: none;
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0;
     }
     #monday-run-slide-1:checked ~ .monday-slides .monday-slide-1,
@@ -592,8 +593,10 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
     }
     .monday-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    max-height: none;
+    aspect-ratio: auto;
     }
     @keyframes mondayFade {
     from { opacity: .35; }
@@ -683,8 +686,10 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
     }
     .monday-gallery img {
     width: 100%;
-    height: 330px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    max-height: none;
+    aspect-ratio: auto;
     }
     .monday-gallery figcaption {
     padding: 15px 20px;
@@ -709,7 +714,7 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
 @media (max-width: 650px) {
 .monday-page .monday-details, .monday-gallery { grid-template-columns: 1fr; }
 .monday-gallery img { height: auto; }
-.monday-slides { height: 420px; }
+.monday-slides { height: auto; }
 .monday-detail-card { min-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .monday-slide { animation: none !important; } }

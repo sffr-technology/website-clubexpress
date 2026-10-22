@@ -9,7 +9,7 @@
   sffr.org/profile                Member profile editor
   sffr.org/renew                  Membership renewal page
   sffr.org/board                  Contact the Board page
-  sffr.org/boardmeeting           Redirect to the current Board meeting Zoom link
+  sffr.org/boardmeeting           Redirect to the current Board meeting link
   sffr.org/communityvolunteering  Community Volunteering page
   sffr.org/history                Club History page
   sffr.org/foundingstory          Founding Story page
@@ -48,7 +48,7 @@
     .sffr-welcome-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:29px}
     .sffr-welcome-button{background:#fff;border:2px solid #fff;border-radius:999px;color:var(--purple-dark)!important;display:inline-block;font-size:14px;font-weight:800;padding:11px 18px;text-decoration:none!important}
     .sffr-welcome-button-alt{background:transparent;color:#fff!important}
-    .sffr-welcome-slideshow{aspect-ratio:4/3;background:#1c1034;border:8px solid rgba(255,255,255,.16);border-radius:22px;box-shadow:0 24px 55px rgba(27,12,47,.34);overflow:hidden;position:relative;transform:rotate(1deg)}
+    .sffr-welcome-slideshow{aspect-ratio:4/3;background:#1c1034;border: 1px solid rgba(255, 255, 255, .34);border-radius: 24px;box-shadow: 0 26px 60px rgba(22, 10, 46, .34);overflow: hidden;position:relative;transform:rotate(1deg)}
     .sffr-welcome-slide-choice{opacity:0;pointer-events:none;position:absolute}
     .sffr-welcome-slide{inset:0;opacity:0;position:absolute;transition:opacity .55s ease;visibility:hidden}
     #sffr-welcome-slide-1:checked~.sffr-welcome-slide-1,#sffr-welcome-slide-2:checked~.sffr-welcome-slide-2,#sffr-welcome-slide-3:checked~.sffr-welcome-slide-3,#sffr-welcome-slide-4:checked~.sffr-welcome-slide-4{opacity:1;visibility:visible}
@@ -59,7 +59,7 @@
     .sffr-welcome-slideshow:not(.is-enhanced) .sffr-welcome-slide-4{animation-delay:21s}
     @keyframes sffrWelcomeFade{0%,20%{opacity:1}25%,95%{opacity:0}100%{opacity:1}}
     .sffr-welcome-slide a{display:block;height:100%}
-    .sffr-welcome-slide img{display:block;height:100%;object-fit:cover;width:100%}
+    .sffr-welcome-slide img{display:block;height:100%;object-fit: contain;width:100%}
     .sffr-welcome-slide-caption{background:linear-gradient(transparent,rgba(18,8,32,.9));bottom:0;color:#fff;left:0;padding:55px 22px 18px;pointer-events:none;position:absolute;right:0}
     .sffr-welcome-slide-caption strong{display:block;font-size:17px}
     .sffr-welcome-slide-caption span{color:rgba(255,255,255,.72);font-size:12px}

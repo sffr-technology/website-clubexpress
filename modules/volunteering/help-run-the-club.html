@@ -16,8 +16,12 @@
     .sffr-help-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
     .sffr-help-button{background:#fff;border:2px solid #fff;border-radius:999px;color:var(--plum-dark)!important;display:inline-block;font-size:14px;font-weight:800;padding:11px 18px;text-decoration:none}
     .sffr-help-button-alt{background:transparent;color:#fff!important}
-    .sffr-help-hero-photo{background:#fff;border:8px solid rgba(255,255,255,.2);border-radius:22px;box-shadow:0 22px 52px rgba(18,65,43,.28);display:block;overflow:hidden;transform:rotate(1.5deg)}
-    .sffr-help-hero-photo img{display:block;height:330px;object-fit:cover;width:100%}
+    .sffr-help-hero-photo{background:#fff;border: 1px solid rgba(255, 255, 255, .34);border-radius: 24px;box-shadow: 0 26px 60px rgba(22, 10, 46, .34);display: block;overflow: hidden;transform:rotate(1.5deg)}
+    .sffr-help-hero-photo img{display:block;height: auto;object-fit: contain;width:100%;
+        max-height: none;
+        aspect-ratio: auto;
+        min-height: 0;
+    }
     .sffr-help-nav{background:#fff;border-bottom:1px solid var(--line)}
     .sffr-help-nav-inner{display:flex;gap:9px;overflow-x:auto;padding:15px 22px;scrollbar-width:none}
     .sffr-help-nav-inner::-webkit-scrollbar{display:none}
@@ -61,7 +65,7 @@
     .sffr-help-footer p{margin:0}
     @media(hover:hover){.sffr-help-button,.sffr-help-intro-card,.sffr-help-role,.sffr-help-hero-photo{transition:transform .2s ease,box-shadow .2s ease}.sffr-help-button:hover{transform:translateY(-1px)}.sffr-help-intro-card:hover,.sffr-help-role:hover{box-shadow:0 13px 30px rgba(31,96,67,.12);transform:translateY(-2px)}.sffr-help-hero-photo:hover{transform:rotate(0)}}
     @media(max-width:850px){.sffr-help-hero-grid{grid-template-columns:1fr}.sffr-help-hero-photo{max-width:560px}.sffr-help-intro-grid{grid-template-columns:1fr}.sffr-help-create-grid{grid-template-columns:1fr}}
-    @media(max-width:680px){.sffr-help-hero-photo{display:none}.sffr-help-roles{grid-template-columns:1fr}.sffr-help-feature summary{grid-template-columns:1fr}.sffr-help-feature summary:after{grid-column:2;grid-row:1}.sffr-help-feature-date{max-width:155px}}
+    @media(max-width:680px){.sffr-help-hero-photo{display: block;}.sffr-help-roles{grid-template-columns:1fr}.sffr-help-feature summary{grid-template-columns:1fr}.sffr-help-feature summary:after{grid-column:2;grid-row:1}.sffr-help-feature-date{max-width:155px}}
 </style>
 <div class="sffr-help">
 <section class="sffr-help-hero">
