@@ -15,9 +15,8 @@
     .sffr-holiday .sffr-hero { position:relative; isolation:isolate; overflow:hidden; text-align:center; background:var(--pine); color:var(--cream); padding:40px 32px 62px; }
     .sffr-holiday .sffr-brand { margin:0 0 34px; font-size:12px; letter-spacing:.19em; text-transform:uppercase; font-weight:700; }
     .sffr-holiday .sffr-stars { color:var(--gold); font-size:25px; letter-spacing:.5em; margin:0 0 18px; }
-    .sffr-holiday .sffr-eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.18em; font-size:12px; font-weight:700; margin:0 0 14px; }
-    .sffr-holiday h1 { color:var(--cream); font-family:Georgia,'Times New Roman',serif; font-size:clamp(43px,7vw,78px); line-height:1.07; font-weight:400; letter-spacing:-.04em; margin:0 auto 25px; max-width:760px; }
-    .sffr-holiday h1 em { color:var(--gold); font-weight:400; }
+    .sffr-holiday .sffr-subtitle { color:var(--gold); font-family:Georgia,'Times New Roman',serif; font-size:clamp(22px,3.5vw,30px); line-height:1.35; font-weight:400; margin:0 auto 22px; max-width:650px; }
+    .sffr-holiday h1 { color:var(--cream); font-family:Georgia,'Times New Roman',serif; font-size:clamp(42px,7vw,72px); line-height:1.1; font-weight:400; letter-spacing:-.04em; margin:0 auto 18px; max-width:850px; }
     .sffr-holiday .sffr-intro { margin:0 auto; max-width:610px; font-size:18px; color:#f1eadc; }
     .sffr-holiday .sffr-bauble { position:absolute; z-index:-1; width:150px; height:150px; border:1px solid #c4a66c66; border-radius:50%; top:102px; left:-81px; background:repeating-linear-gradient(50deg,transparent 0 17px,#c4a66c22 17px 19px); transform:rotate(-15deg); }
     .sffr-holiday .sffr-bauble-right { left:auto; right:-90px; top:210px; width:180px; height:180px; }
@@ -33,7 +32,7 @@
     .sffr-holiday .sffr-years span { font-size:10px; text-transform:uppercase; letter-spacing:.18em; margin-top:7px; }
     .sffr-holiday h2 { color:var(--pine); font-family:Georgia,serif; font-size:29px; line-height:1.2; font-weight:400; margin:0 0 12px; }
     .sffr-holiday .sffr-copy { margin:0; color:#41554a; font-size:16px; }
-    .sffr-holiday .sffr-ticket { display:grid; grid-template-columns:1fr auto; gap:26px; align-items:center; background:#f2e8d7; border:1px solid #e0cfb1; border-radius:12px; padding:28px; }
+    .sffr-holiday .sffr-ticket { display:grid; grid-template-columns:1fr auto; gap:26px; align-items:center; background:#f2e8d7; border:1px solid #e0cfb1; border-radius:12px; padding:28px; margin-bottom:34px; }
     .sffr-holiday .sffr-price { margin:0 0 8px; font-size:16px; }
     .sffr-holiday .sffr-price strong { color:var(--berry); font-size:39px; line-height:1.1; letter-spacing:-.04em; margin-right:5px; }
     .sffr-holiday .sffr-policy { margin:0; font-size:14px; color:#41554a; }
@@ -66,11 +65,18 @@
       <div class="sffr-bauble sffr-bauble-right" aria-hidden="true"></div>
       <p class="sffr-brand">San Francisco FrontRunners</p>
       <p class="sffr-stars" aria-hidden="true">✦ ✧ ✦</p>
-      <p class="sffr-eyebrow">2026 End-of-Year Party</p>
-      <h1 id="sffr-party-title">Miles of memories.<br><em>A season to celebrate.</em></h1>
+      <h1 id="sffr-party-title">2026 End-of-Year Party</h1>
+      <p class="sffr-subtitle">Miles of memories. A season to celebrate.</p>
       <p class="sffr-intro">Let’s close out another wonderful year of running, walking, friendship, and community with a little holiday sparkle.</p>
     </header>
     <div class="sffr-body">
+      <div class="sffr-ticket">
+        <div>
+          <p class="sffr-price"><strong>$20</strong> per person</p>
+          <p class="sffr-policy"><strong>Priority given to SFFR members.</strong><br>Tickets are $20 per person, including guests.</p>
+        </div>
+        <a class="sffr-button" href="https://sffr.org/content.aspx?page_id=4002&club_id=801899&item_id=3114408&actr=3">Buy tickets <span aria-hidden="true">→</span></a>
+      </div>
       <div class="sffr-details" aria-label="Party details">
         <div>
           <p class="sffr-label">Save the date</p>
@@ -92,13 +98,6 @@
           <h2>Our community. Our year. Our celebration.</h2>
           <p class="sffr-copy">For 52 years, San Francisco FrontRunners has brought people together, one run and one friendship at a time. Join us to celebrate the miles we’ve shared, the friends we’ve made, and everyone who makes this club feel like home. Here’s to another year, together!</p>
         </div>
-      </div>
-      <div class="sffr-ticket">
-        <div>
-          <p class="sffr-price"><strong>$20</strong> per person</p>
-          <p class="sffr-policy"><strong>Priority given to SFFR members.</strong><br>Tickets are $20 per person, including guests.</p>
-        </div>
-        <a class="sffr-button" href="https://sffr.org/content.aspx?page_id=4002&club_id=801899&item_id=3114408&actr=3">Buy tickets <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <footer class="sffr-footer">Bring your holiday spirit. Celebrate your FrontRunners family. <span aria-hidden="true">✦</span></footer>
