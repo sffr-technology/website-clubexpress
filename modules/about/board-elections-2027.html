@@ -76,7 +76,39 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin: 30px 0 42px;
+      margin: 30px 0 16px;
+    }
+    .sffr-election-email-callout {
+      align-items: center;
+      background: rgba(255, 255, 255, .11);
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 16px;
+      margin: 0 0 42px;
+      max-width: 780px;
+      padding: 16px 19px;
+    }
+    .sffr-election-email-callout span {
+      color: #f8d67e;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .sffr-election-email-callout strong {
+      color: #fff;
+      font-size: clamp(20px, 3vw, 27px);
+      letter-spacing: -.02em;
+      -webkit-user-select: all;
+      user-select: all;
+    }
+    .sffr-election-email-callout p {
+      color: rgba(255, 255, 255, .76);
+      flex-basis: 100%;
+      font-size: 13px;
+      margin: 2px 0 0;
     }
     .sffr-election-button {
       background: var(--gold);
@@ -381,6 +413,11 @@
           <a class="sffr-election-button" href="mailto:elections@sffr.org?subject=2027%20SFFR%20Board%20Nomination">Nominate yourself for the Board</a>
           <a class="sffr-election-button sffr-election-button--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSc5TTehs-Nz45BGZIrTi7aF7n38W23zJeIh-ZQoUIivygR5Tg/viewform?usp=header" target="_blank" rel="noopener">Nominate a Pride Run beneficiary</a>
           <a class="sffr-election-button sffr-election-button--secondary" href="https://docs.google.com/document/d/1DRF0_-sr_uZz7K6GKuNq5ATAZoL69qJw2nXs_ZCb5Nw/edit?usp=sharing" target="_blank" rel="noopener">View current nominees</a>
+        </div>
+        <div class="sffr-election-email-callout" role="note" aria-label="SFFR Elections email address">
+          <span>Board nominations and election questions</span>
+          <strong>elections@sffr.org</strong>
+          <p>If the email button does not open, copy and paste this address into your email app.</p>
         </div>
         <figure class="sffr-election-banner">
           <a href="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/b0befcc3-3dc7-a7c4-9e8a-e674cd648d36.jpg" target="_blank" rel="noopener" aria-label="Open the 2027 SFFR elections banner in a new tab">
