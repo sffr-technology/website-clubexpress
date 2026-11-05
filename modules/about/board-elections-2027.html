@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nominate candidates for the 2027 San Francisco FrontRunners Board and organizations for the 2027 Pride Run Beneficiary. Nominations are open through November 27, 2026.">
+  <title>2027 Board and Pride Run Beneficiary Nominations | San Francisco FrontRunners</title>
+  <style>
+    .sffr-election,
+    .sffr-election * { box-sizing: border-box; }
+    .sffr-election {
+      --ink: #292438;
+      --muted: #655f70;
+      --purple: #4b2e83;
+      --purple-deep: #301b59;
+      --lavender: #f1ecf8;
+      --coral: #e85d5d;
+      --gold: #f5b642;
+      --gold-soft: #fff6dd;
+      --green: #2c8b65;
+      --paper: #ffffff;
+      --wash: #f8f6fb;
+      --line: #e5ddec;
+      color: var(--ink);
+      background: var(--wash);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      overflow: hidden;
+    }
+    .sffr-election a { color: var(--purple); }
+    .sffr-election-inner {
+      margin: 0 auto;
+      max-width: 1120px;
+    }
+    .sffr-election-hero {
+      color: #fff;
+      padding: clamp(58px, 8vw, 92px) 24px 0;
+      position: relative;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(245, 182, 66, .27) 0 110px, transparent 111px),
+        radial-gradient(circle at 92% 2%, rgba(232, 93, 93, .20) 0 150px, transparent 151px),
+        linear-gradient(135deg, var(--purple-deep), var(--purple) 56%, #7045a3);
+    }
+    .sffr-election-hero::after {
+      background: linear-gradient(90deg, var(--coral), var(--gold), #39a96b, #2788c7, #6b43a7);
+      bottom: 0;
+      content: "";
+      height: 7px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+    .sffr-election-kicker {
+      color: #f8d77f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      margin: 0 0 13px;
+      text-transform: uppercase;
+    }
+    .sffr-election-hero h1 {
+      color: #fff;
+      font-size: clamp(40px, 6.6vw, 68px);
+      letter-spacing: -.045em;
+      line-height: 1.02;
+      margin: 0 0 22px;
+      max-width: 920px;
+    }
+    .sffr-election-hero-copy {
+      color: rgba(255, 255, 255, .88);
+      font-size: clamp(17px, 2vw, 21px);
+      margin: 0;
+      max-width: 780px;
+    }
+    .sffr-election-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0 42px;
+    }
+    .sffr-election-button {
+      background: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 999px;
+      color: #30220a !important;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .sffr-election-button--secondary {
+      background: transparent;
+      border-color: rgba(255, 255, 255, .6);
+      color: #fff !important;
+    }
+    .sffr-election-button:focus-visible,
+    .sffr-election a:focus-visible,
+    .sffr-election summary:focus-visible {
+      outline: 4px solid rgba(245, 182, 66, .5);
+      outline-offset: 4px;
+    }
+    .sffr-election-banner {
+      background: #fff;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 24px 24px 0 0;
+      box-shadow: 0 24px 60px rgba(24, 12, 48, .34);
+      display: block;
+      margin: 0;
+      overflow: hidden;
+    }
+    .sffr-election-banner img {
+      display: block;
+      height: auto;
+      max-height: 410px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .sffr-election-main {
+      padding: 56px 24px 80px;
+    }
+    .sffr-election-section + .sffr-election-section { margin-top: 68px; }
+    .sffr-election-heading {
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+    .sffr-election-label {
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      margin: 0 0 9px;
+      text-transform: uppercase;
+    }
+    .sffr-election-heading h2 {
+      color: var(--purple-deep);
+      font-size: clamp(30px, 5vw, 45px);
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      margin: 0 0 10px;
+    }
+    .sffr-election-heading p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+    .sffr-election-paths {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-election-path {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(48, 27, 89, .07);
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+    }
+    .sffr-election-path-icon {
+      align-items: center;
+      background: var(--lavender);
+      border-radius: 15px;
+      display: flex;
+      font-size: 28px;
+      height: 58px;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 58px;
+    }
+    .sffr-election-path:nth-child(2) .sffr-election-path-icon { background: var(--gold-soft); }
+    .sffr-election-path h3 {
+      color: var(--purple-deep);
+      font-size: 24px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    .sffr-election-path p {
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+    .sffr-election-path .sffr-election-button {
+      align-self: flex-start;
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff !important;
+      margin-top: auto;
+    }
+    .sffr-election-note {
+      background: var(--gold-soft);
+      border: 1px solid #efd98f;
+      border-left: 6px solid var(--gold);
+      border-radius: 14px;
+      color: #56451d;
+      margin-top: 18px;
+      padding: 16px 19px;
+    }
+    .sffr-election-note strong { color: #44340f; }
+    .sffr-election-timeline {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .sffr-election-timeline li {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      position: relative;
+    }
+    .sffr-election-timeline li::before {
+      align-items: center;
+      background: var(--purple);
+      border-radius: 50%;
+      color: #fff;
+      content: attr(data-step);
+      display: flex;
+      font-size: 13px;
+      font-weight: 800;
+      height: 34px;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 34px;
+    }
+    .sffr-election-timeline time {
+      color: var(--coral);
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .sffr-election-timeline h3 {
+      color: var(--purple-deep);
+      font-size: 19px;
+      line-height: 1.25;
+      margin: 0 0 6px;
+    }
+    .sffr-election-timeline p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .sffr-election-role-grid {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sffr-election-role {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .sffr-election-role:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .sffr-election-role[open] {
+      border-color: #c8b9dd;
+      box-shadow: 0 12px 30px rgba(48, 27, 89, .08);
+    }
+    .sffr-election-role summary {
+      align-items: center;
+      cursor: pointer;
+      display: grid;
+      gap: 15px;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      list-style: none;
+      padding: 20px 22px;
+    }
+    .sffr-election-role summary::-webkit-details-marker { display: none; }
+    .sffr-election-role-icon {
+      align-items: center;
+      background: var(--lavender);
+      border-radius: 12px;
+      display: flex;
+      font-size: 22px;
+      height: 45px;
+      justify-content: center;
+      width: 45px;
+    }
+    .sffr-election-role h3 {
+      color: var(--purple-deep);
+      font-size: 20px;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .sffr-election-plus {
+      align-items: center;
+      background: var(--lavender);
+      border-radius: 50%;
+      color: var(--purple);
+      display: flex;
+      font-size: 21px;
+      font-weight: 700;
+      height: 31px;
+      justify-content: center;
+      transition: transform .2s ease;
+      width: 31px;
+    }
+    .sffr-election-role[open] .sffr-election-plus { transform: rotate(45deg); }
+    .sffr-election-role-body {
+      border-top: 1px solid #eee9f4;
+      padding: 18px 24px 24px 82px;
+    }
+    .sffr-election-role-body ul {
+      color: var(--muted);
+      margin: 0;
+      padding-left: 20px;
+    }
+    .sffr-election-role-body li + li { margin-top: 8px; }
+    .sffr-election-footer {
+      background: var(--purple-deep);
+      color: #fff;
+      padding: 44px 24px;
+    }
+    .sffr-election-footer-inner {
+      align-items: center;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      margin: 0 auto;
+      max-width: 1120px;
+    }
+    .sffr-election-footer h2 {
+      color: #fff;
+      font-size: 28px;
+      margin: 0 0 5px;
+    }
+    .sffr-election-footer p {
+      color: rgba(255, 255, 255, .78);
+      margin: 0;
+    }
+    .sffr-election-footer .sffr-election-button { white-space: nowrap; }
+    @media (hover: hover) {
+      .sffr-election-button,
+      .sffr-election-path,
+      .sffr-election-role { transition: transform .2s ease, box-shadow .2s ease; }
+      .sffr-election-button:hover { transform: translateY(-2px); }
+      .sffr-election-path:hover,
+      .sffr-election-role:hover { box-shadow: 0 14px 32px rgba(48, 27, 89, .11); }
+    }
+    @media (max-width: 760px) {
+      .sffr-election-paths,
+      .sffr-election-timeline,
+      .sffr-election-role-grid { grid-template-columns: 1fr; }
+      .sffr-election-role:last-child:nth-child(odd) { grid-column: auto; }
+      .sffr-election-footer-inner { grid-template-columns: 1fr; }
+      .sffr-election-footer .sffr-election-button { justify-self: start; }
+    }
+    @media (max-width: 520px) {
+      .sffr-election-hero-actions,
+      .sffr-election-button { width: 100%; }
+      .sffr-election-button { text-align: center; }
+      .sffr-election-role-body { padding-left: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sffr-election-button,
+      .sffr-election-path,
+      .sffr-election-role,
+      .sffr-election-plus { transition: none; }
+    }
+  </style>
+</head>
+<body style="margin:0;background:#f8f6fb;">
+  <div class="sffr-election">
+    <header class="sffr-election-hero">
+      <div class="sffr-election-inner">
+        <p class="sffr-election-kicker">SFFR Elections · 2027</p>
+        <h1>Board &amp; Pride Run Beneficiary Nominations</h1>
+        <p class="sffr-election-hero-copy">FrontRunners, 2027 is right around the corner! Nominations are open through November 27 for the 2027 SFFR Board and Pride Run Beneficiary.</p>
+        <div class="sffr-election-hero-actions">
+          <a class="sffr-election-button" href="mailto:elections@sffr.org?subject=2027%20SFFR%20Board%20Nomination">Nominate yourself for the Board</a>
+          <a class="sffr-election-button sffr-election-button--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSc5TTehs-Nz45BGZIrTi7aF7n38W23zJeIh-ZQoUIivygR5Tg/viewform?usp=header" target="_blank" rel="noopener">Nominate a Pride Run beneficiary</a>
+          <a class="sffr-election-button sffr-election-button--secondary" href="https://docs.google.com/document/d/1DRF0_-sr_uZz7K6GKuNq5ATAZoL69qJw2nXs_ZCb5Nw/edit?usp=sharing" target="_blank" rel="noopener">View current nominees</a>
+        </div>
+        <figure class="sffr-election-banner">
+          <a href="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/b0befcc3-3dc7-a7c4-9e8a-e674cd648d36.jpg" target="_blank" rel="noopener" aria-label="Open the 2027 SFFR elections banner in a new tab">
+            <img src="https://mcusercontent.com/b2405e9db3d53cfef658dc9e2/images/b0befcc3-3dc7-a7c4-9e8a-e674cd648d36.jpg" alt="San Francisco FrontRunners 2027 Board and Pride Run Beneficiary nominations">
+          </a>
+        </figure>
+      </div>
+    </header>
+
+    <main class="sffr-election-main sffr-election-inner">
+      <section class="sffr-election-section" aria-labelledby="sffr-election-nominate">
+        <div class="sffr-election-heading">
+          <p class="sffr-election-label">Get involved</p>
+          <h2 id="sffr-election-nominate">Make a nomination</h2>
+          <p>Choose how you would like to help shape SFFR’s next year.</p>
+        </div>
+        <div class="sffr-election-paths">
+          <article class="sffr-election-path">
+            <div class="sffr-election-path-icon" aria-hidden="true">🗳️</div>
+            <h3>Run for the 2027 Board</h3>
+            <p>Email <strong>elections@sffr.org</strong> and identify the position for which you plan to run. You can review the responsibilities of each role below and see the current list of nominees before deciding.</p>
+            <a class="sffr-election-button" href="mailto:elections@sffr.org?subject=2027%20SFFR%20Board%20Nomination">Email SFFR Elections</a>
+          </article>
+          <article class="sffr-election-path">
+            <div class="sffr-election-path-icon" aria-hidden="true">🏳️‍🌈</div>
+            <h3>Nominate a Pride Run Beneficiary</h3>
+            <p>Recommend an organization to be considered as the beneficiary of the 2027 SFFR Pride Run by completing the nomination form.</p>
+            <a class="sffr-election-button" href="https://docs.google.com/forms/d/e/1FAIpQLSc5TTehs-Nz45BGZIrTi7aF7n38W23zJeIh-ZQoUIivygR5Tg/viewform?usp=header" target="_blank" rel="noopener">Open the nomination form</a>
+          </article>
+        </div>
+        <div class="sffr-election-note"><strong>Candidate eligibility:</strong> All Board candidates must be SFFR members in good standing as of October 31, 2026.</div>
+      </section>
+
+      <section class="sffr-election-section" aria-labelledby="sffr-election-timeline-heading">
+        <div class="sffr-election-heading">
+          <p class="sffr-election-label">Important dates</p>
+          <h2 id="sffr-election-timeline-heading">2027 election timeline</h2>
+        </div>
+        <ol class="sffr-election-timeline">
+          <li data-step="1">
+            <time datetime="2026-10-28">October 28–November 27</time>
+            <h3>Nominations</h3>
+            <p>Nominations for the 2027 Board and Pride Run Beneficiary are open to all members.</p>
+          </li>
+          <li data-step="2">
+            <time datetime="2026-11-28">November 28–December 11</time>
+            <h3>Electronic voting</h3>
+            <p>Members vote electronically for the 2027 Board and Pride Run Beneficiary.</p>
+          </li>
+          <li data-step="3">
+            <time datetime="2026-12-12">December 12</time>
+            <h3>Results announced</h3>
+            <p>Election results are announced at the SFFR Year-End Party.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="sffr-election-section" aria-labelledby="sffr-election-roles-heading">
+        <div class="sffr-election-heading">
+          <p class="sffr-election-label">From the SFFR bylaws</p>
+          <h2 id="sffr-election-roles-heading">Board positions</h2>
+          <p>Open a position to review a concise summary of its responsibilities. You may also contact the <a href="https://www.sffr.org/board" target="_blank" rel="noopener">current Board members</a> to learn more about serving.</p>
+        </div>
+        <div class="sffr-election-role-grid">
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">⭐</span><h3>President</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Act as the chief administrative officer and legal head of the FrontRunners.</li>
+              <li>Exercise supervision over the FrontRunners and all its activities and members.</li>
+              <li>Represent and speak on behalf of the FrontRunners to other organizations and to the public.</li>
+              <li>Call meetings.</li>
+              <li>Preside at membership and officer-director meetings.</li>
+              <li>Appoint committee chairpersons.</li>
+              <li>Sign letters or documents necessary to carry out the decisions and intent of the members.</li>
+              <li>Serve as President of the Board of Directors.</li>
+            </ul></div>
+          </details>
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">🤝</span><h3>Vice President</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Assume the duties of the President in the case of absence or incapacity, and become President upon the death, resignation, or permanent incapacity of the President.</li>
+              <li>Direct the activities of committees as assigned by the President.</li>
+              <li>Until the establishment of a formal Pride Run committee, assume responsibility for contacting potential major Pride Run sponsors, keeping records, and publishing notes.</li>
+              <li>Serve as Vice President of the Board of Directors.</li>
+            </ul></div>
+          </details>
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">📝</span><h3>Secretary</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Take notes of membership meeting proceedings as a basis for preparing minutes.</li>
+              <li>Prepare and certify the correctness of the minutes and enter them in the official record and archive.</li>
+              <li>Read papers, documents, or communications as directed by the President at meetings.</li>
+              <li>Bring the official record of minutes, bylaws, rules, policies, membership list, committee list, and parliamentary authority to each membership meeting.</li>
+              <li>Preserve and upload the records, reports, and official documents of the FrontRunners in digital format, except those assigned to others.</li>
+              <li>Maintain the official record of paid members.</li>
+              <li>Prepare and send required notices of meetings and proposals.</li>
+              <li>Carry on official correspondence except correspondence assigned to other officers or committee chairs.</li>
+              <li>Direct the activities of committees as assigned by the President.</li>
+              <li>Serve as Secretary of the Board of Directors.</li>
+            </ul></div>
+          </details>
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">💰</span><h3>Treasurer</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Be responsible for the collection, safekeeping, and expenditure of all FrontRunners funds in accordance with generally accepted accounting principles.</li>
+              <li>Develop a fiscally sound budget with input from officer-directors and committee chairs.</li>
+              <li>Present a brief financial status report at each membership and Board meeting, and publish a brief financial report quarterly.</li>
+              <li>Submit a full report to the membership annually.</li>
+              <li>Direct the activities of committees as assigned by the President.</li>
+              <li>Serve as Treasurer of the Board of Directors.</li>
+            </ul></div>
+          </details>
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">🏃</span><h3>Team Captain</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Direct and facilitate the Team Race Circuit, including organizing SFFR teams, keeping rosters, and collecting team results at designated running events.</li>
+              <li>Recruit and retain queer runners of all abilities from the broader San Francisco running community by promoting visibility and team spirit.</li>
+              <li>Create the Team Race Circuit schedule, taking member race and event submissions into consideration.</li>
+              <li>Provide a competitive outlet for members.</li>
+              <li>Serve as Team Captain of the Board of Directors.</li>
+              <li>Currently serve as a non-voting Board member.</li>
+            </ul></div>
+          </details>
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">🧩</span><h3>Officer at Large</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Assist all other officers in their duties as needed.</li>
+              <li>Temporarily assume the duties of other officers, with the exception of the President when the Vice President is available, in the case of absence or incapacity.</li>
+              <li>Serve as Officer of the Board of Directors.</li>
+            </ul></div>
+          </details>
+          <details class="sffr-election-role">
+            <summary><span class="sffr-election-role-icon" aria-hidden="true">💻</span><h3>Director of Technology</h3><span class="sffr-election-plus" aria-hidden="true">+</span></summary>
+            <div class="sffr-election-role-body"><ul>
+              <li>Maintain and administer the club’s website, email accounts, social media accounts, membership database, communication platforms, and other digital tools.</li>
+              <li>Ensure technology systems are secure, reliable, and accessible to officers and members.</li>
+              <li>Support officers in the use of club technology resources.</li>
+              <li>Evaluate and recommend technology solutions to improve club operations.</li>
+              <li>Oversee and manage the club’s digital membership systems, including online groups, and ensure these platforms are organized and aligned with the club’s membership policies.</li>
+            </ul></div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sffr-election-footer">
+      <div class="sffr-election-footer-inner">
+        <div>
+          <h2>Questions about the election process?</h2>
+          <p>Contact the SFFR Elections team at elections@sffr.org.</p>
+        </div>
+        <a class="sffr-election-button" href="mailto:elections@sffr.org?subject=2027%20SFFR%20Election%20Question">Email SFFR Elections</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
