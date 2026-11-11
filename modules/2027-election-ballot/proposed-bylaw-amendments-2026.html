@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information for SFFR members about seven proposed amendments to the club bylaws, supporting documents, member feedback, and the 2026 voting process.">
+  <title>2026 Proposed Bylaw Amendments | San Francisco FrontRunners</title>
+  <!--
+    Members-only page.
+    Source bulletin: SFFR Bulletin | Proposed Bylaw Amendments Approved by the SFFR Board
+    Source URL: https://mailchi.mp/sffr/sffr-footweb-week-1-1123-9320963?e=3120914688
+    Access must be restricted to members in the ClubExpress page settings.
+  -->
+  <style>
+    .sffr-bylaws,
+    .sffr-bylaws * { box-sizing: border-box; }
+    .sffr-bylaws {
+      --ink: #292438;
+      --muted: #655f70;
+      --purple: #4b2e83;
+      --purple-deep: #301b59;
+      --lavender: #f1ecf8;
+      --coral: #e85d5d;
+      --gold: #f5b642;
+      --gold-soft: #fff6dd;
+      --green: #2c8b65;
+      --green-soft: #edf7f2;
+      --blue: #277fae;
+      --blue-soft: #edf6fb;
+      --paper: #fff;
+      --wash: #f8f6fb;
+      --line: #e5ddec;
+      background: var(--wash);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.68;
+      overflow: hidden;
+    }
+    .sffr-bylaws a { color: var(--purple); }
+    .sffr-bylaws-inner {
+      margin: 0 auto;
+      max-width: 1120px;
+    }
+    .sffr-bylaws-hero {
+      background:
+        radial-gradient(circle at 7% 15%, rgba(245, 182, 66, .25) 0 108px, transparent 109px),
+        radial-gradient(circle at 94% 4%, rgba(232, 93, 93, .18) 0 150px, transparent 151px),
+        linear-gradient(135deg, var(--purple-deep), var(--purple) 56%, #7045a3);
+      color: #fff;
+      padding: clamp(58px, 8vw, 92px) 24px;
+      position: relative;
+    }
+    .sffr-bylaws-hero::after {
+      background: linear-gradient(90deg, var(--coral), var(--gold), #39a96b, #2788c7, #6b43a7);
+      bottom: 0;
+      content: "";
+      height: 7px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+    .sffr-bylaws-member-badge {
+      align-items: center;
+      background: rgba(255, 255, 255, .13);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 999px;
+      color: #fff;
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 800;
+      gap: 8px;
+      letter-spacing: .08em;
+      margin-bottom: 21px;
+      padding: 8px 13px;
+      text-transform: uppercase;
+    }
+    .sffr-bylaws-kicker,
+    .sffr-bylaws-label {
+      color: #f8d77f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      margin: 0 0 13px;
+      text-transform: uppercase;
+    }
+    .sffr-bylaws-hero h1 {
+      color: #fff;
+      font-size: clamp(40px, 6.4vw, 68px);
+      letter-spacing: -.045em;
+      line-height: 1.02;
+      margin: 0 0 22px;
+      max-width: 930px;
+    }
+    .sffr-bylaws-hero-copy {
+      color: rgba(255, 255, 255, .88);
+      font-size: clamp(17px, 2vw, 21px);
+      margin: 0;
+      max-width: 850px;
+    }
+    .sffr-bylaws-hero-copy + .sffr-bylaws-hero-copy { margin-top: 15px; }
+    .sffr-bylaws-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 31px;
+    }
+    .sffr-bylaws-button {
+      background: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 999px;
+      color: #30220a !important;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .sffr-bylaws-button--secondary {
+      background: transparent;
+      border-color: rgba(255, 255, 255, .62);
+      color: #fff !important;
+    }
+    .sffr-bylaws-button:focus-visible,
+    .sffr-bylaws a:focus-visible {
+      outline: 4px solid rgba(245, 182, 66, .5);
+      outline-offset: 4px;
+    }
+    .sffr-bylaws-main { padding: 58px 24px 82px; }
+    .sffr-bylaws-section + .sffr-bylaws-section { margin-top: 70px; }
+    .sffr-bylaws-heading {
+      margin-bottom: 29px;
+      max-width: 850px;
+    }
+    .sffr-bylaws-label { color: var(--coral); }
+    .sffr-bylaws-heading h2 {
+      color: var(--purple-deep);
+      font-size: clamp(31px, 5vw, 47px);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+      margin: 0 0 13px;
+    }
+    .sffr-bylaws-heading p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+    .sffr-bylaws-intro {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 7px solid var(--purple);
+      border-radius: 18px;
+      box-shadow: 0 14px 34px rgba(48, 27, 89, .07);
+      padding: clamp(25px, 4vw, 36px);
+    }
+    .sffr-bylaws-intro p { margin: 0; }
+    .sffr-bylaws-intro p + p { margin-top: 16px; }
+    .sffr-bylaws-amendments {
+      display: grid;
+      gap: 18px;
+    }
+    .sffr-bylaws-amendment {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(48, 27, 89, .06);
+      display: grid;
+      gap: 25px;
+      grid-template-columns: 76px minmax(0, 1fr);
+      padding: clamp(24px, 4vw, 34px);
+    }
+    .sffr-bylaws-number {
+      align-items: center;
+      background: var(--lavender);
+      border-radius: 18px;
+      color: var(--purple-deep);
+      display: flex;
+      font-size: 29px;
+      font-weight: 800;
+      height: 66px;
+      justify-content: center;
+      width: 66px;
+    }
+    .sffr-bylaws-amendment:nth-child(3n+2) .sffr-bylaws-number { background: var(--gold-soft); }
+    .sffr-bylaws-amendment:nth-child(3n) .sffr-bylaws-number { background: var(--green-soft); }
+    .sffr-bylaws-amendment h3 {
+      color: var(--purple-deep);
+      font-size: clamp(22px, 3vw, 28px);
+      letter-spacing: -.02em;
+      line-height: 1.22;
+      margin: 0 0 12px;
+    }
+    .sffr-bylaws-amendment p {
+      color: var(--muted);
+      margin: 0;
+    }
+    .sffr-bylaws-amendment p + p { margin-top: 15px; }
+    .sffr-bylaws-timeline {
+      border-left: 3px solid #d8cae8;
+      list-style: none;
+      margin: 24px 0;
+      padding: 0 0 0 24px;
+    }
+    .sffr-bylaws-timeline li {
+      color: var(--muted);
+      margin: 0 0 15px;
+      position: relative;
+    }
+    .sffr-bylaws-timeline li:last-child { margin-bottom: 0; }
+    .sffr-bylaws-timeline li::before {
+      background: var(--gold);
+      border: 4px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--purple);
+      content: "";
+      height: 13px;
+      left: -32px;
+      position: absolute;
+      top: 7px;
+      width: 13px;
+    }
+    .sffr-bylaws-timeline strong { color: var(--purple-deep); }
+    .sffr-bylaws-resource-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .sffr-bylaws-resource {
+      background: var(--lavender);
+      border: 1px solid #d8cae8;
+      border-radius: 999px;
+      color: var(--purple-deep) !important;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 10px 15px;
+      text-decoration: none;
+    }
+    .sffr-bylaws-note {
+      background: var(--gold-soft);
+      border: 1px solid #eed78f;
+      border-radius: 14px;
+      color: #59471b;
+      margin-top: 22px;
+      padding: 17px 19px;
+    }
+    .sffr-bylaws-note strong { color: #493810; }
+    .sffr-bylaws-next-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .sffr-bylaws-next-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 275px;
+      padding: 27px;
+    }
+    .sffr-bylaws-next-icon {
+      align-items: center;
+      background: var(--lavender);
+      border-radius: 14px;
+      display: flex;
+      font-size: 24px;
+      height: 52px;
+      justify-content: center;
+      margin-bottom: 23px;
+      width: 52px;
+    }
+    .sffr-bylaws-next-card:nth-child(2) .sffr-bylaws-next-icon { background: var(--blue-soft); }
+    .sffr-bylaws-next-card:nth-child(3) .sffr-bylaws-next-icon { background: var(--gold-soft); }
+    .sffr-bylaws-next-card h3 {
+      color: var(--purple-deep);
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    .sffr-bylaws-next-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 20px;
+    }
+    .sffr-bylaws-next-card a {
+      font-size: 13px;
+      font-weight: 800;
+      margin-top: auto;
+      text-decoration: none;
+    }
+    .sffr-bylaws-vote-note {
+      background: linear-gradient(135deg, var(--purple-deep), var(--purple));
+      border-radius: 22px;
+      color: #fff;
+      margin-top: 18px;
+      padding: clamp(27px, 5vw, 42px);
+    }
+    .sffr-bylaws-vote-note h3 {
+      color: #fff;
+      font-size: clamp(26px, 4vw, 36px);
+      letter-spacing: -.03em;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+    .sffr-bylaws-vote-note p {
+      color: rgba(255, 255, 255, .82);
+      margin: 0;
+      max-width: 850px;
+    }
+    .sffr-bylaws-vote-note p + p { margin-top: 10px; }
+    .sffr-bylaws-footer {
+      background: var(--purple-deep);
+      color: rgba(255, 255, 255, .78);
+      padding: 34px 24px;
+      text-align: center;
+    }
+    .sffr-bylaws-footer p { margin: 0; }
+    .sffr-bylaws-footer strong { color: #fff; }
+    @media (hover: hover) {
+      .sffr-bylaws-button,
+      .sffr-bylaws-amendment,
+      .sffr-bylaws-next-card,
+      .sffr-bylaws-resource { transition: transform .2s ease, box-shadow .2s ease; }
+      .sffr-bylaws-button:hover,
+      .sffr-bylaws-resource:hover { transform: translateY(-2px); }
+      .sffr-bylaws-amendment:hover,
+      .sffr-bylaws-next-card:hover {
+        box-shadow: 0 15px 34px rgba(48, 27, 89, .1);
+        transform: translateY(-2px);
+      }
+    }
+    @media (max-width: 820px) {
+      .sffr-bylaws-next-grid { grid-template-columns: 1fr; }
+      .sffr-bylaws-next-card { min-height: 0; }
+    }
+    @media (max-width: 620px) {
+      .sffr-bylaws-amendment {
+        gap: 17px;
+        grid-template-columns: 1fr;
+      }
+      .sffr-bylaws-number {
+        border-radius: 14px;
+        font-size: 23px;
+        height: 52px;
+        width: 52px;
+      }
+      .sffr-bylaws-button {
+        text-align: center;
+        width: 100%;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sffr-bylaws-button,
+      .sffr-bylaws-amendment,
+      .sffr-bylaws-next-card,
+      .sffr-bylaws-resource { transition: none; }
+    }
+  </style>
+</head>
+<body style="margin:0;background:#f8f6fb;">
+  <div class="sffr-bylaws">
+    <header class="sffr-bylaws-hero">
+      <div class="sffr-bylaws-inner">
+        <div class="sffr-bylaws-member-badge"><span aria-hidden="true">🔒</span> SFFR members only</div>
+        <p class="sffr-bylaws-kicker">2026 Board Bulletin</p>
+        <h1>Proposed Bylaw Amendments</h1>
+        <p class="sffr-bylaws-hero-copy">From time to time, we revisit our club’s bylaws to ensure they continue to serve us as we grow and technology evolves. The 2026 Board has reviewed the bylaws and is proposing seven amendments to support clearer governance, strengthen club operations, and modernize provisions first drafted more than 40 years ago.</p>
+        <p class="sffr-bylaws-hero-copy">These are the only amendments approved by the Board. They reflect months of input and discussion from the Form 1023 Committee, retained counsel, and the Board.</p>
+        <div class="sffr-bylaws-actions">
+          <a class="sffr-bylaws-button" href="https://docs.google.com/document/d/1L7EY1JDIfUg2XHcGfYtcv1JuTPEvSi-S3zM8Srqws3M/edit?usp=sharing" target="_blank" rel="noopener">Read the full proposed amendments</a>
+          <a class="sffr-bylaws-button sffr-bylaws-button--secondary" href="mailto:board@sffr.org">Email the Board</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="sffr-bylaws-main sffr-bylaws-inner">
+      <section class="sffr-bylaws-section" aria-labelledby="sffr-bylaws-overview">
+        <div class="sffr-bylaws-heading">
+          <p class="sffr-bylaws-label">Overview</p>
+          <h2 id="sffr-bylaws-overview">Why the Board is proposing these changes</h2>
+        </div>
+        <div class="sffr-bylaws-intro">
+          <p>The proposed amendments clarify SFFR’s mission, establish clearer Board residency and voting standards, update provisions related to the club’s anticipated 501(c)(3) status, and modernize governance and financial procedures.</p>
+          <p>The summaries below are intended to help members understand each proposal. Members should review the <a href="https://docs.google.com/document/d/1L7EY1JDIfUg2XHcGfYtcv1JuTPEvSi-S3zM8Srqws3M/edit?usp=sharing" target="_blank" rel="noopener"><strong>full text of the proposed amendments</strong></a> before voting.</p>
+        </div>
+      </section>
+
+      <section class="sffr-bylaws-section" aria-labelledby="sffr-bylaws-amendments-heading">
+        <div class="sffr-bylaws-heading">
+          <p class="sffr-bylaws-label">Seven proposals</p>
+          <h2 id="sffr-bylaws-amendments-heading">Summary of proposed amendments</h2>
+          <p>Each proposal will be submitted to the SFFR membership for approval.</p>
+        </div>
+
+        <div class="sffr-bylaws-amendments">
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">1</div>
+            <div>
+              <h3>Modernize SFFR’s mission statement</h3>
+              <p>Clarify that Article 3 reflects SFFR’s mission and make minor changes to modernize the mission statement.</p>
+              <p>This amendment updates outdated terminology, explicitly recognizes walking, social activities, and community service as important parts of SFFR’s mission, and affirms that the organization welcomes LGBTQ+ individuals and the broader public. It also acknowledges SFFR’s charitable and community involvement, reinforces its nonpartisan character, and preserves running and walking as the organization’s primary focus.</p>
+            </div>
+          </article>
+
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">2</div>
+            <div>
+              <h3>Establish a Board residency requirement</h3>
+              <p>Include a residency requirement in the bylaws for members serving on the SFFR Board of Directors.</p>
+              <p>The current bylaws provide for a Board vacancy when a Director “departs the locality,” but do not define that locality or set objective residency criteria. This amendment defines the locality as the nine Bay Area counties and creates a measurable residency standard for candidates and Board members throughout their terms. The goal is to promote consistent application of the bylaws and keep Board members meaningfully connected to the community SFFR serves.</p>
+            </div>
+          </article>
+
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">3</div>
+            <div>
+              <h3>Update the dedication-of-assets provision for 501(c)(3) status</h3>
+              <p>Modify Article XV to specify that SFFR is a 501(c)(3) nonprofit organization, conditioned on SFFR receiving an IRS determination letter confirming that status.</p>
+              <ol class="sffr-bylaws-timeline" aria-label="501(c)(3) application timeline">
+                <li><strong>2022:</strong> SFFR applied to change its tax-exempt status from 501(c)(7) to 501(c)(3) and received a signed IRS letter indicating that SFFR was recognized as a 501(c)(3) organization.</li>
+                <li><strong>2025:</strong> The Treasurer discovered discrepancies in IRS records, which still listed SFFR as a 501(c)(7). The Board began working with the IRS to resolve the issue.</li>
+                <li><strong>July 2026:</strong> The Board formed a Form 1023 Committee to prepare a new application with guidance from legal counsel, requesting recognition retroactive to the original 2022 application.</li>
+                <li><strong>2026:</strong> A new Form 1023 was submitted to the IRS.</li>
+                <li><strong>Now:</strong> The Board is proposing this amendment in anticipation of an IRS determination letter confirming 501(c)(3) status.</li>
+              </ol>
+              <p>The amendment provides that, upon dissolution, SFFR’s remaining assets will be distributed to an organization with similar purposes that qualifies under Section 501(c)(3). Until the IRS determination is received, the existing bylaw provision referencing Section 501(c)(7) will remain in effect.</p>
+            </div>
+          </article>
+
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">4</div>
+            <div>
+              <h3>Remove the quarterly membership meeting requirement</h3>
+              <p>Amend Article VI.A to remove a quarterly meeting requirement that no longer reflects SFFR’s current practices.</p>
+              <p>The amendment provides greater flexibility to hold meetings when needed while preserving the annual meeting for elections, organizational updates, awards, and other official business. It reduces administrative obligations without limiting opportunities for member engagement.</p>
+            </div>
+          </article>
+
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">5</div>
+            <div>
+              <h3>Clarify voting requirements for members</h3>
+              <p>Amend Article VII.A to ensure all members have an equal opportunity to vote on matters submitted to the membership, whether or not they attend a membership meeting.</p>
+              <p>The amendment removes outdated distinctions between in-person and absentee voting and gives the Board flexibility to establish procedures that support accessibility, fairness, and member participation.</p>
+            </div>
+          </article>
+
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">6</div>
+            <div>
+              <h3>Prohibit compensation for Board members</h3>
+              <p>Add a new Article XIV-K formalizing SFFR’s longstanding practice of having officers serve as volunteers without compensation.</p>
+              <p>The amendment promotes transparency, accountability, and responsible stewardship of club funds. Board members may still be reimbursed for legitimate club-related expenses incurred while performing official duties.</p>
+            </div>
+          </article>
+
+          <article class="sffr-bylaws-amendment">
+            <div class="sffr-bylaws-number" aria-hidden="true">7</div>
+            <div>
+              <h3>Move financial controls into a Board-maintained policy</h3>
+              <p>Move detailed financial controls from the bylaws into a new Financial Controls Policy. The initial policy would take effect upon membership approval, and future changes would require Board approval and 30 days’ advance notice to members.</p>
+              <p>The current financial rules can only be updated through a membership vote and no longer reflect all of SFFR’s operational needs. The proposed policy is intended to strengthen safeguards, improve transparency, and make day-to-day procedures more efficient while remaining accessible to all members.</p>
+              <div class="sffr-bylaws-resource-list" aria-label="Financial controls resources">
+                <a class="sffr-bylaws-resource" href="https://docs.google.com/document/d/1X-skbdiCIrhkJzJhtEgjNjz79gfRFq-v9_oJAPtH3u8/edit?usp=sharing" target="_blank" rel="noopener">Review the proposed Financial Controls Policy</a>
+                <a class="sffr-bylaws-resource" href="https://docs.google.com/document/d/1iQ39WRb1i0EbPbM65ocwHxSlJGZqpwrmKWVF-TymdY8/edit?usp=sharing" target="_blank" rel="noopener">View the high-level comparison table</a>
+              </div>
+              <div class="sffr-bylaws-note"><strong>Member-informed process:</strong> Former SFFR treasurers were invited to share their experience and suggestions as the new Financial Controls Policy was developed.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sffr-bylaws-section" aria-labelledby="sffr-bylaws-next-heading">
+        <div class="sffr-bylaws-heading">
+          <p class="sffr-bylaws-label">Member participation</p>
+          <h2 id="sffr-bylaws-next-heading">Review, ask questions, and vote</h2>
+          <p>Members are encouraged to read the full proposals and share feedback before voting begins.</p>
+        </div>
+        <div class="sffr-bylaws-next-grid">
+          <article class="sffr-bylaws-next-card">
+            <div class="sffr-bylaws-next-icon" aria-hidden="true">📄</div>
+            <h3>Review the full text</h3>
+            <p>Read the exact proposed bylaw language before submitting feedback or casting your vote.</p>
+            <a href="https://docs.google.com/document/d/1L7EY1JDIfUg2XHcGfYtcv1JuTPEvSi-S3zM8Srqws3M/edit?usp=sharing" target="_blank" rel="noopener">Open the proposed amendments →</a>
+          </article>
+          <article class="sffr-bylaws-next-card">
+            <div class="sffr-bylaws-next-icon" aria-hidden="true">💬</div>
+            <h3>Share feedback by November 22</h3>
+            <p>Email questions, concerns, or considerations to the Board. Board members will also remain after second circle at the Saturday, November 21 fun run/walk to answer questions.</p>
+            <a href="mailto:board@sffr.org">board@sffr.org →</a>
+          </article>
+          <article class="sffr-bylaws-next-card">
+            <div class="sffr-bylaws-next-icon" aria-hidden="true">🗳️</div>
+            <h3>Voting begins November 28</h3>
+            <p>The amendments will be submitted for a member vote alongside the 2027 Board election and Pride Run beneficiary vote.</p>
+            <a href="https://sffr.org/elections">View election information →</a>
+          </article>
+        </div>
+        <div class="sffr-bylaws-vote-note">
+          <h3>Two-thirds approval is required</h3>
+          <p>Amendments to the SFFR bylaws require approval by two-thirds of the membership.</p>
+          <p>The outcome will be announced at the general meeting on December 12, 2026.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sffr-bylaws-footer">
+      <p>Many thanks,<br><strong>The 2026 SFFR Board</strong></p>
+    </footer>
+  </div>
+</body>
+</html>
