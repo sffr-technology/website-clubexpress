@@ -1,9 +1,6 @@
 <!--
   SFFR THANKSGIVING RUN 2026
   Recommended ClubExpress quick link: sffr.org/thanksgiving
-  Future route assets:
-  - assets/social/thanksgiving-run-strava-3-mile-2026.jpg
-  - assets/social/thanksgiving-run-strava-5-mile-2026.jpg
   Paste this entire fragment into the ClubExpress HTML editor.
 -->
 <style>
@@ -52,7 +49,9 @@
     .sffr-thanksgiving-route-grid{display:grid;gap:25px;grid-template-columns:repeat(2,minmax(0,1fr))}
     .sffr-thanksgiving-route-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 9px 25px rgba(81,45,79,.07);overflow:hidden}
     .sffr-thanksgiving-route-card>a{display:block;text-decoration:none!important}
-    .sffr-thanksgiving-route-card img{aspect-ratio:16/10;background:linear-gradient(135deg,#f8ecd6,#efe0c8);color:var(--muted);display:block;min-height:250px;object-fit:cover;width:100%}
+    .sffr-thanksgiving-route-card img{display:block;width:100%;height:auto}
+    .sffr-thanksgiving-route-card summary{cursor:pointer;color:var(--pumpkin-dark);font-weight:700;margin:16px 0 8px}
+    .sffr-thanksgiving-route-card iframe{border:0;width:100%;height:600px;display:block;margin-top:10px}
     .sffr-thanksgiving-route-content{padding:23px}
     .sffr-thanksgiving-route-tag{color:var(--pumpkin-dark);display:block;font-size:11px;font-weight:800;letter-spacing:.11em;margin-bottom:7px;text-transform:uppercase}
     .sffr-thanksgiving-route-card:nth-child(2) .sffr-thanksgiving-route-tag{color:var(--sage)}
@@ -66,7 +65,7 @@
     .sffr-thanksgiving-footer p{margin:0}
     @media(hover:hover){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:box-shadow .2s ease,transform .2s ease}.sffr-thanksgiving-button:hover{transform:translateY(-1px)}.sffr-thanksgiving-plan-card:hover,.sffr-thanksgiving-route-card:hover{box-shadow:0 14px 32px rgba(81,45,79,.11);transform:translateY(-2px)}.sffr-thanksgiving-photo:hover,.sffr-thanksgiving-date-card:hover{transform:rotate(0)}}
     @media(max-width:800px){.sffr-thanksgiving-hero-grid,.sffr-thanksgiving-route-grid,.sffr-thanksgiving-arrival{grid-template-columns:1fr}.sffr-thanksgiving-visual{max-width:560px}.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transform:none}.sffr-thanksgiving-date-card{max-width:390px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:start}.sffr-thanksgiving-plan{grid-template-columns:1fr}}
-    @media(max-width:520px){.sffr-thanksgiving-hero{padding:48px 18px}.sffr-thanksgiving-section,.sffr-thanksgiving-routes{padding-left:18px;padding-right:18px}.sffr-thanksgiving-actions{align-items:stretch;flex-direction:column}.sffr-thanksgiving-button{width:100%}.sffr-thanksgiving-date-body strong{font-size:49px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:stretch}.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-content{padding:22px}.sffr-thanksgiving-route-card img{min-height:220px}}
+    @media(max-width:520px){.sffr-thanksgiving-hero{padding:48px 18px}.sffr-thanksgiving-section,.sffr-thanksgiving-routes{padding-left:18px;padding-right:18px}.sffr-thanksgiving-actions{align-items:stretch;flex-direction:column}.sffr-thanksgiving-button{width:100%}.sffr-thanksgiving-date-body strong{font-size:49px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:stretch}.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-content{padding:22px}}
     @media(prefers-reduced-motion:reduce){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:none}}
 </style>
 
@@ -110,7 +109,7 @@
         </div>
         <div class="sffr-thanksgiving-plan">
             <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">📍</span><h3>Meet at 10:00 AM</h3><p>Find the group in front of McLaren Lodge at the east end of Golden Gate Park.</p></article>
-            <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">🏃</span><h3>Choose your distance</h3><p>Head into the park with the group for either a 3-mile or 5-mile Thanksgiving run.</p></article>
+            <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">🏃</span><h3>Run 4.3 miles</h3><p>Follow the group from McLaren Lodge through Golden Gate Park.</p></article>
             <article class="sffr-thanksgiving-plan-card"><span class="sffr-thanksgiving-plan-icon" aria-hidden="true">☕</span><h3>Stay and hang out</h3><p>Stick around after the run for an easygoing post-run hang with fellow FrontRunners.</p></article>
         </div>
     </section>
@@ -118,20 +117,22 @@
     <section class="sffr-thanksgiving-routes-wrap">
         <div class="sffr-thanksgiving-inner sffr-thanksgiving-routes">
             <div class="sffr-thanksgiving-heading">
-                <p class="sffr-thanksgiving-label">Route options</p>
-                <h2>Choose Your Route</h2>
-                <p>Pick the distance that works for your Thanksgiving morning. Both options begin with the group at McLaren Lodge.</p>
+                <h2>The 4.3-mile Thanksgiving route</h2>
             </div>
-            <div class="sffr-thanksgiving-route-grid">
-                <article class="sffr-thanksgiving-route-card">
-                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-3-mile-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size 3-mile Thanksgiving route screenshot"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-3-mile-2026.jpg" alt="Strava screenshot of the 3-mile Thanksgiving run route"></a>
-                    <div class="sffr-thanksgiving-route-content"><span class="sffr-thanksgiving-route-tag">3 miles</span><h3>3 Mile Route</h3><p>A shorter option for anyone who wants more time for the rest of their Thanksgiving day.</p></div>
-                </article>
-                <article class="sffr-thanksgiving-route-card">
-                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-5-mile-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size 5-mile Thanksgiving route screenshot"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-strava-5-mile-2026.jpg" alt="Strava screenshot of the 5-mile Thanksgiving run route"></a>
-                    <div class="sffr-thanksgiving-route-content"><span class="sffr-thanksgiving-route-tag">5 miles</span><h3>5 Mile Route</h3><p>A longer option for runners who want a few more miles through Golden Gate Park.</p></div>
-                </article>
-            </div>
+            <article class="sffr-thanksgiving-route-card">
+                <a href="https://www.strava.com/routes/3560778443038634728" target="_blank" rel="noopener">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/JTBKQFF7VMDKTWQ7CIZAE747MR2ZHYIHIH6PJS6J55IAC67N73AOSPQD47CHFUMEZPAL65HXA7SKS3JBXGJJHWYYJ4I25ATM4A4GPU5JH3YQ7DMQCZERB4C62C3AQLTBSFN3TZOTVGT6KCKVJHZNS2GEPUJSB4W6EJI4AY3P76OFRGK5ZZAHIJCSKTI3T7UCXM======" width="1200" height="630" loading="lazy" alt="Map of the 4.3-mile SFFR Thanksgiving &amp; Christmas Run in Golden Gate Park. Open the route on Strava.">
+                </a>
+                <div class="sffr-thanksgiving-route-content">
+                    <h3>SFFR Thanksgiving &amp; Christmas Run · 4.3 miles</h3>
+                    <p><a href="https://www.strava.com/routes/3560778443038634728" target="_blank" rel="noopener">Open the route on Strava</a></p>
+                    <details>
+                        <summary>Explore the map and watch the 3D Flyover</summary>
+                        <p>Select <strong>Flyover</strong> in the map to play the course.</p>
+                        <iframe src="https://strava-embeds.com/route/3560778443038634728" title="Interactive map and 3D Flyover of the SFFR Thanksgiving and Christmas Run" loading="lazy" allowfullscreen></iframe>
+                    </details>
+                </div>
+            </article>
         </div>
     </section>
 
