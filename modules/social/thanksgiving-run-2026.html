@@ -9,7 +9,7 @@
     .sffr-thanksgiving a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
     .sffr-thanksgiving-inner,.sffr-thanksgiving-section{margin:0 auto;max-width:1120px}
     .sffr-thanksgiving-hero{background:radial-gradient(circle at 8% 12%,rgba(255,213,132,.17) 0 105px,transparent 106px),linear-gradient(135deg,var(--plum-dark),var(--plum) 54%,#754039);color:#fff;padding:clamp(58px,8vw,94px) 22px;position:relative}
-    .sffr-thanksgiving-hero-grid{align-items:center;display:grid;gap:clamp(38px,7vw,76px);grid-template-columns:minmax(0,1fr) minmax(320px,440px)}
+    .sffr-thanksgiving-hero-grid{align-items:center;display:grid;gap:clamp(38px,7vw,76px);grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr)}
     .sffr-thanksgiving-eyebrow,.sffr-thanksgiving-label{color:#f3c96f;font-size:13px;font-weight:800;letter-spacing:.15em;margin:0 0 15px;text-transform:uppercase}
     .sffr-thanksgiving-hero h1{color:#fff;font-size:clamp(43px,7vw,72px);letter-spacing:-.05em;line-height:1;margin:0 0 21px;max-width:670px}
     .sffr-thanksgiving-hero-copy{color:rgba(255,255,255,.84);font-size:clamp(18px,2vw,21px);margin:0;max-width:660px}
@@ -67,6 +67,16 @@
     @media(max-width:800px){.sffr-thanksgiving-hero-grid,.sffr-thanksgiving-route-grid,.sffr-thanksgiving-arrival{grid-template-columns:1fr}.sffr-thanksgiving-visual{max-width:560px}.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transform:none}.sffr-thanksgiving-date-card{max-width:390px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:start}.sffr-thanksgiving-plan{grid-template-columns:1fr}}
     @media(max-width:520px){.sffr-thanksgiving-hero{padding:48px 18px}.sffr-thanksgiving-section,.sffr-thanksgiving-routes{padding-left:18px;padding-right:18px}.sffr-thanksgiving-actions{align-items:stretch;flex-direction:column}.sffr-thanksgiving-button{width:100%}.sffr-thanksgiving-date-body strong{font-size:49px}.sffr-thanksgiving-arrival .sffr-thanksgiving-button{justify-self:stretch}.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-content{padding:22px}}
     @media(prefers-reduced-motion:reduce){.sffr-thanksgiving-button,.sffr-thanksgiving-plan-card,.sffr-thanksgiving-route-card,.sffr-thanksgiving-photo,.sffr-thanksgiving-date-card{transition:none}}
+    .sffr-thanksgiving-gallery {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+        align-items: center;
+        gap: clamp(16px, 3vw, 36px);
+    }
+    .sffr-thanksgiving-gallery .sffr-thanksgiving-photo { transform: none; }
+    @media (max-width: 700px) {
+        .sffr-thanksgiving-gallery { grid-template-columns: 1fr; }
+    }
 </style>
 
 <div class="sffr-thanksgiving">
@@ -83,20 +93,9 @@
             </div>
             <div class="sffr-thanksgiving-visual">
                 <figure class="sffr-thanksgiving-photo">
-                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-2026.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Thanksgiving run photo">
-                        <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-2026.jpg" alt="SF FrontRunners gathered outside McLaren Lodge for a Thanksgiving run">
-                        <figcaption>Thanksgiving morning with SF FrontRunners</figcaption>
-                    </a>
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/turkey-trot-2026-group.jpeg" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/turkey-trot-2026-group.jpeg" width="2048" height="1044" alt="FrontRunners and their dogs with the club banner at McLaren Lodge"></a>
+                    <figcaption>Turkey Trot 2026</figcaption>
                 </figure>
-                <aside class="sffr-thanksgiving-date-card" aria-label="Thanksgiving run date, time, and location">
-                    <div class="sffr-thanksgiving-date-top">Thursday</div>
-                    <div class="sffr-thanksgiving-date-body">
-                        <span>November</span>
-                        <strong>26</strong>
-                        <p><b>10:00 AM</b></p>
-                        <p>In front of McLaren Lodge<br>501 Stanyan St, San Francisco</p>
-                    </div>
-                </aside>
             </div>
         </div>
     </section>
@@ -135,5 +134,21 @@
         </div>
     </section>
 
+    <section class="sffr-thanksgiving-section sffr-thanksgiving-gallery" aria-label="Turkey Trot photos">
+        <figure class="sffr-thanksgiving-photo">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/turkey-trot-2026-portrait.jpeg" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/turkey-trot-2026-portrait.jpeg" width="1684" height="2048" loading="lazy" alt="The 2026 Turkey Trot group beneath the holiday tree lighting banner"></a>
+                    <figcaption>Turkey Trot 2026</figcaption>
+                </figure>
+        <figure class="sffr-thanksgiving-photo">
+            <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/turkey-trot-2026-monument.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/turkey-trot-2026-monument.jpeg" width="1536" height="2048" loading="lazy" alt="Turkey Trot runners and dogs gathered beneath a stone cross in Golden Gate Park">
+            </a>
+            <figcaption>Turkey Trot 2026</figcaption>
+        </figure>
+        <figure class="sffr-thanksgiving-photo">
+                    <a href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-2026.jpg" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/social/thanksgiving-run-2026.jpg" loading="lazy" alt="FrontRunners gathered outside McLaren Lodge on Thanksgiving in 2025"></a>
+                    <figcaption>Turkey Trot 2025</figcaption>
+                </figure>
+    </section>
     <footer class="sffr-thanksgiving-footer"><p>All faces. All paces. All are welcome.</p></footer>
 </div>
