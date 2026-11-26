@@ -575,13 +575,16 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
     }
     .monday-slides {
     position: relative;
-    height: auto;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    }
+    @media (min-width: 901px) {
+    .monday-slideshow { max-width: 740px; }
     }
     .monday-slide {
     display: none;
-    width: 100%;
-    height: auto;
+    position: absolute;
+    inset: 0;
     margin: 0;
     }
     #monday-run-slide-1:checked ~ .monday-slides .monday-slide-1,
@@ -592,8 +595,9 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
     animation: mondayFade .45s ease;
     }
     .monday-slide img {
+    display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
     max-height: none;
     aspect-ratio: auto;
@@ -714,7 +718,6 @@ Mitchell host background: August 20 Footweb; spotlight details pending source. -
 @media (max-width: 650px) {
 .monday-page .monday-details, .monday-gallery { grid-template-columns: 1fr; }
 .monday-gallery img { height: auto; }
-.monday-slides { height: auto; }
 .monday-detail-card { min-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .monday-slide { animation: none !important; } }
