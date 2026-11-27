@@ -2,8 +2,6 @@
   .sffr-bylaws-page-module {
     color-scheme: light;
     --ink: #271b2e;
-    --muted: #64596a;
-    --accent: #6d305b;
     --paper: #fbf8f4;
     --line: #e5dde6;
   }
@@ -32,7 +30,7 @@
     font-size: .77rem; font-weight: 750; letter-spacing: .105em; text-transform: uppercase;
   }
   .sffr-bylaws-page-module .edition::before { content: ""; width: 1.65rem; height: 2px; background: #f19aaf; flex: none; }
-  .sffr-bylaws-page-module h1, .sffr-bylaws-page-module h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.03; }
+  .sffr-bylaws-page-module h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.03; }
   .sffr-bylaws-page-module h1 { margin: 0; color: #fff8f5; font-size: clamp(2.5rem, 5.2vw, 5.25rem); letter-spacing: -.05em; overflow-wrap: anywhere; }
   .sffr-bylaws-page-module .intro { max-width: 29rem; margin: 1rem 0 1.5rem; color: #f2e3ee; font-size: clamp(1rem, 2vw, 1.12rem); }
   .sffr-bylaws-page-module .sffr-bylaws-hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
@@ -54,33 +52,12 @@
     border: 1px solid #fff9; border-radius: .25rem;
     box-shadow: 9px 8px 0 #edb1c659, 0 18px 35px #1e102984; transform: rotate(5deg);
   }
-  .sffr-bylaws-page-module .document { display: grid; grid-template-columns: minmax(15.5rem, 1fr) minmax(0, 2.7fr); gap: 1.4rem; margin-top: 1.65rem; align-items: start; }
-  .sffr-bylaws-page-module .panel { min-width: 0; border: 1px solid var(--line); background: #fff; border-radius: .95rem; }
-  .sffr-bylaws-page-module .panel-head { padding: 1.15rem 1.25rem 1rem; }
-  .sffr-bylaws-page-module h2 { margin: 0; font-size: 1.7rem; letter-spacing: -.027em; }
-  .sffr-bylaws-page-module .panel-head p { margin: .38rem 0 0; color: var(--muted); font-size: .84rem; }
-  .sffr-bylaws-page-module .articles { list-style: none; margin: 0; padding: 0 .65rem .65rem; }
-  .sffr-bylaws-page-module .articles li + li { border-top: 1px solid #f1ebf0; }
-  .sffr-bylaws-page-module .articles a {
-    display: grid; align-items: baseline; grid-template-columns: 2.1rem minmax(0, 1fr) auto; gap: .38rem;
-    padding: .49rem .6rem; color: var(--ink); text-decoration: none; border-radius: .35rem; font-size: .86rem;
-  }
-  .sffr-bylaws-page-module .articles a:hover { background: #f7edf5; color: #512347; }
-  .sffr-bylaws-page-module .article-number { color: var(--accent); font-size: .72rem; font-weight: 800; }
-  .sffr-bylaws-page-module .article-page { color: var(--muted); font-size: .75rem; font-variant-numeric: tabular-nums; }
-  .sffr-bylaws-page-module .reader { scroll-margin-block-start: 1rem; }
-  .sffr-bylaws-page-module .reader-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; }
-  .sffr-bylaws-page-module .reader-status { max-width: 24rem; }
-  .sffr-bylaws-page-module .reader-link { color: var(--accent); font-size: .88rem; font-weight: 750; text-underline-offset: .2em; }
   .sffr-bylaws-page-module .pdf-frame {
-    display: block; width: 100%; height: clamp(39rem, 86vh, 66rem);
-    border: 0; border-top: 1px solid var(--line); border-radius: 0 0 .9rem .9rem; background: #f2edf1;
+    display: block; width: 100%; height: clamp(30rem, 86vh, 66rem); margin-top: 1.65rem;
+    border: 1px solid var(--line); border-radius: .9rem; background: #f2edf1;
   }
   @media (max-width: 760px) {
     .sffr-bylaws-page-module .wrap { width: calc(100% - 2rem); }
-    .sffr-bylaws-page-module .document { grid-template-columns: 1fr; gap: 1rem; }
-    .sffr-bylaws-page-module .reader { grid-row: 1; }
-    .sffr-bylaws-page-module .pdf-frame { display: none; }
   }
   @media (max-width: 540px) {
     .sffr-bylaws-page-module .hero { grid-template-columns: 1fr; min-height: 0; }
@@ -106,42 +83,6 @@
         <img src="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/2027-election-ballot/bylaws-cover-2025.png" alt="" width="433" height="560">
       </div>
     </section>
-    <div class="document">
-      <nav class="panel" aria-labelledby="sffr-bylaws-page-contents-title">
-        <div class="panel-head">
-          <h2 id="sffr-bylaws-page-contents-title">Articles</h2>
-          <p>Open an article’s first PDF page in a new tab.</p>
-        </div>
-        <ol class="articles">
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=2" target="_blank" rel="noopener"><span class="article-number">I</span><span class="article-title">Name</span><span class="article-page" aria-label="Page 2">2</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=2" target="_blank" rel="noopener"><span class="article-number">II</span><span class="article-title">Offices</span><span class="article-page" aria-label="Page 2">2</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=2" target="_blank" rel="noopener"><span class="article-number">III</span><span class="article-title">Purposes</span><span class="article-page" aria-label="Page 2">2</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=3" target="_blank" rel="noopener"><span class="article-number">IV</span><span class="article-title">Nonpartisan Activities</span><span class="article-page" aria-label="Page 3">3</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=4" target="_blank" rel="noopener"><span class="article-number">V</span><span class="article-title">Membership</span><span class="article-page" aria-label="Page 4">4</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=4" target="_blank" rel="noopener"><span class="article-number">VI</span><span class="article-title">Meetings</span><span class="article-page" aria-label="Page 4">4</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=5" target="_blank" rel="noopener"><span class="article-number">VII</span><span class="article-title">Voting</span><span class="article-page" aria-label="Page 5">5</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=6" target="_blank" rel="noopener"><span class="article-number">VIII</span><span class="article-title">Elections</span><span class="article-page" aria-label="Page 6">6</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=7" target="_blank" rel="noopener"><span class="article-number">IX</span><span class="article-title">Officer-Directors</span><span class="article-page" aria-label="Page 7">7</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=11" target="_blank" rel="noopener"><span class="article-number">X</span><span class="article-title">Delegation of Authority</span><span class="article-page" aria-label="Page 11">11</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=11" target="_blank" rel="noopener"><span class="article-number">XI</span><span class="article-title">Vacancies</span><span class="article-page" aria-label="Page 11">11</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=12" target="_blank" rel="noopener"><span class="article-number">XII</span><span class="article-title">Committees</span><span class="article-page" aria-label="Page 12">12</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=12" target="_blank" rel="noopener"><span class="article-number">XIII</span><span class="article-title">Recall and Referendum</span><span class="article-page" aria-label="Page 12">12</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=13" target="_blank" rel="noopener"><span class="article-number">XIV</span><span class="article-title">Finances</span><span class="article-page" aria-label="Page 13">13</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=14" target="_blank" rel="noopener"><span class="article-number">XV</span><span class="article-title">Dedication of Assets</span><span class="article-page" aria-label="Page 14">14</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=14" target="_blank" rel="noopener"><span class="article-number">XVI</span><span class="article-title">Affiliation</span><span class="article-page" aria-label="Page 14">14</span></a></li>
-          <li><a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=15" target="_blank" rel="noopener"><span class="article-number">XVII</span><span class="article-title">Bylaw Amendments</span><span class="article-page" aria-label="Page 15">15</span></a></li>
-        </ol>
-      </nav>
-      <section class="panel reader" aria-labelledby="sffr-bylaws-page-reader-title">
-        <div class="panel-head reader-head">
-          <div>
-            <h2 id="sffr-bylaws-page-reader-title">Read the bylaws</h2>
-            <p class="reader-status">15 pages · PDF</p>
-          </div>
-          <a class="reader-link" href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" target="_blank" rel="noopener">Open in a new tab <span aria-hidden="true">↗</span></a>
-        </div>
-        <iframe class="pdf-frame" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsffr-technology%2Fwebsite-clubexpress%40main%2Fassets%2F2027-election-ballot%2FSFFR_Bylaws_12_2025.pdf#pagemode=bookmarks" title="San Francisco FrontRunners bylaws PDF" loading="lazy"></iframe>
-      </section>
-    </div>
+    <iframe class="pdf-frame" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsffr-technology%2Fwebsite-clubexpress%40main%2Fassets%2F2027-election-ballot%2FSFFR_Bylaws_12_2025.pdf#pagemode=bookmarks" title="San Francisco FrontRunners bylaws PDF" loading="lazy"></iframe>
   </div>
 </div>
