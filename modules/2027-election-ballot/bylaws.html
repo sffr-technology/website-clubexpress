@@ -35,16 +35,18 @@
   .sffr-bylaws-page-module h1, .sffr-bylaws-page-module h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.03; }
   .sffr-bylaws-page-module h1 { margin: 0; color: #fff8f5; font-size: clamp(3.5rem, 7.2vw, 6.5rem); letter-spacing: -.06em; }
   .sffr-bylaws-page-module .intro { max-width: 29rem; margin: 1rem 0 1.5rem; color: #f2e3ee; font-size: clamp(1rem, 2vw, 1.12rem); }
-  .sffr-bylaws-page-module .actions { display: flex; flex-wrap: wrap; gap: .65rem; }
-  .sffr-bylaws-page-module .button {
-    display: inline-flex; align-items: center; justify-content: center; min-height: 2.8rem;
-    padding: .55rem .95rem; border: 1px solid transparent; border-radius: .55rem;
-    font-size: .9rem; font-weight: 750; text-decoration: none;
+  .sffr-bylaws-page-module .sffr-bylaws-hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .sffr-bylaws-page-module .sffr-bylaws-hero-actions a.sffr-bylaws-pdf-button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+    padding: .65rem 1.15rem; border: 2px solid #ffd0dc; border-radius: .55rem;
+    background: #361d3e; color: #fff8f5 !important;
+    font-size: 1rem; font-weight: 750; line-height: 1.25; text-align: center; text-decoration: none;
   }
-  .sffr-bylaws-page-module .button-primary { background: #fff8f5; color: #38213b; }
-  .sffr-bylaws-page-module .button-primary:hover { background: #ffdfeb; }
-  .sffr-bylaws-page-module .button-secondary { border-color: #dfb2ce99; color: #fff8f5; }
-  .sffr-bylaws-page-module .button-secondary:hover { background: #ffffff1f; }
+  .sffr-bylaws-page-module .sffr-bylaws-hero-actions a.sffr-bylaws-pdf-button:hover { background: #542b54; }
+  .sffr-bylaws-page-module .sffr-bylaws-hero-actions a.sffr-bylaws-pdf-button-primary {
+    border-color: #fff8f5; background: #fff8f5; color: #38213b !important;
+  }
+  .sffr-bylaws-page-module .sffr-bylaws-hero-actions a.sffr-bylaws-pdf-button-primary:hover { background: #ffdfeb; }
   .sffr-bylaws-page-module .hero a:focus-visible { outline-color: #ffd0dc; }
   .sffr-bylaws-page-module .cover { display: grid; place-items: center; padding: .5rem 0; }
   .sffr-bylaws-page-module .cover img {
@@ -85,6 +87,7 @@
     .sffr-bylaws-page-module .hero::before { opacity: .55; }
     .sffr-bylaws-page-module .cover { display: none; }
     .sffr-bylaws-page-module h1 { font-size: clamp(3.1rem, 11vw, 4.1rem); }
+    .sffr-bylaws-page-module .sffr-bylaws-hero-actions { flex-direction: column; }
   }
 </style>
 <div class="sffr-bylaws-page-module">
@@ -94,9 +97,9 @@
         <p class="edition">Amended December 2025</p>
         <h1 id="sffr-bylaws-page-bylaws-title">Club Bylaws</h1>
         <p class="intro">The rules that govern San Francisco FrontRunners, from membership and elections to board responsibilities.</p>
-        <div class="actions">
-          <a class="button button-primary" href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" target="_blank" rel="noopener">Open PDF <span aria-hidden="true">&nbsp;↗</span></a>
-          <a class="button button-secondary" href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" download="SFFR_Bylaws_12_2025.pdf">Download PDF</a>
+        <div class="sffr-bylaws-hero-actions">
+          <a class="sffr-bylaws-pdf-button sffr-bylaws-pdf-button-primary" href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" target="_blank" rel="noopener">Open PDF <span aria-hidden="true">&nbsp;↗</span></a>
+          <a class="sffr-bylaws-pdf-button" href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" download="SFFR_Bylaws_12_2025.pdf">Download PDF</a>
         </div>
       </div>
       <div class="cover" aria-hidden="true">
