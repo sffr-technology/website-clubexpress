@@ -46,6 +46,42 @@
     color: #f2e3ee;
   }
 
+  .sffr-bylaws-page-module .sffr-bylaws-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    margin-top: 1.25rem;
+  }
+
+  .sffr-bylaws-page-module .sffr-bylaws-button {
+    display: inline-block;
+    padding: .55rem .95rem;
+    border: 1px solid #f2d4e5;
+    border-radius: .55rem;
+    color: #fff8f5;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .sffr-bylaws-page-module .sffr-bylaws-button-primary {
+    background: #fff8f5;
+    color: #38213b;
+  }
+
+  .sffr-bylaws-page-module .sffr-bylaws-reader {
+    margin: 1.25rem 0;
+  }
+
+  .sffr-bylaws-page-module .sffr-bylaws-reader iframe {
+    display: block;
+    width: 100%;
+    height: clamp(35rem, 80vh, 65rem);
+    margin-top: .75rem;
+    border: 1px solid #e5dde6;
+    border-radius: .75rem;
+    background: #f8f5f8;
+  }
+
   .sffr-bylaws-page-module .sffr-bylaws-index {
     margin: 1.25rem 0;
     padding: clamp(1rem, 4vw, 2rem);
@@ -77,6 +113,11 @@
     border-bottom: 1px solid #eee7ef;
   }
 
+  .sffr-bylaws-page-module .sffr-bylaws-index a {
+    color: #6d305b;
+    text-underline-offset: .16em;
+  }
+
   .sffr-bylaws-page-module .sffr-bylaws-article {
     color: #6d305b;
     font-size: .82rem;
@@ -91,6 +132,7 @@
 
   @media (max-width: 680px) {
     .sffr-bylaws-page-module ol { column-count: 1; }
+    .sffr-bylaws-page-module .sffr-bylaws-reader { display: none; }
   }
 </style>
 <div class="sffr-bylaws-page-module">
@@ -98,31 +140,36 @@
     <p class="sffr-bylaws-edition">Amended December 2025</p>
     <h1>Club Bylaws</h1>
     <p class="sffr-bylaws-description">The rules that govern San Francisco FrontRunners, from membership and elections to board responsibilities.</p>
+    <div class="sffr-bylaws-actions">
+      <a class="sffr-bylaws-button sffr-bylaws-button-primary" href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" target="_blank" rel="noopener">Open bylaws (PDF)</a>
+      <a class="sffr-bylaws-button" href="https://raw.githubusercontent.com/sffr-technology/website-clubexpress/main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf">Download PDF</a>
+    </div>
   </header>
-  <!-- In ClubExpress Page Builder, add a Link widget in a separate cell near this module.
-       Choose Document, select SFFR_Bylaws_12_2025.pdf, and use the button label Download bylaws (PDF).
-       Store the original file in the ClubExpress Document Library. -->
+  <section class="sffr-bylaws-reader" aria-labelledby="sffr-bylaws-reader-title">
+    <h2 id="sffr-bylaws-reader-title">Read the bylaws</h2>
+    <iframe src="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf" title="San Francisco FrontRunners bylaws PDF" loading="lazy"></iframe>
+  </section>
   <section class="sffr-bylaws-index" aria-labelledby="sffr-bylaws-article-index">
     <h2 id="sffr-bylaws-article-index">Article index</h2>
     <p>Page numbers refer to the 15-page PDF.</p>
     <ol role="list">
-      <li><span class="sffr-bylaws-article">I</span> <span>Name</span> <span class="sffr-bylaws-page">Page 2</span></li>
-      <li><span class="sffr-bylaws-article">II</span> <span>Offices</span> <span class="sffr-bylaws-page">Page 2</span></li>
-      <li><span class="sffr-bylaws-article">III</span> <span>Purposes</span> <span class="sffr-bylaws-page">Page 2</span></li>
-      <li><span class="sffr-bylaws-article">IV</span> <span>Nonpartisan Activities</span> <span class="sffr-bylaws-page">Page 3</span></li>
-      <li><span class="sffr-bylaws-article">V</span> <span>Membership</span> <span class="sffr-bylaws-page">Page 4</span></li>
-      <li><span class="sffr-bylaws-article">VI</span> <span>Meetings</span> <span class="sffr-bylaws-page">Page 4</span></li>
-      <li><span class="sffr-bylaws-article">VII</span> <span>Voting</span> <span class="sffr-bylaws-page">Page 5</span></li>
-      <li><span class="sffr-bylaws-article">VIII</span> <span>Elections</span> <span class="sffr-bylaws-page">Page 6</span></li>
-      <li><span class="sffr-bylaws-article">IX</span> <span>Officer-Directors</span> <span class="sffr-bylaws-page">Page 7</span></li>
-      <li><span class="sffr-bylaws-article">X</span> <span>Delegation of Authority</span> <span class="sffr-bylaws-page">Page 11</span></li>
-      <li><span class="sffr-bylaws-article">XI</span> <span>Vacancies</span> <span class="sffr-bylaws-page">Page 11</span></li>
-      <li><span class="sffr-bylaws-article">XII</span> <span>Committees</span> <span class="sffr-bylaws-page">Page 12</span></li>
-      <li><span class="sffr-bylaws-article">XIII</span> <span>Recall and Referendum</span> <span class="sffr-bylaws-page">Page 12</span></li>
-      <li><span class="sffr-bylaws-article">XIV</span> <span>Finances</span> <span class="sffr-bylaws-page">Page 13</span></li>
-      <li><span class="sffr-bylaws-article">XV</span> <span>Dedication of Assets</span> <span class="sffr-bylaws-page">Page 14</span></li>
-      <li><span class="sffr-bylaws-article">XVI</span> <span>Affiliation</span> <span class="sffr-bylaws-page">Page 14</span></li>
-      <li><span class="sffr-bylaws-article">XVII</span> <span>Bylaw Amendments</span> <span class="sffr-bylaws-page">Page 15</span></li>
+      <li><span class="sffr-bylaws-article">I</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=2" target="_blank" rel="noopener">Name</a> <span class="sffr-bylaws-page">Page 2</span></li>
+      <li><span class="sffr-bylaws-article">II</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=2" target="_blank" rel="noopener">Offices</a> <span class="sffr-bylaws-page">Page 2</span></li>
+      <li><span class="sffr-bylaws-article">III</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=2" target="_blank" rel="noopener">Purposes</a> <span class="sffr-bylaws-page">Page 2</span></li>
+      <li><span class="sffr-bylaws-article">IV</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=3" target="_blank" rel="noopener">Nonpartisan Activities</a> <span class="sffr-bylaws-page">Page 3</span></li>
+      <li><span class="sffr-bylaws-article">V</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=4" target="_blank" rel="noopener">Membership</a> <span class="sffr-bylaws-page">Page 4</span></li>
+      <li><span class="sffr-bylaws-article">VI</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=4" target="_blank" rel="noopener">Meetings</a> <span class="sffr-bylaws-page">Page 4</span></li>
+      <li><span class="sffr-bylaws-article">VII</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=5" target="_blank" rel="noopener">Voting</a> <span class="sffr-bylaws-page">Page 5</span></li>
+      <li><span class="sffr-bylaws-article">VIII</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=6" target="_blank" rel="noopener">Elections</a> <span class="sffr-bylaws-page">Page 6</span></li>
+      <li><span class="sffr-bylaws-article">IX</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=7" target="_blank" rel="noopener">Officer-Directors</a> <span class="sffr-bylaws-page">Page 7</span></li>
+      <li><span class="sffr-bylaws-article">X</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=11" target="_blank" rel="noopener">Delegation of Authority</a> <span class="sffr-bylaws-page">Page 11</span></li>
+      <li><span class="sffr-bylaws-article">XI</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=11" target="_blank" rel="noopener">Vacancies</a> <span class="sffr-bylaws-page">Page 11</span></li>
+      <li><span class="sffr-bylaws-article">XII</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=12" target="_blank" rel="noopener">Committees</a> <span class="sffr-bylaws-page">Page 12</span></li>
+      <li><span class="sffr-bylaws-article">XIII</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=12" target="_blank" rel="noopener">Recall and Referendum</a> <span class="sffr-bylaws-page">Page 12</span></li>
+      <li><span class="sffr-bylaws-article">XIV</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=13" target="_blank" rel="noopener">Finances</a> <span class="sffr-bylaws-page">Page 13</span></li>
+      <li><span class="sffr-bylaws-article">XV</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=14" target="_blank" rel="noopener">Dedication of Assets</a> <span class="sffr-bylaws-page">Page 14</span></li>
+      <li><span class="sffr-bylaws-article">XVI</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=14" target="_blank" rel="noopener">Affiliation</a> <span class="sffr-bylaws-page">Page 14</span></li>
+      <li><span class="sffr-bylaws-article">XVII</span> <a href="https://cdn.jsdelivr.net/gh/sffr-technology/website-clubexpress@main/assets/2027-election-ballot/SFFR_Bylaws_12_2025.pdf#page=15" target="_blank" rel="noopener">Bylaw Amendments</a> <span class="sffr-bylaws-page">Page 15</span></li>
     </ol>
   </section>
 </div>
